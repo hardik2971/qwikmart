@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/kitchenware.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956503065,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "7d684591-2710-43b9-aece-acdc17f39af4"
+  ],
+  "etag": "Z/82WcTpe2mJGr3XvWHOHqEvbTE",
+  "customMetadata": {
+    "source": "assets:catalog/categories/kitchenware.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:43.065Z",
+  "updated": "2026-10-14T05:41:43.065Z",
+  "size": 12400,
+  "md5Hash": "gHXZuz2jXAA+cNnyFaeQCw==",
+  "crc32c": "2930599179"
+}

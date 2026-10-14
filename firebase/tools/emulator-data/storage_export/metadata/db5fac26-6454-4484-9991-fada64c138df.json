@@ -1,0 +1,21 @@
+{
+  "name": "catalog/blogs/building-immunity-with-everyday-foods.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956511398,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "76602848-e5a5-4482-a205-d39e766d409a"
+  ],
+  "etag": "Gt2wnT2ZhxBbK1siYsMMuHOJPLc",
+  "customMetadata": {
+    "source": "assets:catalog/blogs/building-immunity-with-everyday-foods.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:51.398Z",
+  "updated": "2026-10-14T05:41:51.398Z",
+  "size": 47874,
+  "md5Hash": "kyenYmgwwoGVAaDIvEJpFw==",
+  "crc32c": "3856608059"
+}

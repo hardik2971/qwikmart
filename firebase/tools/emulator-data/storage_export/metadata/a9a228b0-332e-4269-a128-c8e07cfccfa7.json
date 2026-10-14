@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/notification-alphonso-mangoes.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956500217,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "3727cdc4-8bdd-4da9-a232-e3fabe2e3cd3"
+  ],
+  "etag": "Bl77/E7zetFMt8aiw4UzG5Xe+JY",
+  "customMetadata": {
+    "source": "assets:catalog/banners/notification-alphonso-mangoes.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:40.217Z",
+  "updated": "2026-10-14T05:41:40.217Z",
+  "size": 17262,
+  "md5Hash": "xPzRTLTuO8PGpI4YLkmXDA==",
+  "crc32c": "1292323652"
+}

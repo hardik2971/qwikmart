@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/tropicana.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504301,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "f9a548eb-82b8-4b51-aaca-3d9c069cc8c9"
+  ],
+  "etag": "G3NLeCCorBIGgkyUvrKB4qlV9cs",
+  "customMetadata": {
+    "source": "assets:catalog/brands/tropicana.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.301Z",
+  "updated": "2026-10-14T05:41:44.301Z",
+  "size": 6142,
+  "md5Hash": "apcbPsJd3FDhyIuF38l2UA==",
+  "crc32c": "2379230883"
+}

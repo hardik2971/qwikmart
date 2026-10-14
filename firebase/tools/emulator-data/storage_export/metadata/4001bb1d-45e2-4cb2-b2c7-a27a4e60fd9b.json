@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/kwality-walls.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504365,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "afed75fb-f5d4-47c5-a659-f595f0c8bb6c"
+  ],
+  "etag": "f6PKrX5cALXXmZREAeAC14kbd9I",
+  "customMetadata": {
+    "source": "assets:catalog/brands/kwality-walls.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.365Z",
+  "updated": "2026-10-14T05:41:44.365Z",
+  "size": 7790,
+  "md5Hash": "g5AX7GA3V3Q3MLQPZYdh5g==",
+  "crc32c": "1472905687"
+}

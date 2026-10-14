@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/ice-creams.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501835,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "ac139570-8e7a-4366-ad74-646967eedd23"
+  ],
+  "etag": "o173YUDWMRjeFq/U611mLuinB60",
+  "customMetadata": {
+    "source": "assets:catalog/categories/ice-creams.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.835Z",
+  "updated": "2026-10-14T05:41:41.835Z",
+  "size": 27056,
+  "md5Hash": "Gw/wApm6g0PXM5it/8ZuGA==",
+  "crc32c": "1159704411"
+}

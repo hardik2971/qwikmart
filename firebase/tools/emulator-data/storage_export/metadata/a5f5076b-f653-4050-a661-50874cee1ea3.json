@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/dairy-deals.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510753,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "a685c1a4-1a0d-4d28-aef1-5555cd277f6b"
+  ],
+  "etag": "AqCYfFc6+Lfud4ITpmAVRcrSm0I",
+  "customMetadata": {
+    "source": "assets:catalog/banners/dairy-deals.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.753Z",
+  "updated": "2026-10-14T05:41:50.753Z",
+  "size": 16602,
+  "md5Hash": "ROzXU3cj7xQJbAfVWdgK9Q==",
+  "crc32c": "804856076"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/skin-care.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501950,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "c1415edd-af38-4c67-a817-232650f168a1"
+  ],
+  "etag": "t58hT5Pdsg3lXdK1Gw57b2yt310",
+  "customMetadata": {
+    "source": "assets:catalog/categories/skin-care.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.950Z",
+  "updated": "2026-10-14T05:41:41.950Z",
+  "size": 6924,
+  "md5Hash": "hJknKEh27YtjqQIUTaL/rg==",
+  "crc32c": "1611226896"
+}

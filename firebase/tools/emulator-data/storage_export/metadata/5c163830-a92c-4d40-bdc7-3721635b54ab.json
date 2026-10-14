@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/category-fashion.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502749,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "7bfd456c-c282-492f-a5fd-cc067bce715a"
+  ],
+  "etag": "MuoaLoLRuifvRkLTFitf1b7k1Ys",
+  "customMetadata": {
+    "source": "assets:catalog/banners/category-fashion.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.749Z",
+  "updated": "2026-10-14T05:41:42.749Z",
+  "size": 63820,
+  "md5Hash": "PdPA789BqVWCKvf5U83fUw==",
+  "crc32c": "1391654592"
+}

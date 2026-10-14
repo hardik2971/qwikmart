@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/hair-care.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502001,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "62214562-01eb-46ae-a037-4992a38d8ad1"
+  ],
+  "etag": "A2IkdJ7Xgp6W2wFMcIxcpEAunL4",
+  "customMetadata": {
+    "source": "assets:catalog/categories/hair-care.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.001Z",
+  "updated": "2026-10-14T05:41:42.001Z",
+  "size": 22416,
+  "md5Hash": "ImeBin3DOSaFKU2oRdCO2A==",
+  "crc32c": "851290230"
+}

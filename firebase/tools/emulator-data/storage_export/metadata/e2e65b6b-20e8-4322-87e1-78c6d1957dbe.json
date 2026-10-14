@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/aashirvaad.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956503927,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "43fabb8e-f21c-42ef-a955-5954001ac1f9"
+  ],
+  "etag": "Nd68q4Mn3OYp4PsLIj0K7kzceSs",
+  "customMetadata": {
+    "source": "assets:catalog/brands/aashirvaad.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:43.927Z",
+  "updated": "2026-10-14T05:41:43.927Z",
+  "size": 3932,
+  "md5Hash": "vz8m1MuIUIeiKKnkIZSffA==",
+  "crc32c": "1914667675"
+}

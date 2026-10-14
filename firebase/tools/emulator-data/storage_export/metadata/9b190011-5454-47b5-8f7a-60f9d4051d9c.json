@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/namkeen.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501529,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "1e3140ac-89bd-4e85-a611-a8cd40c567e3"
+  ],
+  "etag": "uR3schiREN3boYGkRuc4Oc3cMao",
+  "customMetadata": {
+    "source": "assets:catalog/categories/namkeen.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.529Z",
+  "updated": "2026-10-14T05:41:41.529Z",
+  "size": 9762,
+  "md5Hash": "jUGypm2TdCv10yrmhaYDzw==",
+  "crc32c": "1155854730"
+}

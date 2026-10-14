@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/smartphones.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502576,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "8aed668a-8fac-4c30-a93c-c8cf76dfe865"
+  ],
+  "etag": "mrzTrzlFEqW8/ESbalvKWfzTCOU",
+  "customMetadata": {
+    "source": "assets:catalog/categories/smartphones.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.576Z",
+  "updated": "2026-10-14T05:41:42.576Z",
+  "size": 4682,
+  "md5Hash": "RWje5zDfwXf96mYRXePqkA==",
+  "crc32c": "2815600739"
+}

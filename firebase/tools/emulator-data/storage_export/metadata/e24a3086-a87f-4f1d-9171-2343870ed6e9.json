@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/onion-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956506766,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "4bda2e66-28cc-47f2-a516-7d4a742e3604"
+  ],
+  "etag": "6RfieD+T08aBdJmu9xAr5ZfR3eo",
+  "customMetadata": {
+    "source": "assets:catalog/products/onion-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:46.767Z",
+  "updated": "2026-10-14T05:41:46.767Z",
+  "size": 44186,
+  "md5Hash": "x593K4AevaKcOt+10lkaWw==",
+  "crc32c": "1927549897"
+}

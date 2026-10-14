@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/mother-dairy.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956503762,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "9cccddb1-9729-4cbd-af4b-cdab9c3be287"
+  ],
+  "etag": "B5GmujfozJNAwYBiiWousWNPS8s",
+  "customMetadata": {
+    "source": "assets:catalog/brands/mother-dairy.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:43.762Z",
+  "updated": "2026-10-14T05:41:43.762Z",
+  "size": 9306,
+  "md5Hash": "jsQ3DF/4aaITv2UtT6o2cw==",
+  "crc32c": "3455152090"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/audio.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502386,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "4d19491d-fcff-4468-afbd-efb26ed284bb"
+  ],
+  "etag": "KqhyPGFpfume8SY7gbdBF8gUruI",
+  "customMetadata": {
+    "source": "assets:catalog/categories/audio.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.386Z",
+  "updated": "2026-10-14T05:41:42.386Z",
+  "size": 6662,
+  "md5Hash": "UQf3RCPEV0V8gIfkIotfXw==",
+  "crc32c": "4021647100"
+}

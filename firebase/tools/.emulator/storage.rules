@@ -1,0 +1,7 @@
+rules_version = '2';
+// Minimal rules for the migration tool's private emulator only (Admin SDK bypasses rules anyway).
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} { allow read: if true; allow write: if false; }
+  }
+}

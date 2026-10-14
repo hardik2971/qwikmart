@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/women.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502833,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "2d15482c-f05e-4f71-a873-721e2a69ef56"
+  ],
+  "etag": "2LYd8JjYMwZ5GpItIsWt0FJFTsk",
+  "customMetadata": {
+    "source": "assets:catalog/categories/women.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.833Z",
+  "updated": "2026-10-14T05:41:42.833Z",
+  "size": 11078,
+  "md5Hash": "mM+w+C+ufO+QFAbYgDPvTg==",
+  "crc32c": "4225947530"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/johnsons.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504622,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "97148ace-5a9d-4d87-a57d-95a8df4fa0af"
+  ],
+  "etag": "na3IJaa8BbJSgAgA0a3JJAmKLIg",
+  "customMetadata": {
+    "source": "assets:catalog/brands/johnsons.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.622Z",
+  "updated": "2026-10-14T05:41:44.622Z",
+  "size": 3614,
+  "md5Hash": "G3oObDzgELlXn0ivAtXKFQ==",
+  "crc32c": "4092791109"
+}

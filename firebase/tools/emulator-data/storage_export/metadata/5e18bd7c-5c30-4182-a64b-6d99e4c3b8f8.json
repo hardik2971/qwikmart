@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/grocery.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956500621,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "20bee71f-5635-4695-add4-8df3b04aa541"
+  ],
+  "etag": "aUOCq4U5HFmDWyoV3RxjNiNT0Mc",
+  "customMetadata": {
+    "source": "assets:catalog/categories/grocery.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:40.621Z",
+  "updated": "2026-10-14T05:41:40.621Z",
+  "size": 26508,
+  "md5Hash": "JSsnIT6gQk+0+tV3CJsTLg==",
+  "crc32c": "88273272"
+}

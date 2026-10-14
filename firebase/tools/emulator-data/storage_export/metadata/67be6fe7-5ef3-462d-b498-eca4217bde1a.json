@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/band-aid.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504565,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "3b07b718-0ab2-4e28-a948-5767b5609abf"
+  ],
+  "etag": "L8nrHvdsDueBt08iU+H8dNT9xJA",
+  "customMetadata": {
+    "source": "assets:catalog/brands/band-aid.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.565Z",
+  "updated": "2026-10-14T05:41:44.565Z",
+  "size": 7870,
+  "md5Hash": "JbofmahO1VxtE9YVIv8AGA==",
+  "crc32c": "4250228420"
+}

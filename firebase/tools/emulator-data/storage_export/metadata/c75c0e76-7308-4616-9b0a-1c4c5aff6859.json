@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/first-aid.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502121,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "49ac2fe9-0d2e-46a7-a98e-48ea785a8935"
+  ],
+  "etag": "jbPLImMS498805lfolzprWO49fc",
+  "customMetadata": {
+    "source": "assets:catalog/categories/first-aid.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.121Z",
+  "updated": "2026-10-14T05:41:42.121Z",
+  "size": 9872,
+  "md5Hash": "AInxN4hCG8hJ4XROVLUPUQ==",
+  "crc32c": "2377571551"
+}

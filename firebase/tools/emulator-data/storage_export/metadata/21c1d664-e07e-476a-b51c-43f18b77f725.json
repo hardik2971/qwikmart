@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/toys-games.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502284,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "97b7d949-1a20-44bf-a6a2-d63a51183a40"
+  ],
+  "etag": "Kfyn0C6sHlrfh82+SXNteXXw044",
+  "customMetadata": {
+    "source": "assets:catalog/categories/toys-games.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.284Z",
+  "updated": "2026-10-14T05:41:42.284Z",
+  "size": 16052,
+  "md5Hash": "7vlao8tl4SxGwlDjo88xxA==",
+  "crc32c": "3881481203"
+}

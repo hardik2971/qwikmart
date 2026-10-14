@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/coca-cola-soft-drink.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509339,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "35debb06-a885-4a72-ae57-b01fdf9ad5a8"
+  ],
+  "etag": "xdFTFSkns4MOuVWsrZMv2ZxoNJs",
+  "customMetadata": {
+    "source": "assets:catalog/products/coca-cola-soft-drink.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.339Z",
+  "updated": "2026-10-14T05:41:49.339Z",
+  "size": 69582,
+  "md5Hash": "3vX9Y7/xqUnDiczcj47irw==",
+  "crc32c": "3120171614"
+}

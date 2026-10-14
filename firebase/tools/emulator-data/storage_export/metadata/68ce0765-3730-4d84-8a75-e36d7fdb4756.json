@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/xiaomi.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956505845,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "8417da96-10ee-4243-affc-01f16442b135"
+  ],
+  "etag": "fXZCnQKZaNSGNtAF94jgBKeEf3g",
+  "customMetadata": {
+    "source": "assets:catalog/brands/xiaomi.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:45.845Z",
+  "updated": "2026-10-14T05:41:45.845Z",
+  "size": 2660,
+  "md5Hash": "W+pXNq30BZNJ1OLmXRdGkA==",
+  "crc32c": "2056152305"
+}

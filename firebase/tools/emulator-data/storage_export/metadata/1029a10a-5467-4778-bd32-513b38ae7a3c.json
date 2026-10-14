@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/lego.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504664,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "a9149dbd-fa32-455c-a7c8-bf3fdec53dfa"
+  ],
+  "etag": "9CRQYxGqQKXOQq7exmGIPbDJVrY",
+  "customMetadata": {
+    "source": "assets:catalog/brands/lego.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.664Z",
+  "updated": "2026-10-14T05:41:44.664Z",
+  "size": 4854,
+  "md5Hash": "24vXsfORjKsK7ggFeeYe+g==",
+  "crc32c": "3563887885"
+}

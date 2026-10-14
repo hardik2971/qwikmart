@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/smartphones-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502591,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "83c41e3d-dc14-4b39-a5a9-2430efdc5bc2"
+  ],
+  "etag": "9J8L4rpoRnqlYyWDQFPdQ2V/3VI",
+  "customMetadata": {
+    "source": "assets:catalog/categories/smartphones-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.591Z",
+  "updated": "2026-10-14T05:41:42.591Z",
+  "size": 1046,
+  "md5Hash": "VnS718epYPcYjbWYTnIawQ==",
+  "crc32c": "480492793"
+}

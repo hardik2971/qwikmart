@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/category-electronics.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502371,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "9f634f10-7848-4663-a466-ef10f992c408"
+  ],
+  "etag": "dr6cF/7EYhCKI/oUOcFjGYGEFsI",
+  "customMetadata": {
+    "source": "assets:catalog/banners/category-electronics.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.371Z",
+  "updated": "2026-10-14T05:41:42.371Z",
+  "size": 37500,
+  "md5Hash": "zEseshV60kgiQs61jpGmow==",
+  "crc32c": "4020232791"
+}

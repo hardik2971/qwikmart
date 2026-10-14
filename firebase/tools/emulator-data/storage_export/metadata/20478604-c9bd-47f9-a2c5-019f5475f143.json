@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/amul-taaza-toned-milk-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956507443,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "2aac2ee2-cbf1-4e08-ab36-166bed1f69f9"
+  ],
+  "etag": "nPdtSUxoHc+yL1F1dW2bx351CLM",
+  "customMetadata": {
+    "source": "assets:catalog/products/amul-taaza-toned-milk-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:47.443Z",
+  "updated": "2026-10-14T05:41:47.443Z",
+  "size": 2092,
+  "md5Hash": "mcBjsOCyEfwFZjhXDE4ctA==",
+  "crc32c": "2195591129"
+}

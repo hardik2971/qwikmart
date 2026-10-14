@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/puma.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956506366,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "df9cbc5f-26d9-4366-ad67-b124db2382b0"
+  ],
+  "etag": "ziLT52mnOurppEpZnX359ZkkrfA",
+  "customMetadata": {
+    "source": "assets:catalog/brands/puma.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:46.366Z",
+  "updated": "2026-10-14T05:41:46.366Z",
+  "size": 2960,
+  "md5Hash": "y/GvtHdY/6wkboJGZpEgtA==",
+  "crc32c": "2114911140"
+}

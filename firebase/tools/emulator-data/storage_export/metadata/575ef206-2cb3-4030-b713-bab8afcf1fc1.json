@@ -1,0 +1,21 @@
+{
+  "name": "brand/out/qwikmart-logo.png",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956473213,
+  "contentType": "image/png",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "249a1e60-ab38-4006-a10f-63d404edf7fe"
+  ],
+  "etag": "JodMDAOuvNHAxkTY6Bxobgl0tIQ",
+  "customMetadata": {
+    "source": "assets:brand/out/qwikmart-logo.png"
+  },
+  "timeCreated": "2026-10-14T05:41:13.214Z",
+  "updated": "2026-10-14T05:41:13.214Z",
+  "size": 96470,
+  "md5Hash": "ot9OyisnwhJqwDXqfyLo1w==",
+  "crc32c": "414755605"
+}

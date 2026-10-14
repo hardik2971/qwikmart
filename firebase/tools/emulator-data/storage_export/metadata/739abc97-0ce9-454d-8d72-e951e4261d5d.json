@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/category-snacks.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501462,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "8797101b-3044-4697-a810-c0fe82c475f5"
+  ],
+  "etag": "A/M1lO8K6++gS3t7sijYVLFU9x4",
+  "customMetadata": {
+    "source": "assets:catalog/banners/category-snacks.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.462Z",
+  "updated": "2026-10-14T05:41:41.462Z",
+  "size": 61366,
+  "md5Hash": "OA+DProJW6DL6YXHEY4bAw==",
+  "crc32c": "4279955618"
+}

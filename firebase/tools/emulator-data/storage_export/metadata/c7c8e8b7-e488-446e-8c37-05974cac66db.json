@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/tata-salt.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956508755,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "1c4f5ed6-fb25-49fa-a8bc-9b8ce7c66bb1"
+  ],
+  "etag": "LTfQCTKuI6dh4M1IL4E1uF2+TuA",
+  "customMetadata": {
+    "source": "assets:catalog/products/tata-salt.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:48.755Z",
+  "updated": "2026-10-14T05:41:48.755Z",
+  "size": 32436,
+  "md5Hash": "N0Ub6CClz83YYrDUw0liSw==",
+  "crc32c": "4165861696"
+}

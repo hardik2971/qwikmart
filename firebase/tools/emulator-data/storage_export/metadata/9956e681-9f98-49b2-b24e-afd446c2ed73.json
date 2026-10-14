@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/shimla-apple-2.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956506997,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "fc7300bb-2522-4874-ad60-fffa91687844"
+  ],
+  "etag": "M7G3NKrj46ODHi6pluyY73cw23I",
+  "customMetadata": {
+    "source": "assets:catalog/products/shimla-apple-2.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:46.997Z",
+  "updated": "2026-10-14T05:41:46.997Z",
+  "size": 20742,
+  "md5Hash": "MgH6NJo73IxeGuHqYuT8tw==",
+  "crc32c": "2364858024"
+}

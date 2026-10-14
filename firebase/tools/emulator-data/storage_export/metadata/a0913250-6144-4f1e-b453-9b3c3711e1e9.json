@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/volini-pain-relief-spray.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509821,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "e32b6793-d9f5-48e7-a81a-f2aca920eddb"
+  ],
+  "etag": "cie9IykfByU66A8ZZasjLYHF+pE",
+  "customMetadata": {
+    "source": "assets:catalog/products/volini-pain-relief-spray.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.821Z",
+  "updated": "2026-10-14T05:41:49.821Z",
+  "size": 6804,
+  "md5Hash": "flCKcCfQ3Zvo7yoOu6mRng==",
+  "crc32c": "2913909770"
+}

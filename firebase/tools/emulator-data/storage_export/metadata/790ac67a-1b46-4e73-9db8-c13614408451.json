@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/maggi-2-minute-masala-noodles.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509292,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "6965f461-41ed-472a-aa47-5a13e074988c"
+  ],
+  "etag": "cJsyk4WVyB/Hs+USXkai0mXsCyI",
+  "customMetadata": {
+    "source": "assets:catalog/products/maggi-2-minute-masala-noodles.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.292Z",
+  "updated": "2026-10-14T05:41:49.292Z",
+  "size": 21156,
+  "md5Hash": "aPFzlKNytkDdA9dOziXLlg==",
+  "crc32c": "485053099"
+}

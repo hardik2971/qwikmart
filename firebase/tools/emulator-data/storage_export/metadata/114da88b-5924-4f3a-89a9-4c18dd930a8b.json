@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/britannia.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504185,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "193f8e9e-6dae-4d87-abf3-770b7a43f2cb"
+  ],
+  "etag": "YIn8adnY9+uECIOyjy0FXUTb8SE",
+  "customMetadata": {
+    "source": "assets:catalog/brands/britannia.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.185Z",
+  "updated": "2026-10-14T05:41:44.185Z",
+  "size": 6478,
+  "md5Hash": "HvtRBgiSQ+HWGLR3q8poSQ==",
+  "crc32c": "3307614480"
+}

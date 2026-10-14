@@ -1,0 +1,21 @@
+{
+  "name": "catalog/blogs/introducing-qwikmart-wallet-cashback.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956511543,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "bc0a754b-6170-4f7f-a1ac-b1cfeadf9ae0"
+  ],
+  "etag": "lM6LUww8kM+6fulKRL33QJQlzzo",
+  "customMetadata": {
+    "source": "assets:catalog/blogs/introducing-qwikmart-wallet-cashback.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:51.543Z",
+  "updated": "2026-10-14T05:41:51.543Z",
+  "size": 46628,
+  "md5Hash": "hGWV5yqqynouJv+ziAQuug==",
+  "crc32c": "211996622"
+}

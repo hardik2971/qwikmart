@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/fresh-fruits-vegetables.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501110,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "bde0f9f6-90a6-40ec-a056-ae5287f12a2d"
+  ],
+  "etag": "Mt4Ir92JAGPQ0FP4rVKXwBNWPZ4",
+  "customMetadata": {
+    "source": "assets:catalog/categories/fresh-fruits-vegetables.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.110Z",
+  "updated": "2026-10-14T05:41:41.110Z",
+  "size": 45454,
+  "md5Hash": "oC8rouVYqAiB4fixxCFRUA==",
+  "crc32c": "3878076339"
+}

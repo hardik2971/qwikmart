@@ -1,0 +1,21 @@
+{
+  "name": "catalog/promos/happyhour.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956511047,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "6f890507-4db8-4a46-a441-2924f3cfaf5c"
+  ],
+  "etag": "EfPEiQAi7aDpjnw8iSHmYxaO8kU",
+  "customMetadata": {
+    "source": "assets:catalog/promos/happyhour.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:51.047Z",
+  "updated": "2026-10-14T05:41:51.047Z",
+  "size": 10372,
+  "md5Hash": "z0LuSY3kx+lf/HUuULbNiw==",
+  "crc32c": "4173260310"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/icons/snacks.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501385,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "a9b091d3-3645-4406-a192-252aeeabea4f"
+  ],
+  "etag": "ItwwNLWoPFoOULgjDSsPwqerCQk",
+  "customMetadata": {
+    "source": "assets:catalog/categories/icons/snacks.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.385Z",
+  "updated": "2026-10-14T05:41:41.385Z",
+  "size": 5704,
+  "md5Hash": "605FUt2OhLmLzFRnROymFQ==",
+  "crc32c": "818957833"
+}

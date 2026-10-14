@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/pampers-baby-dry-pants-medium.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509873,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "ccc3dc4c-5d04-4022-a9bf-43e7d182cb07"
+  ],
+  "etag": "dLPAg3f+e386iXCR6hRh4ljqU9s",
+  "customMetadata": {
+    "source": "assets:catalog/products/pampers-baby-dry-pants-medium.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.873Z",
+  "updated": "2026-10-14T05:41:49.873Z",
+  "size": 95674,
+  "md5Hash": "Ah+YO6osDOKEZSwgPoV2vA==",
+  "crc32c": "401678436"
+}

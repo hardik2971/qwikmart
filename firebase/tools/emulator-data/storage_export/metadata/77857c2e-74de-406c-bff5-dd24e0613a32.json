@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/nivea.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504422,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "ae0c349f-6145-41bf-a2c7-52c3d9c0f3f5"
+  ],
+  "etag": "Ptrh4o4tmptaLMBe94PIMBqC8XE",
+  "customMetadata": {
+    "source": "assets:catalog/brands/nivea.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.422Z",
+  "updated": "2026-10-14T05:41:44.422Z",
+  "size": 3510,
+  "md5Hash": "LduzDt3MCcxvFzVJolWLUw==",
+  "crc32c": "2143310323"
+}

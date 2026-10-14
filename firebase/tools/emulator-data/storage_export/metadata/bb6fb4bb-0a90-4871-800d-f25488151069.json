@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/smartphones-from-9999.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510719,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "242026b4-7b53-4255-acda-ebbf089610af"
+  ],
+  "etag": "9PW57sO5OaKawGpqjlwsQporjjc",
+  "customMetadata": {
+    "source": "assets:catalog/banners/smartphones-from-9999.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.719Z",
+  "updated": "2026-10-14T05:41:50.719Z",
+  "size": 40144,
+  "md5Hash": "zCxhTHXG5j/e38vaIMsq/w==",
+  "crc32c": "786871047"
+}

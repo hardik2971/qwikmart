@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/qwikmart-fresh.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956503657,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "2562654b-c1d6-4b35-a34a-dacbc2b625f2"
+  ],
+  "etag": "w1mhvMKEM8IvjtEdZiMbwmpxPis",
+  "customMetadata": {
+    "source": "assets:catalog/brands/qwikmart-fresh.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:43.657Z",
+  "updated": "2026-10-14T05:41:43.657Z",
+  "size": 3878,
+  "md5Hash": "U/CYCHRnMZBBWo8Hka7bVA==",
+  "crc32c": "2395552970"
+}

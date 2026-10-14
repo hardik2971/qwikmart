@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/pharmacy.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502031,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "37457e73-90c7-4211-ac31-8e9bfcea19c9"
+  ],
+  "etag": "y1RF8sS/u6OPrLJGCrrFL+65Sb4",
+  "customMetadata": {
+    "source": "assets:catalog/categories/pharmacy.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.031Z",
+  "updated": "2026-10-14T05:41:42.031Z",
+  "size": 8288,
+  "md5Hash": "rduh+QIAvm4K6kdzCanKew==",
+  "crc32c": "3680133044"
+}

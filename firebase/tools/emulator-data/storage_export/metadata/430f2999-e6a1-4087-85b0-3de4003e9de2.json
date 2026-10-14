@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/potato-2.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956506793,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "5a5b898d-cc77-41c1-af65-7789405a2b1e"
+  ],
+  "etag": "r0rHHIMo6UyKQJQssNQutRCanIY",
+  "customMetadata": {
+    "source": "assets:catalog/products/potato-2.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:46.793Z",
+  "updated": "2026-10-14T05:41:46.793Z",
+  "size": 72806,
+  "md5Hash": "qtOTTbMauh8P5wOSm0MTBg==",
+  "crc32c": "136017132"
+}

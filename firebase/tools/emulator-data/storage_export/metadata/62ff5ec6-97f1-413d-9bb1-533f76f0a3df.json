@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/vim-dishwash-liquid-gel-lemon-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510241,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "af8c4c54-d749-494a-aa2e-9e89da53e380"
+  ],
+  "etag": "SwYdPILFHmagdhK5gCwbHJxlyrk",
+  "customMetadata": {
+    "source": "assets:catalog/products/vim-dishwash-liquid-gel-lemon-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.241Z",
+  "updated": "2026-10-14T05:41:50.241Z",
+  "size": 36072,
+  "md5Hash": "BJNIS7ng/oIkhDjKc83VsQ==",
+  "crc32c": "3832552542"
+}

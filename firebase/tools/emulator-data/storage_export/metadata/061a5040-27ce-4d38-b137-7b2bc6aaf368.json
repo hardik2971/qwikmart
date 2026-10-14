@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/new-season-fashion.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510694,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "734cba45-bef0-4c1c-ac78-19e712befed2"
+  ],
+  "etag": "5xZHRlF2jLUg3g7SlCiUsmOGAbU",
+  "customMetadata": {
+    "source": "assets:catalog/banners/new-season-fashion.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.694Z",
+  "updated": "2026-10-14T05:41:50.694Z",
+  "size": 70486,
+  "md5Hash": "ZGJETO6QK/Ktl2t3vVlu9w==",
+  "crc32c": "3722112255"
+}

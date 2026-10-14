@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/vim.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956506389,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "7f72ab13-2cb5-4dfb-a445-20f233355f9a"
+  ],
+  "etag": "UrOD+ul9wdD3QXST+6knbR88LKw",
+  "customMetadata": {
+    "source": "assets:catalog/brands/vim.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:46.389Z",
+  "updated": "2026-10-14T05:41:46.389Z",
+  "size": 1580,
+  "md5Hash": "mFGiGlAQVbUhJ8fkISh2og==",
+  "crc32c": "1662355749"
+}

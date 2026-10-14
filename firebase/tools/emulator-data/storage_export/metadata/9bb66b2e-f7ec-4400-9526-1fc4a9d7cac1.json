@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/surf-excel-easy-wash-detergent-powder.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510275,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "078c4149-e341-48a8-afe6-78fa32a2c3a4"
+  ],
+  "etag": "0+c1mZOpCsHeadc21X2sLiuNPAg",
+  "customMetadata": {
+    "source": "assets:catalog/products/surf-excel-easy-wash-detergent-powder.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.276Z",
+  "updated": "2026-10-14T05:41:50.276Z",
+  "size": 58866,
+  "md5Hash": "yDhpmN0RGRvJmPLu+3Ni+A==",
+  "crc32c": "3123994308"
+}

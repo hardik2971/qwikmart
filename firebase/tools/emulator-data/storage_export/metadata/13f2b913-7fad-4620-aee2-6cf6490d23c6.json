@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/lays.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504034,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "a7e102b4-1670-4b78-a246-00d8e4d1bb3b"
+  ],
+  "etag": "y0aoG1xjB9mGEkcKqzRVFBqRWI8",
+  "customMetadata": {
+    "source": "assets:catalog/brands/lays.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.035Z",
+  "updated": "2026-10-14T05:41:44.035Z",
+  "size": 7184,
+  "md5Hash": "MYvyh1bKBhZ9CdTS9GZMnQ==",
+  "crc32c": "158893709"
+}

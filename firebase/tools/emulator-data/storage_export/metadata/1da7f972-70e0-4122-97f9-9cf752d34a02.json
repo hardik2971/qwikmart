@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/dove.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504465,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "bdbea2c8-70d2-472b-aae6-3005f0f0a6ff"
+  ],
+  "etag": "p7ox/xN/OV/zuaTrJUb/jfZJ0lo",
+  "customMetadata": {
+    "source": "assets:catalog/brands/dove.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.465Z",
+  "updated": "2026-10-14T05:41:44.465Z",
+  "size": 2068,
+  "md5Hash": "WllSxOuzAOhWdGPNx2CHjQ==",
+  "crc32c": "4147546628"
+}

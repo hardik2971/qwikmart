@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/fresh-fruits-veggies.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510584,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "5ca8db74-2a0d-48b1-a583-cf8302293ed4"
+  ],
+  "etag": "2HsCGe4a1u2X8TQjr77Hj9vlIrM",
+  "customMetadata": {
+    "source": "assets:catalog/banners/fresh-fruits-veggies.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.584Z",
+  "updated": "2026-10-14T05:41:50.584Z",
+  "size": 102710,
+  "md5Hash": "inuqWuCq/by5/ivZTjae/w==",
+  "crc32c": "672617829"
+}

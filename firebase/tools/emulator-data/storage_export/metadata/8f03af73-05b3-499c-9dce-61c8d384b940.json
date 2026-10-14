@@ -1,0 +1,20 @@
+{
+  "name": "users/NcgYw4wjSTRuPJZRwx1TWN2Mrh92/withdrawals/Jyi44fmUwuh8qceulQ98pYPfUjVgkUnBqPddt4K9.png",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956511219,
+  "contentType": "image/png",
+  "storageClass": "STANDARD",
+  "downloadTokens": [
+    "1e8bbd45-8c5d-4756-a02e-9e720e6fa22d"
+  ],
+  "etag": "D03fDKGHPU6DlS508Yny/liHLlU",
+  "customMetadata": {
+    "source": "laravel:withdrawals/Jyi44fmUwuh8qceulQ98pYPfUjVgkUnBqPddt4K9.png"
+  },
+  "timeCreated": "2026-10-14T05:41:51.219Z",
+  "updated": "2026-10-14T05:41:51.219Z",
+  "size": 70,
+  "md5Hash": "+Cm5FPxHz8nAdHwRnCfPGw==",
+  "crc32c": "756763911"
+}

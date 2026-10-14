@@ -1,0 +1,6 @@
+node_modules/
+*.log
+*-debug.log
+# production migration credentials — never commit
+*service-account*.json
+*-firebase-adminsdk-*.json

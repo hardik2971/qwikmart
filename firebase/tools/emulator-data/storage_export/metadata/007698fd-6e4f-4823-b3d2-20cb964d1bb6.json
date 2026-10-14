@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/icons/fashion.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502694,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "50426371-8006-43a1-a683-a2311a42de0e"
+  ],
+  "etag": "tBHcOv2PJuDcS+hV+zBTqoDg7+k",
+  "customMetadata": {
+    "source": "assets:catalog/categories/icons/fashion.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.694Z",
+  "updated": "2026-10-14T05:41:42.694Z",
+  "size": 5696,
+  "md5Hash": "/wkoPvw5KgweMH0STBrV3A==",
+  "crc32c": "2661923507"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/pedigree.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956506467,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "48f3d9fd-4300-40f5-a9f8-360965e243c8"
+  ],
+  "etag": "1ok5x2wATzuL2e87+367ziF/kWw",
+  "customMetadata": {
+    "source": "assets:catalog/brands/pedigree.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:46.467Z",
+  "updated": "2026-10-14T05:41:46.467Z",
+  "size": 6924,
+  "md5Hash": "w3CFurryvD5ToEScHTdZUg==",
+  "crc32c": "4132645029"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/bikaji.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504113,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "003f71db-64e4-4ae5-ab3d-1fb9fc709e53"
+  ],
+  "etag": "QBCiwgUntzhzf9AofUDGUiPop0c",
+  "customMetadata": {
+    "source": "assets:catalog/brands/bikaji.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.113Z",
+  "updated": "2026-10-14T05:41:44.113Z",
+  "size": 2352,
+  "md5Hash": "U0oI+mQHUkWhJbdWWirmEQ==",
+  "crc32c": "151867304"
+}

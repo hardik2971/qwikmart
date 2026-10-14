@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/mi-10000mah-power-bank.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510016,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "0288467c-b105-4cd5-a09e-6fcbbcc520a1"
+  ],
+  "etag": "Co6RTm9N8jChI5aCw6lIs6Lr/34",
+  "customMetadata": {
+    "source": "assets:catalog/products/mi-10000mah-power-bank.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.016Z",
+  "updated": "2026-10-14T05:41:50.016Z",
+  "size": 22274,
+  "md5Hash": "nvgLHaohwbfQLgcbsDySAg==",
+  "crc32c": "3296789677"
+}

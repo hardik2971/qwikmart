@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/amul-vanilla-magic-ice-cream.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509496,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "813375d2-4fac-408f-a5de-a397ea728e70"
+  ],
+  "etag": "RgE+E1Muy0PHQ+XNhwE9eGjkcPc",
+  "customMetadata": {
+    "source": "assets:catalog/products/amul-vanilla-magic-ice-cream.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.496Z",
+  "updated": "2026-10-14T05:41:49.496Z",
+  "size": 43594,
+  "md5Hash": "boI6rmcxPYJ71Fr+ivhlAg==",
+  "crc32c": "1185731521"
+}

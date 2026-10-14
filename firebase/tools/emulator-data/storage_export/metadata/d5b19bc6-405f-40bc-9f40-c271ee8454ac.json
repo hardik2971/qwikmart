@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/icons/pet-care.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956503253,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "21cc3406-09b6-46e6-a40e-5a28ff2fa2a7"
+  ],
+  "etag": "0QvvIYIKOGdu40EKO8uo82mJ4PY",
+  "customMetadata": {
+    "source": "assets:catalog/categories/icons/pet-care.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:43.253Z",
+  "updated": "2026-10-14T05:41:43.253Z",
+  "size": 7208,
+  "md5Hash": "C3hYFLFeg4WY39zCaw/XMQ==",
+  "crc32c": "2890008167"
+}

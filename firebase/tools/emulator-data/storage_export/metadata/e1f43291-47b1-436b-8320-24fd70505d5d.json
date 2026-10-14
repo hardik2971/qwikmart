@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/samsung-galaxy-m35-5g-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510103,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "0cef501c-78ef-466e-a50c-383fb1c4d7c6"
+  ],
+  "etag": "336LfnBvG7y1w9wOcqOp59qKoYo",
+  "customMetadata": {
+    "source": "assets:catalog/products/samsung-galaxy-m35-5g-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.103Z",
+  "updated": "2026-10-14T05:41:50.103Z",
+  "size": 4348,
+  "md5Hash": "rWP3NX2ieOgmQ2x8iKbLAQ==",
+  "crc32c": "897814424"
+}

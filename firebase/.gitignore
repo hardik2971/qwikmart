@@ -1,0 +1,12 @@
+node_modules/
+functions/lib/
+functions/.env.local
+functions/.env.*.local
+.firebase/
+*-debug.log
+*.log
+# Credentials used for the production migration — never commit
+*service-account*.json
+*-firebase-adminsdk-*.json
+# Ad-hoc emulator exports (--export-on-exit). tools/emulator-data/ is the curated dev seed and stays.
+emulator-export*/

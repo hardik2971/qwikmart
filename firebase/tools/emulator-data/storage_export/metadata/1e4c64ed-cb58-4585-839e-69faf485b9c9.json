@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/category-kids.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502231,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "c5856f9c-0d9d-4132-a4f7-1963e4347fb0"
+  ],
+  "etag": "oNH3zwPhrnJJp2puQUGtWK8xxYA",
+  "customMetadata": {
+    "source": "assets:catalog/banners/category-kids.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.231Z",
+  "updated": "2026-10-14T05:41:42.231Z",
+  "size": 64900,
+  "md5Hash": "+2SiJtQfoPdpIrlJDmAEzA==",
+  "crc32c": "4032764088"
+}

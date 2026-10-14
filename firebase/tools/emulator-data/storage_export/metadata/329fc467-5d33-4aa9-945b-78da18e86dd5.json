@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/notification-weekend-mega-sale.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956500152,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "20b1b74e-2d4d-485f-a9ba-b4e3b1c26c79"
+  ],
+  "etag": "22+YONkOcjaNBW4jZ/KMvWNY+rY",
+  "customMetadata": {
+    "source": "assets:catalog/banners/notification-weekend-mega-sale.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:40.152Z",
+  "updated": "2026-10-14T05:41:40.152Z",
+  "size": 36070,
+  "md5Hash": "FBz4uD/2uvjAGB6hlRXRFg==",
+  "crc32c": "4283813789"
+}

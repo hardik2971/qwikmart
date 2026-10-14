@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/namkeen-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501544,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "4ee55023-e3b3-47e1-a4f7-d38f271b64e5"
+  ],
+  "etag": "sK5oTlpPoqLjaiQB1uDUYs+e24I",
+  "customMetadata": {
+    "source": "assets:catalog/categories/namkeen-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.544Z",
+  "updated": "2026-10-14T05:41:41.544Z",
+  "size": 2548,
+  "md5Hash": "KmtjmYLGRT+cGYsG+Ft7NA==",
+  "crc32c": "3312181283"
+}

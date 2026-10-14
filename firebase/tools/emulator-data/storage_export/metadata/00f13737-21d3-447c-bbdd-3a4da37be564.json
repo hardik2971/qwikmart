@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/tata-sampann-moong-dal-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956507995,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "ff7cee67-9af7-4054-a2c6-f3473cb6b993"
+  ],
+  "etag": "I381xUkoi1V3qDbmqPmQ+AydmjQ",
+  "customMetadata": {
+    "source": "assets:catalog/products/tata-sampann-moong-dal-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:47.995Z",
+  "updated": "2026-10-14T05:41:47.995Z",
+  "size": 29056,
+  "md5Hash": "RpwqIHddMSUSLpHCnFBE+w==",
+  "crc32c": "2051949326"
+}

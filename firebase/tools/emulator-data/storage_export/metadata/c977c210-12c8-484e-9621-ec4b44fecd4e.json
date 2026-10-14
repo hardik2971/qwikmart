@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/harpic.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956506451,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "d1b3e5ae-7ba8-4398-ae15-3a491fda2b73"
+  ],
+  "etag": "Vqixl5Q8FkI5LNZ+JvS2e9x2OZA",
+  "customMetadata": {
+    "source": "assets:catalog/brands/harpic.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:46.451Z",
+  "updated": "2026-10-14T05:41:46.451Z",
+  "size": 2470,
+  "md5Hash": "JXVwUT/EalK4fVGjQyUEpQ==",
+  "crc32c": "4003306273"
+}

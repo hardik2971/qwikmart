@@ -1,0 +1,1235 @@
+{
+  "version": 1,
+  "note": "Paths are relative to firebase/tools/assets; the migration uploads each file to Storage at the same path minus the leading \"catalog/\" folder name kept (i.e. catalog/<type>/<file>).",
+  "products": {
+    "1": {
+      "slug": "fresh-tomato-local",
+      "images": [
+        "catalog/products/fresh-tomato-local.webp",
+        "catalog/products/fresh-tomato-local-2.webp"
+      ],
+      "thumbnail": "catalog/products/fresh-tomato-local-thumb.webp",
+      "variants": {
+        "2": "catalog/products/fresh-tomato-local-2.webp"
+      }
+    },
+    "2": {
+      "slug": "onion",
+      "images": [
+        "catalog/products/onion.webp",
+        "catalog/products/onion-2.webp"
+      ],
+      "thumbnail": "catalog/products/onion-thumb.webp",
+      "variants": {
+        "4": "catalog/products/onion-2.webp"
+      }
+    },
+    "3": {
+      "slug": "potato",
+      "images": [
+        "catalog/products/potato.webp",
+        "catalog/products/potato-2.webp"
+      ],
+      "thumbnail": "catalog/products/potato-thumb.webp",
+      "variants": {
+        "6": "catalog/products/potato-2.webp"
+      }
+    },
+    "4": {
+      "slug": "banana-robusta",
+      "images": [
+        "catalog/products/banana-robusta.webp",
+        "catalog/products/banana-robusta-2.webp"
+      ],
+      "thumbnail": "catalog/products/banana-robusta-thumb.webp",
+      "variants": {
+        "8": "catalog/products/banana-robusta-2.webp"
+      }
+    },
+    "5": {
+      "slug": "shimla-apple",
+      "images": [
+        "catalog/products/shimla-apple.webp",
+        "catalog/products/shimla-apple-2.webp"
+      ],
+      "thumbnail": "catalog/products/shimla-apple-thumb.webp",
+      "variants": {
+        "10": "catalog/products/shimla-apple-2.webp"
+      }
+    },
+    "6": {
+      "slug": "alphonso-mango",
+      "images": [
+        "catalog/products/alphonso-mango.webp",
+        "catalog/products/alphonso-mango-2.webp"
+      ],
+      "thumbnail": "catalog/products/alphonso-mango-thumb.webp",
+      "variants": {}
+    },
+    "7": {
+      "slug": "coriander-leaves",
+      "images": [
+        "catalog/products/coriander-leaves.webp",
+        "catalog/products/coriander-leaves-2.webp"
+      ],
+      "thumbnail": "catalog/products/coriander-leaves-thumb.webp",
+      "variants": {}
+    },
+    "8": {
+      "slug": "green-capsicum",
+      "images": [
+        "catalog/products/green-capsicum.webp",
+        "catalog/products/green-capsicum-2.webp"
+      ],
+      "thumbnail": "catalog/products/green-capsicum-thumb.webp",
+      "variants": {
+        "14": "catalog/products/green-capsicum-2.webp"
+      }
+    },
+    "9": {
+      "slug": "amul-taaza-toned-milk",
+      "images": [
+        "catalog/products/amul-taaza-toned-milk.webp",
+        "catalog/products/amul-taaza-toned-milk-2.webp"
+      ],
+      "thumbnail": "catalog/products/amul-taaza-toned-milk-thumb.webp",
+      "variants": {
+        "16": "catalog/products/amul-taaza-toned-milk-2.webp"
+      }
+    },
+    "10": {
+      "slug": "amul-butter",
+      "images": [
+        "catalog/products/amul-butter.webp",
+        "catalog/products/amul-butter-2.webp"
+      ],
+      "thumbnail": "catalog/products/amul-butter-thumb.webp",
+      "variants": {
+        "18": "catalog/products/amul-butter-2.webp"
+      }
+    },
+    "11": {
+      "slug": "mother-dairy-classic-curd",
+      "images": [
+        "catalog/products/mother-dairy-classic-curd.webp",
+        "catalog/products/mother-dairy-classic-curd-2.webp"
+      ],
+      "thumbnail": "catalog/products/mother-dairy-classic-curd-thumb.webp",
+      "variants": {
+        "20": "catalog/products/mother-dairy-classic-curd-2.webp"
+      }
+    },
+    "12": {
+      "slug": "farm-fresh-white-eggs",
+      "images": [
+        "catalog/products/farm-fresh-white-eggs.webp",
+        "catalog/products/farm-fresh-white-eggs-2.webp"
+      ],
+      "thumbnail": "catalog/products/farm-fresh-white-eggs-thumb.webp",
+      "variants": {
+        "22": "catalog/products/farm-fresh-white-eggs-2.webp"
+      }
+    },
+    "13": {
+      "slug": "amul-cheese-slices",
+      "images": [
+        "catalog/products/amul-cheese-slices.webp",
+        "catalog/products/amul-cheese-slices-2.webp"
+      ],
+      "thumbnail": "catalog/products/amul-cheese-slices-thumb.webp",
+      "variants": {}
+    },
+    "14": {
+      "slug": "tata-sampann-toor-dal",
+      "images": [
+        "catalog/products/tata-sampann-toor-dal.webp",
+        "catalog/products/tata-sampann-toor-dal-2.webp"
+      ],
+      "thumbnail": "catalog/products/tata-sampann-toor-dal-thumb.webp",
+      "variants": {
+        "25": "catalog/products/tata-sampann-toor-dal-2.webp"
+      }
+    },
+    "15": {
+      "slug": "tata-sampann-moong-dal",
+      "images": [
+        "catalog/products/tata-sampann-moong-dal.webp",
+        "catalog/products/tata-sampann-moong-dal-2.webp"
+      ],
+      "thumbnail": "catalog/products/tata-sampann-moong-dal-thumb.webp",
+      "variants": {
+        "27": "catalog/products/tata-sampann-moong-dal-2.webp"
+      }
+    },
+    "16": {
+      "slug": "fortune-chana-dal",
+      "images": [
+        "catalog/products/fortune-chana-dal.webp",
+        "catalog/products/fortune-chana-dal-2.webp"
+      ],
+      "thumbnail": "catalog/products/fortune-chana-dal-thumb.webp",
+      "variants": {}
+    },
+    "17": {
+      "slug": "aashirvaad-shudh-chakki-atta",
+      "images": [
+        "catalog/products/aashirvaad-shudh-chakki-atta.webp",
+        "catalog/products/aashirvaad-shudh-chakki-atta-2.webp"
+      ],
+      "thumbnail": "catalog/products/aashirvaad-shudh-chakki-atta-thumb.webp",
+      "variants": {
+        "30": "catalog/products/aashirvaad-shudh-chakki-atta-2.webp"
+      }
+    },
+    "18": {
+      "slug": "india-gate-basmati-rice-classic",
+      "images": [
+        "catalog/products/india-gate-basmati-rice-classic.webp",
+        "catalog/products/india-gate-basmati-rice-classic-2.webp"
+      ],
+      "thumbnail": "catalog/products/india-gate-basmati-rice-classic-thumb.webp",
+      "variants": {
+        "32": "catalog/products/india-gate-basmati-rice-classic-2.webp"
+      }
+    },
+    "19": {
+      "slug": "fortune-sunflower-oil",
+      "images": [
+        "catalog/products/fortune-sunflower-oil.webp",
+        "catalog/products/fortune-sunflower-oil-2.webp"
+      ],
+      "thumbnail": "catalog/products/fortune-sunflower-oil-thumb.webp",
+      "variants": {
+        "34": "catalog/products/fortune-sunflower-oil-2.webp"
+      }
+    },
+    "20": {
+      "slug": "saffola-gold-oil",
+      "images": [
+        "catalog/products/saffola-gold-oil.webp",
+        "catalog/products/saffola-gold-oil-2.webp"
+      ],
+      "thumbnail": "catalog/products/saffola-gold-oil-thumb.webp",
+      "variants": {
+        "36": "catalog/products/saffola-gold-oil-2.webp"
+      }
+    },
+    "21": {
+      "slug": "happilo-california-almonds",
+      "images": [
+        "catalog/products/happilo-california-almonds.webp",
+        "catalog/products/happilo-california-almonds-2.webp"
+      ],
+      "thumbnail": "catalog/products/happilo-california-almonds-thumb.webp",
+      "variants": {
+        "38": "catalog/products/happilo-california-almonds-2.webp"
+      }
+    },
+    "22": {
+      "slug": "happilo-premium-cashews",
+      "images": [
+        "catalog/products/happilo-premium-cashews.webp",
+        "catalog/products/happilo-premium-cashews-2.webp"
+      ],
+      "thumbnail": "catalog/products/happilo-premium-cashews-thumb.webp",
+      "variants": {
+        "40": "catalog/products/happilo-premium-cashews-2.webp"
+      }
+    },
+    "23": {
+      "slug": "everest-garam-masala",
+      "images": [
+        "catalog/products/everest-garam-masala.webp"
+      ],
+      "thumbnail": "catalog/products/everest-garam-masala-thumb.webp",
+      "variants": {}
+    },
+    "24": {
+      "slug": "tata-salt",
+      "images": [
+        "catalog/products/tata-salt.webp"
+      ],
+      "thumbnail": "catalog/products/tata-salt-thumb.webp",
+      "variants": {}
+    },
+    "25": {
+      "slug": "lays-classic-salted",
+      "images": [
+        "catalog/products/lays-classic-salted.webp"
+      ],
+      "thumbnail": "catalog/products/lays-classic-salted-thumb.webp",
+      "variants": {
+        "44": "catalog/products/lays-classic-salted.webp"
+      }
+    },
+    "26": {
+      "slug": "lays-indias-magic-masala",
+      "images": [
+        "catalog/products/lays-indias-magic-masala.webp"
+      ],
+      "thumbnail": "catalog/products/lays-indias-magic-masala-thumb.webp",
+      "variants": {
+        "46": "catalog/products/lays-indias-magic-masala.webp"
+      }
+    },
+    "27": {
+      "slug": "pringles-sour-cream-onion",
+      "images": [
+        "catalog/products/pringles-sour-cream-onion.webp"
+      ],
+      "thumbnail": "catalog/products/pringles-sour-cream-onion-thumb.webp",
+      "variants": {}
+    },
+    "28": {
+      "slug": "haldirams-aloo-bhujia",
+      "images": [
+        "catalog/products/haldirams-aloo-bhujia.webp"
+      ],
+      "thumbnail": "catalog/products/haldirams-aloo-bhujia-thumb.webp",
+      "variants": {
+        "49": "catalog/products/haldirams-aloo-bhujia.webp",
+        "50": "catalog/products/haldirams-aloo-bhujia.webp"
+      }
+    },
+    "29": {
+      "slug": "haldirams-moong-dal",
+      "images": [
+        "catalog/products/haldirams-moong-dal.webp"
+      ],
+      "thumbnail": "catalog/products/haldirams-moong-dal-thumb.webp",
+      "variants": {}
+    },
+    "30": {
+      "slug": "bikaji-bikaneri-bhujia",
+      "images": [
+        "catalog/products/bikaji-bikaneri-bhujia.webp"
+      ],
+      "thumbnail": "catalog/products/bikaji-bikaneri-bhujia-thumb.webp",
+      "variants": {}
+    },
+    "31": {
+      "slug": "balaji-simply-salted-wafers",
+      "images": [
+        "catalog/products/balaji-simply-salted-wafers.webp"
+      ],
+      "thumbnail": "catalog/products/balaji-simply-salted-wafers-thumb.webp",
+      "variants": {}
+    },
+    "32": {
+      "slug": "britannia-good-day-cashew-cookies",
+      "images": [
+        "catalog/products/britannia-good-day-cashew-cookies.webp"
+      ],
+      "thumbnail": "catalog/products/britannia-good-day-cashew-cookies-thumb.webp",
+      "variants": {
+        "55": "catalog/products/britannia-good-day-cashew-cookies.webp"
+      }
+    },
+    "33": {
+      "slug": "parle-g-gold-biscuits",
+      "images": [
+        "catalog/products/parle-g-gold-biscuits.webp"
+      ],
+      "thumbnail": "catalog/products/parle-g-gold-biscuits-thumb.webp",
+      "variants": {}
+    },
+    "34": {
+      "slug": "oreo-chocolate-cream-biscuit",
+      "images": [
+        "catalog/products/oreo-chocolate-cream-biscuit.webp"
+      ],
+      "thumbnail": "catalog/products/oreo-chocolate-cream-biscuit-thumb.webp",
+      "variants": {
+        "58": "catalog/products/oreo-chocolate-cream-biscuit.webp"
+      }
+    },
+    "35": {
+      "slug": "britannia-white-bread",
+      "images": [
+        "catalog/products/britannia-white-bread.webp"
+      ],
+      "thumbnail": "catalog/products/britannia-white-bread-thumb.webp",
+      "variants": {}
+    },
+    "36": {
+      "slug": "maggi-2-minute-masala-noodles",
+      "images": [
+        "catalog/products/maggi-2-minute-masala-noodles.webp"
+      ],
+      "thumbnail": "catalog/products/maggi-2-minute-masala-noodles-thumb.webp",
+      "variants": {
+        "61": "catalog/products/maggi-2-minute-masala-noodles.webp",
+        "62": "catalog/products/maggi-2-minute-masala-noodles.webp"
+      }
+    },
+    "37": {
+      "slug": "coca-cola-soft-drink",
+      "images": [
+        "catalog/products/coca-cola-soft-drink.webp"
+      ],
+      "thumbnail": "catalog/products/coca-cola-soft-drink-thumb.webp",
+      "variants": {
+        "64": "catalog/products/coca-cola-soft-drink.webp"
+      }
+    },
+    "38": {
+      "slug": "tropicana-orange-juice",
+      "images": [
+        "catalog/products/tropicana-orange-juice.webp"
+      ],
+      "thumbnail": "catalog/products/tropicana-orange-juice-thumb.webp",
+      "variants": {}
+    },
+    "39": {
+      "slug": "red-bull-energy-drink",
+      "images": [
+        "catalog/products/red-bull-energy-drink.webp"
+      ],
+      "thumbnail": "catalog/products/red-bull-energy-drink-thumb.webp",
+      "variants": {
+        "67": "catalog/products/red-bull-energy-drink.webp"
+      }
+    },
+    "40": {
+      "slug": "kwality-walls-cornetto-double-chocolate",
+      "images": [
+        "catalog/products/kwality-walls-cornetto-double-chocolate.webp"
+      ],
+      "thumbnail": "catalog/products/kwality-walls-cornetto-double-chocolate-thumb.webp",
+      "variants": {}
+    },
+    "41": {
+      "slug": "amul-vanilla-magic-ice-cream",
+      "images": [
+        "catalog/products/amul-vanilla-magic-ice-cream.webp"
+      ],
+      "thumbnail": "catalog/products/amul-vanilla-magic-ice-cream-thumb.webp",
+      "variants": {}
+    },
+    "42": {
+      "slug": "lakme-sun-expert-spf-50-sunscreen",
+      "images": [
+        "catalog/products/lakme-sun-expert-spf-50-sunscreen.webp"
+      ],
+      "thumbnail": "catalog/products/lakme-sun-expert-spf-50-sunscreen-thumb.webp",
+      "variants": {
+        "71": "catalog/products/lakme-sun-expert-spf-50-sunscreen.webp"
+      }
+    },
+    "43": {
+      "slug": "nivea-soft-light-moisturising-cream",
+      "images": [
+        "catalog/products/nivea-soft-light-moisturising-cream.webp"
+      ],
+      "thumbnail": "catalog/products/nivea-soft-light-moisturising-cream-thumb.webp",
+      "variants": {
+        "73": "catalog/products/nivea-soft-light-moisturising-cream.webp"
+      }
+    },
+    "44": {
+      "slug": "dove-intense-repair-shampoo",
+      "images": [
+        "catalog/products/dove-intense-repair-shampoo.webp"
+      ],
+      "thumbnail": "catalog/products/dove-intense-repair-shampoo-thumb.webp",
+      "variants": {
+        "75": "catalog/products/dove-intense-repair-shampoo.webp"
+      }
+    },
+    "45": {
+      "slug": "mamaearth-onion-hair-oil",
+      "images": [
+        "catalog/products/mamaearth-onion-hair-oil.webp"
+      ],
+      "thumbnail": "catalog/products/mamaearth-onion-hair-oil-thumb.webp",
+      "variants": {
+        "77": "catalog/products/mamaearth-onion-hair-oil.webp"
+      }
+    },
+    "46": {
+      "slug": "dettol-antiseptic-liquid",
+      "images": [
+        "catalog/products/dettol-antiseptic-liquid.webp"
+      ],
+      "thumbnail": "catalog/products/dettol-antiseptic-liquid-thumb.webp",
+      "variants": {
+        "79": "catalog/products/dettol-antiseptic-liquid.webp"
+      }
+    },
+    "47": {
+      "slug": "dabur-chyawanprash",
+      "images": [
+        "catalog/products/dabur-chyawanprash.webp"
+      ],
+      "thumbnail": "catalog/products/dabur-chyawanprash-thumb.webp",
+      "variants": {
+        "81": "catalog/products/dabur-chyawanprash.webp"
+      }
+    },
+    "48": {
+      "slug": "band-aid-washproof-strips",
+      "images": [
+        "catalog/products/band-aid-washproof-strips.webp"
+      ],
+      "thumbnail": "catalog/products/band-aid-washproof-strips-thumb.webp",
+      "variants": {}
+    },
+    "49": {
+      "slug": "volini-pain-relief-spray",
+      "images": [
+        "catalog/products/volini-pain-relief-spray.webp"
+      ],
+      "thumbnail": "catalog/products/volini-pain-relief-spray-thumb.webp",
+      "variants": {
+        "84": "catalog/products/volini-pain-relief-spray.webp"
+      }
+    },
+    "50": {
+      "slug": "pampers-baby-dry-pants-medium",
+      "images": [
+        "catalog/products/pampers-baby-dry-pants-medium.webp"
+      ],
+      "thumbnail": "catalog/products/pampers-baby-dry-pants-medium-thumb.webp",
+      "variants": {
+        "86": "catalog/products/pampers-baby-dry-pants-medium.webp"
+      }
+    },
+    "51": {
+      "slug": "johnsons-baby-powder",
+      "images": [
+        "catalog/products/johnsons-baby-powder.webp"
+      ],
+      "thumbnail": "catalog/products/johnsons-baby-powder-thumb.webp",
+      "variants": {
+        "88": "catalog/products/johnsons-baby-powder.webp"
+      }
+    },
+    "52": {
+      "slug": "lego-classic-creative-bricks-box",
+      "images": [
+        "catalog/products/lego-classic-creative-bricks-box.webp"
+      ],
+      "thumbnail": "catalog/products/lego-classic-creative-bricks-box-thumb.webp",
+      "variants": {}
+    },
+    "53": {
+      "slug": "boat-airdopes-141-tws-earbuds",
+      "images": [
+        "catalog/products/boat-airdopes-141-tws-earbuds.webp"
+      ],
+      "thumbnail": "catalog/products/boat-airdopes-141-tws-earbuds-thumb.webp",
+      "variants": {
+        "91": "catalog/products/boat-airdopes-141-tws-earbuds.webp",
+        "92": "catalog/products/boat-airdopes-141-tws-earbuds.webp"
+      }
+    },
+    "54": {
+      "slug": "mi-10000mah-power-bank",
+      "images": [
+        "catalog/products/mi-10000mah-power-bank.webp"
+      ],
+      "thumbnail": "catalog/products/mi-10000mah-power-bank-thumb.webp",
+      "variants": {
+        "94": "catalog/products/mi-10000mah-power-bank.webp"
+      }
+    },
+    "55": {
+      "slug": "philips-9w-led-bulb",
+      "images": [
+        "catalog/products/philips-9w-led-bulb.webp"
+      ],
+      "thumbnail": "catalog/products/philips-9w-led-bulb-thumb.webp",
+      "variants": {
+        "96": "catalog/products/philips-9w-led-bulb.webp"
+      }
+    },
+    "56": {
+      "slug": "samsung-galaxy-m35-5g",
+      "images": [
+        "catalog/products/samsung-galaxy-m35-5g.webp"
+      ],
+      "thumbnail": "catalog/products/samsung-galaxy-m35-5g-thumb.webp",
+      "variants": {
+        "98": "catalog/products/samsung-galaxy-m35-5g.webp",
+        "99": "catalog/products/samsung-galaxy-m35-5g.webp"
+      }
+    },
+    "57": {
+      "slug": "apple-20w-usb-c-power-adapter",
+      "images": [
+        "catalog/products/apple-20w-usb-c-power-adapter.webp"
+      ],
+      "thumbnail": "catalog/products/apple-20w-usb-c-power-adapter-thumb.webp",
+      "variants": {}
+    },
+    "58": {
+      "slug": "levis-mens-slim-fit-cotton-t-shirt",
+      "images": [
+        "catalog/products/levis-mens-slim-fit-cotton-t-shirt.webp"
+      ],
+      "thumbnail": "catalog/products/levis-mens-slim-fit-cotton-t-shirt-thumb.webp",
+      "variants": {
+        "102": "catalog/products/levis-mens-slim-fit-cotton-t-shirt.webp",
+        "103": "catalog/products/levis-mens-slim-fit-cotton-t-shirt.webp",
+        "104": "catalog/products/levis-mens-slim-fit-cotton-t-shirt.webp"
+      }
+    },
+    "59": {
+      "slug": "puma-unisex-essential-cap",
+      "images": [
+        "catalog/products/puma-unisex-essential-cap.webp"
+      ],
+      "thumbnail": "catalog/products/puma-unisex-essential-cap-thumb.webp",
+      "variants": {
+        "106": "catalog/products/puma-unisex-essential-cap.webp"
+      }
+    },
+    "60": {
+      "slug": "vim-dishwash-liquid-gel-lemon",
+      "images": [
+        "catalog/products/vim-dishwash-liquid-gel-lemon.webp"
+      ],
+      "thumbnail": "catalog/products/vim-dishwash-liquid-gel-lemon-thumb.webp",
+      "variants": {
+        "108": "catalog/products/vim-dishwash-liquid-gel-lemon.webp"
+      }
+    },
+    "61": {
+      "slug": "surf-excel-easy-wash-detergent-powder",
+      "images": [
+        "catalog/products/surf-excel-easy-wash-detergent-powder.webp"
+      ],
+      "thumbnail": "catalog/products/surf-excel-easy-wash-detergent-powder-thumb.webp",
+      "variants": {
+        "110": "catalog/products/surf-excel-easy-wash-detergent-powder.webp"
+      }
+    },
+    "62": {
+      "slug": "prestige-omega-deluxe-non-stick-tawa",
+      "images": [
+        "catalog/products/prestige-omega-deluxe-non-stick-tawa.webp"
+      ],
+      "thumbnail": "catalog/products/prestige-omega-deluxe-non-stick-tawa-thumb.webp",
+      "variants": {}
+    },
+    "63": {
+      "slug": "harpic-power-plus-toilet-cleaner",
+      "images": [
+        "catalog/products/harpic-power-plus-toilet-cleaner.webp"
+      ],
+      "thumbnail": "catalog/products/harpic-power-plus-toilet-cleaner-thumb.webp",
+      "variants": {
+        "113": "catalog/products/harpic-power-plus-toilet-cleaner.webp"
+      }
+    },
+    "64": {
+      "slug": "pedigree-adult-dog-food-chicken-vegetables",
+      "images": [
+        "catalog/products/pedigree-adult-dog-food-chicken-vegetables.webp"
+      ],
+      "thumbnail": "catalog/products/pedigree-adult-dog-food-chicken-vegetables-thumb.webp",
+      "variants": {
+        "115": "catalog/products/pedigree-adult-dog-food-chicken-vegetables.webp"
+      }
+    },
+    "65": {
+      "slug": "whiskas-adult-cat-food-ocean-fish",
+      "images": [
+        "catalog/products/whiskas-adult-cat-food-ocean-fish.webp"
+      ],
+      "thumbnail": "catalog/products/whiskas-adult-cat-food-ocean-fish-thumb.webp",
+      "variants": {}
+    }
+  },
+  "categories": {
+    "1": {
+      "slug": "grocery",
+      "image": "catalog/categories/grocery.webp",
+      "icon": "catalog/categories/icons/grocery.webp",
+      "banner": "catalog/banners/category-grocery.webp"
+    },
+    "2": {
+      "slug": "dal-pulses",
+      "image": "catalog/categories/dal-pulses.webp",
+      "icon": "catalog/categories/dal-pulses-icon.webp"
+    },
+    "3": {
+      "slug": "atta-rice-grains",
+      "image": "catalog/categories/atta-rice-grains.webp",
+      "icon": "catalog/categories/atta-rice-grains-icon.webp"
+    },
+    "4": {
+      "slug": "edible-oils",
+      "image": "catalog/categories/edible-oils.webp",
+      "icon": "catalog/categories/edible-oils-icon.webp"
+    },
+    "5": {
+      "slug": "dry-fruits",
+      "image": "catalog/categories/dry-fruits.webp",
+      "icon": "catalog/categories/dry-fruits-icon.webp"
+    },
+    "6": {
+      "slug": "masala-spices",
+      "image": "catalog/categories/masala-spices.webp",
+      "icon": "catalog/categories/masala-spices-icon.webp"
+    },
+    "7": {
+      "slug": "dairy-eggs",
+      "image": "catalog/categories/dairy-eggs.webp",
+      "icon": "catalog/categories/dairy-eggs-icon.webp"
+    },
+    "8": {
+      "slug": "fresh-fruits-vegetables",
+      "image": "catalog/categories/fresh-fruits-vegetables.webp",
+      "icon": "catalog/categories/icons/fresh-fruits-vegetables.webp",
+      "banner": "catalog/banners/category-fresh-fruits-vegetables.webp"
+    },
+    "9": {
+      "slug": "fresh-fruits",
+      "image": "catalog/categories/fresh-fruits.webp",
+      "icon": "catalog/categories/fresh-fruits-icon.webp"
+    },
+    "10": {
+      "slug": "fresh-vegetables",
+      "image": "catalog/categories/fresh-vegetables.webp",
+      "icon": "catalog/categories/fresh-vegetables-icon.webp"
+    },
+    "11": {
+      "slug": "herbs-seasonings",
+      "image": "catalog/categories/herbs-seasonings.webp",
+      "icon": "catalog/categories/herbs-seasonings-icon.webp"
+    },
+    "12": {
+      "slug": "snacks",
+      "image": "catalog/categories/snacks.webp",
+      "icon": "catalog/categories/icons/snacks.webp",
+      "banner": "catalog/banners/category-snacks.webp"
+    },
+    "13": {
+      "slug": "chips",
+      "image": "catalog/categories/chips.webp",
+      "icon": "catalog/categories/chips-icon.webp"
+    },
+    "14": {
+      "slug": "namkeen",
+      "image": "catalog/categories/namkeen.webp",
+      "icon": "catalog/categories/namkeen-icon.webp"
+    },
+    "15": {
+      "slug": "wafers",
+      "image": "catalog/categories/wafers.webp",
+      "icon": "catalog/categories/wafers-icon.webp"
+    },
+    "16": {
+      "slug": "bakery-biscuits",
+      "image": "catalog/categories/bakery-biscuits.webp",
+      "icon": "catalog/categories/bakery-biscuits-icon.webp"
+    },
+    "17": {
+      "slug": "instant-food",
+      "image": "catalog/categories/instant-food.webp",
+      "icon": "catalog/categories/instant-food-icon.webp"
+    },
+    "18": {
+      "slug": "summer",
+      "image": "catalog/categories/summer.webp",
+      "icon": "catalog/categories/icons/summer.webp",
+      "banner": "catalog/banners/category-summer.webp"
+    },
+    "19": {
+      "slug": "cold-drinks-juices",
+      "image": "catalog/categories/cold-drinks-juices.webp",
+      "icon": "catalog/categories/cold-drinks-juices-icon.webp"
+    },
+    "20": {
+      "slug": "ice-creams",
+      "image": "catalog/categories/ice-creams.webp",
+      "icon": "catalog/categories/ice-creams-icon.webp"
+    },
+    "21": {
+      "slug": "sun-care",
+      "image": "catalog/categories/sun-care.webp",
+      "icon": "catalog/categories/sun-care-icon.webp"
+    },
+    "22": {
+      "slug": "beauty",
+      "image": "catalog/categories/beauty.webp",
+      "icon": "catalog/categories/icons/beauty.webp",
+      "banner": "catalog/banners/category-beauty.webp"
+    },
+    "23": {
+      "slug": "skin-care",
+      "image": "catalog/categories/skin-care.webp",
+      "icon": "catalog/categories/skin-care-icon.webp"
+    },
+    "24": {
+      "slug": "hair-care",
+      "image": "catalog/categories/hair-care.webp",
+      "icon": "catalog/categories/hair-care-icon.webp"
+    },
+    "25": {
+      "slug": "pharmacy",
+      "image": "catalog/categories/pharmacy.webp",
+      "icon": "catalog/categories/icons/pharmacy.webp",
+      "banner": "catalog/banners/category-pharmacy.webp"
+    },
+    "26": {
+      "slug": "wellness",
+      "image": "catalog/categories/wellness.webp",
+      "icon": "catalog/categories/wellness-icon.webp"
+    },
+    "27": {
+      "slug": "first-aid",
+      "image": "catalog/categories/first-aid.webp",
+      "icon": "catalog/categories/first-aid-icon.webp"
+    },
+    "28": {
+      "slug": "kids",
+      "image": "catalog/categories/kids.webp",
+      "icon": "catalog/categories/icons/kids.webp",
+      "banner": "catalog/banners/category-kids.webp"
+    },
+    "29": {
+      "slug": "baby-care",
+      "image": "catalog/categories/baby-care.webp",
+      "icon": "catalog/categories/baby-care-icon.webp"
+    },
+    "30": {
+      "slug": "toys-games",
+      "image": "catalog/categories/toys-games.webp",
+      "icon": "catalog/categories/toys-games-icon.webp"
+    },
+    "31": {
+      "slug": "electronics",
+      "image": "catalog/categories/electronics.webp",
+      "icon": "catalog/categories/icons/electronics.webp",
+      "banner": "catalog/banners/category-electronics.webp"
+    },
+    "32": {
+      "slug": "audio",
+      "image": "catalog/categories/audio.webp",
+      "icon": "catalog/categories/audio-icon.webp"
+    },
+    "33": {
+      "slug": "accessories",
+      "image": "catalog/categories/accessories.webp",
+      "icon": "catalog/categories/accessories-icon.webp"
+    },
+    "34": {
+      "slug": "lighting",
+      "image": "catalog/categories/lighting.webp",
+      "icon": "catalog/categories/lighting-icon.webp"
+    },
+    "35": {
+      "slug": "mobiles",
+      "image": "catalog/categories/mobiles.webp",
+      "icon": "catalog/categories/icons/mobiles.webp",
+      "banner": "catalog/banners/category-mobiles.webp"
+    },
+    "36": {
+      "slug": "smartphones",
+      "image": "catalog/categories/smartphones.webp",
+      "icon": "catalog/categories/smartphones-icon.webp"
+    },
+    "37": {
+      "slug": "chargers-cables",
+      "image": "catalog/categories/chargers-cables.webp",
+      "icon": "catalog/categories/chargers-cables-icon.webp"
+    },
+    "38": {
+      "slug": "fashion",
+      "image": "catalog/categories/fashion.webp",
+      "icon": "catalog/categories/icons/fashion.webp",
+      "banner": "catalog/banners/category-fashion.webp"
+    },
+    "39": {
+      "slug": "men",
+      "image": "catalog/categories/men.webp",
+      "icon": "catalog/categories/men-icon.webp"
+    },
+    "40": {
+      "slug": "women",
+      "image": "catalog/categories/women.webp",
+      "icon": "catalog/categories/women-icon.webp"
+    },
+    "41": {
+      "slug": "fashion-accessories",
+      "image": "catalog/categories/fashion-accessories.webp",
+      "icon": "catalog/categories/fashion-accessories-icon.webp"
+    },
+    "42": {
+      "slug": "home-kitchen",
+      "image": "catalog/categories/home-kitchen.webp",
+      "icon": "catalog/categories/icons/home-kitchen.webp",
+      "banner": "catalog/banners/category-home-kitchen.webp"
+    },
+    "43": {
+      "slug": "cleaning-essentials",
+      "image": "catalog/categories/cleaning-essentials.webp",
+      "icon": "catalog/categories/cleaning-essentials-icon.webp"
+    },
+    "44": {
+      "slug": "kitchenware",
+      "image": "catalog/categories/kitchenware.webp",
+      "icon": "catalog/categories/kitchenware-icon.webp"
+    },
+    "45": {
+      "slug": "detergents",
+      "image": "catalog/categories/detergents.webp",
+      "icon": "catalog/categories/detergents-icon.webp"
+    },
+    "46": {
+      "slug": "pet-care",
+      "image": "catalog/categories/pet-care.webp",
+      "icon": "catalog/categories/icons/pet-care.webp",
+      "banner": "catalog/banners/category-pet-care.webp"
+    },
+    "47": {
+      "slug": "dog-food",
+      "image": "catalog/categories/dog-food.webp",
+      "icon": "catalog/categories/dog-food-icon.webp"
+    },
+    "48": {
+      "slug": "cat-food",
+      "image": "catalog/categories/cat-food.webp",
+      "icon": "catalog/categories/cat-food-icon.webp"
+    }
+  },
+  "banners": {
+    "1": {
+      "title": "Groceries in 8 minutes",
+      "image": "catalog/banners/groceries-in-8-minutes.webp"
+    },
+    "2": {
+      "title": "Fresh Fruits & Veggies - Up to 30% Off",
+      "image": "catalog/banners/fresh-fruits-veggies.webp"
+    },
+    "3": {
+      "title": "Summer Coolers - Beat the Heat",
+      "image": "catalog/banners/summer-coolers.webp"
+    },
+    "4": {
+      "title": "Flat Rs 99 Off with MUMBAI99",
+      "image": "catalog/banners/flat-99-off-mumbai99.webp"
+    },
+    "5": {
+      "title": "Mega Electronics Sale - Up to 70% Off",
+      "image": "catalog/banners/mega-electronics-sale.webp"
+    },
+    "6": {
+      "title": "New Season Fashion",
+      "image": "catalog/banners/new-season-fashion.webp"
+    },
+    "7": {
+      "title": "Smartphones from Rs 9,999",
+      "image": "catalog/banners/smartphones-from-9999.webp"
+    }
+  },
+  "placeholders": {
+    "https://placehold.co/800x400/E6F4E9/0E9623/png?text=Dairy+Deals": "catalog/banners/dairy-deals.webp",
+    "https://placehold.co/800x400/FFE4B5/0E9623/png?text=Snack+Attack": "catalog/banners/snack-attack.webp",
+    "https://placehold.co/1600x500/BDE7FF/0E9623/png?text=Summer+Specials+-+Ice+Creams+%26+Coolers": "catalog/banners/summer-specials.webp",
+    "https://placehold.co/800x400/E5E7EB/0E9623/png?text=Smartphones": "catalog/banners/smartphones-grid.webp",
+    "https://placehold.co/800x400/FDE2D6/0E9623/png?text=Fashion+Week": "catalog/banners/fashion-week.webp",
+    "https://placehold.co/1600x600/EBEC8D/0E9623/png?text=Grocery+Deals": "catalog/banners/category-grocery.webp",
+    "https://placehold.co/1600x600/EBEC8D/0E9623/png?text=Snacks+Deals": "catalog/banners/category-snacks.webp",
+    "https://placehold.co/1600x600/EBEC8D/0E9623/png?text=Beauty+Deals": "catalog/banners/category-beauty.webp",
+    "https://placehold.co/1600x600/EBEC8D/0E9623/png?text=Summer+Deals": "catalog/banners/category-summer.webp"
+  },
+  "notifications": {
+    "1": {
+      "image": "catalog/banners/notification-weekend-mega-sale.webp"
+    },
+    "2": {
+      "image": "catalog/banners/notification-alphonso-mangoes.webp"
+    },
+    "3": {
+      "image": "catalog/banners/notification-rider-bonus.webp"
+    }
+  },
+  "blogs": {
+    "1": {
+      "slug": "5-quick-monsoon-snacks-under-15-minutes",
+      "image": "catalog/blogs/5-quick-monsoon-snacks-under-15-minutes.webp"
+    },
+    "2": {
+      "slug": "the-perfect-mumbai-vada-pav-at-home",
+      "image": "catalog/blogs/the-perfect-mumbai-vada-pav-at-home.webp"
+    },
+    "3": {
+      "slug": "summer-hydration-7-drinks-to-beat-the-heat",
+      "image": "catalog/blogs/summer-hydration-7-drinks-to-beat-the-heat.webp"
+    },
+    "4": {
+      "slug": "building-immunity-with-everyday-foods",
+      "image": "catalog/blogs/building-immunity-with-everyday-foods.webp"
+    },
+    "5": {
+      "slug": "qwikmart-now-delivers-in-8-minutes-across-mumbai",
+      "image": "catalog/blogs/qwikmart-now-delivers-in-8-minutes-across-mumbai.webp"
+    },
+    "6": {
+      "slug": "introducing-qwikmart-wallet-cashback",
+      "image": "catalog/blogs/introducing-qwikmart-wallet-cashback.webp"
+    }
+  },
+  "stores": {
+    "1": {
+      "slug": "mumbai-store",
+      "logo": "catalog/stores/mumbai-store-logo.webp",
+      "banner": "catalog/stores/mumbai-store-banner.webp"
+    },
+    "2": {
+      "slug": "toronto-store",
+      "logo": "catalog/stores/toronto-store-logo.webp",
+      "banner": "catalog/stores/toronto-store-banner.webp"
+    },
+    "3": {
+      "slug": "sydney-store",
+      "logo": "catalog/stores/sydney-store-logo.webp",
+      "banner": "catalog/stores/sydney-store-banner.webp"
+    },
+    "4": {
+      "slug": "dubai-store",
+      "logo": "catalog/stores/dubai-store-logo.webp",
+      "banner": "catalog/stores/dubai-store-banner.webp"
+    },
+    "5": {
+      "slug": "london-store",
+      "logo": "catalog/stores/london-store-logo.webp",
+      "banner": "catalog/stores/london-store-banner.webp"
+    },
+    "6": {
+      "slug": "new-york-store",
+      "logo": "catalog/stores/new-york-store-logo.webp",
+      "banner": "catalog/stores/new-york-store-banner.webp"
+    }
+  },
+  "brands": {
+    "1": {
+      "slug": "qwikmart-fresh",
+      "logo": "catalog/brands/qwikmart-fresh.webp"
+    },
+    "2": {
+      "slug": "amul",
+      "logo": "catalog/brands/amul.webp"
+    },
+    "3": {
+      "slug": "mother-dairy",
+      "logo": "catalog/brands/mother-dairy.webp"
+    },
+    "4": {
+      "slug": "tata",
+      "logo": "catalog/brands/tata.webp"
+    },
+    "5": {
+      "slug": "fortune",
+      "logo": "catalog/brands/fortune.webp"
+    },
+    "6": {
+      "slug": "aashirvaad",
+      "logo": "catalog/brands/aashirvaad.webp"
+    },
+    "7": {
+      "slug": "india-gate",
+      "logo": "catalog/brands/india-gate.webp"
+    },
+    "8": {
+      "slug": "saffola",
+      "logo": "catalog/brands/saffola.webp"
+    },
+    "9": {
+      "slug": "happilo",
+      "logo": "catalog/brands/happilo.webp"
+    },
+    "10": {
+      "slug": "everest",
+      "logo": "catalog/brands/everest.webp"
+    },
+    "11": {
+      "slug": "lays",
+      "logo": "catalog/brands/lays.webp"
+    },
+    "12": {
+      "slug": "pringles",
+      "logo": "catalog/brands/pringles.webp"
+    },
+    "13": {
+      "slug": "haldirams",
+      "logo": "catalog/brands/haldirams.webp"
+    },
+    "14": {
+      "slug": "bikaji",
+      "logo": "catalog/brands/bikaji.webp"
+    },
+    "15": {
+      "slug": "balaji",
+      "logo": "catalog/brands/balaji.webp"
+    },
+    "16": {
+      "slug": "britannia",
+      "logo": "catalog/brands/britannia.webp"
+    },
+    "17": {
+      "slug": "parle",
+      "logo": "catalog/brands/parle.webp"
+    },
+    "18": {
+      "slug": "oreo",
+      "logo": "catalog/brands/oreo.webp"
+    },
+    "19": {
+      "slug": "maggi",
+      "logo": "catalog/brands/maggi.webp"
+    },
+    "20": {
+      "slug": "coca-cola",
+      "logo": "catalog/brands/coca-cola.webp"
+    },
+    "21": {
+      "slug": "tropicana",
+      "logo": "catalog/brands/tropicana.webp"
+    },
+    "22": {
+      "slug": "red-bull",
+      "logo": "catalog/brands/red-bull.webp"
+    },
+    "23": {
+      "slug": "kwality-walls",
+      "logo": "catalog/brands/kwality-walls.webp"
+    },
+    "24": {
+      "slug": "lakme",
+      "logo": "catalog/brands/lakme.webp"
+    },
+    "25": {
+      "slug": "nivea",
+      "logo": "catalog/brands/nivea.webp"
+    },
+    "26": {
+      "slug": "dove",
+      "logo": "catalog/brands/dove.webp"
+    },
+    "27": {
+      "slug": "mamaearth",
+      "logo": "catalog/brands/mamaearth.webp"
+    },
+    "28": {
+      "slug": "dettol",
+      "logo": "catalog/brands/dettol.webp"
+    },
+    "29": {
+      "slug": "dabur",
+      "logo": "catalog/brands/dabur.webp"
+    },
+    "30": {
+      "slug": "band-aid",
+      "logo": "catalog/brands/band-aid.webp"
+    },
+    "31": {
+      "slug": "volini",
+      "logo": "catalog/brands/volini.webp"
+    },
+    "32": {
+      "slug": "pampers",
+      "logo": "catalog/brands/pampers.webp"
+    },
+    "33": {
+      "slug": "johnsons",
+      "logo": "catalog/brands/johnsons.webp"
+    },
+    "34": {
+      "slug": "lego",
+      "logo": "catalog/brands/lego.webp"
+    },
+    "35": {
+      "slug": "boat",
+      "logo": "catalog/brands/boat.webp"
+    },
+    "36": {
+      "slug": "xiaomi",
+      "logo": "catalog/brands/xiaomi.webp"
+    },
+    "37": {
+      "slug": "philips",
+      "logo": "catalog/brands/philips.webp"
+    },
+    "38": {
+      "slug": "samsung",
+      "logo": "catalog/brands/samsung.webp"
+    },
+    "39": {
+      "slug": "apple",
+      "logo": "catalog/brands/apple.webp"
+    },
+    "40": {
+      "slug": "levis",
+      "logo": "catalog/brands/levis.webp"
+    },
+    "41": {
+      "slug": "puma",
+      "logo": "catalog/brands/puma.webp"
+    },
+    "42": {
+      "slug": "vim",
+      "logo": "catalog/brands/vim.webp"
+    },
+    "43": {
+      "slug": "surf-excel",
+      "logo": "catalog/brands/surf-excel.webp"
+    },
+    "44": {
+      "slug": "prestige",
+      "logo": "catalog/brands/prestige.webp"
+    },
+    "45": {
+      "slug": "harpic",
+      "logo": "catalog/brands/harpic.webp"
+    },
+    "46": {
+      "slug": "pedigree",
+      "logo": "catalog/brands/pedigree.webp"
+    },
+    "47": {
+      "slug": "whiskas",
+      "logo": "catalog/brands/whiskas.webp"
+    }
+  },
+  "promo_codes": {
+    "1": {
+      "code": "MUMBAI99",
+      "image": "catalog/promos/mumbai99.webp"
+    },
+    "2": {
+      "code": "VIP500",
+      "image": "catalog/promos/vip500.webp"
+    },
+    "3": {
+      "code": "HAPPYHOUR",
+      "image": "catalog/promos/happyhour.webp"
+    },
+    "4": {
+      "code": "WALLETCASH50",
+      "image": "catalog/promos/walletcash50.webp"
+    },
+    "5": {
+      "code": "FREEDEL",
+      "image": "catalog/promos/freedel.webp"
+    },
+    "6": {
+      "code": "NEW100",
+      "image": "catalog/promos/new100.webp"
+    }
+  },
+  "ui": {
+    "admin-login-illustration.webp": "ui/admin-login-illustration.webp",
+    "login-cart-scene.webp": "ui/login-cart-scene.webp",
+    "empty-cart.webp": "ui/empty-cart.webp",
+    "empty-orders.webp": "ui/empty-orders.webp",
+    "empty-search.webp": "ui/empty-search.webp",
+    "onboarding-1.webp": "ui/onboarding-1.webp",
+    "onboarding-2.webp": "ui/onboarding-2.webp",
+    "onboarding-3.webp": "ui/onboarding-3.webp",
+    "hero-fallback.webp": "ui/hero-fallback.webp"
+  }
+}

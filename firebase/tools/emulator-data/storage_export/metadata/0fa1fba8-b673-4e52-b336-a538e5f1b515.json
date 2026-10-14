@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/fashion-week.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510905,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "06c72d05-419f-459c-ae79-b6b13ba4aa33"
+  ],
+  "etag": "O/3RQ4sa9OKwOj/QdlWE400aTmg",
+  "customMetadata": {
+    "source": "assets:catalog/banners/fashion-week.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.906Z",
+  "updated": "2026-10-14T05:41:50.906Z",
+  "size": 23394,
+  "md5Hash": "BCduR5uLVcoCQSHLENRx0Q==",
+  "crc32c": "408580434"
+}

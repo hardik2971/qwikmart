@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/summer.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501702,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "2b9e8ffe-f1df-48b1-a18f-5ce9c58409c8"
+  ],
+  "etag": "Zm3Kji0cZ9DbGvj9kkClQCA5Ujs",
+  "customMetadata": {
+    "source": "assets:catalog/categories/summer.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.702Z",
+  "updated": "2026-10-14T05:41:41.702Z",
+  "size": 8254,
+  "md5Hash": "S8VEcjID/UMtz4i8Ih0A5A==",
+  "crc32c": "3400542417"
+}

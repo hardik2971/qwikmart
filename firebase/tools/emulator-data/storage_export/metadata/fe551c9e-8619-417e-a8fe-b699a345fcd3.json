@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/wellness.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502084,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "0413ea38-1f14-47c6-a6f2-beb2024000c5"
+  ],
+  "etag": "DVIdiwRNJcb7Pkrt/1s6YYC02S8",
+  "customMetadata": {
+    "source": "assets:catalog/categories/wellness.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.084Z",
+  "updated": "2026-10-14T05:41:42.084Z",
+  "size": 35304,
+  "md5Hash": "bHHYMsNTIxKZvszSzsWm4w==",
+  "crc32c": "3775571757"
+}

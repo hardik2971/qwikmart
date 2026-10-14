@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/boat-airdopes-141-tws-earbuds-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509994,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "db9b0505-be6d-40fb-a802-5d8164de8956"
+  ],
+  "etag": "PphidYUGVcROySLXUpfdr9+lbrU",
+  "customMetadata": {
+    "source": "assets:catalog/products/boat-airdopes-141-tws-earbuds-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.994Z",
+  "updated": "2026-10-14T05:41:49.994Z",
+  "size": 32502,
+  "md5Hash": "OIE8NCNPIRtB5ZqGP82YSQ==",
+  "crc32c": "2738704348"
+}

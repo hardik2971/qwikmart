@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/britannia-white-bread-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509264,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "d0c167a8-da84-4e1a-aef7-a335b69ef65c"
+  ],
+  "etag": "jv7qFhmiLjQtKps5tlzwq3xxdjI",
+  "customMetadata": {
+    "source": "assets:catalog/products/britannia-white-bread-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.264Z",
+  "updated": "2026-10-14T05:41:49.264Z",
+  "size": 29616,
+  "md5Hash": "8uI/IPL9oHNwfKgoJ41C1w==",
+  "crc32c": "774061177"
+}

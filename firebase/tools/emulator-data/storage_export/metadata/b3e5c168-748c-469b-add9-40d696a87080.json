@@ -1,0 +1,21 @@
+{
+  "name": "catalog/stores/new-york-store-banner.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956473990,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "9205c9e9-4359-4ec6-ad40-4fca41a17819"
+  ],
+  "etag": "BrP+S6/ttFDfeSyGjGUYfIcfvEI",
+  "customMetadata": {
+    "source": "assets:catalog/stores/new-york-store-banner.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:13.990Z",
+  "updated": "2026-10-14T05:41:13.990Z",
+  "size": 44554,
+  "md5Hash": "IgC7cMlLUet5aOxxhvNWIA==",
+  "crc32c": "1953647872"
+}

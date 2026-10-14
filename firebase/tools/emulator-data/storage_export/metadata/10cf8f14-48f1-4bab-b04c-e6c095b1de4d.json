@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/volini-pain-relief-spray-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509845,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "76309703-ad53-4911-acc7-14cc71b1f1e4"
+  ],
+  "etag": "skYl4a1Uaix0Tu35Q2TYiFnqJ64",
+  "customMetadata": {
+    "source": "assets:catalog/products/volini-pain-relief-spray-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.845Z",
+  "updated": "2026-10-14T05:41:49.845Z",
+  "size": 2334,
+  "md5Hash": "A7H/mzg4bsyAulFCYkQ1dQ==",
+  "crc32c": "3274627596"
+}

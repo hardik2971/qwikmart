@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/lays-classic-salted-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956508816,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "fc5c7362-1025-433d-ae6c-f265cc4e70b8"
+  ],
+  "etag": "HCbGbUJa5VpnCNTFSV6T6GGwoQs",
+  "customMetadata": {
+    "source": "assets:catalog/products/lays-classic-salted-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:48.816Z",
+  "updated": "2026-10-14T05:41:48.816Z",
+  "size": 7462,
+  "md5Hash": "GDZkZd5H2Lfs5KeffaiDmQ==",
+  "crc32c": "3858605623"
+}

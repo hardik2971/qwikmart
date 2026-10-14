@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/mega-electronics-sale.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510672,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "36c22ca8-48c8-4185-a4ec-f178a6353cc1"
+  ],
+  "etag": "D+hqC61mvKvvA707p8gz9ksPPak",
+  "customMetadata": {
+    "source": "assets:catalog/banners/mega-electronics-sale.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.672Z",
+  "updated": "2026-10-14T05:41:50.672Z",
+  "size": 54518,
+  "md5Hash": "0ObSRRBXxv7uy347ikmr9w==",
+  "crc32c": "1685748903"
+}

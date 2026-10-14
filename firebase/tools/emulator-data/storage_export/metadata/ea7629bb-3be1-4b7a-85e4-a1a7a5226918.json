@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/mamaearth.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504480,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "e8f4b208-a290-4ac3-a408-b8a6e50a4802"
+  ],
+  "etag": "plxPmiWh11j0mdwffhc6p4sbfZo",
+  "customMetadata": {
+    "source": "assets:catalog/brands/mamaearth.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.480Z",
+  "updated": "2026-10-14T05:41:44.480Z",
+  "size": 3406,
+  "md5Hash": "I4dc7gLI11UyxA2xPz0dsA==",
+  "crc32c": "1754212525"
+}

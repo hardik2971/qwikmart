@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/sun-care-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501880,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "43fa151c-dfe3-478d-a8ab-bf1006b137ff"
+  ],
+  "etag": "RRXnJ24sYb4RFB4b286NA+cJlRA",
+  "customMetadata": {
+    "source": "assets:catalog/categories/sun-care-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.880Z",
+  "updated": "2026-10-14T05:41:41.880Z",
+  "size": 4668,
+  "md5Hash": "tHEmMonk4VnQtvLM8W+Z6g==",
+  "crc32c": "1132718532"
+}

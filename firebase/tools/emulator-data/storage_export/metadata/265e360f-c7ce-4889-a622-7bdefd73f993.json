@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/pedigree-adult-dog-food-chicken-vegetables.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510402,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "e53cd4b6-7a02-46ed-a9fd-dda728ddf0f7"
+  ],
+  "etag": "WBLIJiWXnMv72EsDhztdxhuFlvs",
+  "customMetadata": {
+    "source": "assets:catalog/products/pedigree-adult-dog-food-chicken-vegetables.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.402Z",
+  "updated": "2026-10-14T05:41:50.402Z",
+  "size": 106250,
+  "md5Hash": "z34f7XAn6DpUVs1hu5NQ1w==",
+  "crc32c": "773470061"
+}

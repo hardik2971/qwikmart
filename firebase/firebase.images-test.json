@@ -1,0 +1,65 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json",
+    "location": "asia-south1"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "runtime": "nodejs22",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "test",
+        "*.log",
+        "src",
+        "tsconfig*.json",
+        "vitest.config.*"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
+    }
+  ],
+  "emulators": {
+    "singleProjectMode": true,
+    "hub": {
+      "host": "127.0.0.1",
+      "port": 61400
+    },
+    "logging": {
+      "port": 61500
+    },
+    "auth": {
+      "host": "127.0.0.1",
+      "port": 61099
+    },
+    "firestore": {
+      "host": "127.0.0.1",
+      "port": 61080,
+      "websocketPort": 61150
+    },
+    "functions": {
+      "host": "127.0.0.1",
+      "port": 61001
+    },
+    "storage": {
+      "host": "127.0.0.1",
+      "port": 61199
+    },
+    "eventarc": {
+      "port": 61299
+    },
+    "tasks": {
+      "port": 61499
+    },
+    "ui": {
+      "enabled": false
+    }
+  }
+}

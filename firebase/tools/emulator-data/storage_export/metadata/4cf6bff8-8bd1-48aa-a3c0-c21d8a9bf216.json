@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/india-gate-basmati-rice-classic-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956508382,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "9bf392ba-2ed5-400d-a3d3-d2cc006ea715"
+  ],
+  "etag": "Omzx814SNSzxQwNk1oRZKY+kCp8",
+  "customMetadata": {
+    "source": "assets:catalog/products/india-gate-basmati-rice-classic-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:48.382Z",
+  "updated": "2026-10-14T05:41:48.382Z",
+  "size": 13216,
+  "md5Hash": "dQyaJ/6ONGMgcXc9M2aoJA==",
+  "crc32c": "2995848261"
+}

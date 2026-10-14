@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/philips.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956506272,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "e64784fb-abb6-4a9f-a649-9344ede8a5f2"
+  ],
+  "etag": "KG9iyrvAWiFa2BXUvMZJzRMYQ7g",
+  "customMetadata": {
+    "source": "assets:catalog/brands/philips.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:46.272Z",
+  "updated": "2026-10-14T05:41:46.272Z",
+  "size": 3438,
+  "md5Hash": "ixdz0le1OHSnomSMqTRUGA==",
+  "crc32c": "1541349031"
+}

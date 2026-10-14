@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/coriander-leaves.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956507222,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "5508cb2d-6408-40e1-afff-5d812f36bf1b"
+  ],
+  "etag": "YsYjtwkiayXXvXAY+R1vLTkxDdA",
+  "customMetadata": {
+    "source": "assets:catalog/products/coriander-leaves.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:47.222Z",
+  "updated": "2026-10-14T05:41:47.222Z",
+  "size": 25786,
+  "md5Hash": "wrUTvbXD9gdBPYectIQjXw==",
+  "crc32c": "3960142783"
+}

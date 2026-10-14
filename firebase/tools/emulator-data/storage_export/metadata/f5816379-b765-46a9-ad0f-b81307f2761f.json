@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/cleaning-essentials-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956503034,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "f7200ed1-c7ca-4f15-a85b-9836625fbbac"
+  ],
+  "etag": "t8teLjMHd7o3h2dkcUebp2zHS9E",
+  "customMetadata": {
+    "source": "assets:catalog/categories/cleaning-essentials-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:43.034Z",
+  "updated": "2026-10-14T05:41:43.034Z",
+  "size": 1530,
+  "md5Hash": "1yIzEEZvKAqnAiQbIlNAfw==",
+  "crc32c": "371051011"
+}

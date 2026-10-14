@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/fresh-fruits-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501281,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "e3c02037-be1e-49b2-a989-cb134f75cb8f"
+  ],
+  "etag": "M/wy6Od2iH9k1A0Q+ZJNWSWfEzQ",
+  "customMetadata": {
+    "source": "assets:catalog/categories/fresh-fruits-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.281Z",
+  "updated": "2026-10-14T05:41:41.281Z",
+  "size": 3738,
+  "md5Hash": "NrAMc5JeP3Hbim5B9TA7NA==",
+  "crc32c": "2896574961"
+}

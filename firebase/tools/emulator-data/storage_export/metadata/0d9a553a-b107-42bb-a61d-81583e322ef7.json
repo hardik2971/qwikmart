@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/baby-care.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502251,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "a3db5b76-9c88-46fb-a2c6-0c4353244cf5"
+  ],
+  "etag": "tgUukK0++U815vSzjDLdUx/Qp4A",
+  "customMetadata": {
+    "source": "assets:catalog/categories/baby-care.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.251Z",
+  "updated": "2026-10-14T05:41:42.251Z",
+  "size": 23132,
+  "md5Hash": "h/MsPpy/J2CLU4d1tUqfIg==",
+  "crc32c": "1489788225"
+}

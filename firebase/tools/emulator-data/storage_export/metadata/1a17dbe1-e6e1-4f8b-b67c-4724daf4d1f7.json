@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/green-capsicum-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956507358,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "a7ffdbe1-1e5d-4b7f-a2e3-61cf1c726660"
+  ],
+  "etag": "/JuXRlFLirW3JuIyDjEm8Pdxr+c",
+  "customMetadata": {
+    "source": "assets:catalog/products/green-capsicum-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:47.358Z",
+  "updated": "2026-10-14T05:41:47.358Z",
+  "size": 3642,
+  "md5Hash": "Y1AJgDYHbdgW7ZibZS7FYA==",
+  "crc32c": "1553481047"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/haldirams.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504082,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "873e6d34-ed91-4bfd-ac16-ff0e1dd1653d"
+  ],
+  "etag": "Cw8/s5n6ypZ3yUdnYeiIZ4lesd0",
+  "customMetadata": {
+    "source": "assets:catalog/brands/haldirams.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.082Z",
+  "updated": "2026-10-14T05:41:44.082Z",
+  "size": 9462,
+  "md5Hash": "iN3Kkc9DXbnL46oOT6DEZg==",
+  "crc32c": "1865174778"
+}

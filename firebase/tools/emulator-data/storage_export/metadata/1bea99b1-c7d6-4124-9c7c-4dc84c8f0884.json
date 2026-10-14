@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/red-bull-energy-drink.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509401,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "452bf0d8-c870-4aec-a3d2-ac40bc558cf3"
+  ],
+  "etag": "c2Rfojig4VO6S7o7HKrgi+3cdeM",
+  "customMetadata": {
+    "source": "assets:catalog/products/red-bull-energy-drink.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.401Z",
+  "updated": "2026-10-14T05:41:49.401Z",
+  "size": 4550,
+  "md5Hash": "oiGLYhjVP5tUJdaG7Pvjpw==",
+  "crc32c": "2984325318"
+}

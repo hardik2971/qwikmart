@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/dog-food-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956503359,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "ba637790-4b94-4a81-adf4-333d743fe98c"
+  ],
+  "etag": "i9pvfus77AWShRjLZq5kzp/8tVc",
+  "customMetadata": {
+    "source": "assets:catalog/categories/dog-food-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:43.359Z",
+  "updated": "2026-10-14T05:41:43.359Z",
+  "size": 2430,
+  "md5Hash": "s4JXhVpOS1D8fVAl/2xlIQ==",
+  "crc32c": "1202072549"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/first-aid-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502145,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "c2757f79-fe47-4981-a583-246d7b780edf"
+  ],
+  "etag": "6tGTWJia2ZLn47fHuJisS6O5pdY",
+  "customMetadata": {
+    "source": "assets:catalog/categories/first-aid-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.145Z",
+  "updated": "2026-10-14T05:41:42.145Z",
+  "size": 2370,
+  "md5Hash": "B0DKwDXRT12VNs1mkzxpjg==",
+  "crc32c": "1959578431"
+}

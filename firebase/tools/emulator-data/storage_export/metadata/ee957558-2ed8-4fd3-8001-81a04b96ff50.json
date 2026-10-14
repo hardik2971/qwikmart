@@ -1,0 +1,21 @@
+{
+  "name": "catalog/blogs/5-quick-monsoon-snacks-under-15-minutes.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956511249,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "db01e313-7492-40ba-a2d8-7c7d6406864a"
+  ],
+  "etag": "UXV2dj9DoR5XaX1Dz+v/V9o+LAs",
+  "customMetadata": {
+    "source": "assets:catalog/blogs/5-quick-monsoon-snacks-under-15-minutes.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:51.250Z",
+  "updated": "2026-10-14T05:41:51.250Z",
+  "size": 133382,
+  "md5Hash": "0/yE7xc1Y9mt6erJ2BAnNA==",
+  "crc32c": "3062992261"
+}

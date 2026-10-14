@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/levis-mens-slim-fit-cotton-t-shirt.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510150,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "01e1a659-7f03-45b3-a9f1-4794a5fc1abb"
+  ],
+  "etag": "BQeuX7qScYZScisjC80b37BXIhY",
+  "customMetadata": {
+    "source": "assets:catalog/products/levis-mens-slim-fit-cotton-t-shirt.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.150Z",
+  "updated": "2026-10-14T05:41:50.150Z",
+  "size": 8050,
+  "md5Hash": "lXk9wmY8x9jQ516U2qtDGg==",
+  "crc32c": "2635148405"
+}

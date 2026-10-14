@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/snack-attack.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510765,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "2dd1daf3-9e1a-4f57-acf4-bf9804f075d4"
+  ],
+  "etag": "eDNm/YkljAN25Yy0+NeqM5oZjJM",
+  "customMetadata": {
+    "source": "assets:catalog/banners/snack-attack.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.765Z",
+  "updated": "2026-10-14T05:41:50.765Z",
+  "size": 24010,
+  "md5Hash": "zLTOKjr2Ho3xPUzCQiAaGg==",
+  "crc32c": "3793409222"
+}

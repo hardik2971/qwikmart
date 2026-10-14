@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/cat-food.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956503378,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "04dc5daa-560a-4ffc-a54d-0e7f35cd40f5"
+  ],
+  "etag": "oqiFkcJI1Uxhb2CCdwbz/qCRrpY",
+  "customMetadata": {
+    "source": "assets:catalog/categories/cat-food.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:43.378Z",
+  "updated": "2026-10-14T05:41:43.378Z",
+  "size": 5716,
+  "md5Hash": "JTyRK9DZGe0WLpOCwUVfiQ==",
+  "crc32c": "3413370381"
+}

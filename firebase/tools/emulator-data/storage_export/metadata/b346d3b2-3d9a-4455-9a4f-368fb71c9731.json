@@ -1,0 +1,21 @@
+{
+  "name": "catalog/blogs/the-perfect-mumbai-vada-pav-at-home.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956511341,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "62c1994a-d544-49a9-af63-f666d5f1a8b8"
+  ],
+  "etag": "cYHqJud24jB6tgfq5QgH3DFBsIY",
+  "customMetadata": {
+    "source": "assets:catalog/blogs/the-perfect-mumbai-vada-pav-at-home.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:51.341Z",
+  "updated": "2026-10-14T05:41:51.341Z",
+  "size": 81934,
+  "md5Hash": "YyhFJgrV7DN0i40zxi31Mg==",
+  "crc32c": "2504252924"
+}

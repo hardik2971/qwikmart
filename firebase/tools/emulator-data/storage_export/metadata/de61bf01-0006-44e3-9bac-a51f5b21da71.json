@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/category-beauty.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501935,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "e0ee601f-b79f-4998-abc2-9a6086223b3c"
+  ],
+  "etag": "cyFeyx/vdB/tNo8QSu7WPjIOwcM",
+  "customMetadata": {
+    "source": "assets:catalog/banners/category-beauty.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.935Z",
+  "updated": "2026-10-14T05:41:41.935Z",
+  "size": 44696,
+  "md5Hash": "OIgddCJ4JtEUhM8LhpbCLw==",
+  "crc32c": "111008655"
+}

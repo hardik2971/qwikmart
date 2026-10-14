@@ -1,0 +1,21 @@
+{
+  "name": "catalog/stores/mumbai-store-banner.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956473442,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "434cc32d-c5d7-49d4-a3f9-5d3f12546e10"
+  ],
+  "etag": "qBYfVbLLYP52vhCHRcwZD38Qydg",
+  "customMetadata": {
+    "source": "assets:catalog/stores/mumbai-store-banner.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:13.442Z",
+  "updated": "2026-10-14T05:41:13.442Z",
+  "size": 70390,
+  "md5Hash": "o4vj4HRcTJDtErO9vU6jhw==",
+  "crc32c": "2465394650"
+}

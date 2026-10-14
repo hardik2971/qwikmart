@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/instant-food-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501668,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "568dc8bd-2740-4455-a46c-60682484e182"
+  ],
+  "etag": "9r6uKUmMtbOuHy/vwX/efCOUb4U",
+  "customMetadata": {
+    "source": "assets:catalog/categories/instant-food-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.668Z",
+  "updated": "2026-10-14T05:41:41.668Z",
+  "size": 5020,
+  "md5Hash": "vEeOUJIlnbXFbC/hkrx7Jg==",
+  "crc32c": "672486319"
+}

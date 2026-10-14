@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/amul-butter-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956507530,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "4847e8e4-0224-48d2-aef3-8d1c08359631"
+  ],
+  "etag": "FYZwKe/fUOWpETbSfDre+UhhtRI",
+  "customMetadata": {
+    "source": "assets:catalog/products/amul-butter-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:47.530Z",
+  "updated": "2026-10-14T05:41:47.530Z",
+  "size": 14760,
+  "md5Hash": "7hmjRJPaj0AJ7Z/PwxvwBA==",
+  "crc32c": "3845668726"
+}

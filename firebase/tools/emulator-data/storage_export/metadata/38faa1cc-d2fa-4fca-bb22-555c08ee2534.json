@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/dettol-antiseptic-liquid-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509719,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "3fcecab7-7852-46aa-ab00-c73483aaa638"
+  ],
+  "etag": "OxyuMc7U8Hv4P1kWnj+TOb23mag",
+  "customMetadata": {
+    "source": "assets:catalog/products/dettol-antiseptic-liquid-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.719Z",
+  "updated": "2026-10-14T05:41:49.719Z",
+  "size": 4634,
+  "md5Hash": "aFLjEpZSP7AyJJ7uoti4gA==",
+  "crc32c": "3755414633"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/icons/summer.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501735,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "32ee14fe-d969-4054-a636-5c4a470b1934"
+  ],
+  "etag": "0IJWGx/Vhc95EgH85KHD9eQR12s",
+  "customMetadata": {
+    "source": "assets:catalog/categories/icons/summer.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.735Z",
+  "updated": "2026-10-14T05:41:41.735Z",
+  "size": 5858,
+  "md5Hash": "PpM6xJewBE2L2pH/b/hFIw==",
+  "crc32c": "203680022"
+}

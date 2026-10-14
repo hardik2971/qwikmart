@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/dove-intense-repair-shampoo-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509642,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "4dee5c0d-2492-49fa-ad33-6d90436b470a"
+  ],
+  "etag": "34o/h/4fHV+KqIAn6Y5OzzF+nUk",
+  "customMetadata": {
+    "source": "assets:catalog/products/dove-intense-repair-shampoo-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.642Z",
+  "updated": "2026-10-14T05:41:49.642Z",
+  "size": 10404,
+  "md5Hash": "IEkARihwlhSzvP9pYUTu7A==",
+  "crc32c": "3220086238"
+}

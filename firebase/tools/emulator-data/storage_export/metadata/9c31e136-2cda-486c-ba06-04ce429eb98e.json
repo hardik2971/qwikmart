@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/tropicana-orange-juice-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509386,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "486d663f-8da7-4717-af84-23b0b8decb6d"
+  ],
+  "etag": "QKG6nydVdLGMz0AO4qup+J2bqKU",
+  "customMetadata": {
+    "source": "assets:catalog/products/tropicana-orange-juice-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.386Z",
+  "updated": "2026-10-14T05:41:49.386Z",
+  "size": 7438,
+  "md5Hash": "Him5bI8ARv9fZiZkqHixZg==",
+  "crc32c": "2258988748"
+}

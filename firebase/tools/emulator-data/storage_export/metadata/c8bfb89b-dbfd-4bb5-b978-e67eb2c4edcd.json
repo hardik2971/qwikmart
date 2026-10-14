@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/detergents-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956503220,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "02ce72c7-45fc-4045-ada3-df31b57d7c6b"
+  ],
+  "etag": "apdIxI/7RNskusZuktPwlY0iMN4",
+  "customMetadata": {
+    "source": "assets:catalog/categories/detergents-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:43.220Z",
+  "updated": "2026-10-14T05:41:43.220Z",
+  "size": 848,
+  "md5Hash": "LS6uzqk4oCXVv5h3BB7OpA==",
+  "crc32c": "3802264189"
+}

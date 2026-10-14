@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/pampers.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504598,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "1fc02795-b5df-4cff-a960-46e29ce72819"
+  ],
+  "etag": "0eAFfZV4LlwpZXxSdUYnhpdoS/Y",
+  "customMetadata": {
+    "source": "assets:catalog/brands/pampers.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.598Z",
+  "updated": "2026-10-14T05:41:44.598Z",
+  "size": 5958,
+  "md5Hash": "reg6jclp8hqWcq0d/WNcfA==",
+  "crc32c": "3905172150"
+}

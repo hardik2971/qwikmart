@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/dabur-chyawanprash-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509761,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "027d2ab0-721d-4311-a3be-e8c5d75b0f75"
+  ],
+  "etag": "/0G0I4NzI0szXHlYZd8ZmIhzI/g",
+  "customMetadata": {
+    "source": "assets:catalog/products/dabur-chyawanprash-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.761Z",
+  "updated": "2026-10-14T05:41:49.761Z",
+  "size": 14294,
+  "md5Hash": "SZZOrNE0yRpFINoTMpGYtA==",
+  "crc32c": "1837863154"
+}

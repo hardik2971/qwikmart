@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/bakery-biscuits-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501614,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "0f5c8f80-a950-49c0-a592-6ec0c1b8af6b"
+  ],
+  "etag": "mq36iuvjBaOiVmz5HpvW21IgktI",
+  "customMetadata": {
+    "source": "assets:catalog/categories/bakery-biscuits-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.614Z",
+  "updated": "2026-10-14T05:41:41.614Z",
+  "size": 2662,
+  "md5Hash": "7xhbwwVrOcUeHosn7+bklA==",
+  "crc32c": "2726298734"
+}

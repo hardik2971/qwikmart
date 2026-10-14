@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/amul-cheese-slices.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956507757,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "b0c79158-62d4-43c5-ac32-63a4ee3185b3"
+  ],
+  "etag": "5XK5uQP9hP3qeYjNyCysdogVSqY",
+  "customMetadata": {
+    "source": "assets:catalog/products/amul-cheese-slices.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:47.757Z",
+  "updated": "2026-10-14T05:41:47.757Z",
+  "size": 68286,
+  "md5Hash": "Ymhs3tSNoka7ydQXTazK3Q==",
+  "crc32c": "1332438989"
+}

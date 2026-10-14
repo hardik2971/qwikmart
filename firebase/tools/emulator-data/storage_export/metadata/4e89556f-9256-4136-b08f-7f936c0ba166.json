@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/mamaearth-onion-hair-oil-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509689,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "c71e6127-2fc3-4b08-a16b-9cb06fec6f30"
+  ],
+  "etag": "Ql8kGO/F6oTLtLeboGkIz49MeyM",
+  "customMetadata": {
+    "source": "assets:catalog/products/mamaearth-onion-hair-oil-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.689Z",
+  "updated": "2026-10-14T05:41:49.689Z",
+  "size": 6954,
+  "md5Hash": "kSvSX3L4OeqH1EpI0Eg/VQ==",
+  "crc32c": "2065293468"
+}

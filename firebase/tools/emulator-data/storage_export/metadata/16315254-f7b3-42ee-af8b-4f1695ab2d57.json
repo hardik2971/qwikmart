@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/whiskas-adult-cat-food-ocean-fish-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510479,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "9214b3ed-a0e9-4519-ad3c-28c57f81962f"
+  ],
+  "etag": "LtoN1ksNuKhlI+B8yUf06t0riOY",
+  "customMetadata": {
+    "source": "assets:catalog/products/whiskas-adult-cat-food-ocean-fish-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.479Z",
+  "updated": "2026-10-14T05:41:50.479Z",
+  "size": 20880,
+  "md5Hash": "HgSOOg28J/3ceTLcg4wGKA==",
+  "crc32c": "1350085757"
+}

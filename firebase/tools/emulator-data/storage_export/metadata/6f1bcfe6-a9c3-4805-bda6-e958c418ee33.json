@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/amul.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956503694,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "936573ed-5206-4b70-a143-5a4d4d67ba77"
+  ],
+  "etag": "8pz/CaDgUM2/4WG78AxsOpmZAu0",
+  "customMetadata": {
+    "source": "assets:catalog/brands/amul.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:43.694Z",
+  "updated": "2026-10-14T05:41:43.694Z",
+  "size": 5400,
+  "md5Hash": "iFPd5FlyqFC85pGcv2G8sw==",
+  "crc32c": "3960568062"
+}

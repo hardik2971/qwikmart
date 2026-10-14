@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/beauty.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501895,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "c8d2d9a8-7d39-4b91-aa08-05f21aae44ae"
+  ],
+  "etag": "N2DT4W++3Fnejr8livnH49uYQYk",
+  "customMetadata": {
+    "source": "assets:catalog/categories/beauty.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.895Z",
+  "updated": "2026-10-14T05:41:41.895Z",
+  "size": 13902,
+  "md5Hash": "+iaH0gC+TX6OIQ/21NxsiQ==",
+  "crc32c": "135761099"
+}

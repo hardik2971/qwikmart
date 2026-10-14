@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/alphonso-mango-2.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956507109,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "840b87db-5527-492b-a641-71e1d920655b"
+  ],
+  "etag": "dhbG/3/XBxAs7AAEOgtf4xQ5TBY",
+  "customMetadata": {
+    "source": "assets:catalog/products/alphonso-mango-2.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:47.110Z",
+  "updated": "2026-10-14T05:41:47.110Z",
+  "size": 16084,
+  "md5Hash": "AyJMq38R52KHZwKB/tNdaA==",
+  "crc32c": "667658435"
+}

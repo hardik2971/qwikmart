@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/harpic-power-plus-toilet-cleaner-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510377,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "45c550d6-6a29-4989-a711-159ca2fa6c27"
+  ],
+  "etag": "wFtDBQtAfAnuASs9H20cOPCcg7Q",
+  "customMetadata": {
+    "source": "assets:catalog/products/harpic-power-plus-toilet-cleaner-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.377Z",
+  "updated": "2026-10-14T05:41:50.377Z",
+  "size": 5276,
+  "md5Hash": "Ub4DMCIRV2ws+xcLYmAvDw==",
+  "crc32c": "3191550649"
+}

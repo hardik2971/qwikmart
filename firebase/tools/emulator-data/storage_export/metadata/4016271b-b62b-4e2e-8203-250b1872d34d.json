@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/philips-9w-led-bulb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510055,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "1b62ad24-ca41-4cc3-ab4c-d6e1199341c1"
+  ],
+  "etag": "9Zyc4VZVXItcY5LbnlruqzywHJQ",
+  "customMetadata": {
+    "source": "assets:catalog/products/philips-9w-led-bulb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.055Z",
+  "updated": "2026-10-14T05:41:50.055Z",
+  "size": 9836,
+  "md5Hash": "GueGJLBq8EoFW75jJMl3aQ==",
+  "crc32c": "612747702"
+}

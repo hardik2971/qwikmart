@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/india-gate.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956503951,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "3f820998-b59c-49f9-af6b-7bebb6204d14"
+  ],
+  "etag": "Ei3XKu5qLjGfCjUhdYCDj+obLq4",
+  "customMetadata": {
+    "source": "assets:catalog/brands/india-gate.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:43.951Z",
+  "updated": "2026-10-14T05:41:43.951Z",
+  "size": 3872,
+  "md5Hash": "JzhQW5kv3bONDa2bVQDlzg==",
+  "crc32c": "1593770996"
+}

@@ -1,0 +1,22 @@
+# Native splash — regenerate with: dart run flutter_native_splash:create
+# Matches the in-app SplashScreen (QwikMart brand blue, white cart-Q mark).
+flutter_native_splash:
+  color: "#033EAB"
+  image: assets/icon/splash_logo.png
+  branding: assets/icon/splash_branding.png
+  branding_mode: bottom
+  branding_bottom_padding: 32
+  color_dark: "#022C7A"
+  image_dark: assets/icon/splash_logo.png
+  branding_dark: assets/icon/splash_branding.png
+  android_12:
+    color: "#033EAB"
+    image: assets/icon/splash_android12.png
+    icon_background_color: "#033EAB"
+    color_dark: "#022C7A"
+    image_dark: assets/icon/splash_android12.png
+    icon_background_color_dark: "#022C7A"
+  android: true
+  ios: true
+  web: true
+  fullscreen: false

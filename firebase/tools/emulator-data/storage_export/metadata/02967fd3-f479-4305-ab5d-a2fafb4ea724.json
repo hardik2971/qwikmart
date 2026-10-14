@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/johnsons-baby-powder-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509925,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "95a894f9-437a-43d0-a633-b1d36c0995af"
+  ],
+  "etag": "NjKhjSJWwwSGnJWEEhCkTeJP8dE",
+  "customMetadata": {
+    "source": "assets:catalog/products/johnsons-baby-powder-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.925Z",
+  "updated": "2026-10-14T05:41:49.925Z",
+  "size": 2824,
+  "md5Hash": "6wBBSDrlGJBGMfanyWZXbg==",
+  "crc32c": "1729340369"
+}

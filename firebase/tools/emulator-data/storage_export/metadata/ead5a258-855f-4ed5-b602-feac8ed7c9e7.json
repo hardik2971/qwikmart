@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/category-summer.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501768,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "76b7a91d-bb8d-4db7-abf9-9f23fc27dd2b"
+  ],
+  "etag": "OKt71O5w4H1j1TdR935kG4Na9EI",
+  "customMetadata": {
+    "source": "assets:catalog/banners/category-summer.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.768Z",
+  "updated": "2026-10-14T05:41:41.768Z",
+  "size": 51652,
+  "md5Hash": "JvsJy3pLfOCx73XnBnAkOA==",
+  "crc32c": "2931120613"
+}

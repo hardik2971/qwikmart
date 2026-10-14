@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/men-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502810,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "20dbd267-1aa3-4f43-a7a7-e6abed26739b"
+  ],
+  "etag": "Rzgp4W6zbsXlOnTgCNQ/o1p8GSI",
+  "customMetadata": {
+    "source": "assets:catalog/categories/men-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.810Z",
+  "updated": "2026-10-14T05:41:42.810Z",
+  "size": 2612,
+  "md5Hash": "YU5QbIa+cGe5HJVfSLkbww==",
+  "crc32c": "3482613793"
+}

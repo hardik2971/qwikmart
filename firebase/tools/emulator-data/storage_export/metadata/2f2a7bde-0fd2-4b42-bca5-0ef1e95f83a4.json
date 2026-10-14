@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/notification-rider-bonus.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956500277,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "309cd731-7427-47e3-a7b9-03d37da4046b"
+  ],
+  "etag": "oHNxmG30F8nRJi6ibNeSefxrDys",
+  "customMetadata": {
+    "source": "assets:catalog/banners/notification-rider-bonus.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:40.277Z",
+  "updated": "2026-10-14T05:41:40.277Z",
+  "size": 28344,
+  "md5Hash": "Su761hzvqfy7+R7ypyybxg==",
+  "crc32c": "792040901"
+}

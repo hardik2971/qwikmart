@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/levis.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956506343,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "64f18f8e-1d92-4103-afd5-e57ab0c90129"
+  ],
+  "etag": "T81d7KA6HtkV1NlCPRtsx4Lhm2E",
+  "customMetadata": {
+    "source": "assets:catalog/brands/levis.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:46.343Z",
+  "updated": "2026-10-14T05:41:46.343Z",
+  "size": 5160,
+  "md5Hash": "GDRplHGrdsNtZojVt4EOfw==",
+  "crc32c": "527692689"
+}

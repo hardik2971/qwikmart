@@ -1,0 +1,13 @@
+node_modules
+.next
+out
+.env.local
+.env*.local
+*.tsbuildinfo
+next-env.d.ts
+.firebase/
+.apphosting/
+*-debug.log
+npm-debug.log*
+*.pem
+/.next-qa/

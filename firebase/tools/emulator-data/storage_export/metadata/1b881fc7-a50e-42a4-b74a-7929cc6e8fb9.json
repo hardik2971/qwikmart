@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/tata-sampann-toor-dal-2.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956507821,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "4cca1722-b1ad-4559-a51c-8e83417fe35b"
+  ],
+  "etag": "plMn9tV61qJEuzDaRW7oEGvuBfM",
+  "customMetadata": {
+    "source": "assets:catalog/products/tata-sampann-toor-dal-2.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:47.821Z",
+  "updated": "2026-10-14T05:41:47.821Z",
+  "size": 117460,
+  "md5Hash": "o83uFEp6l1aL8RPnJhNfpQ==",
+  "crc32c": "2252970399"
+}

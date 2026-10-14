@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/oreo.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504229,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "dd1be90b-8483-4601-aeac-80e287720fab"
+  ],
+  "etag": "ne4/R6J0rNRHl9PDDNhx7aFts8I",
+  "customMetadata": {
+    "source": "assets:catalog/brands/oreo.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.229Z",
+  "updated": "2026-10-14T05:41:44.229Z",
+  "size": 2278,
+  "md5Hash": "rg6XMoO0VcXgCqMKv8wEww==",
+  "crc32c": "1286597667"
+}

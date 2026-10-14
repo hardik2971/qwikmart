@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/smartphones-grid.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510886,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "17d34572-f49d-4b7b-a4f1-6d8aa57171fc"
+  ],
+  "etag": "73GTTVX9q4MXIjdxjjh16UX548s",
+  "customMetadata": {
+    "source": "assets:catalog/banners/smartphones-grid.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.886Z",
+  "updated": "2026-10-14T05:41:50.886Z",
+  "size": 14492,
+  "md5Hash": "lxcmjppMVZRECZdupL63yg==",
+  "crc32c": "323493362"
+}

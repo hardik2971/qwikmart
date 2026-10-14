@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/summer-specials.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510786,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "c59403fa-5ada-453b-afc5-ff1d8cbfb071"
+  ],
+  "etag": "0mbAHlsINVkvKKSluo8pJ0vtWlc",
+  "customMetadata": {
+    "source": "assets:catalog/banners/summer-specials.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.786Z",
+  "updated": "2026-10-14T05:41:50.786Z",
+  "size": 44070,
+  "md5Hash": "/4+IHFwA1ajDN3/sVbdWfA==",
+  "crc32c": "492408935"
+}

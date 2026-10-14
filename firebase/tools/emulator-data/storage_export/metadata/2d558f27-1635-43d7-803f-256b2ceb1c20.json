@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/masala-spices-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956500999,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "786a3c58-ca3a-4719-adef-0a4cec172f67"
+  ],
+  "etag": "R9crYSrXO1QQYKNJjELTZIHDwg0",
+  "customMetadata": {
+    "source": "assets:catalog/categories/masala-spices-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:40.999Z",
+  "updated": "2026-10-14T05:41:40.999Z",
+  "size": 4650,
+  "md5Hash": "3X3oMS5vre/aa8z6nYY9+w==",
+  "crc32c": "1432388129"
+}

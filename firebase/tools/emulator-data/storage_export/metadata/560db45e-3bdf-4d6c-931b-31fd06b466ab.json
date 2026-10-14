@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/balaji-simply-salted-wafers.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509055,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "29ee5133-14cf-4dde-a2d2-54613b666d22"
+  ],
+  "etag": "glTykUnppfRb4CDztUpus0QcIUU",
+  "customMetadata": {
+    "source": "assets:catalog/products/balaji-simply-salted-wafers.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.055Z",
+  "updated": "2026-10-14T05:41:49.055Z",
+  "size": 22400,
+  "md5Hash": "n4+ZWV0kv+lEB6Un2kPwlg==",
+  "crc32c": "944246717"
+}

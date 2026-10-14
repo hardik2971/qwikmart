@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/red-bull.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504327,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "c98b0511-9a71-4ab3-aa7b-8b49fe197c26"
+  ],
+  "etag": "JnzZsHoTZHfRzL6gRdZuP07azV0",
+  "customMetadata": {
+    "source": "assets:catalog/brands/red-bull.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.327Z",
+  "updated": "2026-10-14T05:41:44.327Z",
+  "size": 8072,
+  "md5Hash": "9EiSj6DtUR0onDsPuqjWRA==",
+  "crc32c": "431753278"
+}

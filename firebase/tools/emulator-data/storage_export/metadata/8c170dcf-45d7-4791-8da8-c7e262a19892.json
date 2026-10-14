@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/prestige-omega-deluxe-non-stick-tawa.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510322,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "34430268-6cda-47ae-a842-9d6280c8237b"
+  ],
+  "etag": "C2r5s66nDz3qaRNWQWwxzr0AbNA",
+  "customMetadata": {
+    "source": "assets:catalog/products/prestige-omega-deluxe-non-stick-tawa.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.322Z",
+  "updated": "2026-10-14T05:41:50.322Z",
+  "size": 10652,
+  "md5Hash": "Ao+BOFfKD7653DTDZbjPyA==",
+  "crc32c": "307874011"
+}

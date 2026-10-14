@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/flat-99-off-mumbai99.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510653,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "40e16eb8-37ed-48bd-aa0e-b8c3d283f72e"
+  ],
+  "etag": "3ciNwDdqjisMBGcY1CjOKPNqc/c",
+  "customMetadata": {
+    "source": "assets:catalog/banners/flat-99-off-mumbai99.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.653Z",
+  "updated": "2026-10-14T05:41:50.653Z",
+  "size": 68946,
+  "md5Hash": "s5fY7bPLa/2Fwa68cA3DXw==",
+  "crc32c": "455262842"
+}

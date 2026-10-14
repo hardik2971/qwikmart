@@ -1,0 +1,345 @@
+rules_version = '2';
+
+// QwikMart — Cloud Firestore security rules (Firebase-only backend). Spec: docs/FIREBASE_BACKEND.md §6.
+// Server-owned data (prices/totals, wallet, stock, status, roles, ratings, counters) is written by Cloud Functions
+// (Admin SDK bypasses these rules). Clients may only write the whitelisted fields below.
+// Claims: { role: customer|delivery_boy|admin|staff|store, store_id?, role_id?, zone_id? }.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ------------------------------------------------------------ helpers
+    function signedIn() { return request.auth != null; }
+    function uid() { return request.auth.uid; }
+    function claim(k, d) { return request.auth.token.get(k, d); }
+    function role() { return claim('role', 'customer'); }
+    function isAdmin() { return signedIn() && role() == 'admin'; }
+    // platform staff only: a token that also carries a store_id is store staff and never gets platform-wide permissions
+    function isStaff() { return signedIn() && role() == 'staff' && claim('store_id', '') == ''; }
+    function isStoreUser() { return signedIn() && role() == 'store' && claim('store_id', '') != ''; }
+    function isRider() { return signedIn() && role() == 'delivery_boy'; }
+    function myStore() { return claim('store_id', ''); }
+    function roleId() { return claim('role_id', ''); }
+    function rolePerms() { return get(/databases/$(database)/documents/roles/$(roleId())).data.permissions; }
+    function grants(m, a) { return rolePerms().hasAny(['*', m + '.' + a, m + '.*']); }
+
+    // admin: everything; staff: role permission
+    function panelCan(m, a) { return isAdmin() || (isStaff() && roleId() != '' && grants(m, a)); }
+    // store owner (no role_id) or store staff with the permission
+    function storeCan(m, a) { return isStoreUser() && (roleId() == '' || grants(m, a)); }
+    function anyPanel() { return isAdmin() || isStaff() || isStoreUser(); }
+    // zone of the store user's store (store panel: riders / home layouts of that zone)
+    function storeZone() { return get(/databases/$(database)/documents/stores/$(myStore())).data.zone_id; }
+
+    function incoming() { return request.resource.data; }
+    function existing() { return resource.data; }
+    function changed() { return incoming().diff(existing()).affectedKeys(); }
+    function onlyKeys(keys) { return incoming().keys().hasOnly(keys); }
+    function unchanged(keys) { return !changed().hasAny(keys); }
+    function isStr(v, max) { return v is string && v.size() <= max; }
+    function optStr(m, k, max) { return !m.keys().hasAny([k]) || m[k] == null || isStr(m[k], max); }
+    function isNum(v) { return v is int || v is float; }
+
+    // Generic panel-managed catalog collection: public read, write by permission.
+    function catalogWrite(m) {
+      return (request.method == 'create' && panelCan(m, 'create'))
+          || (request.method == 'update' && panelCan(m, 'update'))
+          || (request.method == 'delete' && panelCan(m, 'delete'));
+    }
+    // Store-scoped variant: store users may write docs carrying their own store_id.
+    function storeOwned(m) {
+      return storeCan(m, request.method == 'create' ? 'create' : request.method == 'delete' ? 'delete' : 'update')
+        && (request.method == 'delete' ? existing().get('store_id', null) == myStore()
+            : (incoming().get('store_id', null) == myStore()
+               && (request.method == 'create' || existing().get('store_id', null) == myStore())));
+    }
+
+    // ------------------------------------------------------------ settings & geography
+    // settings/private_{payment|sms|smtp|ai}: secrets — role admin only (the admin Settings page reads/writes them);
+    // functions read them with the Admin SDK. Staff (even with setting.update) and everyone else are denied.
+    match /settings/{doc} {
+      allow read: if doc == 'public' || (doc.matches('^[a-z_]+$') && !doc.matches('^private_.*') && anyPanel())
+        || (doc.matches('^private_(payment|sms|smtp|ai)$') && isAdmin());
+      allow write: if (doc != '' && !doc.matches('^private_.*') && panelCan('setting', 'update'))
+        || (doc.matches('^private_(payment|sms|smtp|ai)$') && isAdmin());
+    }
+    match /countries/{id} { allow read: if true; allow write: if catalogWrite('country'); }
+    match /zones/{id} { allow read: if true; allow write: if catalogWrite('zone'); }
+    match /stores/{id} {
+      allow read: if true;
+      allow create, delete: if catalogWrite('store');
+      allow update: if (panelCan('store', 'update') && unchanged(['orders_count', 'revenue']))
+        || (isStoreUser() && id == myStore() && roleId() == ''
+            && changed().hasOnly(['is_open', 'opening_time', 'closing_time', 'phone', 'email', 'logo', 'banner', 'address', 'updated_at']));
+    }
+    match /languages/{code} { allow read: if true; allow write: if catalogWrite('language'); }
+    match /translations/{id} { allow read: if true; allow write: if catalogWrite('language'); }
+
+    // ------------------------------------------------------------ users
+    match /users/{userId} {
+      allow get: if signedIn() && (uid() == userId || panelCan('customer', 'list') || panelCan('staff', 'list') || panelCan('delivery_boy', 'list'));
+      allow list: if panelCan('customer', 'list') || panelCan('staff', 'list') || panelCan('delivery_boy', 'list')
+        || (isStoreUser() && storeCan('staff', 'list') && resource.data.store_id == myStore());
+      allow update: if signedIn() && uid() == userId
+        && changed().hasOnly(['name', 'avatar', 'language', 'fcm_tokens', 'updated_at'])
+        && optStr(incoming(), 'name', 100) && optStr(incoming(), 'avatar', 500) && optStr(incoming(), 'language', 10)
+        && (!changed().hasAny(['fcm_tokens']) || (incoming().fcm_tokens is list && incoming().fcm_tokens.size() <= 20));
+
+      match /addresses/{addressId} {
+        allow read: if signedIn() && (uid() == userId || panelCan('customer', 'list') || panelCan('order', 'view'));
+        allow delete: if signedIn() && uid() == userId;
+        allow create, update: if signedIn() && uid() == userId
+          && onlyKeys(['label', 'name', 'phone', 'address_line', 'landmark', 'city', 'state', 'pincode', 'country_id', 'lat', 'lng', 'is_default', 'created_at', 'updated_at'])
+          && isStr(incoming().name, 100) && isStr(incoming().phone, 20) && isStr(incoming().address_line, 500)
+          && isNum(incoming().lat) && isNum(incoming().lng)
+          && incoming().lat >= -90 && incoming().lat <= 90 && incoming().lng >= -180 && incoming().lng <= 180
+          && optStr(incoming(), 'label', 30) && optStr(incoming(), 'landmark', 200) && optStr(incoming(), 'city', 100)
+          && optStr(incoming(), 'state', 100) && optStr(incoming(), 'pincode', 20)
+          && (!incoming().keys().hasAny(['is_default']) || incoming().is_default is bool);
+      }
+
+      // lineId = `${mode}_${storeId|'central'}_${variantId}`
+      match /cart/{lineId} {
+        allow read, delete: if signedIn() && uid() == userId;
+        allow create, update: if signedIn() && uid() == userId
+          && onlyKeys(['product_id', 'variant_id', 'store_id', 'mode', 'qty', 'added_at', 'updated_at'])
+          && incoming().mode in ['quick', 'ecommerce']
+          && isStr(incoming().product_id, 128) && isStr(incoming().variant_id, 128)
+          && (incoming().store_id == null || isStr(incoming().store_id, 128))
+          && incoming().qty is int && incoming().qty >= 1 && incoming().qty <= 100
+          && lineId == incoming().mode + '_' + (incoming().store_id == null ? 'central' : incoming().store_id) + '_' + incoming().variant_id;
+      }
+
+      match /favorites/{productId} {
+        allow read, delete: if signedIn() && uid() == userId;
+        allow create: if signedIn() && uid() == userId && onlyKeys(['created_at']);
+      }
+
+      match /notifications/{nid} {
+        allow read: if signedIn() && uid() == userId;
+        allow update: if signedIn() && uid() == userId && changed().hasOnly(['read_at']);
+      }
+
+      match /wallet_transactions/{tid} {
+        allow read: if signedIn() && (uid() == userId || panelCan('wallet', 'list') || panelCan('customer', 'list'));
+      }
+    }
+
+    // Collection-group reads (admin Wallet Transactions page: collectionGroup('wallet_transactions')). Admin / staff with
+    // wallet.list or customer.list only — store users are not granted (ledger rows carry no store_id to scope by).
+    match /{path=**}/wallet_transactions/{tid} {
+      allow read: if panelCan('wallet', 'list') || panelCan('customer', 'list');
+    }
+
+    match /delivery_boys/{riderId} {
+      // store users: riders serving their store's zone only (queries must filter zone_id == that zone)
+      allow get: if signedIn() && (uid() == riderId || panelCan('delivery_boy', 'list')
+        || (storeCan('delivery_boy', 'list') && resource.data.get('zone_id', null) == storeZone()));
+      allow list: if panelCan('delivery_boy', 'list')
+        || (storeCan('delivery_boy', 'list') && resource.data.get('zone_id', null) == storeZone());
+      // rider: location only
+      allow update: if (isRider() && uid() == riderId
+            && changed().hasOnly(['location'])
+            && incoming().location.keys().hasOnly(['lat', 'lng', 'updated_at', 'heading', 'speed'])
+            && isNum(incoming().location.lat) && isNum(incoming().location.lng))
+        || (panelCan('delivery_boy', 'update')
+            && unchanged(['cash_in_hand', 'earnings_total', 'approval_status', 'rating_avg', 'rating_count']));
+    }
+
+    match /roles/{id} {
+      allow read: if signedIn() && (anyPanel() && (isAdmin() || roleId() == id || panelCan('role', 'list')
+        || (isStoreUser() && resource.data.get('store_id', null) == myStore())));
+      allow write: if catalogWrite('role')
+        || (isStoreUser() && roleId() == '' && (request.method == 'delete'
+              ? existing().store_id == myStore()
+              : incoming().store_id == myStore() && incoming().scope == 'store'
+                && (request.method == 'create' || existing().store_id == myStore())));
+    }
+
+    // ------------------------------------------------------------ catalog
+    match /categories/{id} {
+      allow read: if true;
+      allow create, delete: if catalogWrite('category');
+      allow update: if catalogWrite('category') && unchanged(['product_count']);
+    }
+    match /brands/{id} { allow read: if true; allow write: if catalogWrite('brand'); }
+    match /attributes/{id} { allow read: if true; allow write: if catalogWrite('attribute'); }
+    match /taxes/{id} { allow read: if true; allow write: if catalogWrite('tax'); }
+
+    match /products/{id} {
+      allow get: if resource.data.status == 'active' || panelCan('product', 'list')
+        || (isStoreUser() && resource.data.store_id == myStore());
+      allow list: if resource.data.status == 'active' || panelCan('product', 'list')
+        || (isStoreUser() && resource.data.store_id == myStore());
+      // in_stock_store_ids is derived by onStoreStockWritten — a store must not list its product in other stores.
+      allow create: if (panelCan('product', 'create')
+            || (storeOwned('product') && incoming().status in ['draft', 'pending_approval', 'inactive'] && incoming().get('in_stock_store_ids', []).size() == 0))
+        && incoming().get('rating_count', 0) == 0 && incoming().get('sold_count', 0) == 0;
+      allow update: if (panelCan('product', 'update')
+            || (storeOwned('product') && (incoming().status == existing().status || incoming().status in ['draft', 'pending_approval', 'inactive'])
+                && unchanged(['in_stock_store_ids'])))
+        && unchanged(['rating_avg', 'rating_count', 'sold_count']);
+      allow delete: if panelCan('product', 'delete') || storeOwned('product');
+    }
+
+    match /store_stocks/{id} {
+      allow read: if true;
+      allow write: if panelCan('stock', 'update')
+        || (storeCan('stock', 'update')
+            && (request.method == 'delete' ? existing().store_id == myStore()
+                : incoming().store_id == myStore() && id == myStore() + '_' + incoming().variant_id
+                  && isNum(incoming().get('stock', 0)) && incoming().get('stock', 0) >= 0
+                  && (incoming().get('price', null) == null || (isNum(incoming().price) && incoming().price > 0))
+                  && (incoming().get('sale_price', null) == null || (isNum(incoming().sale_price) && incoming().sale_price >= 0))));
+    }
+
+    match /reviews/{id} {
+      allow read: if resource.data.status == 'active' || panelCan('product', 'list')
+        || (signedIn() && resource.data.user_id == uid());
+      allow update: if panelCan('product', 'update') && changed().hasOnly(['status', 'updated_at']);
+      allow delete: if panelCan('product', 'delete');
+    }
+
+    match /banners/{id} {
+      allow read: if true;
+      allow write: if catalogWrite('banner') || storeOwned('banner');
+    }
+
+    // Published layouts only (public). Written by publishHomeLayout; admins may delete a layout.
+    match /home_layouts/{id} {
+      allow read: if true;
+      allow delete: if panelCan('home_builder', 'update');
+    }
+    // Home Builder drafts — panel only (admin/staff by home_builder permission; store users for their store's zone).
+    match /home_layout_drafts/{id} {
+      allow read: if panelCan('home_builder', 'list') || panelCan('home_builder', 'update')
+        || (storeCan('home_builder', 'list') && (resource == null || resource.data.zone_id == storeZone()));
+      allow write: if panelCan('home_builder', 'update')
+        || (storeCan('home_builder', 'update')
+            && (request.method == 'delete' ? existing() : incoming()).zone_id == storeZone()
+            && (request.method != 'update' || existing().zone_id == storeZone()));
+    }
+
+    match /promo_codes/{id} {
+      allow read: if panelCan('promo_code', 'list') || (isStoreUser() && resource.data.get('store_id', null) == myStore());
+      allow create, delete: if catalogWrite('promo_code') || storeOwned('promo_code');
+      allow update: if (catalogWrite('promo_code') || storeOwned('promo_code')) && unchanged(['used_count']);
+    }
+
+    match /blogs/{id} { allow read: if true; allow write: if catalogWrite('blog'); }
+    match /blog_categories/{id} { allow read: if true; allow write: if catalogWrite('blog'); }
+    match /faqs/{id} { allow read: if true; allow write: if catalogWrite('faq'); }
+    match /pages/{slug} { allow read: if true; allow write: if panelCan('page', 'update'); }
+    // platform templates: read (get + list) with email.list or email.create; store users may read them; write with email.create
+    match /email_templates/{key} {
+      allow read: if panelCan('email', 'list') || panelCan('email', 'create') || storeCan('email', 'list');
+      allow write: if panelCan('email', 'create');
+    }
+    match /mail_log/{id} { allow read: if panelCan('email', 'list'); }
+
+    // ------------------------------------------------------------ orders & money
+    match /orders/{orderId} {
+      allow get, list: if signedIn() && (
+        resource.data.user_id == uid()
+        || panelCan('order', 'list') || panelCan('order', 'view')
+        || (isStoreUser() && resource.data.store_id == myStore() && storeCan('order', 'list'))
+        || (isRider() && (resource.data.delivery_boy_id == uid()
+            || (claim('zone_id', '') != '' && resource.data.zone_id == claim('zone_id', '')
+                && resource.data.delivery_boy_id == null
+                && resource.data.status in ['received', 'processed', 'ready_for_pickup', 'shipped']))));
+
+      // delivery OTP: customer (owner) and panel staff only — never the rider
+      match /secret/{doc} {
+        allow get: if signedIn() && !isRider() && (
+          get(/databases/$(database)/documents/orders/$(orderId)).data.user_id == uid()
+          || panelCan('order', 'view')
+          || (isStoreUser() && (storeCan('order', 'view') || storeCan('order', 'update'))
+              && get(/databases/$(database)/documents/orders/$(orderId)).data.store_id == myStore()));
+      }
+    }
+
+    match /return_requests/{id} {
+      allow read: if signedIn() && (resource.data.user_id == uid()
+        || (isRider() && resource.data.delivery_boy_id == uid())
+        || panelCan('return', 'list')
+        || (isStoreUser() && resource.data.store_id == myStore() && storeCan('return', 'list')));
+    }
+    match /withdrawal_requests/{id} {
+      allow read: if signedIn() && (resource.data.user_id == uid() || panelCan('withdrawal', 'list'));
+    }
+    match /cash_collections/{id} {
+      // store users: rows carrying their store_id (queries must filter store_id == claim.store_id)
+      allow read: if signedIn() && ((isRider() && resource.data.delivery_boy_id == uid()) || panelCan('delivery_boy', 'list') || panelCan('wallet', 'list')
+        || (storeCan('delivery_boy', 'list') && resource.data.get('store_id', null) == myStore()));
+    }
+    match /delivery_earnings/{id} {
+      allow read: if signedIn() && ((isRider() && resource.data.delivery_boy_id == uid()) || panelCan('delivery_boy', 'list') || panelCan('wallet', 'list'));
+    }
+    match /referrals/{id} {
+      allow read: if signedIn() && (resource.data.referrer_id == uid() || resource.data.referred_id == uid() || panelCan('customer', 'list'));
+    }
+
+    // ------------------------------------------------------------ engagement
+    match /chats/{chatId} {
+      allow get, list: if signedIn() && (resource.data.user_uid == uid() || panelCan('chat', 'list')
+        || (isStoreUser() && resource.data.get('store_id', null) == myStore() && storeCan('chat', 'list')));
+      // store_id is optional and must match the linked order of the chat owner (onChatCreated re-derives it anyway).
+      allow create: if signedIn() && !anyPanel()
+        && (incoming().get('store_id', null) == null
+            || (incoming().get('order_id', null) is string
+                && get(/databases/$(database)/documents/orders/$(incoming().order_id)).data.store_id == incoming().store_id
+                && (get(/databases/$(database)/documents/orders/$(incoming().order_id)).data.user_id == uid()
+                    || get(/databases/$(database)/documents/orders/$(incoming().order_id)).data.get('delivery_boy_id', null) == uid())))
+        && onlyKeys(['user_id', 'user_uid', 'user_type', 'user_name', 'order_id', 'order_number', 'subject', 'status',
+                     'last_message', 'last_message_at', 'unread_admin', 'unread_user', 'created_at', 'store_id'])
+        && incoming().user_uid == uid() && incoming().user_id == uid()
+        && incoming().user_type == (isRider() ? 'delivery_boy' : 'customer')
+        && incoming().status == 'open' && isStr(incoming().subject, 200) && isStr(incoming().user_name, 100)
+        && incoming().get('unread_admin', 0) == 0 && incoming().get('unread_user', 0) == 0
+        && incoming().get('last_message', null) == null;
+      // owner may mark read / close; staff may mark read / change status
+      allow update: if signedIn() && (
+        (resource.data.user_uid == uid() && changed().hasOnly(['unread_user', 'status', 'updated_at'])
+          && incoming().unread_user == 0 && incoming().status in ['open', 'closed'])
+        || (panelCan('chat', 'reply') && changed().hasOnly(['unread_admin', 'status', 'assigned_uid', 'updated_at']))
+        || (isStoreUser() && storeCan('chat', 'reply') && resource.data.get('store_id', null) == myStore()
+            && changed().hasOnly(['unread_admin', 'status', 'updated_at'])));
+
+      match /messages/{messageId} {
+        function chat() { return get(/databases/$(database)/documents/chats/$(chatId)).data; }
+        allow read: if signedIn() && (resource.data.user_uid == uid() || panelCan('chat', 'list')
+          || (isStoreUser() && storeCan('chat', 'list') && chat().get('store_id', null) == myStore()));
+        allow create: if signedIn()
+          && onlyKeys(['user_uid', 'sender_id', 'sender_type', 'sender_name', 'message', 'attachment', 'read_at', 'created_at'])
+          && incoming().sender_id == uid()
+          && incoming().user_uid == chat().user_uid
+          && isStr(incoming().message, 4000) && optStr(incoming(), 'attachment', 500) && isStr(incoming().sender_name, 100)
+          && incoming().get('read_at', null) == null
+          && ((chat().user_uid == uid() && incoming().sender_type == chat().user_type)
+              || (panelCan('chat', 'reply') && incoming().sender_type == 'admin')
+              || (isStoreUser() && storeCan('chat', 'reply') && chat().get('store_id', null) == myStore() && incoming().sender_type == 'store'));
+        allow update: if signedIn() && changed().hasOnly(['read_at'])
+          && (resource.data.user_uid == uid() || panelCan('chat', 'reply')
+              || (isStoreUser() && storeCan('chat', 'reply') && chat().get('store_id', null) == myStore()));
+      }
+    }
+
+    // Broadcast log (written by sendNotification). Store users see / delete their own store's log rows (store_id).
+    match /notifications/{id} {
+      allow read: if panelCan('notification', 'list')
+        || (isStoreUser() && storeCan('notification', 'list') && resource.data.get('store_id', null) == myStore());
+      allow delete: if panelCan('notification', 'delete')
+        || (isStoreUser() && storeCan('notification', 'delete') && resource.data.get('store_id', null) == myStore());
+    }
+
+    match /stats_daily/{id} {
+      allow read: if panelCan('dashboard', 'view') || panelCan('report', 'view')
+        || (isStoreUser() && resource.data.scope == 'store_' + myStore());
+    }
+
+    // counters, promo_usages, wallet_recharges, deleted_orders and anything else: functions only.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

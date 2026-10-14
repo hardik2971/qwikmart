@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/puma-unisex-essential-cap.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510185,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "6c717eff-ff72-49dd-adea-b0c6e5f8cbb3"
+  ],
+  "etag": "ozvCLPWXceLUAOl//DFuXRbDlEI",
+  "customMetadata": {
+    "source": "assets:catalog/products/puma-unisex-essential-cap.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.185Z",
+  "updated": "2026-10-14T05:41:50.185Z",
+  "size": 10046,
+  "md5Hash": "CqjgjEaCwil3b540KIqnpg==",
+  "crc32c": "3127996119"
+}

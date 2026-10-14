@@ -1,0 +1,21 @@
+{
+  "name": "catalog/stores/sydney-store-banner.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956473641,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "074533c5-d139-4844-adf1-b9c2e99a077a"
+  ],
+  "etag": "n7IdJD5Fdpr5z4O5ekO2spf8lRI",
+  "customMetadata": {
+    "source": "assets:catalog/stores/sydney-store-banner.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:13.641Z",
+  "updated": "2026-10-14T05:41:13.641Z",
+  "size": 44538,
+  "md5Hash": "bno+oQrqnG3L95ONmpkflQ==",
+  "crc32c": "2043303556"
+}

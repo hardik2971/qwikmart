@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/surf-excel.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956506397,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "72f6f4e9-cfef-46ba-a770-ca49fb7c7548"
+  ],
+  "etag": "AERgeNf1eK9AJacUp+jvGoF56qA",
+  "customMetadata": {
+    "source": "assets:catalog/brands/surf-excel.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:46.397Z",
+  "updated": "2026-10-14T05:41:46.397Z",
+  "size": 6368,
+  "md5Hash": "pROLr0vn63P/ue21taKy+Q==",
+  "crc32c": "2782271347"
+}

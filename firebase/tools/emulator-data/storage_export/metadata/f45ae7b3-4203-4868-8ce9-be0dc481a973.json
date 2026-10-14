@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/parle-g-gold-biscuits.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509144,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "8ecec5b0-1ee3-4494-ad6a-6c02d3c8e8ad"
+  ],
+  "etag": "guVZhVUCAAHHtfShO934bMGzRV4",
+  "customMetadata": {
+    "source": "assets:catalog/products/parle-g-gold-biscuits.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.144Z",
+  "updated": "2026-10-14T05:41:49.144Z",
+  "size": 21368,
+  "md5Hash": "GKQ+Q8+BKBaLPtG2NoM7qw==",
+  "crc32c": "181435920"
+}

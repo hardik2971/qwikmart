@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/fortune-chana-dal.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956508037,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "747c4cab-a383-4fd2-a5b7-bbfa66360870"
+  ],
+  "etag": "uJLbdAjAb9XrgerWe5ujF1DW68g",
+  "customMetadata": {
+    "source": "assets:catalog/products/fortune-chana-dal.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:48.037Z",
+  "updated": "2026-10-14T05:41:48.037Z",
+  "size": 94860,
+  "md5Hash": "iLL3ehu0wzNnkCxtn+ivUw==",
+  "crc32c": "822448314"
+}

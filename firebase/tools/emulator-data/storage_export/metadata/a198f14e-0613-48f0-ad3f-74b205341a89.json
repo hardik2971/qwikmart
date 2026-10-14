@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/chargers-cables-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502651,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "73f2782b-da58-4ca9-a77a-b3ed01db42a3"
+  ],
+  "etag": "nZvTyYHP8qAyxyMvKK+lPkSGhXk",
+  "customMetadata": {
+    "source": "assets:catalog/categories/chargers-cables-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.651Z",
+  "updated": "2026-10-14T05:41:42.651Z",
+  "size": 2916,
+  "md5Hash": "boRkKjpD+4SatyQkTIA0MQ==",
+  "crc32c": "2521814149"
+}

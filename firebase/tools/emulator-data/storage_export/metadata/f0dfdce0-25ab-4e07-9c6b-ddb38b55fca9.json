@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/haldirams-aloo-bhujia-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956508942,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "3e640ac7-7da1-4e98-a6cb-f956932c3b44"
+  ],
+  "etag": "8BEfSOnTbT2YKZU1+geZaSE9HMk",
+  "customMetadata": {
+    "source": "assets:catalog/products/haldirams-aloo-bhujia-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:48.942Z",
+  "updated": "2026-10-14T05:41:48.942Z",
+  "size": 9974,
+  "md5Hash": "7z3A9Dz+l1Pbkm3a4P1Zyw==",
+  "crc32c": "1648224561"
+}

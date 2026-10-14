@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/lakme.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504397,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "99c8ce90-f7ee-485f-ab5c-b59c4692d7a2"
+  ],
+  "etag": "KnC2SdHYncuGBK4ht6EzXMXeJYI",
+  "customMetadata": {
+    "source": "assets:catalog/brands/lakme.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.397Z",
+  "updated": "2026-10-14T05:41:44.397Z",
+  "size": 3342,
+  "md5Hash": "mO9PTDIkz6aQoQR3rW0oDg==",
+  "crc32c": "3210536603"
+}

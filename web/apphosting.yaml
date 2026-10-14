@@ -1,0 +1,45 @@
+# Firebase App Hosting config for the QwikMart customer website (app root: web/)
+# IMPORTANT: without the NEXT_PUBLIC_FIREBASE_* values below the site silently falls back to the in-browser
+# DEMO data (src/lib/api.ts FORCE_MOCK). Keep NEXT_PUBLIC_USE_MOCK=false and the full web config here.
+# These values are public (Firebase web config) — no secrets belong in this file.
+runConfig:
+  minInstances: 0        # set 1 at launch to avoid cold starts on the storefront (billed while idle)
+  maxInstances: 10
+  concurrency: 80
+  cpu: 1
+  memoryMiB: 512
+
+env:
+  # Public site URL for absolute share-image links (og:image). Set to your live domain before launch
+  # (App Hosting default looks like https://<backend-id>--qwikmart-37299.<region>.hosted.app).
+  - variable: NEXT_PUBLIC_SITE_URL
+    value: https://qwikmart-web--qwikmart-37299.asia-southeast1.hosted.app
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_USE_MOCK
+    value: "false"
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_USE_EMULATORS
+    value: "false"
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+    value: AIzaSyC39HUD-GT9zC2wtKBkz4mRgXspm40Vzvw
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+    value: qwikmart-37299.firebaseapp.com
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: qwikmart-37299
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+    value: qwikmart-37299.firebasestorage.app
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+    value: "1054065019133"
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_FIREBASE_APP_ID
+    value: 1:1054065019133:web:c7bbf751cf29d67a4a9694
+    availability: [BUILD, RUNTIME]
+  # Optional web push (Firebase console → Cloud Messaging → Web Push certificates). Empty = push disabled.
+  # - variable: NEXT_PUBLIC_FIREBASE_VAPID_KEY
+  #   value: <public VAPID key>
+  #   availability: [BUILD, RUNTIME]

@@ -1,0 +1,21 @@
+{
+  "name": "catalog/blogs/summer-hydration-7-drinks-to-beat-the-heat.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956511373,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "37dae413-9247-4b97-a7e7-896bd54373f7"
+  ],
+  "etag": "0vtImRSiKw9xg3wyEUpIF5L5Umw",
+  "customMetadata": {
+    "source": "assets:catalog/blogs/summer-hydration-7-drinks-to-beat-the-heat.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:51.374Z",
+  "updated": "2026-10-14T05:41:51.374Z",
+  "size": 47974,
+  "md5Hash": "qMvDBCItQ4sY23i4uth5EQ==",
+  "crc32c": "1039471643"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "delivery_docs/user_62/bC3R2TArV8n0UbXwJ8bBtKUbnpX75OdmJzKV4jcb.pdf",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956500440,
+  "contentType": "application/pdf",
+  "storageClass": "STANDARD",
+  "downloadTokens": [
+    "5532ada4-9f63-4efd-a44e-57bc150fbae4"
+  ],
+  "etag": "MZr+F2QnGe34Kq+Isqcz8qdiC40",
+  "customMetadata": {
+    "source": "laravel:delivery-docs/bC3R2TArV8n0UbXwJ8bBtKUbnpX75OdmJzKV4jcb.pdf"
+  },
+  "timeCreated": "2026-10-14T05:41:40.440Z",
+  "updated": "2026-10-14T05:41:40.440Z",
+  "size": 15,
+  "md5Hash": "9isn5Fod+xQMkaKRq1htPg==",
+  "crc32c": "3426198722"
+}

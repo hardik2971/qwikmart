@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/chips-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501514,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "736c1bdf-3da9-4362-a076-7346fe9ef2f1"
+  ],
+  "etag": "ziEm0l6ULA+NkUbkFi+3v6/3B5w",
+  "customMetadata": {
+    "source": "assets:catalog/categories/chips-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.514Z",
+  "updated": "2026-10-14T05:41:41.514Z",
+  "size": 2270,
+  "md5Hash": "2JygwWjjtBXxSi65P6iOiQ==",
+  "crc32c": "1094324825"
+}

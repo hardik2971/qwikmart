@@ -1,0 +1,21 @@
+{
+  "name": "catalog/blogs/qwikmart-now-delivers-in-8-minutes-across-mumbai.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956511430,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "4b9849ac-c65b-41a1-ab26-7213039218b3"
+  ],
+  "etag": "cQUDH5bWcjX5HUDmEnpzG0etQEI",
+  "customMetadata": {
+    "source": "assets:catalog/blogs/qwikmart-now-delivers-in-8-minutes-across-mumbai.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:51.430Z",
+  "updated": "2026-10-14T05:41:51.430Z",
+  "size": 49942,
+  "md5Hash": "A6ok8KGqtu4m2//WE00Dtg==",
+  "crc32c": "1122864749"
+}

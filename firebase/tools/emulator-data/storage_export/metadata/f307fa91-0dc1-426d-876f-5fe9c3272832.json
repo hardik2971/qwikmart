@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/everest.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504014,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "c2318c2d-b2d7-42d1-a36a-98ffd30499b4"
+  ],
+  "etag": "QlWG4S5gZNH64ZYf49/XY5k56Oo",
+  "customMetadata": {
+    "source": "assets:catalog/brands/everest.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.015Z",
+  "updated": "2026-10-14T05:41:44.015Z",
+  "size": 2768,
+  "md5Hash": "XYhsxqUa3u3cbHNLBzbloA==",
+  "crc32c": "485079323"
+}

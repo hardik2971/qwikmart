@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/fortune-chana-dal-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956508129,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "65384bc7-f106-4d5b-a813-5ca7a0f053a1"
+  ],
+  "etag": "t4O8S7dYsfJkYAFAsv72WKxCRJ4",
+  "customMetadata": {
+    "source": "assets:catalog/products/fortune-chana-dal-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:48.129Z",
+  "updated": "2026-10-14T05:41:48.129Z",
+  "size": 49676,
+  "md5Hash": "bhJsu3AV4pqqW+nKB6hJwQ==",
+  "crc32c": "1758306461"
+}

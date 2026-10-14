@@ -1,0 +1,21 @@
+{
+  "name": "catalog/promos/freedel.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956511094,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "134681b5-74bc-4b1d-af68-c9e4d4ebac51"
+  ],
+  "etag": "542nJIUQBBk5neSpBQDSSOAugAI",
+  "customMetadata": {
+    "source": "assets:catalog/promos/freedel.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:51.094Z",
+  "updated": "2026-10-14T05:41:51.094Z",
+  "size": 9074,
+  "md5Hash": "gZl5Q5v6v6bTwTmiKGTo/Q==",
+  "crc32c": "2909872760"
+}

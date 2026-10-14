@@ -1,0 +1,17 @@
+# Launcher icons — regenerate with: dart run flutter_launcher_icons
+# Source art: assets/icon/* (built by firebase/tools/assets/build-app-icons.ts from the brand mark).
+flutter_launcher_icons:
+  image_path: "assets/icon/app_icon.png"
+  android: "ic_launcher"
+  adaptive_icon_background: "#033EAB"
+  adaptive_icon_foreground: "assets/icon/app_icon_foreground.png"
+  adaptive_icon_monochrome: "assets/icon/app_icon_monochrome.png"
+  min_sdk_android: 24
+  ios: true
+  remove_alpha_ios: true
+  background_color_ios: "#033EAB"
+  web:
+    generate: true
+    image_path: "assets/icon/app_icon.png"
+    background_color: "#033EAB"
+    theme_color: "#033EAB"

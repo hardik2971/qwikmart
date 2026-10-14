@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/cold-drinks-juices.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501793,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "b75bfae3-2d7b-4524-a6e7-b98d03b2b111"
+  ],
+  "etag": "Ix8lWEr6rFsTolWbfzh8+JVw/kg",
+  "customMetadata": {
+    "source": "assets:catalog/categories/cold-drinks-juices.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.793Z",
+  "updated": "2026-10-14T05:41:41.793Z",
+  "size": 5238,
+  "md5Hash": "OUGS7339jzCPSepyempPRQ==",
+  "crc32c": "4035308301"
+}

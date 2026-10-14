@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/lakme-sun-expert-spf-50-sunscreen.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509533,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "6d8ce396-968d-4c17-a005-a57f1630b6dd"
+  ],
+  "etag": "YbjG9gvW2KIfZj+ZFEMpGAdouVI",
+  "customMetadata": {
+    "source": "assets:catalog/products/lakme-sun-expert-spf-50-sunscreen.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.533Z",
+  "updated": "2026-10-14T05:41:49.533Z",
+  "size": 6498,
+  "md5Hash": "qLfGllp5PcX3/EeVLgU1yw==",
+  "crc32c": "4050745147"
+}

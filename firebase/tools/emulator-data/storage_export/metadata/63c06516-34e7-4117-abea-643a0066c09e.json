@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/haldirams-moong-dal-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956508991,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "0f6dd306-fb8c-454f-a839-55bcd4a60637"
+  ],
+  "etag": "IA0DhHK9AM3Fg+eHhiq0kLuM3aM",
+  "customMetadata": {
+    "source": "assets:catalog/products/haldirams-moong-dal-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:48.991Z",
+  "updated": "2026-10-14T05:41:48.991Z",
+  "size": 56342,
+  "md5Hash": "RGQdJY6+wS6MrgoVgK3V6A==",
+  "crc32c": "3825280950"
+}

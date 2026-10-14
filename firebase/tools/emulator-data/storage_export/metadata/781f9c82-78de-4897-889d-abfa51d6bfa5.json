@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/lego-classic-creative-bricks-box.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509940,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "30b0f416-67df-41aa-aabf-eee2681ce888"
+  ],
+  "etag": "oiy1HM2ImPX/4A97kbfApsFsY8c",
+  "customMetadata": {
+    "source": "assets:catalog/products/lego-classic-creative-bricks-box.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.940Z",
+  "updated": "2026-10-14T05:41:49.940Z",
+  "size": 41530,
+  "md5Hash": "nTcRhoKOu3C4IiR3f/zbCA==",
+  "crc32c": "2087656535"
+}

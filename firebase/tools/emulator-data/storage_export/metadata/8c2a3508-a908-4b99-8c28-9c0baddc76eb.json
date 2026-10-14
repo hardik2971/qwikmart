@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/coca-cola.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504280,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "cb43f2b9-72d4-4693-af0e-def6f8c481c4"
+  ],
+  "etag": "roQ8PwQBEQWREBV3lqjo6cvqUNc",
+  "customMetadata": {
+    "source": "assets:catalog/brands/coca-cola.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.280Z",
+  "updated": "2026-10-14T05:41:44.280Z",
+  "size": 10972,
+  "md5Hash": "T95J+1UGdFtlGi6WamywLg==",
+  "crc32c": "2485905632"
+}

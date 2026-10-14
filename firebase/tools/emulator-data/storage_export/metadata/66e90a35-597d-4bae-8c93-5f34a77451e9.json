@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/summer-coolers.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510632,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "eb425fce-13b1-41a5-acd1-f58515c6d0fd"
+  ],
+  "etag": "phbZDKAyDN0NDVAm2kHHUK5CBDc",
+  "customMetadata": {
+    "source": "assets:catalog/banners/summer-coolers.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.632Z",
+  "updated": "2026-10-14T05:41:50.632Z",
+  "size": 61006,
+  "md5Hash": "H7HWZAvrn4XuYw3/lbv0lw==",
+  "crc32c": "1399267884"
+}

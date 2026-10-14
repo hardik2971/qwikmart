@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/bikaji-bikaneri-bhujia.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509015,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "51127854-274c-4295-ab00-e2ec00d946eb"
+  ],
+  "etag": "vlzrV/95xzwlo2/eFVKBzT39xNI",
+  "customMetadata": {
+    "source": "assets:catalog/products/bikaji-bikaneri-bhujia.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.016Z",
+  "updated": "2026-10-14T05:41:49.016Z",
+  "size": 74976,
+  "md5Hash": "1/YJNj1krGIsjvLh7KKl6Q==",
+  "crc32c": "4273293516"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "catalog/stores/toronto-store-logo.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956473475,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "31bc4fd6-bb3e-4442-ac8f-162d7c41a7ae"
+  ],
+  "etag": "QO/DFinwoOtA/13ufyavfHtAyKw",
+  "customMetadata": {
+    "source": "assets:catalog/stores/toronto-store-logo.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:13.475Z",
+  "updated": "2026-10-14T05:41:13.475Z",
+  "size": 8416,
+  "md5Hash": "e5FqdcpYux0WaDRRWE8x5w==",
+  "crc32c": "3061708433"
+}

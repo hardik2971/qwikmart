@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/saffola.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956503976,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "46e9e0df-eece-48cf-adfa-7cfd42383df5"
+  ],
+  "etag": "fJSnsjfECLUhANJP6W7iHIkF4XU",
+  "customMetadata": {
+    "source": "assets:catalog/brands/saffola.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:43.976Z",
+  "updated": "2026-10-14T05:41:43.976Z",
+  "size": 2940,
+  "md5Hash": "Axk6cv3FNF35fVaICmGSXg==",
+  "crc32c": "1449298775"
+}

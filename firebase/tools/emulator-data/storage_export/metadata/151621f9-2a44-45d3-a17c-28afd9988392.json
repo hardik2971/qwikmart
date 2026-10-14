@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/maggi.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504257,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "59548637-c399-4bc9-aac3-72863a5dae35"
+  ],
+  "etag": "LFTecJDdULjWYw4KEcSS0h1jrno",
+  "customMetadata": {
+    "source": "assets:catalog/brands/maggi.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.257Z",
+  "updated": "2026-10-14T05:41:44.257Z",
+  "size": 5892,
+  "md5Hash": "OW2c+O6rF0mtfvp2OLNJiw==",
+  "crc32c": "4178265976"
+}

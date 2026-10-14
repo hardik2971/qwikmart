@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/atta-rice-grains-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956500851,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "70df0d21-795e-4ef3-ac25-d47fea147258"
+  ],
+  "etag": "uUlMn8LtiQvzEOUZSkYEL/SnMyo",
+  "customMetadata": {
+    "source": "assets:catalog/categories/atta-rice-grains-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:40.851Z",
+  "updated": "2026-10-14T05:41:40.851Z",
+  "size": 3066,
+  "md5Hash": "nnegw5t/H7giZ5tVGVqMRA==",
+  "crc32c": "2480335"
+}

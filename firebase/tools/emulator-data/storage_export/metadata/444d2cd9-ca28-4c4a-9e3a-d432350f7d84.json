@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/britannia-good-day-cashew-cookies-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509117,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "cb2e2611-da3a-49fb-a65c-96c8207433cf"
+  ],
+  "etag": "ssBiDMrqSGwiAzYqmYJUNjZoDiI",
+  "customMetadata": {
+    "source": "assets:catalog/products/britannia-good-day-cashew-cookies-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.117Z",
+  "updated": "2026-10-14T05:41:49.117Z",
+  "size": 13142,
+  "md5Hash": "pkiHIZ1TQFFbBLnmuWMHvg==",
+  "crc32c": "1190824176"
+}

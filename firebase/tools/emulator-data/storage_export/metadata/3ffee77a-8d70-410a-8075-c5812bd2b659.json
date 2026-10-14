@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/banana-robusta-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956506971,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "fea83db8-fce9-4f50-ac5a-0c0cdb4d354d"
+  ],
+  "etag": "klE6XgV3uzdJmQz7FYlss6xGqWA",
+  "customMetadata": {
+    "source": "assets:catalog/products/banana-robusta-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:46.971Z",
+  "updated": "2026-10-14T05:41:46.971Z",
+  "size": 7168,
+  "md5Hash": "ub5vJKLt0EPYEEWbGEXD8g==",
+  "crc32c": "3734242486"
+}

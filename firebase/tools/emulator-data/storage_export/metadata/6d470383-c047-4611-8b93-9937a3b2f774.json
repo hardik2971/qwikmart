@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/pringles.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504060,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "b23bce7c-14c5-433b-a799-03f60b43ff01"
+  ],
+  "etag": "jIXiHIasJmPCkyADNZxeBdYEGkg",
+  "customMetadata": {
+    "source": "assets:catalog/brands/pringles.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.060Z",
+  "updated": "2026-10-14T05:41:44.060Z",
+  "size": 4478,
+  "md5Hash": "QHxEf2HL9YSph5xxo6fp1A==",
+  "crc32c": "1365494187"
+}

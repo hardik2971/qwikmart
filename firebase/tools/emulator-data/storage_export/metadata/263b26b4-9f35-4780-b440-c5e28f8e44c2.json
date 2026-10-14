@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/fashion-accessories.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502879,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "0b00b10e-dac7-4a52-ae74-8a0f98dc8fad"
+  ],
+  "etag": "ltX3pvMdIi5n9TkyFKMmgV5GTpE",
+  "customMetadata": {
+    "source": "assets:catalog/categories/fashion-accessories.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.879Z",
+  "updated": "2026-10-14T05:41:42.879Z",
+  "size": 42732,
+  "md5Hash": "/fUN1GXVS8fAY+blHVRY2Q==",
+  "crc32c": "246834095"
+}

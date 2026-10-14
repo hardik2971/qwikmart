@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/mobiles.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502516,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "dce5f68b-9979-462e-a86d-d73e57f85dd1"
+  ],
+  "etag": "1IFwxE9/SjxwtHAnE5iz6S+xaGg",
+  "customMetadata": {
+    "source": "assets:catalog/categories/mobiles.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.516Z",
+  "updated": "2026-10-14T05:41:42.516Z",
+  "size": 1724,
+  "md5Hash": "y6pykf4ImP0+Ex9R8TExgg==",
+  "crc32c": "1926244988"
+}

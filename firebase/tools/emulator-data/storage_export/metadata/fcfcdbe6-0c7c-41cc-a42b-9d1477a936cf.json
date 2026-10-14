@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/icons/pharmacy.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502044,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "a3f51005-8b95-4d72-a87d-fd6bf393ef4b"
+  ],
+  "etag": "d+f0aP/L6P+mv5AzEvM7BJSLeXU",
+  "customMetadata": {
+    "source": "assets:catalog/categories/icons/pharmacy.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.044Z",
+  "updated": "2026-10-14T05:41:42.044Z",
+  "size": 4754,
+  "md5Hash": "4DFFbPwLrlwhCfbQ0zQiiA==",
+  "crc32c": "4247262304"
+}

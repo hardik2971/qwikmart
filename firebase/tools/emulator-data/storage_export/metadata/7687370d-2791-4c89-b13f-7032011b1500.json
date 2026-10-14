@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/aashirvaad-shudh-chakki-atta-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956508223,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "1700de1c-6588-4aab-a73d-32d81e620901"
+  ],
+  "etag": "8acXwiIHNeomgJotB7m8AXiOK8Q",
+  "customMetadata": {
+    "source": "assets:catalog/products/aashirvaad-shudh-chakki-atta-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:48.223Z",
+  "updated": "2026-10-14T05:41:48.223Z",
+  "size": 18586,
+  "md5Hash": "BJJ71fnQtAmtpSGONtvm/g==",
+  "crc32c": "842598477"
+}

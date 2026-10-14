@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/accessories-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502434,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "473ba95c-4146-4f61-aef8-46523dcf1d03"
+  ],
+  "etag": "yMVs+lJncuz6hwAnU6fqvatAD0Y",
+  "customMetadata": {
+    "source": "assets:catalog/categories/accessories-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.434Z",
+  "updated": "2026-10-14T05:41:42.434Z",
+  "size": 2228,
+  "md5Hash": "q/fnfjB8Owd+U0eGvhFF4w==",
+  "crc32c": "3491826399"
+}

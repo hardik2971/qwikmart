@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "1054065019133",
+    "project_id": "qwikmart-37299",
+    "storage_bucket": "qwikmart-37299.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054065019133:android:3204c8da083a43c94a9694",
+        "android_client_info": { "package_name": "com.qwikmart.app" }
+      },
+      "oauth_client": [
+        { "client_id": "1054065019133-6gamcikckulr2o4956ti44sn86hg78kj.apps.googleusercontent.com", "client_type": 3 }
+      ],
+      "api_key": [ { "current_key": "AIzaSyCX22CmmydUiwiTtMJ6VGHnEhNm7vxNdYQ" } ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            { "client_id": "1054065019133-6gamcikckulr2o4956ti44sn86hg78kj.apps.googleusercontent.com", "client_type": 3 }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054065019133:android:d97cfa2b36fcc09a4a9694",
+        "android_client_info": { "package_name": "com.qwikmart.delivery" }
+      },
+      "oauth_client": [
+        { "client_id": "1054065019133-6gamcikckulr2o4956ti44sn86hg78kj.apps.googleusercontent.com", "client_type": 3 }
+      ],
+      "api_key": [ { "current_key": "AIzaSyCX22CmmydUiwiTtMJ6VGHnEhNm7vxNdYQ" } ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            { "client_id": "1054065019133-6gamcikckulr2o4956ti44sn86hg78kj.apps.googleusercontent.com", "client_type": 3 }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

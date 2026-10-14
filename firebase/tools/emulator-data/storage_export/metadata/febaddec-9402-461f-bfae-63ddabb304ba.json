@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/everest-garam-masala-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956508734,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "bcfcf679-bf94-41ee-a310-c4cc6a8a7b42"
+  ],
+  "etag": "Pz5lY3BzDWaNw/WU1EgFOBM91EQ",
+  "customMetadata": {
+    "source": "assets:catalog/products/everest-garam-masala-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:48.735Z",
+  "updated": "2026-10-14T05:41:48.735Z",
+  "size": 41712,
+  "md5Hash": "hBFdx+qZHCqaLQdj0QHHqg==",
+  "crc32c": "685535837"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/wellness-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502100,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "32d370ed-1acf-4f63-ab7c-01718b2c99a3"
+  ],
+  "etag": "PtUuF9qxo3kgQ0RvNSRFcPKigQM",
+  "customMetadata": {
+    "source": "assets:catalog/categories/wellness-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.100Z",
+  "updated": "2026-10-14T05:41:42.100Z",
+  "size": 5722,
+  "md5Hash": "b7V6lKVGFu133mdW85WD/g==",
+  "crc32c": "2664016312"
+}

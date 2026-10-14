@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/dry-fruits.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956500926,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "2c11ae75-261b-4bc5-a433-47971549cf92"
+  ],
+  "etag": "RM3VZHjNzxLNuBBUZYnH6K5orsI",
+  "customMetadata": {
+    "source": "assets:catalog/categories/dry-fruits.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:40.926Z",
+  "updated": "2026-10-14T05:41:40.926Z",
+  "size": 15170,
+  "md5Hash": "/pFfsn6lBPe8yD6f+IuMPg==",
+  "crc32c": "3355304105"
+}

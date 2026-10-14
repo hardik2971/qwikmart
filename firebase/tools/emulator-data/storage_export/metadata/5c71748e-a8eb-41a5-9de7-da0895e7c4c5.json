@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/balaji.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504134,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "be8efa45-56fe-45c0-aedf-c4957c2086b1"
+  ],
+  "etag": "vFiDi6Lo2aJY2XezQtXv0OLo9cU",
+  "customMetadata": {
+    "source": "assets:catalog/brands/balaji.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.134Z",
+  "updated": "2026-10-14T05:41:44.134Z",
+  "size": 7610,
+  "md5Hash": "pGX3NbUY/NPqieBIRIIlTg==",
+  "crc32c": "3458244538"
+}

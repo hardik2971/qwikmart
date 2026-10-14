@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/prestige.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956506434,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "4361e097-6063-4954-a26a-77cffd2d8bb5"
+  ],
+  "etag": "i7w4opBoXt0XPSMFn6zabzS8ZWk",
+  "customMetadata": {
+    "source": "assets:catalog/brands/prestige.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:46.434Z",
+  "updated": "2026-10-14T05:41:46.434Z",
+  "size": 7056,
+  "md5Hash": "llBxNgJoZxSumb3v/i+PJQ==",
+  "crc32c": "2677083320"
+}

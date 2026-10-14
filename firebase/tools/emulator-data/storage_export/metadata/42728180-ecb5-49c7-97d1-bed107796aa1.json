@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/lays-classic-salted.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956508800,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "7e9cbba6-1582-4335-a73d-9acd4bfd4ec2"
+  ],
+  "etag": "BcbQzoRp8F6NFPb97PF6m0k+ths",
+  "customMetadata": {
+    "source": "assets:catalog/products/lays-classic-salted.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:48.800Z",
+  "updated": "2026-10-14T05:41:48.800Z",
+  "size": 20480,
+  "md5Hash": "OOMJin2guujkEV/3kf9p7w==",
+  "crc32c": "2100929374"
+}

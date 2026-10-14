@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/happilo-premium-cashews-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956508697,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "9721ffbd-c211-4da1-a24e-7f2d4c55ca09"
+  ],
+  "etag": "pVaffA970LgWnbNxtbBiU//6W5E",
+  "customMetadata": {
+    "source": "assets:catalog/products/happilo-premium-cashews-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:48.698Z",
+  "updated": "2026-10-14T05:41:48.698Z",
+  "size": 14102,
+  "md5Hash": "qrZXjkC06Y5iGgA2RUvxkg==",
+  "crc32c": "2527713729"
+}

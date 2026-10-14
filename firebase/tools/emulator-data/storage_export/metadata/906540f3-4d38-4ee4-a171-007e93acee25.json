@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/nivea-soft-light-moisturising-cream-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509598,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "f9f1cb30-2aad-4e38-a23e-9fdeb66bd183"
+  ],
+  "etag": "+rLdwSjqRIalRspTaI4MFpYl3ys",
+  "customMetadata": {
+    "source": "assets:catalog/products/nivea-soft-light-moisturising-cream-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.598Z",
+  "updated": "2026-10-14T05:41:49.598Z",
+  "size": 11646,
+  "md5Hash": "NW9dLJS1+P3E355n8Ww2zQ==",
+  "crc32c": "791672839"
+}

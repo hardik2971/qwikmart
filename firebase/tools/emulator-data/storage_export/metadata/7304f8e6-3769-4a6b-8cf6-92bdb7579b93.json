@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/lays-indias-magic-masala.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956508840,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "2f8f4f66-a46a-4096-ac91-240c67b08112"
+  ],
+  "etag": "P8z3PBCLJllyb8Pd105eKnnYtOQ",
+  "customMetadata": {
+    "source": "assets:catalog/products/lays-indias-magic-masala.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:48.840Z",
+  "updated": "2026-10-14T05:41:48.840Z",
+  "size": 61214,
+  "md5Hash": "t1pmq63z/vFZ0HhjBNLD3Q==",
+  "crc32c": "3634556623"
+}

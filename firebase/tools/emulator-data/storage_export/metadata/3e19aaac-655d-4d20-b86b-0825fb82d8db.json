@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/lighting.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502469,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "a6df0f22-b4e5-498d-a8ca-3206fd0b4e59"
+  ],
+  "etag": "zrlaOG4X/00bzk80KeQVW3Ks0NE",
+  "customMetadata": {
+    "source": "assets:catalog/categories/lighting.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.469Z",
+  "updated": "2026-10-14T05:41:42.469Z",
+  "size": 3368,
+  "md5Hash": "R6EoqGdE+r2pnvajk4GkHg==",
+  "crc32c": "2397553686"
+}

@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --surface: 255 255 255;
+  --page: 255 255 255;
+  --soft: 246 248 250;
+  --ink: 17 24 39;
+  --body: 52 64 84;
+  --muted: 124 141 181;
+  --line: 230 234 242;
+  --header-from: #ebec8d;
+  --header-via: #f8f9e9;
+  --header-to: #ffffff;
+}
+
+.dark {
+  --surface: 24 28 36;
+  --page: 15 18 24;
+  --soft: 32 37 47;
+  --ink: 243 244 246;
+  --body: 209 213 219;
+  --muted: 140 152 182;
+  --line: 45 51 64;
+  --header-from: #2e3214;
+  --header-via: #1a1e16;
+  --header-to: #0f1218;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  @apply bg-page text-body antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply text-ink;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-btn px-4 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary-dark;
+  }
+  .btn-outline {
+    @apply btn border border-primary text-primary hover:bg-primary-50;
+  }
+  .btn-soft {
+    @apply btn bg-primary-50 text-primary hover:bg-primary-100;
+  }
+  .btn-ghost {
+    @apply btn border border-line bg-surface text-ink hover:bg-soft;
+  }
+  .card {
+    @apply rounded-card border border-line bg-surface shadow-soft;
+  }
+  .input {
+    @apply w-full rounded-btn border border-line bg-surface px-3.5 py-2.5 text-sm text-ink outline-none transition placeholder:text-muted focus:border-primary focus:ring-2 focus:ring-primary/15;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-ink;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1.5 text-sm text-ink transition hover:border-primary;
+  }
+  .chip-active {
+    @apply border-primary bg-primary-50 text-primary;
+  }
+  .skeleton {
+    @apply animate-pulse rounded-md bg-soft;
+  }
+  .section-title {
+    @apply text-xl font-bold text-ink md:text-2xl;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .header-gradient {
+    background: linear-gradient(180deg, var(--header-from) 0%, var(--header-via) 70%, var(--header-to) 100%);
+  }
+}
+
+/* Swiper pagination in brand colours */
+.swiper-pagination-bullet {
+  background: #cbd5e1 !important;
+  opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+  background: #111827 !important;
+}
+
+/* Rich text (product description, blog, CMS) */
+.prose-sb h2 { @apply mb-2 mt-5 text-lg font-bold text-ink; }
+.prose-sb h3 { @apply mb-2 mt-4 font-semibold text-ink; }
+.prose-sb p { @apply mb-3 leading-relaxed; }
+.prose-sb ul { @apply mb-3 list-disc space-y-1 ps-5; }
+.prose-sb ol { @apply mb-3 list-decimal space-y-1 ps-5; }
+.prose-sb a { @apply text-primary underline; }
+.prose-sb strong { @apply text-ink; }
+
+.leaflet-container {
+  font-family: inherit;
+  z-index: 0;
+}

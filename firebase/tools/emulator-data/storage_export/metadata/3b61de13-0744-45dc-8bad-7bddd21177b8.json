@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/edible-oils.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956500873,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "22b87189-cdb5-460c-a13c-60dc3efc0c90"
+  ],
+  "etag": "Qu5h8qlTi5dUlJHJT1dXmWIGrdE",
+  "customMetadata": {
+    "source": "assets:catalog/categories/edible-oils.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:40.873Z",
+  "updated": "2026-10-14T05:41:40.873Z",
+  "size": 9484,
+  "md5Hash": "FKZ0PMtAkNxOfm/pthlT/A==",
+  "crc32c": "3186996328"
+}

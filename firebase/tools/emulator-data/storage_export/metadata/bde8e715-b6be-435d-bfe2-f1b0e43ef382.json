@@ -1,0 +1,21 @@
+{
+  "name": "catalog/stores/london-store-logo.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956473891,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "8fbe6971-db80-41d4-a1ba-ff1b54cb9d9d"
+  ],
+  "etag": "4VAzukrm1Y6IOEg/z2yCXx+ZQok",
+  "customMetadata": {
+    "source": "assets:catalog/stores/london-store-logo.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:13.891Z",
+  "updated": "2026-10-14T05:41:13.891Z",
+  "size": 8206,
+  "md5Hash": "quGYtMr3rVq0SHTxFLGlYA==",
+  "crc32c": "2977171326"
+}

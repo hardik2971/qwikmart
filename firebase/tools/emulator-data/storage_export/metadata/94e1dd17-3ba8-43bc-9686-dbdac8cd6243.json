@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/women-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502852,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "f7e944dc-54ae-41fb-aaa1-66a4ca025f9d"
+  ],
+  "etag": "XHV2uLUPOOS8UZcPjKE6S/os9pk",
+  "customMetadata": {
+    "source": "assets:catalog/categories/women-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.852Z",
+  "updated": "2026-10-14T05:41:42.852Z",
+  "size": 1996,
+  "md5Hash": "/lXzmQ/PtD3iy2Xl5JuGGQ==",
+  "crc32c": "2382675528"
+}

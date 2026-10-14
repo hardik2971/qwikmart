@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/icons/electronics.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502349,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "1faed69b-1dc1-49f9-a29b-7d13117a902b"
+  ],
+  "etag": "iuaadDb4KeHXPih6NK3H/3/iAyU",
+  "customMetadata": {
+    "source": "assets:catalog/categories/icons/electronics.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.349Z",
+  "updated": "2026-10-14T05:41:42.349Z",
+  "size": 7912,
+  "md5Hash": "+e8ytYFql4Xl0otBTSzJYA==",
+  "crc32c": "615807078"
+}

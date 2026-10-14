@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/audio-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502401,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "f453a470-b288-41e4-a7c9-da6d54633476"
+  ],
+  "etag": "Hi0u87iTkB4Sr7L5tH5O13P0Dpk",
+  "customMetadata": {
+    "source": "assets:catalog/categories/audio-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.401Z",
+  "updated": "2026-10-14T05:41:42.401Z",
+  "size": 1392,
+  "md5Hash": "STAbCw/A5//9EdrTv8whkA==",
+  "crc32c": "2660534580"
+}

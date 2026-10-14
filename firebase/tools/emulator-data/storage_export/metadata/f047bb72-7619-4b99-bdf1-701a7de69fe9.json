@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/icons/home-kitchen.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502943,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "9c16bcf1-5d90-46ab-aa1c-54cd0d193224"
+  ],
+  "etag": "QqKRWNZtyGUIAGGvV2Aupn2GrWI",
+  "customMetadata": {
+    "source": "assets:catalog/categories/icons/home-kitchen.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.943Z",
+  "updated": "2026-10-14T05:41:42.943Z",
+  "size": 5204,
+  "md5Hash": "XlU7VZyN07MAp8sRBwBsRg==",
+  "crc32c": "2184638440"
+}

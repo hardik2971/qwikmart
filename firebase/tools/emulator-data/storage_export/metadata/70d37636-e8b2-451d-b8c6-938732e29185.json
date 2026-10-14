@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/dal-pulses-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956500793,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "17f2f137-3129-4c43-a75b-5df51dd71f36"
+  ],
+  "etag": "YpkdtaeRbO/UhovHQ7mjHFucomA",
+  "customMetadata": {
+    "source": "assets:catalog/categories/dal-pulses-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:40.793Z",
+  "updated": "2026-10-14T05:41:40.793Z",
+  "size": 1520,
+  "md5Hash": "2pxQrI02G9fMtsGuuCSeXQ==",
+  "crc32c": "469261736"
+}

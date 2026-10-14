@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/fortune.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956503850,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "1df5dba6-9a92-4eab-ae99-fe1876a1e55e"
+  ],
+  "etag": "I5kLlOdIg1FdWcll0hfkTwdnkJI",
+  "customMetadata": {
+    "source": "assets:catalog/brands/fortune.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:43.850Z",
+  "updated": "2026-10-14T05:41:43.850Z",
+  "size": 2572,
+  "md5Hash": "XssXyBIpE347+MdJNQaJ5A==",
+  "crc32c": "1647746365"
+}

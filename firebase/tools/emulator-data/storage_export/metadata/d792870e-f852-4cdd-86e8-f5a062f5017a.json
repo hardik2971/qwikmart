@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/oreo-chocolate-cream-biscuit-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509205,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "1e6bedda-57fa-491a-ad6c-694212530a65"
+  ],
+  "etag": "UF8oMgsgtaGcZ/+E9Yo7b5cYqPg",
+  "customMetadata": {
+    "source": "assets:catalog/products/oreo-chocolate-cream-biscuit-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.205Z",
+  "updated": "2026-10-14T05:41:49.205Z",
+  "size": 3498,
+  "md5Hash": "DUAqRk/BP/0JZDE1xS7rMg==",
+  "crc32c": "1349141327"
+}

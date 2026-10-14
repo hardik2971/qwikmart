@@ -1,0 +1,21 @@
+{
+  "name": "catalog/promos/walletcash50.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956511072,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "ad1f70b8-5b9d-45d6-a508-cbcc054e643c"
+  ],
+  "etag": "51dKb/BmKGZUD0aMxkcZacCnxe0",
+  "customMetadata": {
+    "source": "assets:catalog/promos/walletcash50.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:51.072Z",
+  "updated": "2026-10-14T05:41:51.072Z",
+  "size": 12474,
+  "md5Hash": "nXUYkOBlhIuG90/eSmZWPg==",
+  "crc32c": "1327473520"
+}

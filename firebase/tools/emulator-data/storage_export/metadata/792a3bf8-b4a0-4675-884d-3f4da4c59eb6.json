@@ -1,0 +1,21 @@
+{
+  "name": "catalog/promos/new100.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956511119,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "95e8ac5b-62a8-49b8-ab88-d7102bcd1b87"
+  ],
+  "etag": "RCaten6umOXkRrN5fIGK47EiVA4",
+  "customMetadata": {
+    "source": "assets:catalog/promos/new100.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:51.119Z",
+  "updated": "2026-10-14T05:41:51.119Z",
+  "size": 11176,
+  "md5Hash": "J8/mQwq1sfl6mh7+yFv98g==",
+  "crc32c": "69872686"
+}

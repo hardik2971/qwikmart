@@ -1,0 +1,65 @@
+# QwikMart monorepo — root .gitignore (each sub-project also has its own).
+# The repo root is meant to be ONE git repository: remove the nested web/.git (Create Next App leftover)
+# before `git init` here, otherwise web/ becomes an unreadable embedded repo.
+
+# Dependencies / build outputs
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+firebase/functions/lib/
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+**/android/.gradle/
+**/android/.kotlin/
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
+
+# Env files: commit only *.env.example
+.env
+.env.*
+!.env.example
+!**/.env.example
+firebase/functions/.env.local
+firebase/functions/.env.*.local
+# functions params per project (non-secret, e.g. HOT_MIN_INSTANCES) may be committed:
+!firebase/functions/.env.qwikmart-37299
+
+# Firebase CLI state + logs
+.firebase/
+*-debug.log
+*.log
+.apphosting/
+
+# Emulator exports other than the curated seed (tools/emulator-data is dev-only demo data:
+# keep it in git for local dev, it is NEVER deployed — deploy only uploads rules, indexes and functions/lib).
+emulator-export*/
+firebase/emulator-data/
+
+# Credentials — never commit
+*service-account*.json
+*serviceAccount*.json
+*-firebase-adminsdk-*.json
+*.pem
+*.p12
+*.p8
+*.jks
+*.keystore
+**/android/key.properties
+**/android/local.properties
+GoogleService-Info.plist
+
+# IDE / OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Play Store release bundles (signed binaries, large)
+store/playstore/**/*.aab
+store/playstore/**/*.apk

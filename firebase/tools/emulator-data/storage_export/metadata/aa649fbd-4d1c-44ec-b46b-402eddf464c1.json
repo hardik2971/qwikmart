@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/apple-20w-usb-c-power-adapter.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510121,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "b7f9b140-39cd-46b6-abf3-1bfb4479194e"
+  ],
+  "etag": "OgMJ4kj0tng22v/d6DkjwHfazq4",
+  "customMetadata": {
+    "source": "assets:catalog/products/apple-20w-usb-c-power-adapter.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.121Z",
+  "updated": "2026-10-14T05:41:50.121Z",
+  "size": 5572,
+  "md5Hash": "DzigV0HngHZSV0Q9CuAlmQ==",
+  "crc32c": "2227338452"
+}

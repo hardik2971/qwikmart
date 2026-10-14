@@ -1,0 +1,21 @@
+{
+  "name": "catalog/banners/groceries-in-8-minutes.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956510528,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "ae9d4805-1ad5-4590-ad9a-a87a6d159f11"
+  ],
+  "etag": "+8IFqg7pgvEG2gzmqrBfRiwdsdk",
+  "customMetadata": {
+    "source": "assets:catalog/banners/groceries-in-8-minutes.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:50.528Z",
+  "updated": "2026-10-14T05:41:50.528Z",
+  "size": 85286,
+  "md5Hash": "rh5+QBNcmjHEYK2X7bQRWw==",
+  "crc32c": "3160942853"
+}

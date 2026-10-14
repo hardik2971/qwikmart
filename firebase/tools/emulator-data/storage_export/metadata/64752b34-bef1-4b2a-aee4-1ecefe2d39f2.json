@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/fresh-tomato-local.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956506585,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "c743ecb0-acee-488b-a5ac-5c460499dc1d"
+  ],
+  "etag": "Iv1fX6itbPlAIob4ut9M1fNG0AA",
+  "customMetadata": {
+    "source": "assets:catalog/products/fresh-tomato-local.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:46.585Z",
+  "updated": "2026-10-14T05:41:46.585Z",
+  "size": 25122,
+  "md5Hash": "ZBVEZHPcApu9yPMCSgS1FQ==",
+  "crc32c": "1244595957"
+}

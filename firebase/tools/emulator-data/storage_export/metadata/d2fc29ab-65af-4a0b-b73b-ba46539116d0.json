@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/kids.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502178,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "2752e894-baab-4dc5-ae98-9aa37b890e90"
+  ],
+  "etag": "p2+gHzzSiYoIwSA+HofCEEPcB1Y",
+  "customMetadata": {
+    "source": "assets:catalog/categories/kids.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.178Z",
+  "updated": "2026-10-14T05:41:42.178Z",
+  "size": 24058,
+  "md5Hash": "FUXTRQOcCuGDZTAn5pJaww==",
+  "crc32c": "1082928046"
+}

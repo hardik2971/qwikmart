@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/dettol.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504519,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "788df7d5-75c8-48e9-af01-4d45b1430f15"
+  ],
+  "etag": "FBdKpuFDrk1farmqD5U9L8n748M",
+  "customMetadata": {
+    "source": "assets:catalog/brands/dettol.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.519Z",
+  "updated": "2026-10-14T05:41:44.519Z",
+  "size": 4228,
+  "md5Hash": "/zWU0KEg9lqXkxkf8uXT+Q==",
+  "crc32c": "4208335933"
+}

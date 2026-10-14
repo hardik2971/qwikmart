@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/saffola-gold-oil.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956508551,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "a2d5c5e9-094e-48ba-a244-ea1f3d40bf69"
+  ],
+  "etag": "GXRapXflnuh8pBAKuEhCS9vvweE",
+  "customMetadata": {
+    "source": "assets:catalog/products/saffola-gold-oil.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:48.551Z",
+  "updated": "2026-10-14T05:41:48.551Z",
+  "size": 18258,
+  "md5Hash": "Yuf2YsOS1x9S6SEMQ+V7zg==",
+  "crc32c": "3306413185"
+}

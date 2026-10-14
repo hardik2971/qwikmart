@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/fortune-sunflower-oil.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956508477,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "baa2d7c2-e356-4ec1-ab21-909ab770d395"
+  ],
+  "etag": "o60iJEn7L7KbLpg6sFiYXgXuWaU",
+  "customMetadata": {
+    "source": "assets:catalog/products/fortune-sunflower-oil.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:48.477Z",
+  "updated": "2026-10-14T05:41:48.477Z",
+  "size": 26744,
+  "md5Hash": "1svyDF8LQYgB2eDxJIStZg==",
+  "crc32c": "3014399856"
+}

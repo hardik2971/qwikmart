@@ -1,0 +1,14 @@
+{
+  "apphosting": [
+    {
+      "backendId": "qwikmart-web",
+      "rootDir": "web",
+      "ignore": ["node_modules", ".next", ".next-qa", ".git", ".env.local", "*.log", "QA_REPORT.md"]
+    },
+    {
+      "backendId": "qwikmart-admin",
+      "rootDir": "admin",
+      "ignore": ["node_modules", ".next", ".next-qa", ".git", ".env.local", "*.log", "QA_REPORT.md"]
+    }
+  ]
+}

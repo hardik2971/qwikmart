@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/icons/mobiles.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502529,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "067b0787-bbf4-4823-aee3-4a0a37d86387"
+  ],
+  "etag": "zLABXf58yPBtxSiM+92YLHEgO6w",
+  "customMetadata": {
+    "source": "assets:catalog/categories/icons/mobiles.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.529Z",
+  "updated": "2026-10-14T05:41:42.529Z",
+  "size": 3816,
+  "md5Hash": "QUZr+prsh6T4UMZvNt14bw==",
+  "crc32c": "3015559730"
+}

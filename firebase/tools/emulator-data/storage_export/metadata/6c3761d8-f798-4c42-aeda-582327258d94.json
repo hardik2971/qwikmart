@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/onion-2.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956506677,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "f355a91c-0157-48f7-a6df-d91711bba204"
+  ],
+  "etag": "0jWbcUJSdI3hJn9v7NbefCXsQx8",
+  "customMetadata": {
+    "source": "assets:catalog/products/onion-2.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:46.677Z",
+  "updated": "2026-10-14T05:41:46.677Z",
+  "size": 50936,
+  "md5Hash": "9f3pcGA+bx7QgqnPUv3DjA==",
+  "crc32c": "2466969709"
+}

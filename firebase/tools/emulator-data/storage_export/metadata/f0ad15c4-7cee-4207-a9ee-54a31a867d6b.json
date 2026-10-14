@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/wafers-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501577,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "e32a1e17-acca-4204-a5ab-01479a9340cb"
+  ],
+  "etag": "8hx2i+mpEcPcs2MRaFL0hC68Zs0",
+  "customMetadata": {
+    "source": "assets:catalog/categories/wafers-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.577Z",
+  "updated": "2026-10-14T05:41:41.577Z",
+  "size": 2080,
+  "md5Hash": "sQzJ32B36FNXl0GTvO94iw==",
+  "crc32c": "1791691149"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "catalog/stores/mumbai-store-logo.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956473412,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "da89f465-9a4c-45c9-a2a8-1b423388607a"
+  ],
+  "etag": "eMCASusUNIkKmW7W1mRwuLS6A2s",
+  "customMetadata": {
+    "source": "assets:catalog/stores/mumbai-store-logo.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:13.412Z",
+  "updated": "2026-10-14T05:41:13.412Z",
+  "size": 8340,
+  "md5Hash": "l+2WlQdSd4NoAiT2Wt440A==",
+  "crc32c": "1567883321"
+}

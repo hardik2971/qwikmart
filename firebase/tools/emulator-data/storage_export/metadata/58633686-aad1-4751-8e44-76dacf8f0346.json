@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/men.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956502783,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "5332e1a1-fc84-40b0-adce-2d607e5c94e9"
+  ],
+  "etag": "4o4jaslQIsAaHef0v36Zz9xndpA",
+  "customMetadata": {
+    "source": "assets:catalog/categories/men.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:42.783Z",
+  "updated": "2026-10-14T05:41:42.783Z",
+  "size": 13154,
+  "md5Hash": "nj0HvX+ID6DdTC0YIcXQkQ==",
+  "crc32c": "1144840845"
+}

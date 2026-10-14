@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/volini.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504586,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "9f043458-6495-41a6-a90a-cf53d63d8ecd"
+  ],
+  "etag": "BsAkBgGhJtpnNI0qlCQAe1q9EXs",
+  "customMetadata": {
+    "source": "assets:catalog/brands/volini.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.586Z",
+  "updated": "2026-10-14T05:41:44.586Z",
+  "size": 2150,
+  "md5Hash": "h87ZstFU8ImCPlvyqYSPwQ==",
+  "crc32c": "2274515999"
+}

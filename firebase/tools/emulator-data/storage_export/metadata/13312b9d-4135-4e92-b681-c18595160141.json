@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/herbs-seasonings.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501331,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "f762970f-508c-44d0-a3b4-e593bbb4deb1"
+  ],
+  "etag": "l/14dzKAhOuQ1wZOAvRTpzHsjqM",
+  "customMetadata": {
+    "source": "assets:catalog/categories/herbs-seasonings.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.331Z",
+  "updated": "2026-10-14T05:41:41.331Z",
+  "size": 14246,
+  "md5Hash": "Nu7IZt6ls+9NmEVv+SXwCw==",
+  "crc32c": "4112560569"
+}

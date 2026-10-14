@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/kwality-walls-cornetto-double-chocolate-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509471,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "34e38301-cf80-4828-afb1-be7c66b71cfd"
+  ],
+  "etag": "jL5R/Ae+3imDA+uGY7+xA9d03Vw",
+  "customMetadata": {
+    "source": "assets:catalog/products/kwality-walls-cornetto-double-chocolate-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.471Z",
+  "updated": "2026-10-14T05:41:49.471Z",
+  "size": 12300,
+  "md5Hash": "bWRxekDL5QnHo2Uvi/W5jw==",
+  "crc32c": "204448559"
+}

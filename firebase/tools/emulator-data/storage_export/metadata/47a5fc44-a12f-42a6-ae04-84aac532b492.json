@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/happilo-california-almonds-2.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956508597,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "d4d89bd5-782a-4fb6-a9de-0f1554b5f6df"
+  ],
+  "etag": "E0tNyEB3vJLAT6SIv4W3rvbrs3Y",
+  "customMetadata": {
+    "source": "assets:catalog/products/happilo-california-almonds-2.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:48.597Z",
+  "updated": "2026-10-14T05:41:48.597Z",
+  "size": 49336,
+  "md5Hash": "8VQ8Gsac27ZW1r3uSU/aNw==",
+  "crc32c": "1505964859"
+}

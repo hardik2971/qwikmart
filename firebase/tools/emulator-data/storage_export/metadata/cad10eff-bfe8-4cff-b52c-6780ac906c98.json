@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/parle.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504204,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "02dbbb06-abea-480d-a2c8-d4544bf34cbc"
+  ],
+  "etag": "DzC7Y+8QIU6M75KsSuVZ0M8XGqw",
+  "customMetadata": {
+    "source": "assets:catalog/brands/parle.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.204Z",
+  "updated": "2026-10-14T05:41:44.204Z",
+  "size": 5630,
+  "md5Hash": "bhmCOYSXq1DLD1Rkr1v0Iw==",
+  "crc32c": "1093252562"
+}

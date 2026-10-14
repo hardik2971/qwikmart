@@ -1,0 +1,65 @@
+rules_version = '2';
+
+// QwikMart — Cloud Storage rules. Spec: docs/FIREBASE_BACKEND.md §6.
+//   catalog/**                public read; admin/staff write (images ≤ 5 MB); store users may only ADD new images
+//                             (no overwrite / delete of existing files, which may belong to the platform or other stores)
+//   users/{uid}/**            owner write (raster images ≤ 5 MB, no SVG); owner + panel read; avatars public
+//   delivery_docs/{uid}/**    owner write (images/PDF ≤ 10 MB) — also admin/staff ("Add delivery boy"); owner + panel read
+//   imports/{uid}/**          panel CSV uploads for bulkImportProducts (≤ 20 MB)
+//   reviews/{uid}/**          review photos: owner write (raster images ≤ 5 MB, no SVG), public read (product pages)
+//   withdrawal_receipts/**    payout receipts uploaded by panel users (images ≤ 5 MB); panel read
+//   invoices/**, exports/**   functions only (clients use the URL returned by the callable)
+service firebase.storage {
+  match /b/{bucket}/o {
+    function signedIn() { return request.auth != null; }
+    function role() { return request.auth.token.get('role', 'customer'); }
+    function isPanel() { return signedIn() && role() in ['admin', 'staff', 'store']; }
+    function isPlatform() { return signedIn() && role() in ['admin', 'staff']; }
+    function isImage(maxMb) { return request.resource.contentType.matches('image/.*') && request.resource.size <= maxMb * 1024 * 1024; }
+    // end-user uploads: no SVG (scriptable) — raster formats only
+    function isRaster(maxMb) { return isImage(maxMb) && !request.resource.contentType.matches('image/svg.*'); }
+
+    match /catalog/{allPaths=**} {
+      allow read: if true;
+      allow write: if (isPlatform() && (request.resource == null || isImage(5)))
+        || (isPanel() && resource == null && request.resource != null && isImage(5));
+    }
+
+    match /users/{userId}/avatar/{file} {
+      allow read: if true;
+    }
+
+    match /users/{userId}/{allPaths=**} {
+      allow read: if signedIn() && (request.auth.uid == userId || isPanel());
+      allow write: if signedIn() && request.auth.uid == userId && (request.resource == null || isRaster(5));
+    }
+
+    match /reviews/{userId}/{allPaths=**} {
+      allow read: if true;
+      allow write: if signedIn() && request.auth.uid == userId && (request.resource == null || isRaster(5));
+    }
+
+    match /withdrawal_receipts/{allPaths=**} {
+      allow read: if isPanel();
+      allow write: if isPlatform() && (request.resource == null || isImage(5));
+    }
+
+    match /delivery_docs/{userId}/{allPaths=**} {
+      allow read: if signedIn() && (request.auth.uid == userId || isPanel());
+      allow write: if signedIn() && (request.auth.uid == userId || isPlatform())
+        && (request.resource == null
+            || (((request.resource.contentType.matches('image/.*') && !request.resource.contentType.matches('image/svg.*'))
+                 || request.resource.contentType == 'application/pdf')
+                && request.resource.size <= 10 * 1024 * 1024));
+    }
+
+    match /imports/{userId}/{allPaths=**} {
+      allow read, write: if isPanel() && request.auth.uid == userId
+        && (request.resource == null || request.resource.size <= 20 * 1024 * 1024);
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

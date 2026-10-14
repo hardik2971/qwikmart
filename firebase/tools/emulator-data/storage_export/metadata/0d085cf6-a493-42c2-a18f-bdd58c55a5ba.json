@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/samsung.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956506295,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "612bc648-542a-4c1b-ae68-d2a0d3b0f7cc"
+  ],
+  "etag": "inv9B+LO8CAALsIQEmVwkmqBASI",
+  "customMetadata": {
+    "source": "assets:catalog/brands/samsung.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:46.295Z",
+  "updated": "2026-10-14T05:41:46.295Z",
+  "size": 6186,
+  "md5Hash": "G84NXBkiytDkyRJ236lkTQ==",
+  "crc32c": "1882611857"
+}

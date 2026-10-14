@@ -1,0 +1,72 @@
+/* Ported from backend/resources/css/app.css — keep class names identical so Blade markup ports 1:1. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --font-jakarta: 'Plus Jakarta Sans'; }
+
+@layer base {
+    html { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif; }
+    body { @apply text-bodytext bg-adminbg antialiased text-sm; }
+    .dark body { @apply bg-dark-bg text-slate-300; }
+    svg.lucide { stroke-width: 1.75; flex-shrink: 0; }
+}
+
+@layer components {
+    .card { @apply bg-white border border-line rounded-card shadow-soft dark:bg-dark-card dark:border-dark-line; }
+    .card-title { @apply text-navy font-bold text-base dark:text-white; }
+    .page-title { @apply text-navy font-extrabold text-2xl dark:text-white; }
+    .label { @apply block text-[13px] font-medium text-navy mb-1.5 dark:text-slate-300; }
+    .input { @apply block w-full rounded-lg border-line bg-white text-sm text-bodytext placeholder:text-slate-400 focus:border-primary focus:ring-primary/20 focus:ring-4 dark:bg-slate-800 dark:border-dark-line dark:text-slate-200; }
+    select.input { @apply pr-8; }
+    .btn { @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-4 py-2 text-sm font-semibold transition whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed; }
+    .btn-primary { @apply btn bg-primary text-white hover:bg-primary-dark shadow-sm; }
+    .btn-soft { @apply btn bg-primary-50 text-primary border border-primary/30 hover:bg-primary-100; }
+    .btn-outline { @apply btn bg-white border border-line text-bodytext hover:bg-slate-50 dark:bg-slate-800 dark:border-dark-line dark:text-slate-200; }
+    .btn-danger { @apply btn bg-red-500 text-white hover:bg-red-600; }
+    .btn-gray { @apply btn bg-slate-500 text-white hover:bg-slate-600; }
+    .btn-sm { @apply px-2.5 py-1.5 text-xs; }
+    .icon-btn { @apply inline-flex items-center justify-center w-8 h-8 rounded-lg border border-line text-slate-500 hover:text-primary hover:border-primary/40 bg-white dark:bg-slate-800 dark:border-dark-line disabled:opacity-50; }
+    .tbl { @apply w-full text-sm; }
+    .tbl thead th { @apply bg-slate-50 text-navy text-xs font-bold uppercase tracking-wide px-4 py-3 text-left whitespace-nowrap dark:bg-slate-800 dark:text-slate-300; }
+    .tbl tbody td { @apply px-4 py-3 border-t border-line align-middle dark:border-dark-line; }
+    .tbl tbody tr:hover { @apply bg-slate-50/60 dark:bg-slate-800/40; }
+    .pill { @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold whitespace-nowrap; }
+    .chip { @apply inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium border border-line bg-white cursor-pointer dark:bg-slate-800 dark:border-dark-line; }
+    .chip-active { @apply bg-primary-50 border-primary text-primary; }
+    .tab { @apply px-4 py-2 text-sm font-semibold border-b-2 border-transparent text-muted hover:text-primary cursor-pointer; }
+    .tab-active { @apply border-primary text-primary; }
+    .step { @apply flex-1 text-center py-2 rounded-md text-sm font-semibold border border-line bg-white text-muted cursor-pointer dark:bg-slate-800 dark:border-dark-line; }
+    .step-active { @apply bg-primary text-white border-primary dark:bg-primary dark:border-primary; }
+    .step-done { @apply bg-primary-dark text-white border-primary-dark dark:bg-primary-dark; }
+    .side-link { @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-[15px] text-bodytext hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800; }
+    .side-link-active { @apply bg-primary text-white font-semibold hover:bg-primary dark:text-white dark:hover:bg-primary; }
+    .side-sub { @apply flex items-center gap-2.5 rounded-md pl-11 pr-3 py-1.5 text-[13.5px] text-slate-500 hover:text-primary dark:text-slate-400; }
+    .side-sub-active { @apply text-primary font-semibold; }
+    .toggle { @apply relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full bg-slate-300 transition dark:bg-slate-600; }
+    .toggle-on { @apply bg-primary; }
+    .toggle-dot { @apply absolute top-0.5 left-0.5 h-4 w-4 rounded-full bg-white shadow transition; }
+    .toggle-on .toggle-dot { @apply translate-x-4; }
+    .section-label { @apply px-3 pt-4 pb-1.5 text-xs font-bold uppercase tracking-wide text-navy/80 dark:text-slate-400; }
+}
+
+.leaflet-container { font-family: inherit; z-index: 0; }
+.scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; }
+.sidebar-collapsed .hide-collapsed { display: none !important; }
+
+/* TipTap rich text editor */
+.rte .ProseMirror { min-height: 200px; padding: 12px 14px; outline: none; }
+.rte .ProseMirror p { margin: .4em 0; }
+.rte .ProseMirror h1 { font-size: 1.5em; font-weight: 700; } .rte .ProseMirror h2 { font-size: 1.25em; font-weight: 700; } .rte .ProseMirror h3 { font-size: 1.1em; font-weight: 700; }
+.rte .ProseMirror ul { list-style: disc; padding-left: 1.4em; } .rte .ProseMirror ol { list-style: decimal; padding-left: 1.4em; }
+.rte .ProseMirror blockquote { border-left: 3px solid #E6EAF2; padding-left: .8em; color: #7C8DB5; }
+.rte .ProseMirror a { color: #0E9623; text-decoration: underline; }
+.prose-content ul { list-style: disc; padding-left: 1.4em; } .prose-content ol { list-style: decimal; padding-left: 1.4em; }
+
+@keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }
+.float-1 { animation: float 6s ease-in-out infinite; } .float-2 { animation: float 7s ease-in-out infinite .8s; }
+.float-3 { animation: float 6.5s ease-in-out infinite 1.6s; } .float-4 { animation: float 7.5s ease-in-out infinite 2.2s; }
+.login-bg { background: radial-gradient(1200px 700px at 75% 40%, #f4f4f5 0%, #e7e7ea 55%, #d9d9de 100%); }
+.dots { background-image: radial-gradient(rgba(255,255,255,.55) 1.6px, transparent 1.6px); background-size: 16px 16px; }
+.dots-gray { background-image: radial-gradient(rgba(14,150,35,.18) 2px, transparent 2px); background-size: 20px 20px; }

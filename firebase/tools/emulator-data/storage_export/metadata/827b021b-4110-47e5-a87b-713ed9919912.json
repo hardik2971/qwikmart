@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/mother-dairy-classic-curd.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956507587,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "194c977d-72fe-4f2d-a80c-dcfbd79b3a3d"
+  ],
+  "etag": "PVEJ3yBPvG6Y4DSv9eGcigLzlO4",
+  "customMetadata": {
+    "source": "assets:catalog/products/mother-dairy-classic-curd.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:47.587Z",
+  "updated": "2026-10-14T05:41:47.587Z",
+  "size": 62676,
+  "md5Hash": "he9VHSFsAOmY+iC7XjpzSg==",
+  "crc32c": "1886154985"
+}

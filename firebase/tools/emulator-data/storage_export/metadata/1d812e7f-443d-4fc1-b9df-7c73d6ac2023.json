@@ -1,0 +1,21 @@
+{
+  "name": "catalog/brands/dabur.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956504547,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "f7cf4db5-ab13-44bf-a223-610fd8b81b9e"
+  ],
+  "etag": "R78gbA0YR9SIUV63wIuKqLGKVBw",
+  "customMetadata": {
+    "source": "assets:catalog/brands/dabur.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:44.547Z",
+  "updated": "2026-10-14T05:41:44.547Z",
+  "size": 8468,
+  "md5Hash": "WteO1L66cqhombv7xgKc9g==",
+  "crc32c": "1403214489"
+}

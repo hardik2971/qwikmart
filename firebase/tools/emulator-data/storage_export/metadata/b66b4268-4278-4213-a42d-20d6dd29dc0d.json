@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/pringles-sour-cream-onion.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956508881,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "74c093ca-34ae-4e72-ab11-4455130116d1"
+  ],
+  "etag": "ZfDyKdnlmWw9T5zynZHZOWJWSAk",
+  "customMetadata": {
+    "source": "assets:catalog/products/pringles-sour-cream-onion.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:48.881Z",
+  "updated": "2026-10-14T05:41:48.881Z",
+  "size": 90946,
+  "md5Hash": "aR9GfnRAlZGz7yVJtJp/wA==",
+  "crc32c": "4162390202"
+}

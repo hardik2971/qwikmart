@@ -1,0 +1,21 @@
+{
+  "name": "catalog/stores/dubai-store-banner.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956473865,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "206b4289-e119-4f27-a539-8768310c0478"
+  ],
+  "etag": "/r1EN+/ha0o/KaYhOQQzeo8C/ok",
+  "customMetadata": {
+    "source": "assets:catalog/stores/dubai-store-banner.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:13.865Z",
+  "updated": "2026-10-14T05:41:13.865Z",
+  "size": 70328,
+  "md5Hash": "tUpchZPyQxUKiNdHhLuxVA==",
+  "crc32c": "4006048815"
+}

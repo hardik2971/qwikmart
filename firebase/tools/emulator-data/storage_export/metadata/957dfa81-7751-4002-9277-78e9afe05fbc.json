@@ -1,0 +1,21 @@
+{
+  "name": "catalog/stores/new-york-store-logo.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956473954,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "1e1dabdc-2ba4-471e-ab29-ed2f919a8273"
+  ],
+  "etag": "bzcHXexrYOvm5f/UtH8mBcOf3hk",
+  "customMetadata": {
+    "source": "assets:catalog/stores/new-york-store-logo.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:13.954Z",
+  "updated": "2026-10-14T05:41:13.954Z",
+  "size": 8904,
+  "md5Hash": "fOsvX0MWtixGn0mPaARG9Q==",
+  "crc32c": "1154133234"
+}

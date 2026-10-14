@@ -1,0 +1,21 @@
+{
+  "name": "catalog/categories/dairy-eggs-icon.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956501041,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "bf17965f-c014-4c2d-a86d-05aaec0978f6"
+  ],
+  "etag": "9xXnlvFJBhxFP6KolB9Xo0iEeNQ",
+  "customMetadata": {
+    "source": "assets:catalog/categories/dairy-eggs-icon.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:41.041Z",
+  "updated": "2026-10-14T05:41:41.041Z",
+  "size": 3442,
+  "md5Hash": "MYQLrG7vGwAZV0IN1jfVpQ==",
+  "crc32c": "1339960356"
+}

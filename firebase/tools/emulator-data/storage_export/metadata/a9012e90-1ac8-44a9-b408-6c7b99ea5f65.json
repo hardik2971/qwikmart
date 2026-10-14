@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/band-aid-washproof-strips-thumb.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956509805,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "f2d582b2-931e-4935-a110-0f8e27612211"
+  ],
+  "etag": "kuxq3we/b5iHcJE2X4d7Okoy8Ho",
+  "customMetadata": {
+    "source": "assets:catalog/products/band-aid-washproof-strips-thumb.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:49.805Z",
+  "updated": "2026-10-14T05:41:49.805Z",
+  "size": 10528,
+  "md5Hash": "YgvqBzrHv1NRpdazdwVamw==",
+  "crc32c": "1551788567"
+}

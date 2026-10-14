@@ -1,0 +1,21 @@
+{
+  "name": "catalog/promos/vip500.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956511027,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "f12b59eb-7897-4b34-a0a1-cd1b0e64971d"
+  ],
+  "etag": "OsPaKpXB4MogcRgw93LdterY9bo",
+  "customMetadata": {
+    "source": "assets:catalog/promos/vip500.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:51.027Z",
+  "updated": "2026-10-14T05:41:51.027Z",
+  "size": 9294,
+  "md5Hash": "wxAIFsjt+HclQBdGeUUg0g==",
+  "crc32c": "1048559049"
+}

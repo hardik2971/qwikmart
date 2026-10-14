@@ -1,0 +1,21 @@
+{
+  "name": "catalog/products/farm-fresh-white-eggs-2.webp",
+  "bucket": "qwikmart-37299.firebasestorage.app",
+  "metageneration": 1,
+  "generation": 1791956507645,
+  "contentType": "image/webp",
+  "storageClass": "STANDARD",
+  "cacheControl": "public, max-age=86400",
+  "downloadTokens": [
+    "e6492c04-3760-40b7-a373-7f48e7379ced"
+  ],
+  "etag": "V1xaYEkyDWomut4ZbcY3j239XSQ",
+  "customMetadata": {
+    "source": "assets:catalog/products/farm-fresh-white-eggs-2.webp"
+  },
+  "timeCreated": "2026-10-14T05:41:47.645Z",
+  "updated": "2026-10-14T05:41:47.645Z",
+  "size": 23118,
+  "md5Hash": "NvPDNzWfSiogkukxPVudWQ==",
+  "crc32c": "832644980"
+}
