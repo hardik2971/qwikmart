@@ -9,8 +9,8 @@ Super Admin / Store / Delivery-boy panels, customer website, customer app and de
 | `firebase/tools/` | TypeScript | One-time MySQL → Firestore + Auth migration, verifier, emulator seed data |
 | `admin/` | Next.js 15 · Tailwind · Firebase SDK | Admin (`/admin`), Store (`/store`), Delivery boy (`/delivery`) panels |
 | `web/` | Next.js 14 · Tailwind · Firebase SDK | Customer website |
-| `customer_app/` | Flutter · FlutterFire | Customer app (Android `com.qwikmart.app`) |
-| `delivery_app/` | Flutter · FlutterFire | Delivery boy app (Android `com.qwikmart.delivery`) |
+| `customer_app/` | Flutter · FlutterFire | Customer app (Android `com.qwikmartapp.customer`) |
+| `delivery_app/` | Flutter · FlutterFire | Delivery boy app (Android `com.qwikmartapp.delivery`) |
 | `docs/` | — | `FIREBASE_BACKEND.md` (binding backend spec), `SPEC.md` (product/UI spec, design tokens), reference screenshots, brand assets |
 
 Firebase services: Auth (phone OTP, email/password, anonymous guests), Cloud Firestore, Cloud Functions,

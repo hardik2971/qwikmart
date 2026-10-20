@@ -87,6 +87,8 @@ export interface Api {
   blogCategories(): Promise<BlogCategory[]>;
   faqs(): Promise<Faq[]>;
   page(slug: string): Promise<CmsPage>;
+  /** Contact-us form → submitContactMessage. */
+  contact(input: Record<string, unknown>): Promise<{ ok: boolean; ticket?: string }>;
 
   /** Cart summary; checkout passes the selected address / delivery type so the server prices them. */
   cart(opts?: { address_id?: Id | null; delivery_type?: 'delivery' | 'self_pickup' }): Promise<Cart>;

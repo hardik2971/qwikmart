@@ -3,7 +3,7 @@ import { collection, doc, getDoc, getDocs, limit, orderBy, query, where, type Qu
 import { ApiError } from '../errors';
 import { fb } from '../firebase';
 import type { Blog, BlogCategory, CmsPage, Faq, Paginated } from '../types';
-import { cached, ctx, guard, iso, isOn, num, pick, type Raw } from './core';
+import { cached, call, ctx, guard, iso, isOn, num, pick, type Raw } from './core';
 
 const db = () => fb().db;
 
@@ -93,4 +93,9 @@ export async function page(slug: string): Promise<CmsPage> {
   const s = await guard(() => getDoc(doc(db(), 'pages', slug)));
   if (!s.exists() || s.get('status') === 'inactive') throw new ApiError('Page not found', 404);
   return { slug, title: pick(s.get('title'), lang), content: pick(s.get('content'), lang) };
+}
+
+/** Website "Contact us" form (works signed out; no anonymous session is created). */
+export async function contact(input: Record<string, unknown>): Promise<{ ok: boolean; ticket?: string }> {
+  return call<{ ok: boolean; ticket?: string }>('submitContactMessage', input, { anonymousOk: false });
 }

@@ -596,7 +596,7 @@ const settings: AppSettings = {
   support_email: 'support@qwikmart.app',
   company_name: 'QwikMart Retail Pvt. Ltd.',
   company_address: '4th Floor, Trade Centre, Bandra Kurla Complex, Mumbai 400051',
-  play_store_url: 'https://play.google.com/store/apps/details?id=com.qwikmart.app',
+  play_store_url: 'https://play.google.com/store/apps/details?id=com.qwikmartapp.customer',
   social_links: {
     facebook: 'https://facebook.com',
     instagram: 'https://instagram.com',

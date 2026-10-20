@@ -4,10 +4,10 @@ Step-by-step guide for the store owner to publish the two Android apps:
 
 | | Customer app | Delivery partner app |
 |---|---|---|
-| Package | `com.qwikmart.app` | `com.qwikmart.delivery` |
+| Package | `com.qwikmartapp.customer` | `com.qwikmartapp.delivery` |
 | Launcher name | QwikMart | QwikMart Delivery |
-| Version | 1.0.0 (versionCode 1) | 1.0.0 (versionCode 1) |
-| Signed bundle | `customer/qwikmart-customer-1.0.0+1.aab` | `delivery/qwikmart-delivery-1.0.0+1.aab` |
+| Version | 1.0.1 (versionCode 2) | 1.0.0 (versionCode 1) |
+| Signed bundle | `customer/qwikmart-customer-1.0.1+2.aab` | `delivery/qwikmart-delivery-1.0.0+1.aab` |
 | Store texts | `customer/listing.md` | `delivery/listing.md` |
 | Graphics | `customer/icon-512.png`, `feature-graphic.png`, `01…08-*.png` | `delivery/icon-512.png`, `feature-graphic.png`, `01…08-*.png` |
 | Min / target SDK | 24 / 36 | 24 / 36 |
@@ -80,7 +80,7 @@ re-frame or localise the screenshots later.
 1. **Test and release → Testing → Internal testing → Create new release.**
 2. **Play App Signing**: on the first upload Play asks to set up app signing. Choose **"Use Google-generated key"**
    (recommended). Your file `*-upload.jks` stays the **upload key**; Google holds the **app signing key**.
-3. Upload `customer/qwikmart-customer-1.0.0+1.aab` (or the delivery one). The bundle already contains the R8
+3. Upload `customer/qwikmart-customer-1.0.1+2.aab` (or the delivery one). The bundle already contains the R8
    mapping file and native debug symbols, so crash stack traces are de-obfuscated automatically.
 4. Release name: `1.0.0 (1)`. Release notes: paste `listing.md` → Release notes (language `en-IN`).
 5. **Testers** tab: create an e-mail list (yourself + team), save, copy the opt-in link and open it on your phone.
@@ -94,14 +94,14 @@ The **upload** keys are already registered (done 2026-10-14, see §10).
 1. Play Console → the app → **Test and release → Setup → App integrity → App signing** tab.
 2. Under **App signing key certificate** copy the **SHA-1** and **SHA-256** fingerprints.
 3. Add them in Firebase — either:
-   - Console: Firebase → Project settings → General → **Your apps** → `com.qwikmart.app` (or `com.qwikmart.delivery`)
+   - Console: Firebase → Project settings → General → **Your apps** → `com.qwikmartapp.customer` (or `com.qwikmartapp.delivery`)
      → **Add fingerprint** → paste SHA-1 → Save; repeat for SHA-256; or
    - CLI (from `F:\DI_Local_Project\snapbuy\firebase`, logged in):
      ```bash
-     npx firebase apps:android:sha:create 1:1054065019133:android:3204c8da083a43c94a9694 <SHA1> --project qwikmart-37299     # customer
-     npx firebase apps:android:sha:create 1:1054065019133:android:3204c8da083a43c94a9694 <SHA256> --project qwikmart-37299
-     npx firebase apps:android:sha:create 1:1054065019133:android:d97cfa2b36fcc09a4a9694 <SHA1> --project qwikmart-37299     # delivery
-     npx firebase apps:android:sha:create 1:1054065019133:android:d97cfa2b36fcc09a4a9694 <SHA256> --project qwikmart-37299
+     npx firebase apps:android:sha:create 1:1054065019133:android:bfabf974129f2cfc4a9694 <SHA1> --project qwikmart-37299     # customer
+     npx firebase apps:android:sha:create 1:1054065019133:android:bfabf974129f2cfc4a9694 <SHA256> --project qwikmart-37299
+     npx firebase apps:android:sha:create 1:1054065019133:android:443f0d691cf47b284a9694 <SHA1> --project qwikmart-37299     # delivery
+     npx firebase apps:android:sha:create 1:1054065019133:android:443f0d691cf47b284a9694 <SHA256> --project qwikmart-37299
      ```
 4. Optional: download the refreshed `google-services.json` into `android/app/` for the next build (not required
    for phone auth; it only matters if you later add Google Sign-In).
@@ -250,7 +250,7 @@ transfer). **Processed ephemerally = No** unless stated. Purposes are listed per
 "Account management" as indicated; neither app uses data for advertising or analytics — there is no ads or
 analytics SDK and no Crashlytics).
 
-### 6.1 Customer app (`com.qwikmart.app`)
+### 6.1 Customer app (`com.qwikmartapp.customer`)
 
 | Data type (Play category) | Collected | Required / optional | Purposes | Where in the app |
 |---|---|---|---|---|
@@ -262,7 +262,7 @@ analytics SDK and no Crashlytics).
 | Location → **Precise location** | Yes | Optional (user can pick a city instead) | App functionality (detect delivery zone, address pin) | location screen / map picker |
 | Financial info → **Purchase history** | Yes | Required to order | App functionality | orders, invoices, returns |
 | Financial info → Other financial info | Yes | Optional | App functionality | wallet balance, top-ups, withdrawals |
-| Financial info → Payment info (card/UPI) | **No** — online payments run on the gateway's hosted checkout; the app never sees card/UPI data. COD and wallet need none. |
+| Financial info → **Payment info** | Yes (since 1.0.1) — card / UPI / netbanking details are entered in the **Razorpay checkout SDK** inside the app and sent straight to Razorpay; QwikMart never stores them. Play counts data collected by SDKs in your app, so declare it | Optional (only when paying online) | App functionality | Razorpay checkout |
 | Messages → **Other in-app messages** | Yes | Optional | App functionality, Customer support | support chat |
 | Photos and videos → **Photos** | Yes | Optional | App functionality | profile avatar, review photos (public), return photos |
 | App activity → Other user-generated content | Yes | Optional | App functionality | product ratings & reviews |
@@ -270,7 +270,7 @@ analytics SDK and no Crashlytics).
 | Device or other IDs | Yes | Required for notifications | App functionality (push notifications) | FCM registration token, Firebase installation ID |
 | App info and performance → Crash logs / Diagnostics | No (no crash reporting SDK) |
 
-### 6.2 Delivery app (`com.qwikmart.delivery`)
+### 6.2 Delivery app (`com.qwikmartapp.delivery`)
 
 | Data type | Collected | Required / optional | Purposes | Where |
 |---|---|---|---|---|
@@ -377,8 +377,8 @@ Both: versionCode 1, versionName 1.0.0, minSdk 24, targetSdk 36, R8 enabled (map
 
 | Firebase Android app | Upload key SHA-1 + SHA-256 | Play app-signing key |
 |---|---|---|
-| `1:1054065019133:android:3204c8da083a43c94a9694` (`com.qwikmart.app`) | **registered** 2026-10-14 | **to do after first upload** (§3.1) |
-| `1:1054065019133:android:d97cfa2b36fcc09a4a9694` (`com.qwikmart.delivery`) | **registered** 2026-10-14 | **to do after first upload** (§3.1) |
+| `1:1054065019133:android:bfabf974129f2cfc4a9694` (`com.qwikmartapp.customer`) | **registered** 2026-10-14 | **to do after first upload** (§3.1) |
+| `1:1054065019133:android:443f0d691cf47b284a9694` (`com.qwikmartapp.delivery`) | **registered** 2026-10-14 | **to do after first upload** (§3.1) |
 
 Also still open from `DEPLOYMENT_CHECKLIST.md`: the Firebase test phone number `+91 9876543210 → 123456` gives
 anyone access to the (currently disabled) demo customer — remove it before launch; restrict the Android API key to

@@ -1,6 +1,6 @@
 # QwikMart Delivery — Google Play store listing (delivery partner app)
 
-Package `com.qwikmart.delivery` · version **1.0.0 (versionCode 1)** · default language **English (India) – en-IN**.
+Package `com.qwikmartapp.delivery` · version **1.0.0 (versionCode 1)** · default language **English (India) – en-IN**.
 Character counts below are Unicode characters as Play Console counts them (checked by script).
 
 ## App name (max 30)

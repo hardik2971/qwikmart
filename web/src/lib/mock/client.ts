@@ -171,6 +171,7 @@ export const mockApi: Api = {
   blogCategories: () => data<BlogCategory[]>('GET', '/blog-categories'),
   faqs: () => data<Faq[]>('GET', '/faqs'),
   page: (slug) => data<CmsPage>('GET', `/pages/${encodeURIComponent(slug)}`),
+  contact: async () => ({ ok: true, ticket: 'QM-DEMO01' }),
 
   cart: () => data<Cart>('GET', '/cart'),
   addToCart: (variantId, qty) => data<Cart>('POST', '/cart', { body: { product_variant_id: variantId, qty } }),

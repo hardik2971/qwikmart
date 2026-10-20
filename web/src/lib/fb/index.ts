@@ -42,6 +42,7 @@ export const fbApi: Api = {
   blogCategories: content.blogCategories,
   faqs: content.faqs,
   page: content.page,
+  contact: content.contact,
 
   cart: cartMod.cart,
   addToCart: cartMod.addToCart,

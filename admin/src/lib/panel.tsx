@@ -44,12 +44,13 @@ export function usePublicSettings() {
 }
 
 /** Collections the rules deny to store users (store panel never reads them). */
-const STORE_DENIED = ['users', 'cash_collections', 'delivery_earnings', 'withdrawal_requests', 'email_templates', 'mail_log', 'referrals', 'wallet_transactions', 'addresses'];
+const STORE_DENIED = ['users', 'cash_collections', 'delivery_earnings', 'withdrawal_requests', 'email_templates', 'mail_log', 'referrals', 'wallet_transactions', 'addresses', 'contact_messages'];
 /** Staff: collection → any of these permissions (firestore.rules). */
 const STAFF_NEEDS: Record<string, string[]> = {
   users: ['customer.list', 'staff.list', 'delivery_boy.list'], cash_collections: ['delivery_boy.list', 'wallet.list'], delivery_earnings: ['delivery_boy.list', 'wallet.list'],
   withdrawal_requests: ['withdrawal.list'], email_templates: ['email.list', 'email.create'], mail_log: ['email.list'], referrals: ['customer.list'],
   wallet_transactions: ['wallet.list', 'customer.list'], addresses: ['customer.list', 'order.view'],
+  contact_messages: ['chat.list'],
 };
 
 export function PanelProvider({ panel, children }: { panel: Panel; children: ReactNode }) {

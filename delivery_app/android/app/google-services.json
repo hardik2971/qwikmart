@@ -8,16 +8,36 @@
     {
       "client_info": {
         "mobilesdk_app_id": "1:1054065019133:android:3204c8da083a43c94a9694",
-        "android_client_info": { "package_name": "com.qwikmart.app" }
+        "android_client_info": {
+          "package_name": "com.qwikmart.app"
+        }
       },
       "oauth_client": [
-        { "client_id": "1054065019133-6gamcikckulr2o4956ti44sn86hg78kj.apps.googleusercontent.com", "client_type": 3 }
+        {
+          "client_id": "1054065019133-3akti980so4c74htjldidjc8p8eqe0n6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.qwikmart.app",
+            "certificate_hash": "f6fa25c415d8ee0f5ece41d839ef15d1753c5d8b"
+          }
+        },
+        {
+          "client_id": "1054065019133-6gamcikckulr2o4956ti44sn86hg78kj.apps.googleusercontent.com",
+          "client_type": 3
+        }
       ],
-      "api_key": [ { "current_key": "AIzaSyCX22CmmydUiwiTtMJ6VGHnEhNm7vxNdYQ" } ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCX22CmmydUiwiTtMJ6VGHnEhNm7vxNdYQ"
+        }
+      ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
-            { "client_id": "1054065019133-6gamcikckulr2o4956ti44sn86hg78kj.apps.googleusercontent.com", "client_type": 3 }
+            {
+              "client_id": "1054065019133-6gamcikckulr2o4956ti44sn86hg78kj.apps.googleusercontent.com",
+              "client_type": 3
+            }
           ]
         }
       }
@@ -25,16 +45,110 @@
     {
       "client_info": {
         "mobilesdk_app_id": "1:1054065019133:android:d97cfa2b36fcc09a4a9694",
-        "android_client_info": { "package_name": "com.qwikmart.delivery" }
+        "android_client_info": {
+          "package_name": "com.qwikmart.delivery"
+        }
       },
       "oauth_client": [
-        { "client_id": "1054065019133-6gamcikckulr2o4956ti44sn86hg78kj.apps.googleusercontent.com", "client_type": 3 }
+        {
+          "client_id": "1054065019133-5c7q83f7sh8uio3482ndulohdmi7rlen.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.qwikmart.delivery",
+            "certificate_hash": "5d78efe1a98f8548d645b72bb1774f56ab60218f"
+          }
+        },
+        {
+          "client_id": "1054065019133-6gamcikckulr2o4956ti44sn86hg78kj.apps.googleusercontent.com",
+          "client_type": 3
+        }
       ],
-      "api_key": [ { "current_key": "AIzaSyCX22CmmydUiwiTtMJ6VGHnEhNm7vxNdYQ" } ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCX22CmmydUiwiTtMJ6VGHnEhNm7vxNdYQ"
+        }
+      ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
-            { "client_id": "1054065019133-6gamcikckulr2o4956ti44sn86hg78kj.apps.googleusercontent.com", "client_type": 3 }
+            {
+              "client_id": "1054065019133-6gamcikckulr2o4956ti44sn86hg78kj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054065019133:android:bfabf974129f2cfc4a9694",
+        "android_client_info": {
+          "package_name": "com.qwikmartapp.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054065019133-cg68jff6bnqm358oirpau250iro1gktm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.qwikmartapp.customer",
+            "certificate_hash": "f6fa25c415d8ee0f5ece41d839ef15d1753c5d8b"
+          }
+        },
+        {
+          "client_id": "1054065019133-6gamcikckulr2o4956ti44sn86hg78kj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCX22CmmydUiwiTtMJ6VGHnEhNm7vxNdYQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054065019133-6gamcikckulr2o4956ti44sn86hg78kj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054065019133:android:443f0d691cf47b284a9694",
+        "android_client_info": {
+          "package_name": "com.qwikmartapp.delivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054065019133-t92d92jq72dmlda976vpp3u3b1r96pub.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.qwikmartapp.delivery",
+            "certificate_hash": "5d78efe1a98f8548d645b72bb1774f56ab60218f"
+          }
+        },
+        {
+          "client_id": "1054065019133-6gamcikckulr2o4956ti44sn86hg78kj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCX22CmmydUiwiTtMJ6VGHnEhNm7vxNdYQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054065019133-6gamcikckulr2o4956ti44sn86hg78kj.apps.googleusercontent.com",
+              "client_type": 3
+            }
           ]
         }
       }

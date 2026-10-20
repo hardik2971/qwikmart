@@ -53,7 +53,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCX22CmmydUiwiTtMJ6VGHnEhNm7vxNdYQ',
-    appId: '1:1054065019133:android:3204c8da083a43c94a9694',
+    appId: '1:1054065019133:android:bfabf974129f2cfc4a9694',
     messagingSenderId: '1054065019133',
     projectId: 'qwikmart-37299',
     storageBucket: 'qwikmart-37299.firebasestorage.app',

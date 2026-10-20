@@ -230,6 +230,14 @@ service cloud.firestore {
     match /blog_categories/{id} { allow read: if true; allow write: if catalogWrite('blog'); }
     match /faqs/{id} { allow read: if true; allow write: if catalogWrite('faq'); }
     match /pages/{slug} { allow read: if true; allow write: if panelCan('page', 'update'); }
+    // website contact form (written only by submitContactMessage); support staff read, triage and delete
+    match /contact_messages/{id} {
+      allow read: if panelCan('chat', 'list');
+      allow update: if panelCan('chat', 'reply')
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'admin_note', 'updated_at'])
+        && incoming().status in ['new', 'in_progress', 'resolved'];
+      allow delete: if panelCan('chat', 'reply');
+    }
     // platform templates: read (get + list) with email.list or email.create; store users may read them; write with email.create
     match /email_templates/{key} {
       allow read: if panelCan('email', 'list') || panelCan('email', 'create') || storeCan('email', 'list');

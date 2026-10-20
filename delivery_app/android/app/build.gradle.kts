@@ -50,7 +50,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.qwikmart.delivery"
+        applicationId = "com.qwikmartapp.delivery"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode

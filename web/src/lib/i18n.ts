@@ -47,7 +47,7 @@ const en = {
   expanding: "We're always expanding. Stay tuned!",
   privacy_title: 'We Value Your Privacy',
   privacy_text:
-    'We use cookies to improve your browsing experience, personalize content, analyze website traffic, and support our marketing efforts. You can accept all cookies or customize your preferences at any time.',
+    'We use essential cookies and local storage to keep you signed in and remember your cart, language and delivery location. We do not use advertising or tracking cookies. See our Privacy Policy for details.',
   accept: 'Accept',
   decline: 'Decline',
   home: 'Home',

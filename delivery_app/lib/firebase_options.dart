@@ -1,5 +1,5 @@
 // Firebase configuration for project `qwikmart-37299` (equivalent of `flutterfire configure`).
-// Android app: com.qwikmart.delivery. Web app: qwikmart web. iOS is not registered yet.
+// Android app: com.qwikmartapp.delivery. Web app: qwikmart web. iOS is not registered yet.
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart' show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
@@ -24,7 +24,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCX22CmmydUiwiTtMJ6VGHnEhNm7vxNdYQ',
-    appId: '1:1054065019133:android:d97cfa2b36fcc09a4a9694',
+    appId: '1:1054065019133:android:443f0d691cf47b284a9694',
     messagingSenderId: '1054065019133',
     projectId: 'qwikmart-37299',
     storageBucket: 'qwikmart-37299.firebasestorage.app',

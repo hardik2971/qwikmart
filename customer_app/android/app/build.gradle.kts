@@ -50,7 +50,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.qwikmart.app"
+        applicationId = "com.qwikmartapp.customer"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = maxOf(flutter.minSdkVersion, 23)

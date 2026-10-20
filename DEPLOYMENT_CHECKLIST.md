@@ -64,7 +64,7 @@ and serve mock data**), `.gitignore` files, Node 22 engines, README release/depl
    - **Templates**: set the sender name/reply-to and customise the password-reset email; set the action URL domain.
    - Settings → **Authorized domains**: add the App Hosting domains (`*.hosted.app` URLs of both backends) and the
      custom domains (step 5/6). Remove nothing else you still need (`localhost` is for dev).
-5. **Android apps** (already registered: `com.qwikmart.app`, `com.qwikmart.delivery`): SHA fingerprints come in step 7.
+5. **Android apps** (already registered: `com.qwikmartapp.customer`, `com.qwikmartapp.delivery`): SHA fingerprints come in step 7.
 6. **iOS**: **not registered** — the Flutter apps have no iOS Firebase options; iOS is **not deployable** yet.
 7. **Cloud Messaging**: (website push, optional) Web Push certificates → generate key pair → put the public key in
    `web/apphosting.yaml` (`NEXT_PUBLIC_FIREBASE_VAPID_KEY`).
@@ -169,7 +169,7 @@ Rollback: App Hosting → Rollouts → pick the previous rollout → **Roll back
 Requirements verified: compileSdk/targetSdk **36** (Flutter 3.41 defaults) — meets Play's rule that new apps and updates
 target API 36 from 31 Aug 2026; minSdk 24; versions `1.0.0+1`; app names "QwikMart" / "QwikMart Delivery"; launcher icons
 generated from `docs/brand/logo-icon.svg` (adaptive + round); `google-services.json` contains both
-`com.qwikmart.app` and `com.qwikmart.delivery`; R8 + Firebase consumer rules (Flutter default).
+`com.qwikmartapp.customer` and `com.qwikmartapp.delivery`; R8 + Firebase consumer rules (Flutter default).
 
 For **each** app (`customer_app`, `delivery_app`):
 

@@ -1,7 +1,7 @@
 'use client';
 // Port of admin/pages/index.blade.php — static pages (pages/{slug}).
 import Link from 'next/link';
-import { Info, Shield, ScrollText, Receipt, FileText, Pencil, type LucideIcon } from 'lucide-react';
+import { Info, Shield, ScrollText, Receipt, FileText, Pencil, UserX, type LucideIcon } from 'lucide-react';
 import { usePanel } from '@/lib/panel';
 import { useAuth } from '@/lib/auth';
 import { useListQ } from '@/lib/firestore';
@@ -9,8 +9,8 @@ import { errMsg, timeAgo, tr } from '@/lib/format';
 import type { PageDoc } from '@/lib/types';
 import { PageHeader, StatusPill, Loading, Forbidden } from '@/components/ui';
 
-export const PAGE_SLUGS: Record<string, string> = { about: 'About Us', privacy: 'Privacy Policy', terms: 'Terms & Conditions', refund: 'Refund Policy' };
-const ICONS: Record<string, LucideIcon> = { about: Info, privacy: Shield, terms: ScrollText, refund: Receipt };
+export const PAGE_SLUGS: Record<string, string> = { about: 'About Us', privacy: 'Privacy Policy', terms: 'Terms & Conditions', refund: 'Refund Policy', 'delete-account': 'Delete Account' };
+const ICONS: Record<string, LucideIcon> = { about: Info, privacy: Shield, terms: ScrollText, refund: Receipt, 'delete-account': UserX };
 const plain = (h?: string) => (h || '').replace(/<[^>]*>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
 
 export default function PagesPage() {

@@ -22,8 +22,8 @@ Reference screenshots live in `docs/reference/*.png` (open them with the Read to
 qwikmart/
   backend/          Laravel 12 (PHP 8.2) — REST API (/api/v1) + Admin / Store / Delivery-boy web panels (Blade)
   web/              Next.js 14 (App Router, TypeScript, Tailwind) — customer website
-  customer_app/     Flutter — customer mobile app (package com.qwikmart.app)
-  delivery_app/     Flutter — delivery boy mobile app (package com.qwikmart.delivery)
+  customer_app/     Flutter — customer mobile app (package com.qwikmartapp.customer)
+  delivery_app/     Flutter — delivery boy mobile app (package com.qwikmartapp.delivery)
   docs/             this spec + reference screenshots
 ```
 
@@ -249,13 +249,13 @@ Frontend stack for panels: Blade + Tailwind (Vite build, Node 22) + Alpine.js + 
 
 ## 8. Customer app (Flutter) — screenshots 5, 50, 13–27
 
-Package `com.qwikmart.app`, name "QwikMart". State: `flutter_riverpod`; HTTP: `dio`; routing: `go_router`; storage: `shared_preferences` + `flutter_secure_storage`; images: `cached_network_image`; maps: `flutter_map` + `latlong2` (OSM, no API key); location: `geolocator`; push: `firebase_messaging` + `flutter_local_notifications` (guarded so app runs without google-services.json); carousel: `carousel_slider`; fonts: `google_fonts`; i18n via `flutter_localizations` + JSON strings (en, ar, hi; RTL).
+Package `com.qwikmartapp.customer`, name "QwikMart". State: `flutter_riverpod`; HTTP: `dio`; routing: `go_router`; storage: `shared_preferences` + `flutter_secure_storage`; images: `cached_network_image`; maps: `flutter_map` + `latlong2` (OSM, no API key); location: `geolocator`; push: `firebase_messaging` + `flutter_local_notifications` (guarded so app runs without google-services.json); carousel: `carousel_slider`; fonts: `google_fonts`; i18n via `flutter_localizations` + JSON strings (en, ar, hi; RTL).
 Screens: Splash → Onboarding → Location permission / select location (map pin) → Login (phone + OTP) → Main tabs (Home, Categories, Favourites, Profile — bottom nav like screenshot 5). Home top: Quick/eCommerce toggle, "Delivery in 8 minutes · 2.48 km away" + address, bell, search bar with rotating hint + mic, horizontal category tabs with icons, then sections from `/home`. Also: Category products, Search (with filters/sort), Product detail, Cart/Checkout (screenshot 16/17), Payment methods, Order success, Orders list, Order detail (OTP card, timeline, cancel, return, invoice, reorder, help), Live tracking map, Wallet (history, add money, withdraw), Refer & Earn, Ratings & Reviews, Chat with Support, Notifications, Addresses, Profile/Settings (language, theme), Blog, FAQ.
 API base URL in `lib/core/config.dart` (`http://10.0.2.2:8000/api/v1` for Android emulator).
 
 ## 9. Delivery boy app (Flutter) — screenshots 28–30
 
-Package `com.qwikmart.delivery`, name "QwikMart Delivery". Same stack. Screens: Splash → Login (email/password, Forgot) / Create Account (multi-step: personal info, country/zone, vehicle, documents upload, bank details) → Pending approval screen → Home (online/offline toggle, today earnings, cash in hand, tabs Available / Active / History) → Order detail guided workflow (Ready for Pickup: pickup info + Get Directions, delivery info + call/directions, track order timeline, buttons Accept → Picked Up → Out for Delivery → Enter OTP → Delivered, collect COD amount) → Returns pickups → Cash Collection (cash in hand, cash collected, list) → Earnings → Wallet (balance, Withdraw, request list) → Chat with Support → Notifications → Profile. Background location updates while online (`geolocator` stream → `/delivery/location`).
+Package `com.qwikmartapp.delivery`, name "QwikMart Delivery". Same stack. Screens: Splash → Login (email/password, Forgot) / Create Account (multi-step: personal info, country/zone, vehicle, documents upload, bank details) → Pending approval screen → Home (online/offline toggle, today earnings, cash in hand, tabs Available / Active / History) → Order detail guided workflow (Ready for Pickup: pickup info + Get Directions, delivery info + call/directions, track order timeline, buttons Accept → Picked Up → Out for Delivery → Enter OTP → Delivered, collect COD amount) → Returns pickups → Cash Collection (cash in hand, cash collected, list) → Earnings → Wallet (balance, Withdraw, request list) → Chat with Support → Notifications → Profile. Background location updates while online (`geolocator` stream → `/delivery/location`).
 
 ## 10. Seed / demo data
 

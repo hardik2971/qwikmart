@@ -3,7 +3,7 @@
 import {
   LayoutGrid, ShoppingCart, PackageOpen, RotateCcw, MessagesSquare, LayoutTemplate, Package, Tag, Boxes, Globe, Map, Store, Bike, Users,
   Ticket, Bell, Mail, Newspaper, CircleHelp, ChartColumn, UserCog, ShieldCheck, Settings, Languages, FileText, ShoppingBag, Banknote,
-  TrendingUp, Wallet, UserRound, type LucideIcon,
+  TrendingUp, Wallet, UserRound, Inbox, type LucideIcon,
 } from 'lucide-react';
 import type { Panel } from './auth';
 
@@ -26,6 +26,7 @@ const MAIN = (store: boolean): MenuItem[] => [
   { label: 'Self Pickup', icon: PackageOpen, href: '/self-pickup', perm: 'order.list' },
   { label: 'Return Requests', icon: RotateCcw, href: '/returns', perm: 'return.list' },
   { label: 'Chat', icon: MessagesSquare, href: '/chat', perm: 'chat.list' },
+  ...(store ? [] : [{ label: 'Contact Messages', icon: Inbox, href: '/contact-messages', perm: 'chat.list' }]),
   {
     label: 'Home Builder', icon: LayoutTemplate, perm: 'home_builder.list', active: ['/home-builder', '/banners'], children: [
       { label: 'Quick Layouts', href: '/home-builder/quick' },

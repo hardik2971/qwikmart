@@ -1,6 +1,6 @@
 # QwikMart Delivery (Flutter)
 
-Delivery partner app for QwikMart (`com.qwikmart.delivery`, label **QwikMart Delivery**).
+Delivery partner app for QwikMart (`com.qwikmartapp.delivery`, label **QwikMart Delivery**).
 Follows `docs/SPEC.md` §2 (design tokens) and §9, plus reference screens 28–30.
 
 **Backend: Firebase only** – Firebase Auth, Cloud Firestore, Cloud Functions (`asia-south1`) and Cloud Storage
@@ -175,12 +175,12 @@ options), so the app cannot ship to the App Store until the iOS app is added (`f
    flutter build appbundle --release --dart-define=FALLBACK_TO_MOCK=false
    # → build/app/outputs/bundle/release/app-release.aab
    ```
-5. Firebase console → Project settings → `com.qwikmart.delivery` → add the **SHA-1 and SHA-256** of the upload key
+5. Firebase console → Project settings → `com.qwikmartapp.delivery` → add the **SHA-1 and SHA-256** of the upload key
    (`keytool -list -v -keystore ~/qwikmart-upload.jks -alias upload`) **and** of the Play App Signing key
    (Play Console → Setup → App integrity), then download the refreshed `google-services.json` into `android/app/`.
    Required for phone auth / Play Integrity.
 
-Release config: applicationId `com.qwikmart.delivery`, targetSdk/compileSdk 36 and minSdk from the Flutter SDK (3.41: min 24),
+Release config: applicationId `com.qwikmartapp.delivery`, targetSdk/compileSdk 36 and minSdk from the Flutter SDK (3.41: min 24),
 R8 shrinking is Flutter's default for release (Firebase libraries ship their own consumer ProGuard rules),
 cleartext HTTP is allowed in **debug builds only** (`src/debug/AndroidManifest.xml`, for the emulators),
 launcher icons are generated from `docs/brand/logo-icon.svg` (adaptive icon: `res/mipmap-anydpi-v26`, background `#0E9623`).

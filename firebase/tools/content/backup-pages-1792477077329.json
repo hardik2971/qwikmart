@@ -1,0 +1,62 @@
+{
+  "about": {
+    "slug": "about",
+    "title": {
+      "en": "About Us",
+      "hi": "About Us",
+      "ar": "About Us"
+    },
+    "content": {
+      "en": "<p>QwikMart is a hyperlocal quick commerce and eCommerce platform delivering groceries, fresh produce and everyday essentials in minutes, and lifestyle products in days.</p><p>Founded in Mumbai, we operate dark stores close to you so your order reaches you faster.</p>"
+    },
+    "updated_at": {
+      "_seconds": 1791793631,
+      "_nanoseconds": 0
+    }
+  },
+  "terms": {
+    "slug": "terms",
+    "title": {
+      "en": "Terms & Conditions",
+      "hi": "Terms & Conditions",
+      "ar": "Terms & Conditions"
+    },
+    "content": {
+      "en": "<p>By using QwikMart you agree to these terms. Prices and availability may change without notice. Orders are subject to acceptance and stock availability.</p>"
+    },
+    "updated_at": {
+      "_seconds": 1791793631,
+      "_nanoseconds": 0
+    }
+  },
+  "privacy": {
+    "slug": "privacy",
+    "title": {
+      "en": "Privacy Policy",
+      "hi": "Privacy Policy",
+      "ar": "Privacy Policy"
+    },
+    "content": {
+      "en": "<p>We respect your privacy. We collect only the information needed to process orders and improve our services, and never sell your personal data.</p><h3>Information we collect</h3><ul><li>Account details (name, phone, email)</li><li>Delivery addresses and location</li><li>Order history</li></ul>"
+    },
+    "updated_at": {
+      "_seconds": 1791793631,
+      "_nanoseconds": 0
+    }
+  },
+  "refund": {
+    "slug": "refund",
+    "title": {
+      "en": "Refund Policy",
+      "hi": "Refund Policy",
+      "ar": "Refund Policy"
+    },
+    "content": {
+      "en": "<p>Refunds for cancelled orders and approved returns are credited to your QwikMart wallet instantly, or to the original payment method within 5–7 business days on request.</p>"
+    },
+    "updated_at": {
+      "_seconds": 1791793631,
+      "_nanoseconds": 0
+    }
+  }
+}

@@ -26,7 +26,7 @@ bool osmTileCache = true;
 /// Shared OSM tile layer.
 TileLayer osmTileLayer() => TileLayer(
       urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-      userAgentPackageName: 'com.qwikmart.app',
+      userAgentPackageName: 'com.qwikmartapp.customer',
       maxZoom: 19,
       tileProvider: osmTileCache ? null : NetworkTileProvider(cachingProvider: const DisabledMapCachingProvider()),
     );

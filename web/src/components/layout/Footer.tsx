@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { ChevronRight, Mail, MapPin, PhoneCall } from 'lucide-react';
 import { api } from '@/lib/api';
@@ -10,6 +11,7 @@ import { useT } from '@/lib/i18n';
 import { AppStoreBadge, PAYMENT_BRANDS, PaymentLogo, PlayStoreBadge, socialIcons } from '../icons';
 import { Logo } from '../ui';
 import { useSettings } from './TopBar';
+import ContactModal from './ContactModal';
 
 const MAX_PAYMENTS = 5;
 
@@ -33,6 +35,7 @@ export default function Footer() {
   const { data: s } = useSettings();
   const ctx = useCtxKey();
   const { data: categories } = useQuery({ queryKey: ['categories-tree', ...ctx], queryFn: () => api.categories(), staleTime: 300_000 });
+  const [contactOpen, setContactOpen] = useState(false);
   const year = new Date().getFullYear();
   const appName = s?.app_name || 'QwikMart';
 
@@ -41,10 +44,11 @@ export default function Footer() {
   const payments = (s?.payment_gateways ?? []).filter((g) => g.enabled !== false && PAYMENT_BRANDS[g.key]);
   const shown = payments.slice(0, MAX_PAYMENTS);
   const extra = payments.length - shown.length;
-  const playUrl = s?.play_store_url || 'https://play.google.com/store/apps/details?id=com.qwikmart.app';
+  const playUrl = s?.play_store_url || 'https://play.google.com/store/apps/details?id=com.qwikmartapp.customer';
 
   return (
     <footer className="mt-24">
+      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
       {/* App download banner — overlaps the top of the dark footer */}
       <div className="container relative z-10">
         {/* No overflow-hidden on the card itself so the phone can pop out above it; decorations are clipped separately. */}
@@ -95,7 +99,12 @@ export default function Footer() {
               <FooterLink href="/pages/terms">{t('terms')}</FooterLink>
               <FooterLink href="/pages/privacy">{t('privacy')}</FooterLink>
               <FooterLink href="/blog">{t('blog')}</FooterLink>
-              <FooterLink href="/support">{t('contact_us')}</FooterLink>
+              <li>
+                <button type="button" onClick={() => setContactOpen(true)} className="group inline-flex items-center gap-2 text-[15px] text-white/80 transition hover:text-white">
+                  <ChevronRight className="h-4 w-4 shrink-0 transition group-hover:translate-x-0.5 rtl:rotate-180" />
+                  {t('contact_us')}
+                </button>
+              </li>
               <FooterLink href="/faq">{t('faq')}</FooterLink>
             </ul>
           </div>
@@ -122,6 +131,7 @@ export default function Footer() {
               <FooterLink href="/refer-earn">{t('refer_earn')}</FooterLink>
               <FooterLink href="/favorites">{t('favorites')}</FooterLink>
               <FooterLink href="/pages/refund">{t('return_refund_policy')}</FooterLink>
+              <FooterLink href="/pages/delete-account">Delete account</FooterLink>
             </ul>
           </div>
 

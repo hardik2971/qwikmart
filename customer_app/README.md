@@ -1,7 +1,7 @@
 # QwikMart — Customer App (Flutter)
 
 Customer mobile app for **QwikMart**, the hyperlocal Quick Commerce + eCommerce platform.
-Android applicationId: `com.qwikmart.app` (Kotlin namespace `com.qwikmart.app`) · App name: **QwikMart** · Platforms: Android, iOS, Web.
+Android applicationId: `com.qwikmartapp.customer` (Kotlin namespace `com.qwikmart.app`) · App name: **QwikMart** · Platforms: Android, iOS, Web.
 
 The app follows `../docs/SPEC.md` (design tokens §2, customer app §8) and the reference screenshots in
 `../docs/reference`. **Backend: Firebase only** — Auth, Cloud Firestore, Cloud Functions (`asia-south1` callables) and
@@ -181,7 +181,7 @@ Flow:
    countries you serve). While India is blocked, real numbers fail with a "region" error and the app shows
    "SMS verification is not available for this region yet".
 3. **Phone numbers for testing** (Sign-in method → Phone): add `+91 9876543210` → code `123456` (demo; no SMS sent).
-4. **Android phone auth** needs the signing certificates: Project settings → Your apps → `com.qwikmart.app` →
+4. **Android phone auth** needs the signing certificates: Project settings → Your apps → `com.qwikmartapp.customer` →
    *Add fingerprint* for the **debug** and **release/upload** keystores (SHA-1 and SHA-256), plus the Play App Signing
    key when publishing, then download the new `google-services.json` into `android/app/`. Print them with:
    ```bash
@@ -278,12 +278,12 @@ options), so the app cannot ship to the App Store until the iOS app is added (`f
    flutter build appbundle --release
    # → build/app/outputs/bundle/release/app-release.aab
    ```
-5. Firebase console → Project settings → `com.qwikmart.app` → add the **SHA-1 and SHA-256** of the upload key
+5. Firebase console → Project settings → `com.qwikmartapp.customer` → add the **SHA-1 and SHA-256** of the upload key
    (`keytool -list -v -keystore ~/qwikmart-upload.jks -alias upload`) **and** of the Play App Signing key
    (Play Console → Setup → App integrity), then download the refreshed `google-services.json` into `android/app/`.
    Required for phone auth / Play Integrity.
 
-Release config: applicationId `com.qwikmart.app`, targetSdk/compileSdk 36 and minSdk from the Flutter SDK (3.41: min 24),
+Release config: applicationId `com.qwikmartapp.customer`, targetSdk/compileSdk 36 and minSdk from the Flutter SDK (3.41: min 24),
 R8 shrinking is Flutter's default for release (Firebase libraries ship their own consumer ProGuard rules),
 cleartext HTTP is allowed in **debug builds only** (`src/debug/AndroidManifest.xml`, for the emulators),
 launcher icons are generated from `docs/brand/logo-icon.svg` (adaptive icon: `res/mipmap-anydpi-v26`, background `#0E9623`).

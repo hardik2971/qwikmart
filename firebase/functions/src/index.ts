@@ -12,6 +12,7 @@ export {
   publishHomeLayout, previewHomeSections, bulkImportProducts, exportReport, sendNotification, sendBulkEmail, testSmtp,
 } from './callables/panel';
 export { generateProductContent, translateFields } from './callables/ai';
+export { submitContactMessage } from './callables/contact';
 export { onOrderWritten } from './triggers/orders';
 export { onProductWritten, onStoreStockWritten, onReviewCreated, onCategoryWritten } from './triggers/catalog';
 export { onMailQueued } from './triggers/mail';

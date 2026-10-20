@@ -112,6 +112,19 @@ h4 {
 .prose-sb ol { @apply mb-3 list-decimal space-y-1 ps-5; }
 .prose-sb a { @apply text-primary underline; }
 .prose-sb strong { @apply text-ink; }
+.prose-sb h2:first-child { @apply mt-0; }
+.prose-sb li > p { @apply mb-1; }
+.prose-sb hr { @apply my-6 border-line; }
+.prose-sb .lead { @apply text-base text-muted; }
+.prose-sb .note { @apply my-4 rounded-xl border border-primary/20 bg-primary/5 p-4; }
+.prose-sb .updated { @apply mb-4 text-sm text-muted; }
+.prose-sb table { @apply my-4 w-full border-collapse overflow-hidden rounded-xl text-sm; }
+.prose-sb th { @apply border border-line bg-soft px-3 py-2 text-start font-semibold text-ink; }
+.prose-sb td { @apply border border-line px-3 py-2 align-top; }
+.prose-sb .table-wrap { @apply overflow-x-auto; }
+.prose-sb .grid-3 { @apply my-4 grid gap-3 sm:grid-cols-3; }
+.prose-sb .grid-3 > div { @apply rounded-xl bg-soft p-4; }
+.prose-sb .grid-3 strong { @apply block text-lg; }
 
 .leaflet-container {
   font-family: inherit;
