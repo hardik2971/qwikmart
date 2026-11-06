@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
+import clsx from 'clsx';
 import { Search, TrendingUp, X } from 'lucide-react';
 import { api } from '@/lib/api';
 import { useT } from '@/lib/i18n';
@@ -13,7 +14,8 @@ import { useCtxKey, useDebounced } from '@/hooks';
 const HINTS_QUICK = ['McCain Samosa Cheese Corn', 'Amul Taaza Toned Milk', 'Aashirvaad Atta', 'Alphonso Mango', 'Lay\'s Magic Masala', 'Fresh Paneer'];
 const HINTS_ECOM = ['boAt Rockerz 450', 'iPhone 17 Pro Max', 'Noise Smart Watch', 'Levi\'s T-Shirt', 'Prestige Pressure Cooker'];
 
-export default function SearchBar({ initial = '' }: { initial?: string }) {
+export default function SearchBar({ initial = '', size = 'md' }: { initial?: string; size?: 'md' | 'lg' }) {
+  const lg = size === 'lg';
   const t = useT();
   const router = useRouter();
   const ctx = useCtxKey();
@@ -57,19 +59,24 @@ export default function SearchBar({ initial = '' }: { initial?: string }) {
           e.preventDefault();
           go(q);
         }}
-        className="flex h-11 items-center gap-2.5 rounded-btn border border-black/5 bg-surface px-3.5 shadow-soft focus-within:border-primary"
+        className={clsx(
+          'flex items-center gap-2.5 transition',
+          lg
+            ? 'h-14 rounded-2xl bg-surface px-4 shadow-pop focus-within:ring-4 focus-within:ring-accent/40'
+            : 'h-11 rounded-btn border border-line bg-soft px-3.5 hover:border-ink/20 focus-within:border-primary focus-within:bg-surface focus-within:ring-4 focus-within:ring-primary/10',
+        )}
       >
-        <Search className="h-[18px] w-[18px] shrink-0 text-muted" />
+        <Search className={clsx('shrink-0', lg ? 'h-5 w-5 text-primary' : 'h-[18px] w-[18px] text-muted')} />
         <div className="relative flex-1">
           <input
             value={q}
             onChange={(e) => setQ(e.target.value)}
             onFocus={() => setOpen(true)}
-            className="w-full bg-transparent text-sm text-ink outline-none"
+            className={clsx('w-full bg-transparent text-ink outline-none', lg ? 'text-base' : 'text-sm')}
             aria-label={t('search')}
           />
           {!q && (
-            <div className="pointer-events-none absolute inset-0 flex items-center gap-1.5 overflow-hidden text-sm">
+            <div className={clsx('pointer-events-none absolute inset-0 flex items-center gap-1.5 overflow-hidden', lg ? 'text-base' : 'text-sm')}>
               <span className="shrink-0 text-muted">{t('looking_for')}</span>
               <span key={hint} className="animate-slide-up truncate font-medium text-ink/80">
                 {hints[hint % hints.length]}
@@ -85,7 +92,7 @@ export default function SearchBar({ initial = '' }: { initial?: string }) {
       </form>
 
       {open && (
-        <div className="absolute inset-x-0 top-12 z-50 max-h-[70vh] overflow-y-auto rounded-card border border-line bg-surface p-3 shadow-pop">
+        <div className={clsx('absolute inset-x-0 z-50', lg ? 'top-16' : 'top-12', 'max-h-[70vh] overflow-y-auto rounded-card border border-line bg-surface p-3 text-body shadow-pop')}>
           {dq.length > 1 && sugg.data && (sugg.data.products.length > 0 || sugg.data.categories.length > 0) ? (
             <div className="space-y-1">
               {sugg.data.categories.map((c) => (
@@ -122,7 +129,7 @@ export default function SearchBar({ initial = '' }: { initial?: string }) {
             </div>
           ) : (
             <div>
-              <div className="mb-2 flex items-center gap-1.5 px-1 text-xs font-semibold uppercase tracking-wide text-muted">
+              <div className="mb-2 flex items-center gap-1.5 px-1 text-xs font-semibold text-muted">
                 <TrendingUp className="h-3.5 w-3.5" /> Trending searches
               </div>
               <div className="flex flex-wrap gap-2">

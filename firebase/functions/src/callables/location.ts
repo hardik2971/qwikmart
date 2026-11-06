@@ -1,5 +1,5 @@
-/** detectZone, getHome (60 s in-memory cache per instance). */
-import { cached, hotOpts, numIn, oneOf, open, str } from '../shared/firebase';
+/** detectZone, getHome (stale-while-revalidate in-memory cache per instance). */
+import { cachedSwr, hotOpts, numIn, oneOf, open, str } from '../shared/firebase';
 import type { DetectZoneResult, Mode } from '../shared/types';
 import { detect } from '../services/zones';
 import { resolveHome } from '../services/home';
@@ -24,5 +24,6 @@ export const getHome = open<{ zone_id?: string; mode?: Mode; category_id?: strin
   const zoneId = str(data.zone_id, 'zone_id', { max: 128 }) || null;
   const categoryId = str(data.category_id, 'category_id', { max: 128 }) || null;
   const lang = str(data.lang, 'lang', { max: 10 }) || 'en';
-  return cached(`home/${zoneId}/${mode}/${categoryId}/${lang}`, 60_000, () => resolveHome(zoneId, mode, categoryId, lang));
+  // fresh for 60 s; up to 30 min old it is served instantly while one refresh runs in the background
+  return cachedSwr(`home/${zoneId}/${mode}/${categoryId}/${lang}`, 60_000, 30 * 60_000, () => resolveHome(zoneId, mode, categoryId, lang));
 }, hotOpts);

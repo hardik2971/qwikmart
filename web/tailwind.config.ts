@@ -8,11 +8,20 @@ const config: Config = {
   darkMode: 'class',
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
-    container: { center: true, padding: { DEFAULT: '1rem', lg: '1.5rem' }, screens: { '2xl': '1320px' } },
+    // Content width steps: 960 → 1280 → 1536 → 1660 px, with 2.5rem side padding from 960 px up.
+    container: {
+      center: true,
+      padding: { DEFAULT: '1rem', c960: '2.5rem' },
+      screens: { c960: '960px', c1280: '1280px', c1536: '1536px', c1660: '1660px' },
+    },
     extend: {
       colors: {
-        primary: { DEFAULT: '#0E9623', dark: '#0B7A1C', 50: '#E6F4E9', 100: '#CCE9D2' },
-        navy: '#25396F',
+        // QwikMart brand (logo): royal blue for actions, orange for speed & savings, night navy for dark surfaces.
+        primary: { DEFAULT: '#1846D1', dark: '#0F34A8', 50: '#EDF2FF', 100: '#D9E3FF' },
+        accent: { DEFAULT: '#F26411', ink: '#C2410C', 50: '#FFF1E7', 100: '#FFE0CC' },
+        night: { DEFAULT: '#0A1B4D', 2: '#132A6B' },
+        fresh: '#15803D',
+        navy: '#0A1B4D',
         muted: v('muted'),
         body: v('body'),
         ink: v('ink'),
@@ -28,12 +37,14 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-jakarta)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'var(--font-jakarta)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
-      borderRadius: { card: '12px', btn: '10px' },
+      borderRadius: { card: '16px', btn: '12px', hero: '28px' },
       boxShadow: {
-        soft: '0 1px 2px rgba(16,24,40,.05)',
-        card: '0 1px 3px rgba(16,24,40,.06), 0 1px 2px rgba(16,24,40,.04)',
-        pop: '0 12px 32px -8px rgba(16,24,40,.18)',
+        soft: '0 1px 2px rgba(10,27,77,.06)',
+        card: '0 10px 30px -12px rgba(10,27,77,.22)',
+        pop: '0 24px 48px -16px rgba(10,27,77,.35)',
+        cta: '0 8px 20px -8px rgba(24,70,209,.55)',
       },
       keyframes: {
         'slide-up': { from: { transform: 'translateY(8px)', opacity: '0' }, to: { transform: 'none', opacity: '1' } },

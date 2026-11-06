@@ -36,7 +36,7 @@ export default function TrackingMap({ track, height = 360 }: { track: OrderTrack
     <MapContainer center={store} zoom={14} style={{ height, width: '100%', borderRadius: 12 }} scrollWheelZoom={false}>
       <TileLayer attribution="&copy; OpenStreetMap" url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Fit points={[store, home]} />
-      <Polyline positions={[store, ...(rider ? [rider] : []), home]} pathOptions={{ color: '#0E9623', weight: 4, dashArray: '8 8' }} />
+      <Polyline positions={[store, ...(rider ? [rider] : []), home]} pathOptions={{ color: '#1846D1', weight: 4, dashArray: '8 8' }} />
       <Marker position={store} icon={pinIcon('#25396F', '🏪')}>
         <Popup>Store</Popup>
       </Marker>
@@ -44,7 +44,7 @@ export default function TrackingMap({ track, height = 360 }: { track: OrderTrack
         <Popup>Delivery address</Popup>
       </Marker>
       {rider && (
-        <Marker position={rider} icon={pinIcon('#0E9623', '🛵')}>
+        <Marker position={rider} icon={pinIcon('#1846D1', '🛵')}>
           <Popup>Delivery partner</Popup>
         </Marker>
       )}

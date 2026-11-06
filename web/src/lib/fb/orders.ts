@@ -4,10 +4,9 @@
  * (`rider`, copied onto the order by the onDeliveryBoyLocation trigger).
  */
 import { collection, doc, getDoc, getDocs, limit, onSnapshot, orderBy, query, where, type QueryConstraint } from 'firebase/firestore';
-import { getDownloadURL, ref as storageRef, uploadBytes } from 'firebase/storage';
 import type { ReturnBody, ReviewBody, Unsubscribe } from '../api-types';
 import { ApiError } from '../errors';
-import { fb } from '../firebase';
+import { fb, storageModule } from '../firebase';
 import type { Id, Order, OrderDetail, OrderItem, OrderTrack, Paginated, PaymentPayload, PlaceOrderPayload, ReturnRequest } from '../types';
 import { call, customerUid, guard, iso, num, sid, type Raw } from './core';
 import { cart, setPromoCode, summaryArgs } from './cart';
@@ -241,10 +240,11 @@ export async function invoiceUrl(id: Id): Promise<string | null> {
 export async function createReturn(b: ReturnBody): Promise<ReturnRequest> {
   const owner = await customerUid();
   const paths: string[] = [];
+  const { storage, ref, uploadBytes } = await storageModule();
   for (const [i, file] of (b.images ?? []).slice(0, 5).entries()) {
     if (!file.type.startsWith('image/') || file.size > 5 * 1024 * 1024) throw new ApiError('Photos must be images of 5 MB or less.', 422);
     const path = `users/${owner}/returns/${sid(b.order_id)}_${Date.now()}_${i}.${(file.name.split('.').pop() || 'jpg').toLowerCase()}`;
-    await guard(() => uploadBytes(storageRef(fb().storage, path), file, { contentType: file.type }));
+    await guard(() => uploadBytes(ref(storage, path), file, { contentType: file.type }));
     paths.push(path);
   }
   const r = await call<Raw>('requestReturn', { order_id: String(b.order_id), variant_id: String(b.item.product_variant_id), qty: b.qty, reason: b.reason, images: paths });
@@ -255,10 +255,11 @@ export async function createReturn(b: ReturnBody): Promise<ReturnRequest> {
 export async function createReview(b: ReviewBody): Promise<void> {
   const owner = await customerUid();
   const paths: string[] = [];
+  const { storage, ref, uploadBytes, getDownloadURL } = await storageModule();
   for (const [i, file] of (b.images ?? []).slice(0, 5).entries()) {
     if (!file.type.startsWith('image/') || file.size > 5 * 1024 * 1024) throw new ApiError('Photos must be images of 5 MB or less.', 422);
     const path = `reviews/${owner}/${sid(b.order_id)}_${Date.now()}_${i}.${(file.name.split('.').pop() || 'jpg').toLowerCase()}`;
-    const r = storageRef(fb().storage, path);
+    const r = ref(storage, path);
     await guard(() => uploadBytes(r, file, { contentType: file.type }));
     paths.push(await guard(() => getDownloadURL(r)));
   }
@@ -266,4 +267,7 @@ export async function createReview(b: ReviewBody): Promise<void> {
 }
 
 /** Public URL of an uploaded Storage object (avatars). */
-export const downloadUrl = (path: string) => getDownloadURL(storageRef(fb().storage, path));
+export const downloadUrl = async (path: string) => {
+  const { storage, ref, getDownloadURL } = await storageModule();
+  return getDownloadURL(ref(storage, path));
+};

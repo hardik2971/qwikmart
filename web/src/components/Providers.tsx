@@ -141,7 +141,7 @@ export default function Providers({ children }: { children: ReactNode }) {
           position="top-center"
           toastOptions={{
             style: { borderRadius: 10, fontSize: 14, fontWeight: 500 },
-            success: { iconTheme: { primary: '#0E9623', secondary: '#fff' } },
+            success: { iconTheme: { primary: '#1846D1', secondary: '#fff' } },
           }}
         />
       </QueryClientProvider>

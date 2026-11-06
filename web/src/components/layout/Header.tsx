@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import { useQueryClient } from '@tanstack/react-query';
 import clsx from 'clsx';
@@ -15,10 +15,11 @@ import {
   MapPin,
   MessageCircle,
   Package,
-  ShoppingCart,
+  ShoppingBag,
   User,
   Wallet,
   MapPinned,
+  Zap,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { logout } from '@/lib/auth';
@@ -29,32 +30,15 @@ import type { Mode } from '@/lib/types';
 import { Logo } from '../ui';
 import SearchBar from './SearchBar';
 
-/** Writes the header gradient CSS variables (category header_color / mode) to <html>. */
-function useHeaderGradient() {
-  const mode = useUiStore((s) => s.mode);
+/** Tints the category strip with the selected category's admin colour (header_color). */
+function useCategoryTint() {
   const headerColor = useUiStore((s) => s.headerColor);
   const { resolvedTheme } = useTheme();
   useEffect(() => {
     const root = document.documentElement.style;
-    if (resolvedTheme === 'dark') {
-      root.removeProperty('--header-from');
-      root.removeProperty('--header-via');
-      root.removeProperty('--header-to');
-      return;
-    }
-    let from = '#EBEC8D';
-    let via = '#F8F9E9';
-    if (mode === 'ecommerce') {
-      from = headerColor || '#FDE2D6';
-      via = headerColor ? `color-mix(in srgb, ${headerColor} 30%, white)` : '#FFF4EE';
-    } else if (headerColor) {
-      from = headerColor;
-      via = `color-mix(in srgb, ${headerColor} 30%, white)`;
-    }
-    root.setProperty('--header-from', from);
-    root.setProperty('--header-via', via);
-    root.setProperty('--header-to', '#FFFFFF');
-  }, [mode, headerColor, resolvedTheme]);
+    if (!headerColor || resolvedTheme === 'dark') root.removeProperty('--cat-tint');
+    else root.setProperty('--cat-tint', `color-mix(in srgb, ${headerColor} 16%, white)`);
+  }, [headerColor, resolvedTheme]);
 }
 
 export function ModeToggle({ className }: { className?: string }) {
@@ -70,16 +54,19 @@ export function ModeToggle({ className }: { className?: string }) {
     router.push('/');
   };
   return (
-    <div className={clsx('flex rounded-btn bg-black/[.06] p-1', className)}>
+    <div role="tablist" className={clsx('flex rounded-full bg-soft p-1 ring-1 ring-line', className)}>
       {(['quick', 'ecommerce'] as Mode[]).map((m) => (
         <button
           key={m}
+          role="tab"
+          aria-selected={current === m}
           onClick={() => pick(m)}
           className={clsx(
-            'flex-1 rounded-lg px-4 py-1.5 text-xs font-semibold transition md:min-w-[100px]',
-            current === m ? 'bg-surface text-ink shadow-soft' : 'bg-black/25 text-white hover:bg-black/35',
+            'flex flex-1 items-center justify-center gap-1 rounded-full px-3 py-1.5 text-xs font-semibold transition sm:px-4 md:min-w-[92px]',
+            current === m ? 'bg-night text-white shadow-soft' : 'text-body hover:text-ink',
           )}
         >
+          {m === 'quick' && <Zap className={clsx('h-3.5 w-3.5', current === m ? 'fill-accent text-accent' : '')} />}
           {t(m)}
         </button>
       ))}
@@ -87,30 +74,27 @@ export function ModeToggle({ className }: { className?: string }) {
   );
 }
 
-function DeliveryInfo({ compact }: { compact?: boolean }) {
+function DeliveryInfo() {
   const t = useT();
   const mounted = useMounted();
   const loc = useLocationStore();
   const mode = useUiStore((s) => s.mode);
   const open = useUiStore((s) => s.openLocationModal);
   const mins = loc.deliveryMinutes || loc.zone?.delivery_time_minutes || 8;
+  const chosen = mounted && loc.chosen;
   return (
-    <button onClick={() => open(true)} className="flex min-w-0 items-start gap-2 text-start">
-      <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-ink" />
+    <button onClick={() => open(true)} className="flex min-w-0 items-center gap-2.5 rounded-xl py-1 pe-2 text-start transition hover:bg-soft md:ps-1">
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-accent-50 text-accent-ink">
+        {chosen && mode === 'quick' ? <Zap className="h-[18px] w-[18px] fill-current" /> : <MapPin className="h-[18px] w-[18px]" />}
+      </span>
       <span className="min-w-0">
-        <span className={clsx('block truncate font-bold text-ink', compact ? 'text-sm' : 'text-sm')}>
-          {!mounted || !loc.chosen
-            ? t('select_location')
-            : mode === 'ecommerce'
-              ? t('delivery_in_days')
-              : t('delivery_in', { mins })}
-          {mounted && loc.chosen && loc.distanceKm != null && mode === 'quick' && (
-            <span className="font-bold"> · {loc.distanceKm.toFixed(2)} km</span>
-          )}
+        <span className="block truncate font-display text-[15px] font-bold leading-tight text-ink">
+          {!chosen ? t('select_location') : mode === 'ecommerce' ? t('delivery_in_days') : t('delivery_in', { mins })}
         </span>
-        <span className="flex items-center gap-1 text-xs text-body/80">
-          <span className="block max-w-[220px] truncate">
-            {mounted && loc.chosen ? loc.address || `${loc.zone?.name}, ${loc.country?.name ?? ''}` : 'Choose your area'}
+        <span className="flex items-center gap-1 text-xs text-muted">
+          <span className="block max-w-[200px] truncate">
+            {chosen ? loc.address || `${loc.zone?.name}, ${loc.country?.name ?? ''}` : 'Choose your area'}
+            {chosen && loc.distanceKm != null && mode === 'quick' && ` · ${loc.distanceKm.toFixed(1)} km`}
           </span>
           <ChevronDown className="h-3 w-3 shrink-0" />
         </span>
@@ -125,21 +109,28 @@ function CartButton() {
   useCart(); // keeps summary in sync
   const { count, total } = useCartStore();
   const { fmt } = useCurrency();
+  const filled = mounted && count > 0;
   return (
-    <Link href="/cart" className="relative flex items-center gap-3.5 rounded-btn px-2 py-1.5 hover:bg-black/5">
+    <Link
+      href="/cart"
+      aria-label={t('your_cart')}
+      className={clsx(
+        'relative flex h-11 items-center gap-2.5 rounded-xl px-3 transition',
+        filled ? 'bg-primary text-white shadow-cta hover:bg-primary-dark md:px-4' : 'text-ink ring-1 ring-line hover:bg-soft',
+      )}
+    >
       <span className="relative">
-        <ShoppingCart className="h-6 w-6 text-ink" />
-        {mounted && count > 0 && (
-          <span className="absolute -end-2 -top-2 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-white">
+        <ShoppingBag className="h-5 w-5" />
+        {filled && (
+          <span className="absolute -end-2 -top-2 flex h-[18px] min-w-[18px] items-center justify-center rounded-full bg-accent px-1 text-[10px] font-bold text-white ring-2 ring-primary">
             {count}
           </span>
         )}
       </span>
-      {mounted && count > 0 && (
-        <span className="hidden leading-tight lg:block">
-          <span className="block text-[11px] text-body/80">{t('your_cart')}</span>
-          <span className="block text-sm font-bold text-ink">{fmt(total)}</span>
-        </span>
+      {filled ? (
+        <span className="hidden text-sm font-bold tabular-nums sm:block">{fmt(total)}</span>
+      ) : (
+        <span className="hidden text-sm font-semibold lg:block">{t('your_cart')}</span>
       )}
     </Link>
   );
@@ -173,7 +164,7 @@ function UserMenu() {
 
   if (!mounted || !user) {
     return (
-      <Link href="/login" className="flex items-center gap-2 rounded-btn px-2 py-1.5 text-sm font-semibold text-ink hover:bg-black/5">
+      <Link href="/login" className="flex h-11 items-center gap-2 rounded-xl px-3 text-sm font-semibold text-ink transition hover:bg-soft">
         <User className="h-5 w-5" />
         <span className="hidden sm:inline">{t('login')}</span>
       </Link>
@@ -190,65 +181,84 @@ function UserMenu() {
 
   return (
     <div ref={ref} className="relative">
-      <button onClick={() => setOpen((o) => !o)} className="flex items-center gap-2 rounded-btn px-2 py-1.5 hover:bg-black/5">
-        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+      <button onClick={() => setOpen((o) => !o)} aria-expanded={open} className="flex h-11 items-center gap-2 rounded-xl px-1.5 transition hover:bg-soft lg:px-2">
+        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-night font-display text-sm font-bold text-white">
           {user?.name?.[0]?.toUpperCase() || 'U'}
         </span>
         <span className="hidden max-w-[120px] truncate text-sm font-semibold text-ink lg:block">{user?.name}</span>
-        <ChevronDown className="hidden h-4 w-4 text-ink lg:block" />
+        <ChevronDown className="hidden h-4 w-4 text-muted lg:block" />
       </button>
       {open && (
-        <div className="absolute end-0 top-12 z-50 w-60 rounded-card border border-line bg-surface p-2 shadow-pop animate-fade-in">
-          <div className="border-b border-line px-3 pb-2 pt-1">
-            <div className="truncate font-semibold text-ink">{user?.name}</div>
-            <div className="truncate text-xs text-muted">{user?.email || user?.phone}</div>
+        <div className="absolute end-0 top-[52px] z-50 w-64 overflow-hidden rounded-card border border-line bg-surface shadow-pop animate-fade-in">
+          <div className="bg-night px-4 py-3.5 text-white">
+            <div className="truncate font-display font-bold">{user?.name}</div>
+            <div className="truncate text-xs text-white/70">{user?.email || user?.phone}</div>
           </div>
-          {MENU.map(({ href, icon: Icon, key }) => (
-            <Link
-              key={href}
-              href={href}
-              onClick={() => setOpen(false)}
-              className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-ink hover:bg-soft"
-            >
-              <Icon className="h-4 w-4 text-muted" /> {t(key)}
-            </Link>
-          ))}
-          <button onClick={doLogout} className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm text-danger hover:bg-red-50 dark:hover:bg-red-500/10">
-            <LogOut className="h-4 w-4" /> {t('logout')}
-          </button>
+          <div className="p-1.5">
+            {MENU.map(({ href, icon: Icon, key }) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setOpen(false)}
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-ink hover:bg-soft"
+              >
+                <Icon className="h-4 w-4 text-muted" /> {t(key)}
+              </Link>
+            ))}
+            <div className="my-1 h-px bg-line" />
+            <button onClick={doLogout} className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-danger hover:bg-red-50 dark:hover:bg-red-500/10">
+              <LogOut className="h-4 w-4" /> {t('logout')}
+            </button>
+          </div>
         </div>
       )}
     </div>
   );
 }
 
+// first path segments that are real pages; any other single segment is a zone home (/mumbai)
+const ROUTES = new Set(['addresses', 'blog', 'cart', 'categories', 'category', 'checkout', 'faq', 'favorites', 'login', 'notifications', 'orders', 'pages', 'product', 'products', 'profile', 'refer-earn', 'support', 'wallet']);
+
+function useIsHome() {
+  const parts = usePathname().split('/').filter(Boolean);
+  return parts.length === 0 || (parts.length === 1 && !ROUTES.has(parts[0]));
+}
+
 export default function Header() {
-  useHeaderGradient();
+  useCategoryTint();
+  const home = useIsHome();
   return (
-    <header className="sticky top-0 z-40 border-b border-black/5" style={{ background: 'linear-gradient(180deg,var(--header-from),var(--header-via))' }}>
-      <div className="container py-2.5">
-        <div className="flex items-center gap-3 lg:gap-6">
-          <Link href="/" className="h-9 shrink-0 md:h-10" aria-label="QwikMart home">
-            <Logo className="h-9 w-auto md:h-10" />
+    <header className="sticky top-0 z-40 border-b border-line bg-surface/95 backdrop-blur-md supports-[backdrop-filter]:bg-surface/85">
+      <div className="container py-2.5 md:py-3">
+        <div className="flex items-center gap-3 lg:gap-5">
+          <Link href="/" className="h-8 shrink-0 md:h-9" aria-label="QwikMart home">
+            <Logo className="h-8 w-auto md:h-9" />
           </Link>
-          <div className="hidden max-w-[300px] shrink-0 md:block">
+          <div className="hidden max-w-[280px] shrink-0 md:block">
             <DeliveryInfo />
           </div>
           <div className="hidden flex-1 md:block">
             <SearchBar />
           </div>
-          <ModeToggle className="hidden md:flex" />
-          <div className="ms-auto flex items-center gap-1 md:ms-0 md:border-s md:border-black/10 md:ps-3">
+          <ModeToggle className="hidden lg:flex" />
+          <div className="ms-auto flex items-center gap-1.5 md:ms-0">
             <CartButton />
             <UserMenu />
           </div>
         </div>
         <div className="mt-2 flex items-center justify-between gap-3 md:hidden">
-          <DeliveryInfo compact />
-          <ModeToggle className="w-44 shrink-0" />
+          <DeliveryInfo />
+          <ModeToggle className="shrink-0" />
         </div>
-        <div className="mt-2 md:hidden">
-          <SearchBar />
+        {/* on the home page the hero carries the search on phones */}
+        {!home && (
+          <div className="mt-2 md:hidden">
+            <SearchBar />
+          </div>
+        )}
+        {/* tablet: the mode switch moves under the search row */}
+        <div className="mt-2 hidden justify-end md:flex lg:hidden">
+          <ModeToggle />
         </div>
       </div>
     </header>

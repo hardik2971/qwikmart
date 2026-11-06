@@ -160,7 +160,7 @@ export default function AddressForm({
             <input className="input" value={d.pincode} onChange={(e) => set('pincode', e.target.value)} inputMode="numeric" />
           </div>
           <label className="mt-7 flex items-center gap-2 text-sm text-ink">
-            <input type="checkbox" checked={d.is_default} onChange={(e) => set('is_default', e.target.checked)} className="h-4 w-4 accent-[#0E9623]" />
+            <input type="checkbox" checked={d.is_default} onChange={(e) => set('is_default', e.target.checked)} className="h-4 w-4 accent-[#1846D1]" />
             Make this my default address
           </label>
         </div>

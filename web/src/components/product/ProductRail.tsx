@@ -30,7 +30,7 @@ export default function ProductRail({
     el.scrollBy({ left: dir * rtl * el.clientWidth * 0.8, behavior: 'smooth' });
   };
   return (
-    <section className="py-5">
+    <section className="py-6">
       {(title || seeAllHref) && (
         <div className="mb-4 flex items-end justify-between gap-3">
           <div>
@@ -39,14 +39,14 @@ export default function ProductRail({
           </div>
           <div className="flex items-center gap-2">
             {seeAllHref && (
-              <Link href={seeAllHref} className="text-sm font-semibold text-primary hover:underline">
+              <Link href={seeAllHref} className="me-1 rounded-full px-3 py-1.5 text-sm font-semibold text-primary transition hover:bg-primary-50">
                 {t('see_all')}
               </Link>
             )}
-            <button onClick={() => scroll(-1)} className="hidden rounded-full border border-line bg-surface p-1.5 hover:bg-soft md:block" aria-label="Previous">
+            <button onClick={() => scroll(-1)} className="hidden h-9 w-9 items-center justify-center rounded-full bg-surface text-ink ring-1 ring-line transition hover:bg-night hover:text-white md:flex" aria-label="Previous">
               <ChevronLeft className="h-4 w-4 rtl:rotate-180" />
             </button>
-            <button onClick={() => scroll(1)} className="hidden rounded-full border border-line bg-surface p-1.5 hover:bg-soft md:block" aria-label="Next">
+            <button onClick={() => scroll(1)} className="hidden h-9 w-9 items-center justify-center rounded-full bg-surface text-ink ring-1 ring-line transition hover:bg-night hover:text-white md:flex" aria-label="Next">
               <ChevronRight className="h-4 w-4 rtl:rotate-180" />
             </button>
           </div>
@@ -55,12 +55,12 @@ export default function ProductRail({
       <div ref={ref} className="no-scrollbar -mx-1 flex snap-x gap-3 overflow-x-auto px-1 pb-2">
         {loading
           ? Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="w-[46%] shrink-0 sm:w-[30%] md:w-[200px]">
+              <div key={i} className="w-[46%] shrink-0 sm:w-[30%] md:w-[212px]">
                 <ProductCardSkeleton />
               </div>
             ))
           : products.map((p) => (
-              <div key={p.id} className="w-[46%] shrink-0 snap-start sm:w-[30%] md:w-[200px]">
+              <div key={p.id} className="w-[46%] shrink-0 snap-start sm:w-[30%] md:w-[212px]">
                 <ProductCard product={p} className="h-full" />
               </div>
             ))}

@@ -131,8 +131,8 @@ function images(list: unknown) {
 
 export async function hydrateSections(sections: HomeSection[], ctx: HomeCtx) {
   const active = [...(sections ?? [])].filter((s) => s && s.is_active !== false).sort((a, b) => Number(a.sort ?? 0) - Number(b.sort ?? 0));
-  const out: unknown[] = [];
-  for (const s of active) {
+  // Sections are independent: resolve them in parallel (in sequence a zone layout took ~12 s of Firestore round trips).
+  const out = await Promise.all(active.map(async (s) => {
     const settings = { ...(SECTION_DEFAULTS[s.type] ?? {}), ...(s.settings ?? {}) } as Record<string, unknown>;
     let items: unknown[] = [];
     switch (s.type) {
@@ -182,10 +182,10 @@ export async function hydrateSections(sections: HomeSection[], ctx: HomeCtx) {
       default:
         items = [];
     }
-    if (s.type !== 'heading_text' && !items.length) continue;
-    out.push({ id: s.id ?? null, type: s.type, title: s.title ? pick(s.title as never, ctx.lang) : null, settings, items });
-  }
-  return out;
+    if (s.type !== 'heading_text' && !items.length) return null;
+    return { id: s.id ?? null, type: s.type, title: s.title ? pick(s.title as never, ctx.lang) : null, settings, items };
+  }));
+  return out.filter(Boolean);
 }
 
 function fallbackSections(ctx: HomeCtx, categoryId: string | null, bannerIds: string[]): HomeSection[] {
@@ -204,10 +204,12 @@ function fallbackSections(ctx: HomeCtx, categoryId: string | null, bannerIds: st
 }
 
 export async function resolveHome(zoneId: string | null, mode: Mode, categoryId: string | null, lang: string) {
+  // independent reads start together
+  const rootsP = rootCategories(mode, lang);
+  const categoryP = categoryId ? db.doc(`categories/${categoryId}`).get() : Promise.resolve(null);
   const ctx = await makeCtx(zoneId, mode, lang);
   const layoutSnap = ctx.zone ? await db.doc(`home_layouts/${ctx.zone.id}_${mode}_${categoryId ?? 'all'}`).get() : null;
   const layout = layoutSnap?.exists && layoutSnap.get('is_published') ? (layoutSnap.data() as HomeLayoutDoc) : null;
-  const category = categoryId ? await db.doc(`categories/${categoryId}`).get() : null;
   let sections: HomeSection[];
   if (layout) sections = layout.published_sections ?? [];
   else {
@@ -220,6 +222,7 @@ export async function resolveHome(zoneId: string | null, mode: Mode, categoryId:
     }
     sections = fallbackSections(ctx, categoryId, bannerIds);
   }
+  const [category, categories, hydrated] = await Promise.all([categoryP, rootsP, hydrateSections(sections, ctx)]);
   const defaultBg = mode === 'ecommerce' ? '#FDE2D6' : '#EBEC8D';
   return {
     layout_id: layout ? layoutSnap!.id : null,
@@ -230,7 +233,7 @@ export async function resolveHome(zoneId: string | null, mode: Mode, categoryId:
       bg_value: layout?.header?.bg_value ?? (category?.get('header_color') as string | undefined) ?? defaultBg,
       text_color: layout?.header?.text_color ?? '#111827',
     },
-    categories: await rootCategories(mode, lang),
-    sections: await hydrateSections(sections, ctx),
+    categories,
+    sections: hydrated,
   };
 }

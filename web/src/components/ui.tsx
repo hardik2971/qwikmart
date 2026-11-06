@@ -22,6 +22,17 @@ export function Logo({ className, iconOnly }: { className?: string; iconOnly?: b
 }
 /* eslint-enable @next/next/no-img-element */
 
+/** The logo's three "speed lines", used as the brand mark for delivery speed. */
+export function SpeedLines({ className = '' }: { className?: string }) {
+  return (
+    <span aria-hidden className={`inline-flex flex-col items-end gap-[3px] ${className}`}>
+      <i className="block h-[3px] w-6 rounded-full bg-accent" />
+      <i className="block h-[3px] w-4 rounded-full bg-accent/80" />
+      <i className="block h-[3px] w-2.5 rounded-full bg-accent/60" />
+    </span>
+  );
+}
+
 export function Breadcrumbs({ items }: { items: { label: string; href?: string }[] }) {
   return (
     <nav className="flex flex-wrap items-center gap-1.5 text-xs text-muted">
@@ -177,7 +188,7 @@ export function PageTitle({ title, subtitle, right }: { title: string; subtitle?
   return (
     <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
       <div>
-        <h1 className="text-2xl font-bold">{title}</h1>
+        <h1 className="text-[26px] font-bold leading-tight md:text-[30px]">{title}</h1>
         {subtitle && <p className="mt-1 text-sm text-muted">{subtitle}</p>}
       </div>
       {right}

@@ -51,7 +51,7 @@ function invoiceHtml(o: OrderDetail, fmt: (n: number) => string) {
     .map((i) => `<tr><td>${i.product_name}<br><small>${i.variant_name}</small></td><td>${i.qty}</td><td>${fmt(i.sale_price ?? i.price)}</td><td>${fmt(i.total)}</td></tr>`)
     .join('');
   return `<!doctype html><html><head><title>Invoice ${o.order_number}</title><style>
-  body{font-family:system-ui,sans-serif;color:#344054;padding:32px;max-width:760px;margin:auto}h1{color:#0E9623;margin:0}
+  body{font-family:system-ui,sans-serif;color:#344054;padding:32px;max-width:760px;margin:auto}h1{color:#1846D1;margin:0}
   table{width:100%;border-collapse:collapse;margin-top:20px}td,th{border-bottom:1px solid #E6EAF2;padding:8px;text-align:left}
   .r{text-align:right}.tot td{font-weight:700}</style></head><body>
   <h1>QwikMart</h1><p>Tax Invoice · <b>${o.order_number}</b> · ${formatDate(o.created_at)}</p>
@@ -422,7 +422,7 @@ export default function OrderDetailPage() {
         <div className="space-y-2">
           {CANCEL_REASONS.map((r) => (
             <label key={r} className="flex items-center gap-2 text-sm text-ink">
-              <input type="radio" checked={reason === r} onChange={() => setReason(r)} className="accent-[#0E9623]" /> {r}
+              <input type="radio" checked={reason === r} onChange={() => setReason(r)} className="accent-[#1846D1]" /> {r}
             </label>
           ))}
         </div>

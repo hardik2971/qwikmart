@@ -10,7 +10,6 @@ import { getApp, getApps, initializeApp, type FirebaseApp } from 'firebase/app';
 import { connectAuthEmulator, getAuth, type Auth } from 'firebase/auth';
 import { connectFirestoreEmulator, getFirestore, type Firestore } from 'firebase/firestore';
 import { connectFunctionsEmulator, getFunctions, type Functions } from 'firebase/functions';
-import { connectStorageEmulator, getStorage, type FirebaseStorage } from 'firebase/storage';
 
 export const FUNCTIONS_REGION = 'asia-south1';
 
@@ -41,7 +40,6 @@ interface Sdk {
   auth: Auth;
   db: Firestore;
   functions: Functions;
-  storage: FirebaseStorage;
 }
 let sdk: Sdk | null = null;
 
@@ -52,16 +50,26 @@ function init(): Sdk | null {
   const auth = getAuth(app);
   const db = getFirestore(app);
   const functions = getFunctions(app, FUNCTIONS_REGION);
-  const storage = getStorage(app);
   if (USE_EMULATORS) {
     connectAuthEmulator(auth, `http://${EMU_HOST}:${EMU_PORTS.auth}`, { disableWarnings: true });
     connectFirestoreEmulator(db, EMU_HOST, EMU_PORTS.firestore);
     connectFunctionsEmulator(functions, EMU_HOST, EMU_PORTS.functions);
-    connectStorageEmulator(storage, EMU_HOST, EMU_PORTS.storage);
   }
   auth.useDeviceLanguage();
-  sdk = { app, auth, db, functions, storage };
+  sdk = { app, auth, db, functions };
   return sdk;
+}
+
+let storageSdk: Promise<typeof import('firebase/storage') & { storage: import('firebase/storage').FirebaseStorage }> | null = null;
+
+/** Firebase Storage (uploads only), loaded on first use so the SDK stays out of the first page load. */
+export function storageModule() {
+  storageSdk ??= import('firebase/storage').then((m) => {
+    const storage = m.getStorage(fb().app);
+    if (USE_EMULATORS) m.connectStorageEmulator(storage, EMU_HOST, EMU_PORTS.storage);
+    return { ...m, storage };
+  });
+  return storageSdk;
 }
 
 /** The Firebase Auth instance, or null on the server / when Firebase is not configured. */

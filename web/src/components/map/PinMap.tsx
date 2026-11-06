@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import L from 'leaflet';
 import { MapContainer, Marker, TileLayer, useMap, useMapEvents } from 'react-leaflet';
 
-export const pinIcon = (color = '#0E9623', glyph = '') =>
+export const pinIcon = (color = '#1846D1', glyph = '') =>
   L.divIcon({
     className: '',
     iconSize: [34, 44],

@@ -3,7 +3,7 @@
 # DEMO data (src/lib/api.ts FORCE_MOCK). Keep NEXT_PUBLIC_USE_MOCK=false and the full web config here.
 # These values are public (Firebase web config) — no secrets belong in this file.
 runConfig:
-  minInstances: 0        # set 1 at launch to avoid cold starts on the storefront (billed while idle)
+  minInstances: 1        # keeps one instance warm: no 5–10 s cold start on the first visit (billed while idle; 0 = free but slow first load)
   maxInstances: 10
   concurrency: 80
   cpu: 1

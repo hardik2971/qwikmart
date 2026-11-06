@@ -1,19 +1,25 @@
 'use client';
 
 import { useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { useQuery } from '@tanstack/react-query';
 import { api } from '@/lib/api';
-import type { Banner, Category } from '@/lib/types';
+import type { Banner, Category, HomeData } from '@/lib/types';
 import { useCtxKey } from '@/hooks';
 import { useLocationStore, useUiStore, zoneSlug } from '@/store';
 import CategoryStrip from './CategoryStrip';
-import { BannerSlider, SectionRenderer } from './Sections';
+import { SectionRenderer } from './Sections';
+import Hero from './Hero';
+
+// Swiper is only needed when the admin has banner slides: keep it out of the first page load.
+const BannerSlider = dynamic(() => import('./BannerSlider'), {
+  loading: () => <div className="container"><div className="skeleton mt-6 aspect-[16/6] w-full rounded-hero" /></div>,
+});
 import { ProductCardSkeleton } from '../product/ProductCard';
 
 function HomeSkeleton() {
   return (
     <>
-      <div className="skeleton h-[300px] w-full rounded-none md:h-[440px]" />
       <div className="container py-8">
         <div className="skeleton h-7 w-56" />
         <div className="mt-5 grid grid-cols-4 gap-3 md:grid-cols-7">
@@ -66,7 +72,7 @@ function useZoneFromSlug(slug?: string) {
   }, [slug]);
 }
 
-export default function HomeView({ zone }: { zone?: string }) {
+export default function HomeView({ zone, initial }: { zone?: string; initial?: HomeData | null }) {
   useZoneFromSlug(zone);
   const ctx = useCtxKey();
   const activeId = useUiStore((s) => s.activeCategoryId);
@@ -75,8 +81,10 @@ export default function HomeView({ zone }: { zone?: string }) {
   // reset category tab when leaving home
   useEffect(() => () => setActive(null, null), [setActive]);
 
-  const home = useQuery({ queryKey: ['home', activeId, ...ctx], queryFn: () => api.home(activeId) });
-  const cats = useQuery({ queryKey: ['home', null, ...ctx], queryFn: () => api.home(null), select: (d) => d.categories });
+  // The server-rendered default storefront stands in while the visitor's own zone / mode / language loads.
+  const seed = initial ?? undefined;
+  const home = useQuery({ queryKey: ['home', activeId, ...ctx], queryFn: () => api.home(activeId), placeholderData: activeId == null ? seed : undefined });
+  const cats = useQuery({ queryKey: ['home', null, ...ctx], queryFn: () => api.home(null), placeholderData: seed, select: (d) => d.categories });
 
   const onSelect = (c: Category | null) => {
     setActive(c?.id ?? null, c?.header_color ?? null);
@@ -85,17 +93,20 @@ export default function HomeView({ zone }: { zone?: string }) {
 
   const sections = home.data?.sections || [];
   const banner = sections.find((s) => s.type === 'banner_slider');
+  const catSection = sections.find((s) => s.type === 'category_section');
+  const heroCats = (catSection?.items as Category[] | undefined) ?? cats.data ?? [];
 
   return (
     <div>
       <CategoryStrip categories={cats.data || []} activeId={activeId} onSelect={onSelect} loading={cats.isLoading} />
+      {activeId == null && <Hero categories={heroCats} />}
       {home.isLoading ? (
         <HomeSkeleton />
       ) : home.isError ? (
         <div className="container py-20 text-center text-muted">Unable to load the homepage. Please try again.</div>
       ) : (
         <>
-          {banner && <BannerSlider items={banner.items as Banner[]} />}
+          {banner && (banner.items as Banner[]).length > 0 && <BannerSlider items={banner.items as Banner[]} />}
           <div className="container">
             {sections
               .filter((s) => s !== banner)

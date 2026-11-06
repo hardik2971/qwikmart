@@ -42,6 +42,7 @@ import type {
 } from '../types';
 import { cached, call, chunk, ctx, guard, iso, isOn, money, num, pick, plain, type Raw } from './core';
 import { favoriteIds } from './favorites';
+import { toHomeData } from './home';
 
 const db = () => fb().db;
 const TEN_MIN = 10 * 60_000;
@@ -523,41 +524,10 @@ export async function trending(): Promise<string[]> {
 
 export async function home(categoryId?: Id | null): Promise<HomeData> {
   const c = ctx();
-  const h = await call<Raw>('getHome', { zone_id: c.zoneId ?? undefined, mode: c.mode, category_id: categoryId ? String(categoryId) : undefined, lang: c.lang });
-  const favs = await favoriteIds().catch(() => null);
-  const normCat = (x: Raw): Category => ({ ...x, products_count: x.products_count ?? x.product_count, children: x.children });
-  return {
-    header: h.header,
-    categories: (h.categories ?? []).map(normCat),
-    sections: (h.sections ?? []).map((s: Raw, si: number) => {
-      const settings = { ...(s.settings || {}) };
-      let items: Raw[] = Array.isArray(s.items) ? s.items : [];
-      let subtitle: string | undefined;
-      switch (s.type) {
-        case 'product_slider':
-          items = items.map((p) => ({
-            ...p,
-            thumbnail: p.thumbnail ?? p.images?.[0] ?? '',
-            images: p.images ?? [],
-            short_description: p.short_description ?? '',
-            is_favorite: favs ? favs.has(String(p.id)) : false,
-            variants: (p.variants ?? []).map((v: Raw) => ({ ...v, product_id: p.id, sale_price: v.sale_price ?? null })),
-          }));
-          if (!settings.category_slug && settings.category_id) settings.category_slug = String(settings.category_id);
-          break;
-        case 'grid_banner':
-        case 'title_image':
-        case 'banner_slider':
-          items = items.map((b, i) => ({ ...b, id: b.id ?? `${si}-${i}`, title: b.title || undefined, subtitle: b.subtitle || undefined }));
-          break;
-        case 'category_section':
-          items = items.map(normCat);
-          break;
-        case 'heading_text':
-          subtitle = settings.subtitle ?? undefined;
-          break;
-      }
-      return { id: String(s.id ?? si), type: s.type, title: s.title ?? (s.type === 'heading_text' ? settings.text : undefined) ?? undefined, subtitle, settings, items };
-    }),
-  };
+  // getHome is public: don't wait for the guest (anonymous) sign-in, and load favourites alongside it.
+  const [h, favs] = await Promise.all([
+    call<Raw>('getHome', { zone_id: c.zoneId ?? undefined, mode: c.mode, category_id: categoryId ? String(categoryId) : undefined, lang: c.lang }, { anonymousOk: false }),
+    favoriteIds().catch(() => null),
+  ]);
+  return toHomeData(h, favs);
 }

@@ -100,7 +100,7 @@ export default function CouponBox({ cart }: { cart: Cart }) {
             const locked = c.min_order > cart.subtotal || c.is_applicable === false;
             return (
               <div key={c.id} className={clsx('flex overflow-hidden rounded-card border border-line', locked && 'opacity-70')}>
-                <div className="flex w-14 items-center justify-center text-white" style={{ background: c.banner_color || '#0E9623' }}>
+                <div className="flex w-14 items-center justify-center text-white" style={{ background: c.banner_color || '#1846D1' }}>
                   <span className="-rotate-90 whitespace-nowrap text-xs font-extrabold tracking-wider">{c.discount_type === 'percent' ? `${c.discount_value}%` : 'OFFER'}</span>
                 </div>
                 <div className="flex-1 p-3">

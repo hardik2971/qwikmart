@@ -3,29 +3,26 @@
 @tailwind utilities;
 
 :root {
+  /* cool neutrals tuned for AA contrast on white (muted = 4.9:1) */
   --surface: 255 255 255;
-  --page: 255 255 255;
-  --soft: 246 248 250;
-  --ink: 17 24 39;
-  --body: 52 64 84;
-  --muted: 124 141 181;
-  --line: 230 234 242;
-  --header-from: #ebec8d;
-  --header-via: #f8f9e9;
-  --header-to: #ffffff;
+  --page: 244 246 251;
+  --soft: 238 242 250;
+  --ink: 11 27 63;
+  --body: 58 71 102;
+  --muted: 99 112 145;
+  --line: 225 231 242;
+  --cat-tint: rgb(255 255 255);
 }
 
 .dark {
-  --surface: 24 28 36;
-  --page: 15 18 24;
-  --soft: 32 37 47;
-  --ink: 243 244 246;
-  --body: 209 213 219;
-  --muted: 140 152 182;
-  --line: 45 51 64;
-  --header-from: #2e3214;
-  --header-via: #1a1e16;
-  --header-to: #0f1218;
+  --surface: 19 26 46;
+  --page: 11 16 32;
+  --soft: 28 37 62;
+  --ink: 240 243 250;
+  --body: 205 212 228;
+  --muted: 148 160 190;
+  --line: 40 51 82;
+  --cat-tint: rgb(19 26 46);
 }
 
 html {
@@ -40,45 +37,60 @@ h1,
 h2,
 h3,
 h4 {
-  @apply text-ink;
+  @apply font-display tracking-[-0.015em] text-ink;
+}
+
+:focus-visible {
+  outline: 2px solid #1846d1;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-btn px-4 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60;
+    @apply inline-flex items-center justify-center gap-2 rounded-btn px-4 py-2.5 text-sm font-semibold transition active:scale-[.98] disabled:cursor-not-allowed disabled:opacity-60 disabled:active:scale-100;
   }
   .btn-primary {
-    @apply btn bg-primary text-white hover:bg-primary-dark;
+    @apply btn bg-primary text-white shadow-cta hover:bg-primary-dark;
   }
   .btn-outline {
-    @apply btn border border-primary text-primary hover:bg-primary-50;
+    @apply btn border-[1.5px] border-primary text-primary hover:bg-primary-50;
   }
   .btn-soft {
     @apply btn bg-primary-50 text-primary hover:bg-primary-100;
   }
   .btn-ghost {
-    @apply btn border border-line bg-surface text-ink hover:bg-soft;
+    @apply btn border border-line bg-surface text-ink hover:border-ink/25 hover:bg-soft;
   }
   .card {
-    @apply rounded-card border border-line bg-surface shadow-soft;
+    @apply rounded-card border border-line bg-surface;
   }
   .input {
-    @apply w-full rounded-btn border border-line bg-surface px-3.5 py-2.5 text-sm text-ink outline-none transition placeholder:text-muted focus:border-primary focus:ring-2 focus:ring-primary/15;
+    @apply w-full rounded-btn border border-line bg-surface px-3.5 py-2.5 text-sm text-ink outline-none transition placeholder:text-muted hover:border-ink/20 focus:border-primary focus:ring-4 focus:ring-primary/10;
   }
   .label {
-    @apply mb-1.5 block text-sm font-medium text-ink;
+    @apply mb-1.5 block text-sm font-semibold text-ink;
   }
   .chip {
-    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1.5 text-sm text-ink transition hover:border-primary;
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3.5 py-1.5 text-sm font-medium text-ink transition hover:border-ink/30;
   }
   .chip-active {
-    @apply border-primary bg-primary-50 text-primary;
+    @apply border-night bg-night text-white hover:border-night;
   }
   .skeleton {
-    @apply animate-pulse rounded-md bg-soft;
+    @apply animate-pulse rounded-lg bg-soft;
   }
   .section-title {
-    @apply text-xl font-bold text-ink md:text-2xl;
+    @apply font-display text-[22px] font-bold leading-tight tracking-[-0.02em] text-ink md:text-[28px];
   }
 }
 
@@ -90,18 +102,17 @@ h4 {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  .header-gradient {
-    background: linear-gradient(180deg, var(--header-from) 0%, var(--header-via) 70%, var(--header-to) 100%);
-  }
 }
 
 /* Swiper pagination in brand colours */
 .swiper-pagination-bullet {
-  background: #cbd5e1 !important;
+  background: rgb(255 255 255 / .55) !important;
   opacity: 1 !important;
 }
 .swiper-pagination-bullet-active {
-  background: #111827 !important;
+  background: #fff !important;
+  width: 22px !important;
+  border-radius: 99px !important;
 }
 
 /* Rich text (product description, blog, CMS) */

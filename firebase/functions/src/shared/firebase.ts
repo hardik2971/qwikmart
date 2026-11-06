@@ -19,7 +19,9 @@ setGlobalOptions({ region: REGION, maxInstances: 20 });
  * set HOT_MIN_INSTANCES=1 in functions/.env.<project> (or answer the deploy prompt) to avoid cold starts.
  */
 export const HOT_MIN_INSTANCES = defineInt('HOT_MIN_INSTANCES', { default: 0, description: 'minInstances for detectZone / getHome / cartSummary' });
-export const hotOpts = { minInstances: HOT_MIN_INSTANCES };
+// A full vCPU: the default (256 MiB / 0.167 vCPU) builds a zone home in 4–6 s and serves one request per instance,
+// so simultaneous visitors each hit a cold instance. With cpu 1 one instance serves up to 80 requests at once.
+export const hotOpts = { minInstances: HOT_MIN_INSTANCES, cpu: 1, memory: '512MiB' as const, concurrency: 80 };
 
 if (!getApps().length) initializeApp();
 
@@ -143,6 +145,38 @@ export async function cached<T>(key: string, ttlMs: number, load: () => Promise<
   const value = await load();
   cache.set(key, { at: Date.now(), value });
   return value;
+}
+
+const inflight = new Map<string, Promise<unknown>>();
+
+/**
+ * Stale-while-revalidate cache for expensive public reads (getHome): a fresh hit is returned as is; a hit older than
+ * ttlMs (but younger than maxStaleMs) is returned at once while one background load refreshes it; concurrent cold
+ * calls share a single load instead of each doing the work.
+ */
+export async function cachedSwr<T>(key: string, ttlMs: number, maxStaleMs: number, load: () => Promise<T>): Promise<T> {
+  const run = () => {
+    let p = inflight.get(key) as Promise<T> | undefined;
+    if (!p) {
+      p = load()
+        .then((value) => {
+          cache.set(key, { at: Date.now(), value });
+          return value;
+        })
+        .finally(() => inflight.delete(key));
+      inflight.set(key, p);
+    }
+    return p;
+  };
+  const hit = cache.get(key);
+  if (!hit || ttlMs <= 0) return run();
+  const age = Date.now() - hit.at;
+  if (age < ttlMs) return hit.value as T;
+  if (age < maxStaleMs) {
+    run().catch((e) => logger.warn('Background refresh failed', key, e));
+    return hit.value as T;
+  }
+  return run();
 }
 
 export function clearCache(prefix = '') {

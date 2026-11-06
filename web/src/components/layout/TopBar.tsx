@@ -21,26 +21,25 @@ export default function TopBar() {
   const links = settings?.social_links || {};
 
   return (
-    <div className="hidden border-b border-black/5 text-xs text-ink/80 md:block" style={{ background: 'var(--header-from)' }}>
+    <div className="hidden bg-night text-xs text-white/75 md:block">
       <div className="container flex h-9 items-center justify-between gap-4">
         <div className="flex items-center gap-2">
-          <span className="font-medium">{t('follow_us')}</span>
-          {socialIcons.map(({ key, Icon, color }) => (
+          <span>{t('follow_us')}</span>
+          {socialIcons.map(({ key, Icon }) => (
             <a
               key={key}
               href={links[key] || '#'}
               target="_blank"
               rel="noreferrer"
               aria-label={key}
-              className="flex h-5 w-5 items-center justify-center rounded-full text-white transition hover:scale-110"
-              style={{ background: color }}
+              className="flex h-6 w-6 items-center justify-center rounded-full text-white/70 transition hover:bg-white/10 hover:text-white"
             >
               <Icon className="h-3 w-3" />
             </a>
           ))}
         </div>
         <div className="flex items-center gap-5">
-          <a href={`tel:${settings?.support_phone || ''}`} className="inline-flex items-center gap-1.5 hover:text-primary">
+          <a href={`tel:${settings?.support_phone || ''}`} className="inline-flex items-center gap-1.5 hover:text-white">
             <Phone className="h-3.5 w-3.5" /> {settings?.support_phone || '+91 8200323466'}
           </a>
           <label className="inline-flex items-center gap-1.5">
@@ -48,7 +47,7 @@ export default function TopBar() {
             <select
               value={mounted ? lang : 'en'}
               onChange={(e) => setLang(e.target.value as Lang)}
-              className="cursor-pointer bg-transparent font-medium outline-none"
+              className="cursor-pointer bg-transparent font-medium text-white/85 outline-none"
               aria-label={t('language')}
             >
               {LANGUAGES.map((l) => (

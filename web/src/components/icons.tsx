@@ -79,8 +79,8 @@ export const PAYMENT_BRANDS: Record<string, { name: string; color: string; label
   razorpay: { name: 'Razorpay', color: '#0C2451', label: 'R' },
   cashfree: { name: 'Cashfree', color: '#6933D3', label: 'C' },
   paytabs: { name: 'PayTabs', color: '#E5373C', label: 'PT' },
-  cod: { name: 'Cash on Delivery', color: '#0E9623', label: '₹' },
-  wallet: { name: 'QwikMart Wallet', color: '#0E9623', label: '$' },
+  cod: { name: 'Cash on Delivery', color: '#1846D1', label: '₹' },
+  wallet: { name: 'QwikMart Wallet', color: '#1846D1', label: '$' },
 };
 
 export function PaymentLogo({ method, size = 32 }: { method: string; size?: number }) {

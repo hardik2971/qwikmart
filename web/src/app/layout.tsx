@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Plus_Jakarta_Sans } from 'next/font/google';
+import { Bricolage_Grotesque, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import Providers from '@/components/Providers';
 import TopBar from '@/components/layout/TopBar';
@@ -13,6 +13,14 @@ const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
   variable: '--font-jakarta',
+  display: 'swap',
+});
+
+// Headlines: a grotesque with character for the brand voice; body copy stays in Jakarta.
+const display = Bricolage_Grotesque({
+  subsets: ['latin'],
+  weight: ['600', '700', '800'],
+  variable: '--font-display',
   display: 'swap',
 });
 
@@ -40,14 +48,34 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0E9623',
+  themeColor: '#0A1B4D',
   width: 'device-width',
   initialScale: 1,
 };
 
+// Hosts the first page view talks to (callables, Firestore, guest sign-in, product images): open the
+// connections while the JS bundle is still downloading.
+const PROJECT_ID = process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID;
+const PRECONNECT = PROJECT_ID
+  ? [
+      `https://asia-south1-${PROJECT_ID}.cloudfunctions.net`,
+      'https://firestore.googleapis.com',
+      'https://identitytoolkit.googleapis.com',
+    ]
+  : [];
+// Firebase App Hosting serves next/image unoptimized, so product images load straight from Storage. They are plain
+// <img> requests (no CORS), so their connection must not be opened as crossorigin.
+const IMAGE_HOST = 'https://firebasestorage.googleapis.com';
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" dir="ltr" suppressHydrationWarning className={jakarta.variable}>
+    <html lang="en" dir="ltr" suppressHydrationWarning className={`${jakarta.variable} ${display.variable}`}>
+      <head>
+        {PRECONNECT.map((href) => (
+          <link key={href} rel="preconnect" href={href} crossOrigin="anonymous" />
+        ))}
+        {PROJECT_ID && <link rel="preconnect" href={IMAGE_HOST} />}
+      </head>
       <body className="min-h-screen font-sans">
         <Providers>
           <TopBar />

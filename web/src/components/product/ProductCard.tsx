@@ -30,7 +30,7 @@ export function QtyStepper({
   return (
     <div
       className={clsx(
-        'inline-flex items-center justify-between rounded-lg bg-primary font-bold text-white',
+        'inline-flex items-center justify-between rounded-xl bg-primary font-bold text-white shadow-cta',
         size === 'sm' ? 'h-8 min-w-[76px] text-sm' : 'h-11 min-w-[120px] text-base',
         busy && 'opacity-80',
       )}
@@ -57,7 +57,7 @@ export function AddButton({ variantId, productId, outOfStock, size = 'sm' }: { v
   const { qty, inc, dec, busy, max } = useCartLine(variantId, productId);
   if (outOfStock)
     return (
-      <span className={clsx('inline-flex items-center rounded-lg border border-line px-2 text-[11px] font-semibold text-muted', size === 'sm' ? 'h-8' : 'h-11')}>
+      <span className={clsx('inline-flex items-center rounded-xl bg-soft px-2.5 text-[11px] font-semibold text-muted', size === 'sm' ? 'h-8' : 'h-11')}>
         {t('out_of_stock')}
       </span>
     );
@@ -69,7 +69,7 @@ export function AddButton({ variantId, productId, outOfStock, size = 'sm' }: { v
         inc();
       }}
       className={clsx(
-        'inline-flex items-center justify-center rounded-lg border border-primary bg-surface font-bold text-primary shadow-soft transition hover:bg-primary-50',
+        'inline-flex items-center justify-center rounded-xl border-[1.5px] border-primary bg-surface font-bold text-primary transition hover:bg-primary hover:text-white',
         size === 'sm' ? 'h-8 min-w-[76px] text-sm' : 'h-11 min-w-[120px]',
       )}
     >
@@ -92,13 +92,13 @@ export default function ProductCard({ product, className, layout = 'grid' }: { p
 
   if (layout === 'list') {
     return (
-      <div className={clsx('group relative flex gap-3 overflow-hidden rounded-card border border-line bg-surface p-3 transition hover:shadow-card', className)}>
+      <div className={clsx('group relative flex gap-3 rounded-card border border-line bg-surface p-3 transition hover:border-ink/15 hover:shadow-card', className)}>
         {off > 0 && (
-          <div className="pointer-events-none absolute -start-[34px] top-[14px] z-10 w-[120px] -rotate-45 bg-primary py-[3px] text-center text-[10px] font-extrabold uppercase leading-tight text-white shadow rtl:rotate-45">
+          <span className="pointer-events-none absolute start-2 top-2 z-10 rounded-md bg-accent-ink px-1.5 py-0.5 text-[11px] font-bold leading-4 text-white">
             {off}% {t('off')}
-          </div>
+          </span>
         )}
-        <Link href={href} className="relative block h-28 w-28 shrink-0 overflow-hidden rounded-lg bg-soft">
+        <Link href={href} className="relative block h-28 w-28 shrink-0 overflow-hidden rounded-xl bg-soft">
           <Image src={v.image || product.thumbnail} alt={product.name} fill sizes="112px" className="object-cover transition duration-300 group-hover:scale-105" />
         </Link>
         <div className="flex min-w-0 flex-1 flex-col">
@@ -110,7 +110,7 @@ export default function ProductCard({ product, className, layout = 'grid' }: { p
               <Heart className={clsx('h-4 w-4', product.is_favorite ? 'fill-danger text-danger' : 'text-muted')} />
             </button>
           </div>
-          <span className="mt-1 inline-flex w-fit items-center gap-1 rounded bg-soft px-1.5 py-0.5 text-[10px] font-semibold uppercase text-body">
+          <span className="mt-1 inline-flex w-fit items-center gap-1 rounded-md bg-primary-50 px-1.5 py-0.5 text-[11px] font-semibold text-primary">
             <Clock3 className="h-3 w-3" /> {etaLabel(product.delivery_minutes)}
           </span>
           {product.variants.length > 1 ? (
@@ -141,7 +141,7 @@ export default function ProductCard({ product, className, layout = 'grid' }: { p
           )}
           <div className="mt-auto flex items-end justify-between gap-2 pt-2">
             <div className="flex items-baseline gap-2 leading-tight">
-              <span className="text-lg font-extrabold text-ink">{fmt(effectivePrice(v))}</span>
+              <span className="font-display text-lg font-bold tabular-nums text-ink">{fmt(effectivePrice(v))}</span>
               {off > 0 && <span className="text-xs text-muted line-through">{fmt(v.price)}</span>}
             </div>
             <AddButton variantId={v.id} productId={product.id} outOfStock={v.stock <= 0} />
@@ -152,20 +152,20 @@ export default function ProductCard({ product, className, layout = 'grid' }: { p
   }
 
   return (
-    <div className={clsx('group relative flex flex-col overflow-hidden rounded-card border border-line bg-surface p-2.5 transition hover:shadow-card', className)}>
+    <div className={clsx('group relative flex flex-col rounded-card border border-line bg-surface p-2 transition hover:border-ink/15 hover:shadow-card', className)}>
       {off > 0 && (
-        <div className="pointer-events-none absolute -start-[34px] top-[14px] z-10 w-[120px] -rotate-45 bg-primary py-[3px] text-center text-[10px] font-extrabold uppercase leading-tight text-white shadow rtl:rotate-45">
-          {off}% {t('off')}
-        </div>
+        <span className="pointer-events-none absolute start-3.5 top-3.5 z-10 rounded-md bg-accent-ink px-1.5 py-0.5 text-[11px] font-bold leading-4 text-white">
+            {off}% {t('off')}
+          </span>
       )}
       <button
         onClick={() => toggleFav(product)}
-        className="absolute end-2 top-2 z-10 rounded-full bg-surface/90 p-1.5 shadow-soft"
+        className="absolute end-3.5 top-3.5 z-10 rounded-full bg-surface/90 p-1.5 shadow-soft backdrop-blur"
         aria-label="Favourite"
       >
         <Heart className={clsx('h-4 w-4', product.is_favorite ? 'fill-danger text-danger' : 'text-muted')} />
       </button>
-      <Link href={href} className="relative block aspect-square overflow-hidden rounded-lg bg-soft">
+      <Link href={href} className="relative block aspect-square overflow-hidden rounded-xl bg-soft">
         <Image
           src={v.image || product.thumbnail}
           alt={product.name}
@@ -180,10 +180,10 @@ export default function ProductCard({ product, className, layout = 'grid' }: { p
         )}
       </Link>
       <div className="mt-2 flex flex-1 flex-col">
-        <span className="inline-flex w-fit items-center gap-1 rounded bg-soft px-1.5 py-0.5 text-[10px] font-semibold uppercase text-body">
+        <span className="inline-flex w-fit items-center gap-1 rounded-md bg-primary-50 px-1.5 py-0.5 text-[11px] font-semibold text-primary">
           <Clock3 className="h-3 w-3" /> {etaLabel(product.delivery_minutes)}
         </span>
-        <Link href={href} className="mt-1.5 line-clamp-2 min-h-[2.5rem] text-[13px] font-semibold leading-5 text-ink hover:text-primary">
+        <Link href={href} className="mt-1.5 line-clamp-2 min-h-[2.5rem] text-[13.5px] font-semibold leading-5 text-ink hover:text-primary">
           {product.name}
         </Link>
         <div className="relative mt-0.5">
@@ -214,7 +214,7 @@ export default function ProductCard({ product, className, layout = 'grid' }: { p
         </div>
         <div className="mt-auto flex items-end justify-between gap-1 pt-2">
           <div className="min-w-0 leading-tight">
-            <div className="text-sm font-bold text-ink">{fmt(effectivePrice(v))}</div>
+            <div className="font-display text-base font-bold tabular-nums text-ink">{fmt(effectivePrice(v))}</div>
             {off > 0 && <div className="text-[11px] text-muted line-through">{fmt(v.price)}</div>}
           </div>
           <AddButton variantId={v.id} productId={product.id} outOfStock={v.stock <= 0} />
@@ -226,8 +226,8 @@ export default function ProductCard({ product, className, layout = 'grid' }: { p
 
 export function ProductCardSkeleton() {
   return (
-    <div className="rounded-card border border-line bg-surface p-2.5">
-      <div className="skeleton aspect-square w-full" />
+    <div className="rounded-card border border-line bg-surface p-2">
+      <div className="skeleton aspect-square w-full rounded-xl" />
       <div className="skeleton mt-3 h-3 w-12" />
       <div className="skeleton mt-2 h-4 w-full" />
       <div className="skeleton mt-1 h-4 w-2/3" />

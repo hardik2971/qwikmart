@@ -16,7 +16,7 @@ import ContactModal from './ContactModal';
 const MAX_PAYMENTS = 5;
 
 function FooterHeading({ children }: { children: React.ReactNode }) {
-  return <h4 className="mb-5 max-w-[200px] border-b border-white/15 pb-4 text-lg font-bold text-white">{children}</h4>;
+  return <h4 className="mb-5 max-w-[200px] border-b border-white/10 pb-4 font-display text-lg font-bold text-white">{children}</h4>;
 }
 
 function FooterLink({ href, children, strong }: { href: string; children: React.ReactNode; strong?: boolean }) {
@@ -52,9 +52,14 @@ export default function Footer() {
       {/* App download banner — overlaps the top of the dark footer */}
       <div className="container relative z-10">
         {/* No overflow-hidden on the card itself so the phone can pop out above it; decorations are clipped separately. */}
-        <div className="relative rounded-[28px] bg-gradient-to-br from-[#2BAA3A] via-[#16952A] to-[#0B7A1C] px-6 py-8 shadow-xl md:px-12 md:py-10">
+        <div className="relative rounded-[28px] bg-gradient-to-br from-primary via-[#1339B4] to-night-2 px-6 py-8 shadow-xl md:px-12 md:py-10">
           <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden rounded-[28px]">
             <div className="absolute -right-20 -top-24 h-72 w-72 rounded-full bg-white/10" />
+            <div className="absolute -right-6 bottom-8 hidden flex-col items-end gap-2 md:flex">
+              <i className="block h-2 w-40 rounded-full bg-accent/80" />
+              <i className="block h-2 w-28 rounded-full bg-accent/60" />
+              <i className="block h-2 w-16 rounded-full bg-accent/40" />
+            </div>
             <div className="absolute -bottom-28 left-1/3 h-64 w-64 rounded-full bg-white/5" />
           </div>
           <div className="relative grid items-center gap-6 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
@@ -69,7 +74,7 @@ export default function Footer() {
               />
             </div>
             <div className="text-center md:text-start">
-              <h2 className="text-3xl font-extrabold tracking-tight text-white md:text-[40px] md:leading-tight">{t('app_promo_title')}</h2>
+              <h2 className="font-display text-3xl font-extrabold tracking-[-0.02em] text-white md:text-[40px] md:leading-tight">{t('app_promo_title')}</h2>
               <p className="mx-auto mt-3 max-w-xl text-base text-white/90 md:mx-0 md:text-lg">{t('app_promo_text')}</p>
               <div className="mt-6 flex flex-wrap justify-center gap-3 md:justify-start">
                 <a href={playUrl} target="_blank" rel="noreferrer" aria-label="Get it on Google Play" className="rounded-lg ring-1 ring-white/70 transition hover:-translate-y-0.5">
@@ -90,7 +95,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="-mt-28 bg-[#1C2127] pt-40 text-white/80">
+      <div className="-mt-28 bg-night pt-40 text-white/75">
         <div className="container grid gap-10 pb-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <FooterHeading>{t('about_us')}</FooterHeading>
@@ -136,7 +141,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-5 border-b border-white/15 pb-4 text-lg font-bold text-white">{t('get_in_touch')}</h4>
+            <h4 className="mb-5 border-b border-white/10 pb-4 font-display text-lg font-bold text-white">{t('get_in_touch')}</h4>
             <ul className="space-y-4">
               {s?.company_address && (
                 <li className="flex items-start gap-3">

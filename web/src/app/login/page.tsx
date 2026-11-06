@@ -21,7 +21,7 @@ import {
 import { errorMessage } from '@/lib/errors';
 import { useMounted } from '@/hooks';
 import { useAuthStore } from '@/store';
-import { Logo, Spinner } from '@/components/ui';
+import { Logo, SpeedLines, Spinner } from '@/components/ui';
 import { useSettings } from '@/components/layout/TopBar';
 
 function OtpInput({ value, onChange }: { value: string; onChange: (v: string) => void }) {
@@ -166,22 +166,25 @@ function Inner() {
 
   return (
     <div className="container flex justify-center py-10">
-      <div className="grid w-full max-w-5xl overflow-hidden rounded-2xl border border-line bg-surface shadow-card md:grid-cols-2">
-        <div className="relative hidden flex-col justify-between overflow-hidden p-10 md:flex" style={{ background: 'linear-gradient(160deg,#EBEC8D 0%,#F8F9E9 60%,#E6F4E9 100%)' }}>
-          <Logo className="h-11 w-auto" />
-          <div>
-            <h2 className="text-3xl font-extrabold leading-tight text-[#111827]">
-              Groceries in <span className="text-primary">8 minutes.</span>
+      <div className="grid w-full max-w-5xl overflow-hidden rounded-hero border border-line bg-surface shadow-card md:grid-cols-2">
+        <div className="relative hidden flex-col justify-between overflow-hidden bg-night p-10 text-white md:flex">
+          <span className="w-fit rounded-xl bg-white px-3 py-2">
+            <Logo className="h-8 w-auto" />
+          </span>
+          <div className="relative">
+            <SpeedLines className="mb-4" />
+            <h2 className="font-display text-[34px] font-extrabold leading-[1.05] tracking-[-0.03em] text-white">
+              Groceries in minutes.
               <br /> Everything else in days.
             </h2>
-            <ul className="mt-6 space-y-3 text-sm text-[#344054]">
-              <li className="flex items-center gap-3"><span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-primary"><Zap className="h-4 w-4" /></span> Lightning-fast quick commerce</li>
-              <li className="flex items-center gap-3"><span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-primary"><Truck className="h-4 w-4" /></span> Live order tracking with OTP delivery</li>
-              <li className="flex items-center gap-3"><span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-primary"><ShieldCheck className="h-4 w-4" /></span> Wallet, cashback &amp; referral rewards</li>
+            <ul className="mt-7 space-y-3.5 text-sm text-white/80">
+              <li className="flex items-center gap-3"><span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-accent"><Zap className="h-4 w-4" /></span> Quick delivery from a store near you</li>
+              <li className="flex items-center gap-3"><span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-accent"><Truck className="h-4 w-4" /></span> Live order tracking with OTP delivery</li>
+              <li className="flex items-center gap-3"><span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-accent"><ShieldCheck className="h-4 w-4" /></span> Wallet, cashback &amp; referral rewards</li>
             </ul>
           </div>
-          <div className="absolute -bottom-20 -end-20 h-72 w-72 rounded-full bg-primary/10" />
-          {showDemo ? <p className="relative text-xs text-[#7C8DB5]">Demo: phone 9876543210 · OTP 123456 · customer@gmail.com / 123456</p> : <span />}
+          <div aria-hidden className="absolute -bottom-24 -end-24 h-80 w-80 rounded-full bg-primary/30 blur-2xl" />
+          {showDemo ? <p className="relative text-xs text-white/60">Demo: phone 9876543210 · OTP 123456 · customer@gmail.com / 123456</p> : <span />}
         </div>
 
         <div className="p-6 sm:p-10">

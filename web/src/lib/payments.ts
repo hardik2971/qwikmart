@@ -71,7 +71,7 @@ function razorpay(p: PaymentPayload, verify: Verify): Promise<boolean> {
           currency: p.currency,
           name: extra.name || 'QwikMart',
           prefill: extra.prefill || {},
-          theme: { color: extra.theme_color || '#0E9623' },
+          theme: { color: extra.theme_color || '#1846D1' },
           handler: (r: Any) => verify({ ...r, gateway: 'razorpay' }).then(() => resolve(true), reject),
           modal: { ondismiss: () => reject(new Error('Payment cancelled.')) },
         });
@@ -89,7 +89,7 @@ async function stripe(p: PaymentPayload, verify: Verify, returnUrl: string): Pro
     overlay.setAttribute('style', 'position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:16px');
     const box = document.createElement('div');
     box.setAttribute('style', 'background:#fff;color:#111827;border-radius:14px;max-width:440px;width:100%;padding:20px;font-family:inherit');
-    box.innerHTML = `<div style="font-weight:700;margin-bottom:12px">Pay ${p.currency ?? ''} ${p.amount ?? ''}</div><div id="sb-stripe-el"></div><div id="sb-stripe-err" style="color:#DC2626;font-size:13px;margin-top:8px"></div><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:16px"><button id="sb-stripe-cancel" style="padding:8px 14px;border:1px solid #E6EAF2;border-radius:10px">Cancel</button><button id="sb-stripe-pay" style="padding:8px 14px;border-radius:10px;background:#0E9623;color:#fff;font-weight:600">Pay now</button></div>`;
+    box.innerHTML = `<div style="font-weight:700;margin-bottom:12px">Pay ${p.currency ?? ''} ${p.amount ?? ''}</div><div id="sb-stripe-el"></div><div id="sb-stripe-err" style="color:#DC2626;font-size:13px;margin-top:8px"></div><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:16px"><button id="sb-stripe-cancel" style="padding:8px 14px;border:1px solid #E6EAF2;border-radius:10px">Cancel</button><button id="sb-stripe-pay" style="padding:8px 14px;border-radius:10px;background:#1846D1;color:#fff;font-weight:600">Pay now</button></div>`;
     overlay.appendChild(box);
     document.body.appendChild(overlay);
     elements.create('payment').mount('#sb-stripe-el');

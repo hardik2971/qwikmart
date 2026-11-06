@@ -263,7 +263,7 @@ export default function ProductListing({ category }: { category?: Category | nul
                 type="checkbox"
                 checked={brandIds.includes(String(b.id))}
                 onChange={() => toggleList('brand', brandIds, String(b.id))}
-                className="h-4 w-4 accent-[#0E9623]"
+                className="h-4 w-4 accent-[#1846D1]"
               />
               {b.name}
             </label>
@@ -319,7 +319,7 @@ export default function ProductListing({ category }: { category?: Category | nul
                   name="price"
                   checked={active}
                   onChange={() => setParam({ min: a ? String(a) : null, max: b ? String(b) : null })}
-                  className="h-4 w-4 accent-[#0E9623]"
+                  className="h-4 w-4 accent-[#1846D1]"
                 />
                 {b ? `${fmt(a)} – ${fmt(b)}` : `${fmt(a)} & above`}
               </label>

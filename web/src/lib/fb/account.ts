@@ -16,9 +16,8 @@ import {
   where,
   writeBatch,
 } from 'firebase/firestore';
-import { getDownloadURL, ref as storageRef, uploadBytes } from 'firebase/storage';
 import { ApiError } from '../errors';
-import { fb } from '../firebase';
+import { fb, storageModule } from '../firebase';
 import type { Address, AppNotification, Id, ReferralData, User, WalletData, Withdrawal } from '../types';
 import { call, customerUid, guard, iso, num, type Raw } from './core';
 import { publicSettings } from './catalog';
@@ -99,7 +98,8 @@ export async function uploadAvatar(file: File): Promise<User> {
   if (file.size > 5 * 1024 * 1024) throw new ApiError('Images must be 5 MB or smaller.', 422);
   const ext = (file.name.split('.').pop() || 'jpg').toLowerCase().replace(/[^a-z0-9]/g, '') || 'jpg';
   const url = await guard(async () => {
-    const r = storageRef(fb().storage, `users/${id}/avatar/avatar_${Date.now()}.${ext}`);
+    const { storage, ref, uploadBytes, getDownloadURL } = await storageModule();
+    const r = ref(storage, `users/${id}/avatar/avatar_${Date.now()}.${ext}`);
     await uploadBytes(r, file, { contentType: file.type });
     return getDownloadURL(r);
   });
