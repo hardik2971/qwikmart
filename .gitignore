@@ -27,7 +27,7 @@ build/
 firebase/functions/.env.local
 firebase/functions/.env.*.local
 # functions params per project (non-secret, e.g. HOT_MIN_INSTANCES) may be committed:
-!firebase/functions/.env.qwikmart-37299
+!firebase/functions/.env.qwikmart-infidec
 
 # Firebase CLI state + logs
 .firebase/
@@ -63,3 +63,7 @@ Thumbs.db
 # Play Store release bundles (signed binaries, large)
 store/playstore/**/*.aab
 store/playstore/**/*.apk
+
+# Service-account keys: never commit
+secret/
+*-firebase-adminsdk-*.json

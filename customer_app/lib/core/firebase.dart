@@ -10,7 +10,7 @@ import 'config.dart';
 import 'errors.dart';
 import 'web_auth_reset_stub.dart' if (dart.library.js_interop) 'web_auth_reset_web.dart';
 
-/// Firebase bootstrap + SDK accessors (project `qwikmart-37299`, functions in `asia-south1`).
+/// Firebase bootstrap + SDK accessors (project `qwikmart-infidec`, functions in `asia-south1`).
 class Fb {
   Fb._();
 

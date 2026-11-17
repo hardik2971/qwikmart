@@ -11,7 +11,7 @@ import * as logger from 'firebase-functions/logger';
 import type { CustomClaims, PublicSettings, UserType } from './types';
 
 export const REGION = 'asia-south1';
-export const PROJECT_ID = process.env.GCLOUD_PROJECT || process.env.GCP_PROJECT || 'qwikmart-37299';
+export const PROJECT_ID = process.env.GCLOUD_PROJECT || process.env.GCP_PROJECT || 'qwikmart-infidec';
 setGlobalOptions({ region: REGION, maxInstances: 20 });
 
 /**

@@ -6,13 +6,13 @@ Step-by-step guide for the store owner to publish the two Android apps:
 |---|---|---|
 | Package | `com.qwikmartapp.customer` | `com.qwikmartapp.delivery` |
 | Launcher name | QwikMart | QwikMart Delivery |
-| Version | 1.0.1 (versionCode 2) | 1.0.0 (versionCode 1) |
-| Signed bundle | `customer/qwikmart-customer-1.0.1+2.aab` | `delivery/qwikmart-delivery-1.0.0+1.aab` |
+| Version | 1.0.2 (versionCode 3) | 1.0.1 (versionCode 2) |
+| Signed bundle | `customer/qwikmart-customer-1.0.2+3.aab` | `delivery/qwikmart-delivery-1.0.1+2.aab` |
 | Store texts | `customer/listing.md` | `delivery/listing.md` |
 | Graphics | `customer/icon-512.png`, `feature-graphic.png`, `01…08-*.png` | `delivery/icon-512.png`, `feature-graphic.png`, `01…08-*.png` |
 | Min / target SDK | 24 / 36 | 24 / 36 |
 
-Prepared 2026-10-14. Backend: live Firebase project `qwikmart-37299`.
+Prepared 2026-10-14; rebuilt 2026-11-17 for the new Firebase project `qwikmart-infidec` (the old project `qwikmart-37299` is deleted — bundles built before 2026-11-17 no longer work and must not be uploaded).
 
 ---
 
@@ -80,7 +80,7 @@ re-frame or localise the screenshots later.
 1. **Test and release → Testing → Internal testing → Create new release.**
 2. **Play App Signing**: on the first upload Play asks to set up app signing. Choose **"Use Google-generated key"**
    (recommended). Your file `*-upload.jks` stays the **upload key**; Google holds the **app signing key**.
-3. Upload `customer/qwikmart-customer-1.0.1+2.aab` (or the delivery one). The bundle already contains the R8
+3. Upload `customer/qwikmart-customer-1.0.2+3.aab` (or the delivery one). The bundle already contains the R8
    mapping file and native debug symbols, so crash stack traces are de-obfuscated automatically.
 4. Release name: `1.0.0 (1)`. Release notes: paste `listing.md` → Release notes (language `en-IN`).
 5. **Testers** tab: create an e-mail list (yourself + team), save, copy the opt-in link and open it on your phone.
@@ -98,15 +98,15 @@ The **upload** keys are already registered (done 2026-10-14, see §10).
      → **Add fingerprint** → paste SHA-1 → Save; repeat for SHA-256; or
    - CLI (from `F:\DI_Local_Project\snapbuy\firebase`, logged in):
      ```bash
-     npx firebase apps:android:sha:create 1:1054065019133:android:bfabf974129f2cfc4a9694 <SHA1> --project qwikmart-37299     # customer
-     npx firebase apps:android:sha:create 1:1054065019133:android:bfabf974129f2cfc4a9694 <SHA256> --project qwikmart-37299
-     npx firebase apps:android:sha:create 1:1054065019133:android:443f0d691cf47b284a9694 <SHA1> --project qwikmart-37299     # delivery
-     npx firebase apps:android:sha:create 1:1054065019133:android:443f0d691cf47b284a9694 <SHA256> --project qwikmart-37299
+     npx firebase apps:android:sha:create 1:751479275108:android:9ad4efd91fed5970f7a971 <SHA1> --project qwikmart-infidec     # customer
+     npx firebase apps:android:sha:create 1:751479275108:android:9ad4efd91fed5970f7a971 <SHA256> --project qwikmart-infidec
+     npx firebase apps:android:sha:create 1:751479275108:android:1c13e29dff5f85b0f7a971 <SHA1> --project qwikmart-infidec     # delivery
+     npx firebase apps:android:sha:create 1:751479275108:android:1c13e29dff5f85b0f7a971 <SHA256> --project qwikmart-infidec
      ```
 4. Optional: download the refreshed `google-services.json` into `android/app/` for the next build (not required
    for phone auth; it only matters if you later add Google Sign-In).
 5. If you enable **App Check / Play Integrity** later, link the Play app (App integrity → Play Integrity API →
-   link the Cloud project `qwikmart-37299`).
+   link the Cloud project `qwikmart-infidec`).
 6. Test phone-number OTP with a **real** number on the internal-testing install. Without the Play fingerprints the
    OTP falls back to a browser reCAPTCHA page.
 
@@ -363,22 +363,22 @@ cd ../delivery_app && flutter build appbundle --release --dart-define=FALLBACK_T
 keytool -printcert -jarfile build/app/outputs/bundle/release/app-release.aab   # Owner must be CN=QwikMart…, not Android Debug
 ```
 
-Built and verified on 2026-10-14:
+Built and verified on 2026-11-17 (Firebase project `qwikmart-infidec`; the 2026-10-14 builds for the deleted project are in `_obsolete-qwikmart-37299/` — do not upload them):
 
 | Bundle | Size | Signer (upload key) | SHA-1 | SHA-256 |
 |---|---|---|---|---|
-| `customer/qwikmart-customer-1.0.0+1.aab` | 50.1 MB | `CN=QwikMart, OU=Mobile, O=QwikMart, C=IN` | `F6:FA:25:C4:15:D8:EE:0F:5E:CE:41:D8:39:EF:15:D1:75:3C:5D:8B` | `59:1B:20:8F:87:70:C6:FB:E3:94:E7:0D:66:28:50:99:03:FC:15:CD:1E:0D:46:BA:7D:01:9C:40:F6:83:AC:BD` |
-| `delivery/qwikmart-delivery-1.0.0+1.aab` | 50.4 MB | `CN=QwikMart Delivery, OU=Mobile, O=QwikMart, C=IN` | `5D:78:EF:E1:A9:8F:85:48:D6:45:B7:2B:B1:77:4F:56:AB:60:21:8F` | `30:22:34:AA:61:82:F2:F5:DD:88:9E:C2:ED:14:47:5D:8B:8B:4F:82:A2:4E:AB:5A:72:74:D1:52:BE:7A:43:B1` |
+| `customer/qwikmart-customer-1.0.2+3.aab` | 50.5 MB | `CN=QwikMart, OU=Mobile, O=QwikMart, C=IN` | `F6:FA:25:C4:15:D8:EE:0F:5E:CE:41:D8:39:EF:15:D1:75:3C:5D:8B` | `59:1B:20:8F:87:70:C6:FB:E3:94:E7:0D:66:28:50:99:03:FC:15:CD:1E:0D:46:BA:7D:01:9C:40:F6:83:AC:BD` |
+| `delivery/qwikmart-delivery-1.0.1+2.aab` | 50.4 MB | `CN=QwikMart Delivery, OU=Mobile, O=QwikMart, C=IN` | `5D:78:EF:E1:A9:8F:85:48:D6:45:B7:2B:B1:77:4F:56:AB:60:21:8F` | `30:22:34:AA:61:82:F2:F5:DD:88:9E:C2:ED:14:47:5D:8B:8B:4F:82:A2:4E:AB:5A:72:74:D1:52:BE:7A:43:B1` |
 
-Both: versionCode 1, versionName 1.0.0, minSdk 24, targetSdk 36, R8 enabled (mapping + native symbols embedded).
+Customer: versionCode 3, versionName 1.0.2 (Stripe hidden in the app — website only). Delivery: versionCode 2, versionName 1.0.1. Both: minSdk 24, targetSdk 36, R8 enabled (mapping + native symbols embedded).
 `*.aab` files under `store/playstore/` are git-ignored (root `.gitignore`).
 
 ## 10. Firebase fingerprints status
 
 | Firebase Android app | Upload key SHA-1 + SHA-256 | Play app-signing key |
 |---|---|---|
-| `1:1054065019133:android:bfabf974129f2cfc4a9694` (`com.qwikmartapp.customer`) | **registered** 2026-10-14 | **to do after first upload** (§3.1) |
-| `1:1054065019133:android:443f0d691cf47b284a9694` (`com.qwikmartapp.delivery`) | **registered** 2026-10-14 | **to do after first upload** (§3.1) |
+| `1:751479275108:android:9ad4efd91fed5970f7a971` (`com.qwikmartapp.customer`) | **registered** 2026-11-17 (+ debug key) | **to do after first upload** (§3.1) |
+| `1:751479275108:android:1c13e29dff5f85b0f7a971` (`com.qwikmartapp.delivery`) | **registered** 2026-11-17 (+ debug key) | **to do after first upload** (§3.1) |
 
 Also still open from `DEPLOYMENT_CHECKLIST.md`: the Firebase test phone number `+91 9876543210 → 123456` gives
 anyone access to the (currently disabled) demo customer — remove it before launch; restrict the Android API key to

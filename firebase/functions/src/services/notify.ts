@@ -6,6 +6,7 @@ const nodemailer = { createTransport: (...a: Parameters<typeof Nodemailer.create
 import { db, FieldValue, IS_EMULATOR, logger, messaging, now, privateSettings, publicSettings } from '../shared/firebase';
 import type { PrivateSmsSettings } from '../shared/types';
 import { chunk, uniq } from '../shared/util';
+import { EMAIL_TEMPLATES, type EmailTemplate, emailLayout, escapeHtml, fillTemplate } from './emailTemplates';
 
 export interface NotifyData { type?: string; image?: string | null; [k: string]: unknown }
 
@@ -142,14 +143,25 @@ export async function sendEmail(to: string | null | undefined, subject: string, 
   }
 }
 
-/** Render an email template (email_templates/{key}: {subject, body}) with {{var}} placeholders. */
-export async function sendTemplate(key: string, to: string | null | undefined, vars: Record<string, string | number>, fallback: { subject: string; body: string }): Promise<boolean> {
+/**
+ * Render an email template (email_templates/{key}: {subject, body}, else the built-in default) with {{var}} / {var}
+ * placeholders and send it inside the branded layout. Vars are inserted as given: callers escape user-entered text.
+ */
+export async function sendTemplate(key: string, to: string | null | undefined, vars: Record<string, string | number>, fallback?: EmailTemplate): Promise<boolean> {
   if (!to) return false;
-  const snap = await db.doc(`email_templates/${key}`).get();
-  const tpl = snap.exists && snap.get('status') !== 'inactive' ? { subject: String(snap.get('subject') ?? fallback.subject), body: String(snap.get('body') ?? fallback.body) } : fallback;
-  const fill = (s: string) => s.replace(/\{\{\s*(\w+)\s*\}\}/g, (_, k) => String(vars[k] ?? ''));
-  return sendEmail(to, fill(tpl.subject), fill(tpl.body), { template: key });
+  const def = fallback ?? EMAIL_TEMPLATES[key] ?? { subject: key, body: '' };
+  const [snap, pub] = await Promise.all([db.doc(`email_templates/${key}`).get(), publicSettings()]);
+  if (snap.exists && snap.get('status') === 'inactive') return false;
+  const tpl = snap.exists ? { subject: String(snap.get('subject') || def.subject), body: String(snap.get('body') || def.body) } : def;
+  const brand = { app_name: pub.app_name ?? 'QwikMart', logo: pub.logo ?? null, support_email: pub.support?.email ?? null, website: WEBSITE_URL };
+  const all = { app_name: escapeHtml(brand.app_name), support_email: escapeHtml(brand.support_email ?? ''), ...vars };
+  // the subject is plain text: undo the HTML escaping of the vars there
+  const subject = fillTemplate(tpl.subject, all).replace(/&(amp|lt|gt|quot|#39);/g, (m, e) => ({ amp: '&', lt: '<', gt: '>', quot: '"', '#39': "'" })[e as string] ?? m);
+  return sendEmail(to, subject, emailLayout(fillTemplate(tpl.body, all), brand), { template: key });
 }
+
+/** Public website (order links in emails): WEBSITE_URL in functions/.env.<project>. */
+export const WEBSITE_URL = (process.env.WEBSITE_URL || 'https://qwikmart-infidec.web.app').replace(/\/$/, '');
 
 /* ------------------------------------------------------------------ SMS */
 /** Send a text via the configured gateway (settings/private_sms.gateway). Returns true on success. */

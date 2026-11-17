@@ -6,7 +6,7 @@
     "build": "npm --prefix functions run build",
     "emulators": "npm run build && firebase emulators:start --project qwikmart-37299",
     "test": "npm --prefix functions test",
-    "deploy": "firebase deploy --only functions,firestore,storage --project qwikmart-37299"
+    "deploy": "firebase deploy --only functions,firestore,storage --project qwikmart-infidec --force"
   },
   "devDependencies": {
     "firebase-tools": "15.30.2"

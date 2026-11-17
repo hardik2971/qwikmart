@@ -2,7 +2,7 @@
 // loaded with the migrated MySQL data (NOT part of `flutter test`).
 //
 //   cd firebase && npm --prefix functions run build
-//   npx firebase emulators:start --project qwikmart-37299 --import tools/emulator-data
+//   npx firebase emulators:start --project qwikmart-infidec --import tools/emulator-data
 //   cd delivery_app && dart run tool/firebase_smoke_test.dart
 //
 // Ports default to the standard emulator ports; override with env vars
@@ -23,7 +23,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-const project = 'qwikmart-37299';
+const project = 'qwikmart-infidec';
 const region = 'asia-south1';
 const bucket = '$project.firebasestorage.app';
 final env = Platform.environment;

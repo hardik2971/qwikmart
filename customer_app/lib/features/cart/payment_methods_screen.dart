@@ -12,7 +12,6 @@ const defaultGateways = [
   PaymentGateway(key: 'cod', name: 'Cash on Delivery'),
   PaymentGateway(key: 'wallet', name: 'QwikMart Wallet'),
   PaymentGateway(key: 'razorpay', name: 'Razorpay'),
-  PaymentGateway(key: 'stripe', name: 'Stripe'),
 ];
 
 String gatewayName(BuildContext context, String key, List<PaymentGateway> gateways) {

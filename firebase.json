@@ -1,14 +1,16 @@
 {
-  "apphosting": [
+  "hosting": [
     {
-      "backendId": "qwikmart-web",
-      "rootDir": "web",
-      "ignore": ["node_modules", ".next", ".next-qa", ".git", ".env.local", "*.log", "QA_REPORT.md"]
+      "site": "qwikmart-infidec",
+      "source": "web",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "frameworksBackend": { "region": "asia-south1", "maxInstances": 10, "memory": "512MiB", "cpu": 1, "concurrency": 80 }
     },
     {
-      "backendId": "qwikmart-admin",
-      "rootDir": "admin",
-      "ignore": ["node_modules", ".next", ".next-qa", ".git", ".env.local", "*.log", "QA_REPORT.md"]
+      "site": "qwikmart-admin",
+      "source": "admin",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "frameworksBackend": { "region": "asia-south1", "maxInstances": 4, "memory": "512MiB", "cpu": 1, "concurrency": 80 }
     }
   ]
 }

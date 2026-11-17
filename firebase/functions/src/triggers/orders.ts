@@ -4,7 +4,8 @@ import { db, FieldValue, logger, now, publicSettings, REGION, Timestamp } from '
 import type { DeliveryBoyDoc, OrderDoc, OrderStatus, ReferralDoc } from '../shared/types';
 import { NON_REVENUE_STATUSES, statusLabel, statusMessage } from '../shared/status';
 import { formatMoney, money, num, zonedParts } from '../shared/util';
-import { notifyUser, pushToUsers, sendTemplate } from '../services/notify';
+import { notifyUser, pushToUsers, sendTemplate, WEBSITE_URL } from '../services/notify';
+import { escapeHtml, orderRows, STATUS_TEMPLATE } from '../services/emailTemplates';
 import { WalletLedger } from '../services/wallet';
 import { autoAssignEnabled, autoAssignRider } from '../services/orders';
 
@@ -172,6 +173,38 @@ async function onDelivered(orderId: string, o: OrderDoc, sym: string) {
 }
 
 /* ------------------------------------------------------------------ notifications */
+const PAYMENT_LABEL: Record<string, string> = { cod: 'Cash on Delivery', wallet: 'QwikMart Wallet', razorpay: 'Razorpay', stripe: 'Card (Stripe)', paypal: 'PayPal' };
+
+/** Order email with items, totals, address, payment and a link to the order on the website (user text escaped). */
+async function sendOrderEmail(key: string, orderId: string, o: OrderDoc, sym: string, extra: Record<string, string> = {}) {
+  if (!o.customer?.email) return;
+  const t = o.totals ?? ({} as OrderDoc['totals']);
+  const m = (n: unknown) => formatMoney(num(n), sym);
+  const totals: Array<[string, string, boolean?]> = [['Subtotal', m(t.subtotal)]];
+  if (num(t.discount) + num(t.promo_discount) > 0) totals.push(['Discount', `−${m(num(t.discount) + num(t.promo_discount))}`]);
+  totals.push(['Delivery', num(t.delivery_charge) > 0 ? m(t.delivery_charge) : 'Free']);
+  if (num(t.tax_amount) > 0) totals.push(['Tax', m(t.tax_amount)]);
+  if (num(t.wallet_used) > 0) totals.push(['Paid from wallet', `−${m(t.wallet_used)}`]);
+  totals.push(['Total', m(t.grand_total), true]);
+  const rows = orderRows((o.items ?? []).map((i) => ({ name: i.name, variant_name: i.variant_name, qty: i.qty, total: m(i.total) })), totals);
+  const store = o.store_id ? ((await db.doc(`stores/${o.store_id}`).get()).get('name') as string | undefined) : undefined;
+  const a = o.address;
+  const address = o.delivery_type === 'self_pickup' ? `Pickup at ${store ?? 'the store'}` : a?.full_address ?? [a?.address_line, a?.landmark, a?.city, a?.pincode].filter(Boolean).join(', ');
+  await sendTemplate(key, o.customer.email, {
+    name: escapeHtml(o.customer.name || 'there'),
+    email: escapeHtml(o.customer.email),
+    order_number: escapeHtml(o.order_number),
+    order_total: escapeHtml(m(t.grand_total)),
+    status: escapeHtml(statusLabel(o.status)),
+    store_name: escapeHtml(store ?? 'the store'),
+    payment_method: escapeHtml(PAYMENT_LABEL[o.payment_method] ?? o.payment_method),
+    delivery_address: escapeHtml(address || '—'),
+    link: `${WEBSITE_URL}/orders/${encodeURIComponent(orderId)}`,
+    items: rows.items,
+    summary: rows.summary,
+    ...Object.fromEntries(Object.entries(extra).map(([k, v]) => [k, escapeHtml(v)])),
+  });
+}
 async function notifyStatus(orderId: string, before: OrderDoc | null, o: OrderDoc, sym: string, autoAssigned = false) {
   const created = !before;
   const placed = o.status === 'received' && (created || before?.status === 'payment_pending');
@@ -182,17 +215,16 @@ async function notifyStatus(orderId: string, before: OrderDoc | null, o: OrderDo
       const owner = store.get('owner_uid') as string | undefined;
       if (owner) await notifyUser(owner, 'New order received', `Order ${o.order_number} • ${formatMoney(num(o.totals?.grand_total), sym)}`, { type: 'order', order_id: orderId });
     }
-    await sendTemplate('order_placed', o.customer?.email, { name: o.customer?.name ?? '', order_number: o.order_number, total: formatMoney(num(o.totals?.grand_total), sym) },
-      { subject: 'Order {{order_number}} placed', body: '<p>Hi {{name}},</p><p>Thanks for your order <strong>{{order_number}}</strong> ({{total}}). We will notify you when it is on the way.</p>' });
+    await sendOrderEmail('order_placed', orderId, o, sym);
   } else if (o.status !== 'payment_pending') {
     let otp: string | null = null;
     if (o.status === 'out_for_delivery') otp = ((await db.doc(`orders/${orderId}/secret/otp`).get()).get('delivery_otp') as string | undefined) ?? null;
     const msg = statusMessage(o.status, o.order_number, otp);
     if (msg) await notifyUser(o.user_id, `Order ${statusLabel(o.status)}`, msg, { type: 'order', order_id: orderId, status: o.status });
-    if (o.status === 'delivered') {
-      await sendTemplate('order_delivered', o.customer?.email, { name: o.customer?.name ?? '', order_number: o.order_number },
-        { subject: 'Order {{order_number}} delivered', body: '<p>Hi {{name}},</p><p>Your order <strong>{{order_number}}</strong> has been delivered. Enjoy!</p>' });
-    }
+    // one email per status change (not on unrelated order updates); "ready for pickup" only matters to self-pickup customers
+    const tpl = STATUS_TEMPLATE[o.status];
+    const selfPickupOnly = o.status === 'ready_for_pickup' && o.delivery_type !== 'self_pickup';
+    if (tpl && !selfPickupOnly && before?.status !== o.status) await sendOrderEmail(tpl, orderId, o, sym, { otp: otp ?? '' });
   }
   // Zone riders: new pool order
   if (!autoAssigned && ['received', 'ready_for_pickup'].includes(o.status) && !o.delivery_boy_id && o.delivery_type === 'delivery' && o.zone_id) {

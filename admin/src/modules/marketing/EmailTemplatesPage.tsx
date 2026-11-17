@@ -14,10 +14,13 @@ import { RichEditor } from '@/components/form/RichEditor';
 import { useConfirm } from '@/components/ui/confirm';
 import { useToast } from '@/components/ui/toast';
 
+// Must match the variables the backend fills (firebase/functions/src/triggers/orders.ts → sendOrderEmail).
 export const EMAIL_PLACEHOLDERS: Record<string, string> = {
-  '{name}': 'Customer name', '{email}': 'Customer email', '{order_number}': 'Order number', '{order_total}': 'Order total',
-  '{status}': 'Order status', '{otp}': 'One-time password', '{app_name}': 'App name', '{store_name}': 'Store name',
-  '{amount}': 'Amount', '{link}': 'Action link',
+  '{{name}}': 'Customer name', '{{email}}': 'Customer email', '{{order_number}}': 'Order number', '{{order_total}}': 'Order total',
+  '{{status}}': 'Order status', '{{store_name}}': 'Store name', '{{payment_method}}': 'Payment method',
+  '{{delivery_address}}': 'Delivery address', '{{items}}': 'Ordered items (table rows)', '{{summary}}': 'Totals (table rows)',
+  '{{otp}}': 'Delivery OTP (out for delivery)', '{{link}}': 'Link to the order on the website', '{{app_name}}': 'App name',
+  '{{support_email}}': 'Support email',
 };
 const human = (k: string) => k.replace(/[_-]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 

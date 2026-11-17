@@ -13,7 +13,7 @@ class AppConfig {
   /// Cloud Functions region (every callable runs in asia-south1).
   static const String functionsRegion = 'asia-south1';
 
-  /// Connect to the local Firebase Emulator Suite instead of project `qwikmart-37299`.
+  /// Connect to the local Firebase Emulator Suite instead of project `qwikmart-infidec`.
   static const bool useEmulators = bool.fromEnvironment('USE_EMULATORS', defaultValue: false);
 
   /// Host running the emulators. Default: `10.0.2.2` (host machine seen from the Android emulator),

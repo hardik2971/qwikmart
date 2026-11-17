@@ -1,1 +1,5 @@
-{ "projects": { "default": "qwikmart-37299" } }
+{
+  "projects": {
+    "default": "qwikmart-infidec"
+  }
+}

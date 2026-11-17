@@ -72,7 +72,7 @@ export default function SearchBar({ initial = '', size = 'md' }: { initial?: str
             value={q}
             onChange={(e) => setQ(e.target.value)}
             onFocus={() => setOpen(true)}
-            className={clsx('w-full bg-transparent text-ink outline-none', lg ? 'text-base' : 'text-sm')}
+            className={clsx('w-full bg-transparent text-ink outline-none focus-visible:outline-none', lg ? 'text-base' : 'text-sm')}
             aria-label={t('search')}
           />
           {!q && (

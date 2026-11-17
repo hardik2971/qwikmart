@@ -237,6 +237,11 @@ class PaymentGateway {
       );
 }
 
+/// Gateways the app cannot complete: Stripe returns a client_secret for an in-page card form (website only) and no
+/// hosted page to open, so selecting it in the app would leave the order unpaid. Razorpay has a native sheet; the
+/// others return a redirect_url (see cart_screen `_completeGatewayPayment`).
+const webOnlyGateways = {'stripe'};
+
 class AppSettings {
   final String appName;
   final String currencySymbol;
@@ -285,7 +290,7 @@ class AppSettings {
       demoMode: asBool(j['demo_mode'], false),
       supportPhone: asString(j['support_phone'] ?? asMap(j['support'])['phone']),
       supportEmail: asString(j['support_email'] ?? asMap(j['support'])['email']),
-      paymentGateways: parsed.where((g) => g.enabled).toList(),
+      paymentGateways: parsed.where((g) => g.enabled && !webOnlyGateways.contains(g.key)).toList(),
       countries: asMapList(j['countries']).map(Country.fromJson).toList(),
       referrerReward: asDouble(referral['referrer_reward'], 50),
       referredReward: asDouble(referral['referred_reward'], 100),
