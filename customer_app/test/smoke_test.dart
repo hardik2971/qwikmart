@@ -93,8 +93,10 @@ void main() {
     }
 
     await visit(tester, c, errors, '/home');
+    expect(find.text('Delivery in 8 minutes'), findsOneWidget);
+    // the sections start below the hero: scroll down to them
+    await tester.scrollUntilVisible(find.text('Find Your Favorites'), 300, scrollable: find.byType(Scrollable).first);
     expect(find.text('Find Your Favorites'), findsOneWidget);
-    expect(find.text('8 minutes'), findsOneWidget);
 
     // Home in eCommerce mode + category tab.
     c.read(sessionProvider.notifier).setMode('ecommerce');

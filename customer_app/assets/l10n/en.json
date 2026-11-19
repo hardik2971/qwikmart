@@ -405,5 +405,14 @@
   "min_order_remaining": "Minimum order is {min}. Add {amount} more to place the order.",
   "cashback_after_delivery": "Cashback (after delivery)",
   "other_charges": "Other charges",
-  "no_online_payment": "Online payments are not available right now. Please try again later."
+  "no_online_payment": "Online payments are not available right now. Please try again later.",
+  "delivery_in_days": "Delivery in 1–4 days",
+  "hero_quick_title": "Groceries and daily essentials, at your door in minutes.",
+  "hero_ecom_title": "Electronics, fashion and home, delivered in 1–4 days.",
+  "hero_quick_sub": "Fresh produce, staples and snacks, packed by a store near you.",
+  "hero_ecom_sub": "Shop brands you trust, with doorstep returns.",
+  "hero_set_location": "Set your location",
+  "hero_delivering_to": "Delivering to {place}",
+  "hero_eta_to": "{mins} min delivery to {place}",
+  "hero_browse": "Browse all categories"
 }

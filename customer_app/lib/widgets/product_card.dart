@@ -33,7 +33,7 @@ Future<void> toggleFavorite(BuildContext context, WidgetRef ref, Product p) asyn
   }
 }
 
-/// Outlined green "ADD" that turns into a `− qty +` stepper.
+/// Outlined blue "ADD" that turns into a `− qty +` stepper.
 class AddToCartButton extends ConsumerWidget {
   final Product product;
   final Variant? variant;
@@ -67,7 +67,7 @@ class AddToCartButton extends ConsumerWidget {
         width: width,
         height: height,
         alignment: Alignment.center,
-        decoration: BoxDecoration(color: context.borderColor, borderRadius: BorderRadius.circular(8)),
+        decoration: BoxDecoration(color: context.isDark ? Colors.white10 : AppColors.soft, borderRadius: BorderRadius.circular(10)),
         child: Text(context.tr('out_of_stock'),
             textAlign: TextAlign.center, style: TextStyle(fontSize: 10, fontWeight: FontWeight.w700, color: context.mutedText)),
       );
@@ -92,8 +92,8 @@ class AddToCartButton extends ConsumerWidget {
             padding: EdgeInsets.zero,
             minimumSize: Size(width, height),
             backgroundColor: context.cardColor,
-            side: const BorderSide(color: AppColors.primary, width: 1.2),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            side: const BorderSide(color: AppColors.primary, width: 1.5),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           ),
           child: Text(context.tr('add'),
               style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 13, color: AppColors.primary)),
@@ -183,27 +183,21 @@ class ProductCard extends ConsumerWidget {
                     child: AppImage(url: p.image, name: p.name, radius: BorderRadius.circular(10), emojiScale: 0.48),
                   ),
                 ),
+                // savings tag (orange = savings, as on the website)
                 if (off > 0)
-                  Positioned(
-                    left: 0,
-                    top: 0,
+                  PositionedDirectional(
+                    start: 10,
+                    top: 10,
                     child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-                      decoration: const BoxDecoration(
-                        color: AppColors.primary,
-                        borderRadius: BorderRadiusDirectional.only(
-                          topStart: Radius.circular(AppRadius.card),
-                          bottomEnd: Radius.circular(10),
-                        ),
-                      ),
-                      child: Text('$off%\nOFF',
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(color: Colors.white, fontSize: 9.5, height: 1.05, fontWeight: FontWeight.w800)),
+                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                      decoration: BoxDecoration(color: AppColors.accentInk, borderRadius: BorderRadius.circular(6)),
+                      child: Text('$off% off',
+                          style: const TextStyle(color: Colors.white, fontSize: 10.5, height: 1.4, fontWeight: FontWeight.w800)),
                     ),
                   ),
                 Positioned(
-                  right: 4,
-                  top: 4,
+                  right: 8,
+                  top: 8,
                   child: InkWell(
                     onTap: () => toggleFavorite(context, ref, p),
                     customBorder: const CircleBorder(),
@@ -234,22 +228,30 @@ class ProductCard extends ConsumerWidget {
                 padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   if (v != null) PriceRow(price: v.effectivePrice, mrp: v.price, fontSize: 14),
-                  if (off > 0)
-                    Text('$off% OFF',
-                        style: const TextStyle(color: AppColors.primary, fontSize: 11, fontWeight: FontWeight.w800)),
                   const SizedBox(height: 3),
                   Text(p.name,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w600, height: 1.25)),
-                  const SizedBox(height: 4),
+                  const SizedBox(height: 5),
+                  // delivery-time chip (blue, as on the website)
                   if (isQuick && p.deliveryMinutes > 0)
-                    Row(children: [
-                      Icon(Icons.timer_outlined, size: 12, color: context.mutedText),
-                      const SizedBox(width: 3),
-                      Text(context.tr('n_mins', {'n': p.deliveryMinutes}),
-                          style: TextStyle(fontSize: 10.5, color: context.mutedText, fontWeight: FontWeight.w600)),
-                    ])
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: context.isDark ? AppColors.primary.withValues(alpha: 0.2) : AppColors.primary50,
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: Row(mainAxisSize: MainAxisSize.min, children: [
+                        Icon(Icons.schedule_rounded, size: 11, color: context.isDark ? Colors.white70 : AppColors.primary),
+                        const SizedBox(width: 3),
+                        Text(context.tr('n_mins', {'n': p.deliveryMinutes}),
+                            style: TextStyle(
+                                fontSize: 10.5,
+                                color: context.isDark ? Colors.white70 : AppColors.primary,
+                                fontWeight: FontWeight.w700)),
+                      ]),
+                    )
                   else if (p.ratingCount > 0)
                     Row(children: [
                       RatingStars(rating: p.ratingAvg, size: 11),

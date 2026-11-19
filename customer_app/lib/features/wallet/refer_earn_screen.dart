@@ -28,7 +28,7 @@ class ReferEarnScreen extends ConsumerWidget {
               padding: const EdgeInsets.all(22),
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [Color(0xFF16A92E), AppColors.primary, AppColors.primaryDark],
+                  colors: [AppColors.primary, AppColors.primaryDark, AppColors.night],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),

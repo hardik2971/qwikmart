@@ -21,7 +21,7 @@ const ENV = new URL('../../secret/.env', import.meta.url);
 const env: Record<string, string> = Object.fromEntries(
   readFileSync(ENV, 'utf8')
     .split(/\r?\n/)
-    .map((l) => /^\s*([A-Z0-9_]+)\s*=\s*(.*?)\s*$/.exec(l))
+    .map((l) => /^\s*([A-Z0-9_]+)\s*[=:]\s*(.*?)\s*$/.exec(l)) // KEY=value or KEY: value
     .filter((m): m is RegExpExecArray => !!m)
     .map((m) => [m[1], m[2].replace(/^["']|["']$/g, '')]),
 );

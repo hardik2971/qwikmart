@@ -6,8 +6,8 @@ Step-by-step guide for the store owner to publish the two Android apps:
 |---|---|---|
 | Package | `com.qwikmartapp.customer` | `com.qwikmartapp.delivery` |
 | Launcher name | QwikMart | QwikMart Delivery |
-| Version | 1.0.2 (versionCode 3) | 1.0.1 (versionCode 2) |
-| Signed bundle | `customer/qwikmart-customer-1.0.2+3.aab` | `delivery/qwikmart-delivery-1.0.1+2.aab` |
+| Version | 1.0.3 (versionCode 4) | 1.0.1 (versionCode 2) |
+| Signed bundle | `customer/qwikmart-customer-1.0.3+4.aab` | `delivery/qwikmart-delivery-1.0.1+2.aab` |
 | Store texts | `customer/listing.md` | `delivery/listing.md` |
 | Graphics | `customer/icon-512.png`, `feature-graphic.png`, `01…08-*.png` | `delivery/icon-512.png`, `feature-graphic.png`, `01…08-*.png` |
 | Min / target SDK | 24 / 36 | 24 / 36 |
@@ -80,7 +80,7 @@ re-frame or localise the screenshots later.
 1. **Test and release → Testing → Internal testing → Create new release.**
 2. **Play App Signing**: on the first upload Play asks to set up app signing. Choose **"Use Google-generated key"**
    (recommended). Your file `*-upload.jks` stays the **upload key**; Google holds the **app signing key**.
-3. Upload `customer/qwikmart-customer-1.0.2+3.aab` (or the delivery one). The bundle already contains the R8
+3. Upload `customer/qwikmart-customer-1.0.3+4.aab` (or the delivery one). The bundle already contains the R8
    mapping file and native debug symbols, so crash stack traces are de-obfuscated automatically.
 4. Release name: `1.0.0 (1)`. Release notes: paste `listing.md` → Release notes (language `en-IN`).
 5. **Testers** tab: create an e-mail list (yourself + team), save, copy the opt-in link and open it on your phone.
@@ -367,10 +367,10 @@ Built and verified on 2026-11-17 (Firebase project `qwikmart-infidec`; the 2026-
 
 | Bundle | Size | Signer (upload key) | SHA-1 | SHA-256 |
 |---|---|---|---|---|
-| `customer/qwikmart-customer-1.0.2+3.aab` | 50.5 MB | `CN=QwikMart, OU=Mobile, O=QwikMart, C=IN` | `F6:FA:25:C4:15:D8:EE:0F:5E:CE:41:D8:39:EF:15:D1:75:3C:5D:8B` | `59:1B:20:8F:87:70:C6:FB:E3:94:E7:0D:66:28:50:99:03:FC:15:CD:1E:0D:46:BA:7D:01:9C:40:F6:83:AC:BD` |
+| `customer/qwikmart-customer-1.0.3+4.aab` | 50.5 MB | `CN=QwikMart, OU=Mobile, O=QwikMart, C=IN` | `F6:FA:25:C4:15:D8:EE:0F:5E:CE:41:D8:39:EF:15:D1:75:3C:5D:8B` | `59:1B:20:8F:87:70:C6:FB:E3:94:E7:0D:66:28:50:99:03:FC:15:CD:1E:0D:46:BA:7D:01:9C:40:F6:83:AC:BD` |
 | `delivery/qwikmart-delivery-1.0.1+2.aab` | 50.4 MB | `CN=QwikMart Delivery, OU=Mobile, O=QwikMart, C=IN` | `5D:78:EF:E1:A9:8F:85:48:D6:45:B7:2B:B1:77:4F:56:AB:60:21:8F` | `30:22:34:AA:61:82:F2:F5:DD:88:9E:C2:ED:14:47:5D:8B:8B:4F:82:A2:4E:AB:5A:72:74:D1:52:BE:7A:43:B1` |
 
-Customer: versionCode 3, versionName 1.0.2 (Stripe hidden in the app — website only). Delivery: versionCode 2, versionName 1.0.1. Both: minSdk 24, targetSdk 36, R8 enabled (mapping + native symbols embedded).
+Customer: versionCode 4, versionName 1.0.3 (website-style redesign; Stripe hidden in the app — website only). Delivery: versionCode 2, versionName 1.0.1. Both: minSdk 24, targetSdk 36, R8 enabled (mapping + native symbols embedded).
 `*.aab` files under `store/playstore/` are git-ignored (root `.gitignore`).
 
 ## 10. Firebase fingerprints status

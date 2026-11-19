@@ -43,23 +43,20 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           : [Category.all, ...data.categories];
     }
 
+    // A selected category tints the category strip with its admin colour (header_color), as on the website.
     final selectedTab = _tabs.where((c) => c.id == _categoryId).firstOrNull;
-    final fallback = session.isQuick
-        ? AppColors.quickGradient.first
-        : AppColors.ecommerceGradient.first;
-    final headerColor = AppColors.fromHex(
-      data?.header.bgValue.isNotEmpty == true && !home.isLoading
-          ? data!.header.bgValue
-          : selectedTab?.headerColor,
-      fallback,
-    );
+    final tint = _categoryId.isNotEmpty && (selectedTab?.headerColor.isNotEmpty ?? false)
+        ? AppColors.fromHex(selectedTab!.headerColor)
+        : null;
+    // Category pages carry their own search block (the hero with its search only shows on "All").
+    final all = _categoryId.isEmpty;
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: context.isDark
           ? SystemUiOverlayStyle.light
           : SystemUiOverlayStyle.dark,
       child: Scaffold(
-        backgroundColor: context.isDark ? AppColors.darkBg : Colors.white,
+        backgroundColor: context.isDark ? AppColors.darkBg : AppColors.pageBg,
         body: RefreshIndicator(
           onRefresh: () async {
             ref.invalidate(homeProvider(_categoryId));
@@ -70,11 +67,19 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             slivers: [
               SliverToBoxAdapter(
                 child: _HomeHeader(
-                  color: headerColor,
+                  tint: tint,
                   tabs: _tabs,
                   selectedId: _categoryId,
                   onTab: (id) => setState(() => _categoryId = id),
                 ),
+              ),
+              SliverToBoxAdapter(
+                child: all
+                    ? const _Hero()
+                    : const Padding(
+                        padding: EdgeInsets.fromLTRB(16, 14, 16, 2),
+                        child: _SearchBar(),
+                      ),
               ),
               ...home.when(
                 skipLoadingOnRefresh: true,
@@ -151,14 +156,14 @@ class _HomeSkeleton extends StatelessWidget {
   }
 }
 
-/// Gradient top: Quick/eCommerce toggle, delivery ETA, address, bell, search, category tabs.
+/// White top bar (as on the website): logo + notifications, delivery pill + Quick/eCommerce switch, category tiles.
 class _HomeHeader extends ConsumerWidget {
-  final Color color;
+  final Color? tint;
   final List<Category> tabs;
   final String selectedId;
   final ValueChanged<String> onTab;
   const _HomeHeader({
-    required this.color,
+    required this.tint,
     required this.tabs,
     required this.selectedId,
     required this.onTab,
@@ -169,137 +174,31 @@ class _HomeHeader extends ConsumerWidget {
     final s = ref.watch(sessionProvider);
     final dark = context.isDark;
     final unread = ref.watch(unreadCountProvider);
-    final ink = dark ? Colors.white : AppColors.ink;
+    final surface = dark ? AppColors.darkSurface : Colors.white;
+    final stripBg = tint == null || dark ? surface : Color.lerp(tint, Colors.white, 0.84)!;
 
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 350),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: AppColors.headerGradient(color, dark: dark),
-          stops: const [0, 0.62, 1],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        ),
-      ),
+    return Container(
+      color: surface,
       child: SafeArea(
         bottom: false,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // logo · mode switch · notifications; the delivery pill gets its own full-width row so it never truncates
             Padding(
-              padding: const EdgeInsets.fromLTRB(16, 10, 16, 0),
-              child: _ModeToggle(
-                mode: s.mode,
-                tint: color,
-                onChanged: (m) => ref.read(sessionProvider.notifier).setMode(m),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 12, 12, 0),
+              padding: const EdgeInsets.fromLTRB(16, 8, 6, 0),
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Expanded(
-                    child: InkWell(
-                      onTap: () => context.push('/location?from=app'),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          if (s.isQuick) ...[
-                            Text(
-                              context.tr('delivery_in'),
-                              style: TextStyle(
-                                fontSize: 12.5,
-                                fontWeight: FontWeight.w600,
-                                color: ink.withValues(alpha: 0.8),
-                              ),
-                            ),
-                            Wrap(
-                              crossAxisAlignment: WrapCrossAlignment.center,
-                              spacing: 8,
-                              runSpacing: 2,
-                              children: [
-                                Text(
-                                  context.tr('n_minutes', {
-                                    'n': s.deliveryMinutes,
-                                  }),
-                                  style: TextStyle(
-                                    fontSize: 26,
-                                    height: 1.15,
-                                    fontWeight: FontWeight.w800,
-                                    color: ink,
-                                    letterSpacing: -0.5,
-                                  ),
-                                ),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 8,
-                                    vertical: 3,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: dark
-                                        ? Colors.white12
-                                        : Color.lerp(color, Colors.black, 0.08),
-                                    borderRadius: BorderRadius.circular(999),
-                                  ),
-                                  child: Text(
-                                    '⚡ ${context.tr('km_away', {'km': s.distanceKm.toStringAsFixed(2)})}',
-                                    style: TextStyle(
-                                      fontSize: 11,
-                                      fontWeight: FontWeight.w700,
-                                      color: ink,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ] else
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  s.zoneName.isEmpty ? 'QwikMart' : s.zoneName,
-                                  style: TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.w800,
-                                    color: ink,
-                                  ),
-                                ),
-                                Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: ink,
-                                ),
-                              ],
-                            ),
-                          const SizedBox(height: 2),
-                          Row(
-                            children: [
-                              Flexible(
-                                child: Text(
-                                  s.address.isEmpty
-                                      ? context.tr('set_location')
-                                      : s.address,
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: ink.withValues(alpha: 0.75),
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                              if (s.isQuick)
-                                Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  size: 18,
-                                  color: ink.withValues(alpha: 0.75),
-                                ),
-                            ],
-                          ),
-                        ],
-                      ),
+                  const BrandLogo(height: 26),
+                  const Spacer(),
+                  Flexible(
+                    flex: 0,
+                    child: _ModeToggle(
+                      mode: s.mode,
+                      onChanged: (m) => ref.read(sessionProvider.notifier).setMode(m),
                     ),
                   ),
+                  const SizedBox(width: 2),
                   _CircleIconButton(
                     icon: Icons.notifications_none_rounded,
                     badge: unread,
@@ -309,74 +208,27 @@ class _HomeHeader extends ConsumerWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(16, 12, 16, 6),
-              child: const _SearchBar(),
+              padding: const EdgeInsets.fromLTRB(12, 6, 16, 10),
+              child: _DeliveryPill(session: s),
             ),
             if (tabs.isNotEmpty)
-              SizedBox(
-                height: 66,
+              AnimatedContainer(
+                duration: const Duration(milliseconds: 300),
+                height: 92,
+                decoration: BoxDecoration(
+                  color: stripBg,
+                  border: Border(
+                    top: BorderSide(color: context.borderColor),
+                    bottom: BorderSide(color: context.borderColor),
+                  ),
+                ),
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                   itemCount: tabs.length,
                   itemBuilder: (_, i) {
                     final c = tabs[i];
-                    final active = c.id == selectedId;
-                    return InkWell(
-                      onTap: () => onTab(c.id),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        decoration: BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(
-                              color: active ? ink : Colors.transparent,
-                              width: 3,
-                            ),
-                          ),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              height: 26,
-                              // "All" uses the bundled 3D shopping-bags icon (same set as the category icons).
-                              child: c.id.isEmpty
-                                  ? Image.asset(
-                                      'assets/images/icons/all.png',
-                                      width: 26,
-                                      height: 26,
-                                    )
-                                  : c.icon.isNotEmpty || c.image.isNotEmpty
-                                  ? AppImage(
-                                      url: c.icon.isNotEmpty ? c.icon : c.image,
-                                      name: c.name,
-                                      width: 26,
-                                      height: 26,
-                                      fit: BoxFit.contain,
-                                      background: Colors.transparent,
-                                    )
-                                  : Text(
-                                      emojiFor(c.name),
-                                      style: const TextStyle(fontSize: 21),
-                                    ),
-                            ),
-                            const SizedBox(height: 4),
-                            Text(
-                              c.name == 'Fresh Fruits & Vegetables'
-                                  ? 'Fresh'
-                                  : c.name,
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: ink,
-                                fontWeight: active
-                                    ? FontWeight.w800
-                                    : FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
+                    return _CategoryTab(category: c, active: c.id == selectedId, onTap: () => onTab(c.id));
                   },
                 ),
               ),
@@ -387,62 +239,323 @@ class _HomeHeader extends ConsumerWidget {
   }
 }
 
+/// Orange speed badge + "Delivery in 8 minutes" + address (opens the location screen).
+class _DeliveryPill extends StatelessWidget {
+  final SessionState session;
+  const _DeliveryPill({required this.session});
+
+  @override
+  Widget build(BuildContext context) {
+    final s = session;
+    final title = !s.hasLocation
+        ? context.tr('set_location')
+        : s.isQuick
+        ? '${context.tr('delivery_in')} ${context.tr('n_minutes', {'n': s.deliveryMinutes})}'
+        : context.tr('delivery_in_days');
+    final place = s.address.isNotEmpty ? s.address : (s.zoneName.isNotEmpty ? s.zoneName : context.tr('set_location'));
+    final sub = s.isQuick && s.distanceKm > 0 ? '$place · ${s.distanceKm.toStringAsFixed(1)} km' : place;
+    return InkWell(
+      borderRadius: BorderRadius.circular(12),
+      onTap: () => context.push('/location?from=app'),
+      child: Padding(
+        padding: const EdgeInsets.all(4),
+        child: Row(
+          children: [
+            Container(
+              width: 38,
+              height: 38,
+              decoration: BoxDecoration(
+                color: context.isDark ? Colors.white10 : AppColors.accent50,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Icon(
+                s.isQuick && s.hasLocation ? Icons.bolt_rounded : Icons.place_outlined,
+                color: AppColors.accentInk,
+                size: 22,
+              ),
+            ),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: displayStyle(
+                      size: 15.5,
+                      weight: FontWeight.w700,
+                      color: context.isDark ? Colors.white : AppColors.ink,
+                      letterSpacing: -0.2,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Flexible(
+                        child: Text(
+                          sub,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontSize: 12, color: context.mutedText, fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                      Icon(Icons.keyboard_arrow_down_rounded, size: 16, color: context.mutedText),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Category tile: icon on a rounded tile; active = blue ring + bold blue label.
+class _CategoryTab extends StatelessWidget {
+  final Category category;
+  final bool active;
+  final VoidCallback onTap;
+  const _CategoryTab({required this.category, required this.active, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    final c = category;
+    final dark = context.isDark;
+    final Widget icon;
+    if (c.id.isEmpty) {
+      // "All" uses the bundled 3D shopping-bags icon (same set as the category icons).
+      icon = Image.asset('assets/images/icons/all.png', width: 28, height: 28);
+    } else if (c.icon.isNotEmpty || c.image.isNotEmpty) {
+      icon = AppImage(
+        url: c.icon.isNotEmpty ? c.icon : c.image,
+        name: c.name,
+        width: 28,
+        height: 28,
+        fit: BoxFit.contain,
+        background: Colors.transparent,
+      );
+    } else {
+      icon = Text(emojiFor(c.name), style: const TextStyle(fontSize: 22));
+    }
+    final label = c.name == 'Fresh Fruits & Vegetables' ? 'Fresh' : c.name;
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(14),
+      child: SizedBox(
+        width: 72,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              width: 48,
+              height: 48,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: active
+                    ? (dark ? AppColors.primary.withValues(alpha: 0.18) : AppColors.primary50)
+                    : (dark ? Colors.white10 : AppColors.soft),
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: active ? AppColors.primary : Colors.transparent, width: 2),
+              ),
+              child: icon,
+            ),
+            const SizedBox(height: 5),
+            Text(
+              label,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontSize: 11.5,
+                color: active ? AppColors.primary : (dark ? Colors.white70 : AppColors.bodyText),
+                fontWeight: active ? FontWeight.w800 : FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Segmented Quick / eCommerce switch: navy pill for the active mode, bolt icon on Quick.
 class _ModeToggle extends StatelessWidget {
   final String mode;
-  final Color tint;
   final ValueChanged<String> onChanged;
-  const _ModeToggle({
-    required this.mode,
-    required this.tint,
-    required this.onChanged,
-  });
+  const _ModeToggle({required this.mode, required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
     final dark = context.isDark;
     Widget seg(String value, String label) {
       final active = mode == value;
-      return Expanded(
-        child: GestureDetector(
-          onTap: () => onChanged(value),
-          child: AnimatedContainer(
-            duration: const Duration(milliseconds: 220),
-            height: 42,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: active
-                  ? (dark ? AppColors.darkSurface : Colors.white)
-                  : (dark
-                        ? Colors.white10
-                        : Color.lerp(
-                            tint,
-                            Colors.black,
-                            0.1,
-                          )!.withValues(alpha: 0.55)),
-              borderRadius: BorderRadius.circular(12),
-              boxShadow: active ? AppShadows.card : null,
-            ),
-            child: Text(
-              label,
-              style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 15,
-                color: active
-                    ? (dark ? Colors.white : AppColors.ink)
-                    : (dark ? Colors.white60 : Colors.white),
-              ),
+      final fg = active ? Colors.white : (dark ? Colors.white70 : AppColors.bodyText);
+      return GestureDetector(
+        onTap: () => onChanged(value),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 220),
+          height: 34,
+          padding: const EdgeInsets.symmetric(horizontal: 11),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: active ? AppColors.night : Colors.transparent,
+            borderRadius: BorderRadius.circular(999),
+          ),
+          // long labels (e.g. Arabic "eCommerce") shrink instead of squeezing the delivery pill
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (value == 'quick') ...[
+                  Icon(Icons.bolt_rounded, size: 15, color: active ? AppColors.accent : fg),
+                  const SizedBox(width: 2),
+                ],
+                Text(label, style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5, color: fg)),
+              ],
             ),
           ),
         ),
       );
     }
 
-    return Row(
-      children: [
-        seg('quick', context.tr('quick')),
-        const SizedBox(width: 10),
-        seg('ecommerce', context.tr('ecommerce')),
-      ],
+    return ConstrainedBox(
+      constraints: const BoxConstraints(maxWidth: 190),
+      child: Container(
+        padding: const EdgeInsets.all(3),
+        decoration: BoxDecoration(
+          color: dark ? Colors.white10 : AppColors.soft,
+          borderRadius: BorderRadius.circular(999),
+          border: Border.all(color: context.borderColor),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Flexible(child: seg('quick', context.tr('quick'))),
+            Flexible(child: seg('ecommerce', context.tr('ecommerce'))),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// The logo's three orange "speed lines".
+class _SpeedLines extends StatelessWidget {
+  const _SpeedLines();
+  @override
+  Widget build(BuildContext context) {
+    Widget line(double w, double a) => Container(
+      width: w,
+      height: 3,
+      margin: const EdgeInsets.only(bottom: 3),
+      decoration: BoxDecoration(color: AppColors.accent.withValues(alpha: a), borderRadius: BorderRadius.circular(3)),
+    );
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      mainAxisSize: MainAxisSize.min,
+      children: [line(22, 1), line(15, 0.8), line(9, 0.6)],
+    );
+  }
+}
+
+/// Navy brand hero (the website's home hero): location chip, delivery promise, big search, browse link.
+class _Hero extends ConsumerWidget {
+  const _Hero();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final s = ref.watch(sessionProvider);
+    final place = s.zoneName.isNotEmpty ? s.zoneName : s.address;
+    final String chip;
+    if (!s.hasLocation || place.isEmpty) {
+      chip = context.tr('hero_set_location');
+    } else if (s.isQuick && s.deliveryMinutes > 0) {
+      chip = context.tr('hero_eta_to', {'mins': s.deliveryMinutes, 'place': place});
+    } else {
+      chip = context.tr('hero_delivering_to', {'place': place});
+    }
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 14, 16, 4),
+      child: Container(
+        padding: const EdgeInsets.all(18),
+        decoration: BoxDecoration(color: AppColors.night, borderRadius: BorderRadius.circular(AppRadius.hero)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Material(
+              color: Colors.white.withValues(alpha: 0.10),
+              shape: StadiumBorder(side: BorderSide(color: Colors.white.withValues(alpha: 0.15))),
+              child: InkWell(
+                customBorder: const StadiumBorder(),
+                onTap: () => context.push('/location?from=app'),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(6, 5, 10, 5),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        width: 24,
+                        height: 24,
+                        decoration: const BoxDecoration(color: AppColors.accent, shape: BoxShape.circle),
+                        child: const Icon(Icons.place_rounded, size: 14, color: Colors.white),
+                      ),
+                      const SizedBox(width: 8),
+                      Flexible(
+                        child: Text(
+                          chip,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                      const Icon(Icons.keyboard_arrow_down_rounded, size: 18, color: Colors.white70),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(padding: EdgeInsets.only(top: 9), child: _SpeedLines()),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Text(
+                    context.tr(s.isQuick ? 'hero_quick_title' : 'hero_ecom_title'),
+                    style: displayStyle(size: 27, weight: FontWeight.w800, color: Colors.white, height: 1.06, letterSpacing: -0.8),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 10),
+            Text(
+              context.tr(s.isQuick ? 'hero_quick_sub' : 'hero_ecom_sub'),
+              style: TextStyle(color: Colors.white.withValues(alpha: 0.75), fontSize: 14, height: 1.5),
+            ),
+            const SizedBox(height: 16),
+            const _SearchBar(large: true),
+            const SizedBox(height: 12),
+            InkWell(
+              onTap: () => context.go('/categories'),
+              child: Text(
+                context.tr('hero_browse'),
+                style: TextStyle(
+                  color: Colors.white.withValues(alpha: 0.85),
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600,
+                  decoration: TextDecoration.underline,
+                  decorationColor: Colors.white.withValues(alpha: 0.35),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -503,7 +616,9 @@ class _CircleIconButton extends StatelessWidget {
 
 /// Search box with a rotating `Search "product"` hint and mic icon.
 class _SearchBar extends StatefulWidget {
-  const _SearchBar();
+  /// Large white search inside the navy hero (as on the website); compact soft field elsewhere.
+  final bool large;
+  const _SearchBar({this.large = false});
   @override
   State<_SearchBar> createState() => _SearchBarState();
 }
@@ -537,22 +652,25 @@ class _SearchBarState extends State<_SearchBar> {
 
   @override
   Widget build(BuildContext context) {
+    final large = widget.large;
+    final radius = BorderRadius.circular(large ? 16 : 12);
     return Material(
-      color: context.cardColor,
-      borderRadius: BorderRadius.circular(12),
+      color: large ? Colors.white : (context.isDark ? context.cardColor : AppColors.soft),
+      borderRadius: radius,
       child: InkWell(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: radius,
         onTap: () => context.push('/search'),
         child: Container(
-          height: 48,
-          padding: const EdgeInsets.symmetric(horizontal: 12),
+          height: large ? 54 : 48,
+          padding: const EdgeInsets.symmetric(horizontal: 14),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: context.borderColor),
+            borderRadius: radius,
+            border: large ? null : Border.all(color: context.borderColor),
+            boxShadow: large ? AppShadows.pop : null,
           ),
           child: Row(
             children: [
-              Icon(Icons.search_rounded, color: context.mutedText),
+              Icon(Icons.search_rounded, color: large ? AppColors.primary : context.mutedText),
               const SizedBox(width: 8),
               Expanded(
                 child: ClipRect(
@@ -573,19 +691,19 @@ class _SearchBarState extends State<_SearchBar> {
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                          color: context.mutedText,
-                          fontSize: 13.5,
+                          color: large ? AppColors.muted : context.mutedText,
+                          fontSize: large ? 14.5 : 13.5,
                         ),
                       ),
                     ),
                   ),
                 ),
               ),
-              Container(width: 1, height: 22, color: context.borderColor),
+              Container(width: 1, height: 22, color: large ? AppColors.border : context.borderColor),
               const SizedBox(width: 10),
               InkWell(
                 onTap: () => context.push('/search?voice=1'),
-                child: Icon(Icons.mic_none_rounded, color: context.mutedText),
+                child: Icon(Icons.mic_none_rounded, color: large ? AppColors.primary : context.mutedText),
               ),
             ],
           ),

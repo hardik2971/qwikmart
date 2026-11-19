@@ -19,8 +19,14 @@ void openCategory(BuildContext context, Category c) {
   }
 }
 
+/// Shapes of the uploaded banner art (admin uploads 1600x600 slides, 800x400 offer tiles, 1600x500 title images);
+/// banners are laid out at these shapes so the baked-in text is never cropped.
+const kSliderBannerAspect = 1600 / 600;
+const kGridBannerAspect = 800 / 400;
+const kTitleBannerAspect = 1600 / 500;
+
 /// Renders one `/home` section by type
-/// (banner_slider, category_section, product_slider, top_brands, grid_banner, title_image, heading_text).
+/// (banner_slider,category_section, product_slider, top_brands, grid_banner, title_image, heading_text).
 class HomeSectionView extends StatelessWidget {
   final HomeSection section;
   final bool isFirst;
@@ -46,9 +52,12 @@ class HomeSectionView extends StatelessWidget {
         return _GridBanner(section: s);
       case 'title_image':
         if (s.rawItems.isEmpty) return const SizedBox.shrink();
+        final b = s.banners.first;
         return Padding(
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 4),
-          child: BannerCard(banner: s.banners.first, height: 150),
+          child: LayoutBuilder(
+            builder: (_, c) => BannerCard(banner: b, height: b.image.isNotEmpty ? c.maxWidth / kTitleBannerAspect : 150),
+          ),
         );
       case 'heading_text':
         return Padding(
@@ -106,16 +115,26 @@ class _BannerSliderState extends State<BannerSlider> {
 
   @override
   Widget build(BuildContext context) {
+    // Uploaded banner art (headline baked in) is shown at its own shape so nothing is cropped; only the composed
+    // fallback cards (no image) use the configured height.
+    final hasArt = widget.banners.every((b) => b.image.isNotEmpty);
+    return LayoutBuilder(builder: (context, c) {
+      final height = hasArt ? (c.maxWidth - 32) / kSliderBannerAspect : widget.height;
+      return _slider(context, height);
+    });
+  }
+
+  Widget _slider(BuildContext context, double height) {
     return Column(children: [
       SizedBox(
-        height: widget.height,
+        height: height,
         child: PageView.builder(
           controller: _page,
           itemCount: widget.banners.length,
           onPageChanged: (i) => setState(() => _index = i),
           itemBuilder: (_, i) => BannerCard(
             banner: widget.banners[i],
-            height: widget.height,
+            height: height,
             margin: const EdgeInsets.symmetric(horizontal: 16),
           ),
         ),
@@ -131,7 +150,7 @@ class _BannerSliderState extends State<BannerSlider> {
                 width: i == _index ? 18 : 6,
                 height: 6,
                 decoration: BoxDecoration(
-                  color: i == _index ? (context.isDark ? Colors.white : AppColors.ink) : context.borderColor,
+                  color: i == _index ? (context.isDark ? Colors.white : AppColors.night) : context.borderColor,
                   borderRadius: BorderRadius.circular(6),
                 ),
               ),
@@ -156,7 +175,7 @@ class CategoryTile extends StatelessWidget {
           width: size,
           height: size,
           decoration: BoxDecoration(
-            color: context.isDark ? AppColors.darkSurface : const Color(0xFFEFF6F8),
+            color: context.isDark ? AppColors.darkSurface : AppColors.soft,
             borderRadius: BorderRadius.circular(14),
           ),
           child: AppImage(
@@ -320,6 +339,8 @@ class _GridBanner extends StatelessWidget {
     final items = section.banners;
     if (items.isEmpty) return const SizedBox.shrink();
     final cols = asInt(section.settings['columns'], 2).clamp(2, 4);
+    // uploaded offer art (800x400) fills the tile at its own 2:1 shape; composed cards keep their layout
+    final art = items.every((b) => b.image.isNotEmpty);
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       if (section.title.isNotEmpty) SectionHeader(title: section.title, subtitle: section.subtitle),
       GridView.builder(
@@ -330,11 +351,18 @@ class _GridBanner extends StatelessWidget {
           crossAxisCount: cols,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
-          childAspectRatio: cols == 2 ? 1.55 : 0.78,
+          childAspectRatio: art ? kGridBannerAspect : (cols == 2 ? 1.55 : 0.78),
         ),
         itemCount: items.length,
         itemBuilder: (_, i) {
           final b = items[i];
+          if (art) {
+            return InkWell(
+              borderRadius: BorderRadius.circular(14),
+              onTap: () => openBannerLink(context, b),
+              child: AppImage(url: b.image, name: b.title, radius: BorderRadius.circular(14)),
+            );
+          }
           final bg = AppColors.fromHex(b.bgColor, AppColors.primary50);
           return InkWell(
             borderRadius: BorderRadius.circular(14),

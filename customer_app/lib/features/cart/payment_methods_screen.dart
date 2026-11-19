@@ -29,8 +29,8 @@ class GatewayLogo extends StatelessWidget {
   const GatewayLogo({super.key, required this.keyName, this.size = 40});
 
   static const _styles = <String, (Color, String)>{
-    'cod': (Color(0xFF0E9623), '₹'),
-    'wallet': (Color(0xFF0B7A1C), 'W'),
+    'cod': (AppColors.primary, '₹'),
+    'wallet': (AppColors.night, 'W'),
     'phonepe': (Color(0xFF5F259F), 'Pe'),
     'midtrans': (Color(0xFF0B3B8C), 'M'),
     'paystack': (Color(0xFF00C3F7), 'ps'),

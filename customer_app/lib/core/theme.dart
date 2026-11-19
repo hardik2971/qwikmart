@@ -1,38 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-/// Design tokens from SPEC §2.
+/// Design tokens — same brand system as the website (web/tailwind.config.ts): QwikMart blue for actions, night navy
+/// for dark brand surfaces, speed orange only for delivery speed and savings.
 class AppColors {
   AppColors._();
-  static const primary = Color(0xFF0E9623);
-  static const primaryDark = Color(0xFF0B7A1C);
-  static const primary50 = Color(0xFFE6F4E9);
+  static const primary = Color(0xFF1846D1);
+  static const primaryDark = Color(0xFF0F34A8);
+  static const primary50 = Color(0xFFEDF2FF);
+  static const primary100 = Color(0xFFD9E3FF);
+  static const accent = Color(0xFFF26411);
+  static const accentInk = Color(0xFFC2410C);
+  static const accent50 = Color(0xFFFFF1E7);
+  static const night = Color(0xFF0A1B4D);
+  static const night2 = Color(0xFF132A6B);
+  static const fresh = Color(0xFF15803D);
   static const adminBg = Color(0xFFF2F7FF);
-  static const navy = Color(0xFF25396F);
-  static const muted = Color(0xFF7C8DB5);
-  static const bodyText = Color(0xFF344054);
-  static const ink = Color(0xFF111827);
-  static const border = Color(0xFFE6EAF2);
+  static const navy = night;
+  static const muted = Color(0xFF637091);
+  static const bodyText = Color(0xFF3A4766);
+  static const ink = Color(0xFF0B1B3F);
+  static const border = Color(0xFFE1E7F2);
+  static const soft = Color(0xFFEEF2FA);
   static const surface = Color(0xFFFFFFFF);
-  static const pageBg = Color(0xFFF5F7FA);
+  static const pageBg = Color(0xFFF4F6FB);
   static const info = Color(0xFF3B82F6);
-  static const success = Color(0xFF22C55E);
+  static const success = Color(0xFF16A34A);
   static const warning = Color(0xFFF59E0B);
   static const danger = Color(0xFFEF4444);
   static const purple = Color(0xFF8B5CF6);
   static const grey = Color(0xFF98A2B3);
 
-  // Dark palette
-  static const darkBg = Color(0xFF0F1412);
-  static const darkSurface = Color(0xFF1A201D);
-  static const darkBorder = Color(0xFF2A322E);
-  static const darkText = Color(0xFFE7ECE9);
+  // Dark palette (navy based, like the website's dark tokens)
+  static const darkBg = Color(0xFF0B1020);
+  static const darkSurface = Color(0xFF131A2E);
+  static const darkBorder = Color(0xFF283352);
+  static const darkText = Color(0xFFF0F3FA);
 
-  /// "Quick" mode header gradient (yellow-green).
-  static const quickGradient = [Color(0xFFEBEC8D), Color(0xFFF8F9E9), Color(0xFFFFFFFF)];
+  /// "Quick" mode soft brand wash (login / profile headers, onboarding).
+  static const quickGradient = [Color(0xFFDCE6FF), Color(0xFFF1F5FF), Color(0xFFFFFFFF)];
 
-  /// "eCommerce" mode header gradient (peach).
-  static const ecommerceGradient = [Color(0xFFFDE2D6), Color(0xFFFFF4EE), Color(0xFFFFFFFF)];
+  /// "eCommerce" mode soft wash (peach — the orange accent family).
+  static const ecommerceGradient = [Color(0xFFFFE4D2), Color(0xFFFFF5EE), Color(0xFFFFFFFF)];
 
   static Color fromHex(String? hex, [Color fallback = primary]) {
     if (hex == null || hex.isEmpty) return fallback;
@@ -58,15 +67,29 @@ class AppColors {
 
 class AppRadius {
   AppRadius._();
-  static const card = 12.0;
-  static const button = 10.0;
+  static const card = 16.0;
+  static const button = 12.0;
+  static const hero = 28.0;
   static const pill = 999.0;
 }
 
 class AppShadows {
   AppShadows._();
-  static const soft = [BoxShadow(color: Color(0x0D101828), blurRadius: 2, offset: Offset(0, 1))];
-  static const card = [BoxShadow(color: Color(0x14101828), blurRadius: 12, offset: Offset(0, 4))];
+  static const soft = [BoxShadow(color: Color(0x0F0A1B4D), blurRadius: 2, offset: Offset(0, 1))];
+  static const card = [BoxShadow(color: Color(0x2E0A1B4D), blurRadius: 30, spreadRadius: -12, offset: Offset(0, 10))];
+  static const pop = [BoxShadow(color: Color(0x590A1B4D), blurRadius: 48, spreadRadius: -16, offset: Offset(0, 24))];
+  static const cta = [BoxShadow(color: Color(0x8C1846D1), blurRadius: 20, spreadRadius: -8, offset: Offset(0, 8))];
+}
+
+/// Headline type (Bricolage Grotesque, like the website); body text stays in Plus Jakarta Sans.
+TextStyle displayStyle({double size = 22, FontWeight weight = FontWeight.w800, Color? color, double? height, double letterSpacing = -0.4}) {
+  final base = TextStyle(fontSize: size, fontWeight: weight, color: color, height: height, letterSpacing: letterSpacing);
+  if (!AppTheme.useGoogleFonts) return base;
+  try {
+    return GoogleFonts.bricolageGrotesque(textStyle: base);
+  } catch (_) {
+    return base;
+  }
 }
 
 class AppTheme {
@@ -207,6 +230,16 @@ class AppTheme {
     TextTheme t;
     try {
       t = useGoogleFonts ? GoogleFonts.plusJakartaSansTextTheme(base) : base;
+      if (useGoogleFonts) {
+        // display / headline / title roles use the brand display face
+        final d = GoogleFonts.bricolageGrotesqueTextTheme(base);
+        t = t.copyWith(
+          displayLarge: d.displayLarge, displayMedium: d.displayMedium, displaySmall: d.displaySmall,
+          headlineLarge: d.headlineLarge, headlineMedium: d.headlineMedium, headlineSmall: d.headlineSmall,
+          titleLarge: d.titleLarge?.copyWith(fontWeight: FontWeight.w700, letterSpacing: -0.3),
+          titleMedium: d.titleMedium?.copyWith(fontWeight: FontWeight.w700, letterSpacing: -0.2),
+        );
+      }
     } catch (_) {
       t = base;
     }

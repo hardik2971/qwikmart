@@ -112,7 +112,7 @@ class _LocationScreenState extends ConsumerState<LocationScreen> {
               height: 150,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
-                gradient: RadialGradient(colors: [Color(0xFFE6F4E9), Color(0xFFF6FBF7)]),
+                gradient: RadialGradient(colors: [AppColors.primary50, Color(0xFFF7F9FF)]),
               ),
               child: const Stack(alignment: Alignment.center, children: [
                 Text('🗺️', style: TextStyle(fontSize: 70)),

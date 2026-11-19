@@ -29,7 +29,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   static const _slides = [
     _Slide(['🛒', '⚡', '🥛'], 'onb_title_1', 'onb_body_1', AppColors.quickGradient, 'assets/images/onboarding/onboarding-1.webp'),
     _Slide(['📱', '👟', '💄'], 'onb_title_2', 'onb_body_2', AppColors.ecommerceGradient, 'assets/images/onboarding/onboarding-3.webp'),
-    _Slide(['🛵', '📍', '💳'], 'onb_title_3', 'onb_body_3', [Color(0xFFD7F0DC), Color(0xFFF1FAF3), Colors.white], 'assets/images/onboarding/onboarding-2.webp'),
+    _Slide(['🛵', '📍', '💳'], 'onb_title_3', 'onb_body_3', [Color(0xFFE3E8F6), Color(0xFFF4F6FB), Colors.white], 'assets/images/onboarding/onboarding-2.webp'),
   ];
 
   void _finish() {

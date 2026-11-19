@@ -159,7 +159,7 @@ class SectionHeader extends StatelessWidget {
       child: Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
         Expanded(
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(title, style: context.text.titleMedium?.copyWith(fontWeight: FontWeight.w800, fontSize: 17)),
+            Text(title, style: context.text.titleMedium?.copyWith(fontWeight: FontWeight.w700, fontSize: 19, letterSpacing: -0.4)),
             if (subtitle != null && subtitle!.isNotEmpty)
               Padding(
                 padding: const EdgeInsets.only(top: 2),
@@ -329,7 +329,7 @@ class PriceRow extends StatelessWidget {
     final hasMrp = mrp != null && mrp! > price;
     final off = hasMrp ? ((mrp! - price) / mrp! * 100).round() : 0;
     return Wrap(crossAxisAlignment: WrapCrossAlignment.center, spacing: 6, children: [
-      Text(Fmt.money(price), style: TextStyle(fontSize: fontSize, fontWeight: FontWeight.w800)),
+      Text(Fmt.money(price), style: displayStyle(size: fontSize + 1, weight: FontWeight.w700, letterSpacing: -0.2)),
       if (hasMrp)
         Text(
           Fmt.money(mrp),
@@ -340,8 +340,8 @@ class PriceRow extends StatelessWidget {
           ),
         ),
       if (showOff && off > 0)
-        Text('$off% OFF',
-            style: TextStyle(fontSize: fontSize - 3, color: AppColors.primary, fontWeight: FontWeight.w800)),
+        Text('$off% off',
+            style: TextStyle(fontSize: fontSize - 3, color: AppColors.accentInk, fontWeight: FontWeight.w800)),
     ]);
   }
 }
@@ -371,7 +371,7 @@ class QtyStepper extends StatelessWidget {
           label: label,
           child: InkWell(
             onTap: onTap,
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(10),
             child: SizedBox(
               width: height,
               height: height,
@@ -382,7 +382,7 @@ class QtyStepper extends StatelessWidget {
     return Container(
       height: height,
       width: width,
-      decoration: BoxDecoration(color: AppColors.primary, borderRadius: BorderRadius.circular(8)),
+      decoration: BoxDecoration(color: AppColors.primary, borderRadius: BorderRadius.circular(10), boxShadow: AppShadows.cta),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         btn(Icons.remove_rounded, onMinus, 'Decrease'),
         Text('$qty', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800, fontSize: 14)),
