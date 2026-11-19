@@ -67,3 +67,6 @@ store/playstore/**/*.apk
 # Service-account keys: never commit
 secret/
 *-firebase-adminsdk-*.json
+
+# Local deploy script (kept on disk, not in git)
+scripts/
