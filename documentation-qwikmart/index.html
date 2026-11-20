@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QwikMart User Guide</title>
+<style>
+  :root {
+    --brand: #1846D1; --brand-dark: #0F34A8; --brand-50: #EDF2FF; --accent: #F26411; --accent-50: #FFF1E7;
+    --ink: #17203A; --muted: #5B6478; --line: #DDE2EC; --bg: #FFFFFF; --soft: #F6F8FC;
+    --ok: #0E7A3A; --ok-50: #E8F6EE; --warn: #9A5B00; --warn-50: #FFF6E0; --bad: #B42318; --bad-50: #FDECEA;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.6 "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
+  h1, h2, h3, h4 { line-height: 1.25; color: var(--ink); }
+  h2 { font-size: 26px; margin: 0 0 6px; padding-top: 8px; }
+  h2 .num { color: var(--brand); margin-right: 8px; }
+  h3 { font-size: 18px; margin: 28px 0 8px; color: var(--brand-dark); }
+  h4 { font-size: 15px; margin: 18px 0 6px; }
+  p { margin: 8px 0; }
+  a { color: var(--brand); }
+  .lead { color: var(--muted); font-size: 16px; margin-bottom: 18px; }
+  section.chapter { padding-top: 34px; border-top: 1px solid var(--line); margin-top: 34px; }
+  code, kbd, pre { font-family: Consolas, "Cascadia Mono", Menlo, monospace; }
+  code { background: var(--soft); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; font-size: 13px; word-break: break-word; }
+  pre { background: #0F1730; color: #E7ECFF; border-radius: 8px; padding: 12px 14px; font-size: 13px; line-height: 1.5; white-space: pre-wrap; word-break: break-word; margin: 10px 0; }
+  pre .c { color: #8FA0C8; }
+  pre .y { color: #FFC58F; }
+  .ph { background: var(--accent-50); color: var(--accent); border: 1px dashed var(--accent); border-radius: 4px; padding: 0 4px; font-weight: 600; white-space: nowrap; }
+  pre .ph { background: transparent; color: #FFB27A; border: 0; padding: 0; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; font-size: 14px; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { background: var(--soft); font-weight: 600; }
+  ol.steps { padding-left: 0; list-style: none; counter-reset: s; }
+  ol.steps > li { counter-increment: s; position: relative; padding: 2px 0 10px 40px; }
+  ol.steps > li::before { content: counter(s); position: absolute; left: 0; top: 2px; width: 26px; height: 26px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+  .box { border-radius: 10px; padding: 12px 16px; margin: 14px 0; border: 1px solid; }
+  .box > b:first-child { display: block; margin-bottom: 4px; }
+  .note { background: var(--brand-50); border-color: #C4D3FF; }
+  .tip { background: var(--ok-50); border-color: #B5E2C6; }
+  .warn { background: var(--warn-50); border-color: #F2D48A; }
+  .stop { background: var(--bad-50); border-color: #F4B8B2; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; border-radius: 99px; padding: 2px 9px; margin-left: 6px; vertical-align: middle; }
+  .t-easy { background: var(--ok-50); color: var(--ok); }
+  .t-cmd { background: var(--brand-50); color: var(--brand); }
+  .t-opt { background: #EEF0F4; color: var(--muted); }
+  .t-dev { background: var(--accent-50); color: var(--accent); }
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 14px 0; }
+  .shots figure { margin: 0; }
+  .shots img { width: 100%; border-radius: 10px; border: 1px solid var(--line); display: block; }
+  .shots figcaption { font-size: 12px; color: var(--muted); text-align: center; margin-top: 4px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .card { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; background: #fff; }
+  .card h4 { margin-top: 0; }
+  .check li { list-style: none; position: relative; padding-left: 4px; }
+  .check { padding-left: 22px; }
+  .check li::before { content: "☐"; position: absolute; left: -20px; color: var(--brand); }
+  .toc { columns: 2; column-gap: 28px; padding-left: 18px; }
+  .toc li { break-inside: avoid; margin: 3px 0; }
+  .toc a { text-decoration: none; }
+  /* cover */
+  .cover { min-height: 96vh; display: flex; flex-direction: column; justify-content: center; padding: 40px 0; }
+  .cover .logo { width: 300px; max-width: 70%; }
+  .cover h1 { font-size: 40px; margin: 26px 0 6px; }
+  .cover .sub { font-size: 18px; color: var(--muted); margin: 0 0 22px; }
+  .cover img.hero { width: 100%; border-radius: 14px; border: 1px solid var(--line); }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--muted); font-size: 14px; margin-top: 18px; }
+  .meta b { color: var(--ink); }
+  @media (max-width: 700px) {
+    .shots { grid-template-columns: repeat(2, 1fr); }
+    .grid2 { grid-template-columns: 1fr; }
+    .toc { columns: 1; }
+    table { display: block; overflow-x: auto; }
+    .cover h1 { font-size: 30px; }
+  }
+  @page { size: A4; margin: 16mm 14mm 16mm 14mm; }
+  @media print {
+    body { font-size: 13.5px; }
+    table { font-size: 13px; }
+    .wrap { max-width: none; padding: 0; }
+    .cover { min-height: 0; height: 262mm; padding: 0; }
+    section.chapter { break-before: page; border-top: 0; margin-top: 0; padding-top: 0; }
+    h2, h3, h4 { break-after: avoid; }
+    pre, .box, table, figure, .card, ol.steps > li { break-inside: avoid; }
+    tr { break-inside: avoid; }
+    pre { font-size: 11px; }
+    a { color: var(--brand); text-decoration: none; }
+    .noprint { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ============================================================ COVER -->
+<div class="cover">
+  <img class="logo" src="images/logo.png" alt="QwikMart">
+  <h1>User Guide &amp; Installation Manual</h1>
+  <p class="sub">Quick Commerce &amp; eCommerce platform: customer website, admin panel, store panel, customer app and delivery partner app, all running on Firebase.</p>
+  <img class="hero" src="images/cover.jpg" alt="QwikMart customer app">
+  <div class="meta">
+    <span><b>Guide version:</b> 1.0</span>
+    <span><b>Updated:</b> November 2026</span>
+    <span><b>Built with:</b> Firebase · Next.js · Flutter</span>
+    <span><b>Support:</b> <span class="ph">[your support email]</span></span>
+  </div>
+</div>
+
+<!-- ============================================================ CONTENTS -->
+<section class="chapter" id="contents">
+  <h2>Contents</h2>
+  <ol class="toc">
+    <li><a href="#welcome">Welcome &amp; how to use this guide</a></li>
+    <li><a href="#before">Read this first</a></li>
+    <li><a href="#included">What's included</a></li>
+    <li><a href="#need">What you need</a></li>
+    <li><a href="#step1">Step 1: Create your Firebase project</a></li>
+    <li><a href="#step2">Step 2: Register your apps in Firebase</a></li>
+    <li><a href="#step3">Step 3: Put your Firebase details into the project</a></li>
+    <li><a href="#step4">Step 4: Deploy the backend</a></li>
+    <li><a href="#step5">Step 5: Publish the website &amp; admin panel</a></li>
+    <li><a href="#step6">Step 6: Create your Super Admin account</a></li>
+    <li><a href="#step7">Step 7: Set up your business in the admin panel</a></li>
+    <li><a href="#step8">Step 8: Brand &amp; publish the mobile apps</a></li>
+    <li><a href="#daily">Running your business day to day</a></li>
+    <li><a href="#costs">Costs, security &amp; maintenance</a></li>
+    <li><a href="#trouble">Troubleshooting</a></li>
+    <li><a href="#appA">Appendix A: Explore the demo data on your computer</a></li>
+    <li><a href="#appB">Appendix B: Every file you edit (quick reference)</a></li>
+    <li><a href="#appC">Appendix C: Technical overview</a></li>
+    <li><a href="#support">Support &amp; credits</a></li>
+  </ol>
+</section>
+
+<!-- ============================================================ WELCOME -->
+<section class="chapter" id="welcome">
+  <h2><span class="num">1</span>Welcome</h2>
+  <p class="lead">Thank you for purchasing QwikMart. This guide takes you from the downloaded files to a live store with a working website, admin panel and Android apps.</p>
+
+  <p>QwikMart is a complete platform for running a grocery or general retail delivery business. It supports two ways of selling:</p>
+  <div class="grid2">
+    <div class="card"><h4>⚡ Quick Commerce</h4>Customers order from the store nearest to them and get delivery in minutes. Prices and stock come from that local store.</div>
+    <div class="card"><h4>📦 eCommerce</h4>Customers order from your full catalogue and receive a standard delivery, like a normal online shop.</div>
+  </div>
+
+  <h3>Who this guide is for</h3>
+  <p>It is written for <b>store owners and non-technical users</b>. You do not need to know how to program. You will need to:</p>
+  <ul>
+    <li>click through the Firebase and Google Play websites,</li>
+    <li>open a few text files and replace values (we show exactly which lines), and</li>
+    <li>copy and paste some commands into a <b>terminal</b> (a window where you type commands).</li>
+  </ul>
+  <p>Plan for about <b>half a day</b> for the first installation. Most of that time is spent waiting for Firebase to finish deploying.</p>
+
+  <h3>Labels used in this guide</h3>
+  <table>
+    <tr><th style="width:160px">Label</th><th>Meaning</th></tr>
+    <tr><td><span class="tag t-easy">No coding</span></td><td>Done by clicking on a website.</td></tr>
+    <tr><td><span class="tag t-cmd">Copy &amp; paste</span></td><td>You copy commands into a terminal or replace values in a file.</td></tr>
+    <tr><td><span class="tag t-opt">Optional</span></td><td>You can skip this step.</td></tr>
+    <tr><td><span class="tag t-dev">Developer</span></td><td>Easier with help from a developer.</td></tr>
+    <tr><td><span class="ph">YOUR-PROJECT-ID</span></td><td>A placeholder. Replace it with your own value, without the highlight.</td></tr>
+  </table>
+
+  <h3>How to open a terminal</h3>
+  <table>
+    <tr><th style="width:160px">Computer</th><th>How</th></tr>
+    <tr><td>Windows</td><td>Install <b>Git for Windows</b> (see <a href="#need">What you need</a>). Then right-click the QwikMart folder and choose <b>Open Git Bash here</b>. All commands in this guide work in Git Bash.</td></tr>
+    <tr><td>macOS</td><td>Open <b>Terminal</b>, type <code>cd </code> (with a space), drag the QwikMart folder into the window and press Enter.</td></tr>
+  </table>
+  <div class="tip box"><b>Tip</b>Every command block in this guide starts from the <b>main QwikMart folder</b> (the one that contains <code>admin</code>, <code>web</code>, <code>firebase</code>, …). If a command fails, check that you are in the right folder.</div>
+</section>
+
+<!-- ============================================================ BEFORE -->
+<section class="chapter" id="before">
+  <h2><span class="num">2</span>Read this first</h2>
+  <p class="lead">These points affect how you plan your setup. Please read them before you start.</p>
+
+  <div class="stop box"><b>1. You need your own Firebase project</b>
+  QwikMart runs entirely on Google Firebase. The download does <b>not</b> connect to the author's servers. You create your own Firebase project (free to create) and connect every part of QwikMart to it. The files still contain the author's Firebase settings, and Step 3 shows you how to replace them.</div>
+
+  <div class="stop box"><b>2. Your store starts empty. Demo data is not imported automatically.</b>
+  The products, stores, banners, orders and demo accounts in the screenshots and the live preview are <b>not</b> loaded into your Firebase project. After installation, your website and apps show no products until you add your own in the admin panel (Step 7). There is also no admin account at first: Step 6 creates one.<br><br>
+  The demo data is included in <code>firebase/tools/emulator-data</code>, but QwikMart has no tool to copy it into a live Firebase project. Developers can explore it on their own computer with the Firebase Emulator (see <a href="#appA">Appendix A</a>).</div>
+
+  <div class="warn box"><b>3. Firebase "Blaze" (pay-as-you-go) plan is required</b>
+  The backend uses Cloud Functions, which need the Blaze plan. Blaze includes a free monthly allowance, and small stores often pay very little, but Google needs a billing account. Set a budget alert (Step 1).</div>
+
+  <div class="warn box"><b>4. Region: Mumbai (asia-south1)</b>
+  The backend is built to run in Google's <b>asia-south1 (Mumbai)</b> region. Create your database there (Step 1). It works for customers in any country, but moving it to another region requires a developer to change the code.</div>
+
+  <div class="note box"><b>5. Android and web are ready. iOS needs extra work.</b>
+  The customer website, admin panel and both Android apps are ready to publish. The Flutter apps can also be built for iPhone, but iOS is <b>not set up</b> in the project. It needs a Mac, an Apple Developer account and some developer work (registering the iOS app in Firebase, push notification keys). <span class="tag t-dev">Developer</span></div>
+
+  <div class="note box"><b>6. Third-party accounts are yours</b>
+  Payment gateways (Stripe, Razorpay, PayPal, etc.), SMS providers, your email (SMTP) account, Google Play Console and the optional Google Gemini AI key all need accounts in <b>your</b> name. QwikMart only stores the keys you enter.</div>
+</section>
+
+<!-- ============================================================ INCLUDED -->
+<section class="chapter" id="included">
+  <h2><span class="num">3</span>What's included</h2>
+  <p class="lead">QwikMart has five parts. All of them use the same Firebase project, so an order placed in the app appears in the admin panel straight away.</p>
+
+  <table>
+    <tr><th style="width:24%">Part</th><th style="width:20%">Folder</th><th>What it does</th></tr>
+    <tr><td><b>Backend</b></td><td><code>firebase/</code></td><td>The "engine": database rules, order processing, payments, delivery assignment, notifications and emails. It runs on Firebase. You deploy it once and update it when needed.</td></tr>
+    <tr><td><b>Admin, Store &amp; Delivery panels</b></td><td><code>admin/</code></td><td>One website with three logins: <b>Super Admin</b> (<code>/admin</code>), <b>Store owner</b> (<code>/store</code>) and <b>Delivery partner</b> (<code>/delivery</code>).</td></tr>
+    <tr><td><b>Customer website</b></td><td><code>web/</code></td><td>Your online shop: browse, cart, checkout, order tracking, wallet, referrals, blog.</td></tr>
+    <tr><td><b>Customer app</b></td><td><code>customer_app/</code></td><td>Android app for shoppers (Flutter). Same features as the website, plus push notifications.</td></tr>
+    <tr><td><b>Delivery partner app</b></td><td><code>delivery_app/</code></td><td>Android app for your riders: accept orders, navigate, deliver with an OTP code, collect cash and track earnings.</td></tr>
+    <tr><td><b>Documentation</b></td><td><code>documentation/</code></td><td>This guide (<code>index.html</code> and <code>user-guide.pdf</code>) and the <code>tools/make-admin.mjs</code> helper.</td></tr>
+  </table>
+
+  <h3>Customer app</h3>
+  <div class="shots">
+    <figure><img src="images/customer-home.jpg" alt=""><figcaption>Home</figcaption></figure>
+    <figure><img src="images/customer-product.jpg" alt=""><figcaption>Product</figcaption></figure>
+    <figure><img src="images/customer-cart.jpg" alt=""><figcaption>Cart &amp; checkout</figcaption></figure>
+    <figure><img src="images/customer-tracking.jpg" alt=""><figcaption>Live tracking</figcaption></figure>
+  </div>
+  <h3>Delivery partner app</h3>
+  <div class="shots">
+    <figure><img src="images/delivery-home.jpg" alt=""><figcaption>Dashboard</figcaption></figure>
+    <figure><img src="images/delivery-workflow.jpg" alt=""><figcaption>Order workflow</figcaption></figure>
+    <figure><img src="images/delivery-otp.jpg" alt=""><figcaption>OTP delivery</figcaption></figure>
+    <figure><img src="images/delivery-earnings.jpg" alt=""><figcaption>Earnings</figcaption></figure>
+  </div>
+
+  <h3>Main features</h3>
+  <div class="grid2">
+    <div class="card"><h4>Selling</h4>Quick and eCommerce modes · delivery zones drawn on a map · multiple stores · per-store stock and prices · variants (size, colour…) · brands · taxes · promo codes · referrals · customer wallet</div>
+    <div class="card"><h4>Payments</h4>Cash on Delivery · Wallet · Stripe · PayPal · Razorpay · Cashfree · PhonePe · PayTabs · Midtrans · Paystack</div>
+    <div class="card"><h4>Delivery</h4>Rider sign-up with document upload and admin approval · automatic or manual assignment · live rider tracking · delivery OTP · cash collection · earnings and payouts</div>
+    <div class="card"><h4>Operations</h4>Drag-and-drop home page builder · returns and refunds · support chat · push and email notifications · reports · staff roles and permissions · bulk product upload · English, Arabic (right-to-left) and Hindi · optional AI (Google Gemini)</div>
+  </div>
+</section>
+
+<!-- ============================================================ NEED -->
+<section class="chapter" id="need">
+  <h2><span class="num">4</span>What you need</h2>
+
+  <h3>Accounts</h3>
+  <table>
+    <tr><th style="width:30%">Account</th><th style="width:16%">Required?</th><th>Notes</th></tr>
+    <tr><td>Google account + <b>Firebase</b> (<a href="https://console.firebase.google.com">console.firebase.google.com</a>)</td><td>Required</td><td>Blaze plan with a billing card.</td></tr>
+    <tr><td><b>Google Play Console</b></td><td>For the apps</td><td>One-time registration fee (currently US$25) to publish Android apps.</td></tr>
+    <tr><td>Payment gateway(s)</td><td>Recommended</td><td>Cash on Delivery and Wallet work without one.</td></tr>
+    <tr><td>Email (SMTP) account</td><td>Recommended</td><td>For order emails, e.g. Gmail with an app password, Zoho, SendGrid or Mailgun.</td></tr>
+    <tr><td>SMS provider</td><td>Optional</td><td>Firebase Phone Auth sends login OTPs without a separate provider.</td></tr>
+    <tr><td>Your own domain name</td><td>Optional</td><td>Firebase gives you free <code>.web.app</code> addresses.</td></tr>
+    <tr><td>Google Gemini API key</td><td>Optional</td><td>Turns on the AI features in the admin panel.</td></tr>
+  </table>
+
+  <h3>Software for your computer</h3>
+  <p>A Windows 10/11 or macOS computer with at least 8 GB of RAM (16 GB recommended for building the apps).</p>
+  <table>
+    <tr><th style="width:26%">Software</th><th style="width:22%">Needed for</th><th>Where to get it</th></tr>
+    <tr><td><b>Node.js 22 (LTS)</b></td><td>Steps 4–6</td><td><a href="https://nodejs.org">nodejs.org</a>. Choose version <b>22</b>; other major versions are not supported.</td></tr>
+    <tr><td><b>Firebase CLI</b></td><td>Steps 4–5</td><td>After installing Node.js, run <code>npm install -g firebase-tools</code></td></tr>
+    <tr><td><b>Git for Windows</b> (Windows only)</td><td>All steps</td><td><a href="https://git-scm.com">git-scm.com</a>. It provides the <b>Git Bash</b> terminal.</td></tr>
+    <tr><td>A text editor</td><td>Step 3</td><td><a href="https://code.visualstudio.com">Visual Studio Code</a> (free) is recommended.</td></tr>
+    <tr><td><b>Flutter 3.41 or newer</b></td><td>Step 8 (apps)</td><td><a href="https://docs.flutter.dev/get-started/install">docs.flutter.dev/get-started/install</a></td></tr>
+    <tr><td><b>Android Studio</b></td><td>Step 8 (apps)</td><td><a href="https://developer.android.com/studio">developer.android.com/studio</a>. It installs the Android SDK and Java.</td></tr>
+  </table>
+
+  <p>To check that everything is installed, open a terminal and run:</p>
+<pre>node -v            <span class="c"># should print v22.x.x</span>
+firebase --version <span class="c"># any recent version</span>
+flutter doctor     <span class="c"># only needed for Step 8; fix anything marked with ✗</span></pre>
+</section>
+
+<!-- ============================================================ STEP 1 -->
+<section class="chapter" id="step1">
+  <h2><span class="num">5</span>Step 1: Create your Firebase project <span class="tag t-easy">No coding</span></h2>
+  <p class="lead">This is all done at <a href="https://console.firebase.google.com">console.firebase.google.com</a>, signed in with your Google account.</p>
+
+  <h3>1.1 Create the project</h3>
+  <ol class="steps">
+    <li>Click <b>Create a project</b> (or <b>Add project</b>) and enter a name, for example <i>MyShop</i>.</li>
+    <li>Below the name, Firebase shows a <b>Project ID</b>, e.g. <code>myshop-4f2a1</code>. <b>Write it down.</b> This guide calls it <span class="ph">YOUR-PROJECT-ID</span>.</li>
+    <li>Google Analytics is optional. Then click <b>Create project</b>.</li>
+  </ol>
+
+  <h3>1.2 Switch to the Blaze plan</h3>
+  <ol class="steps">
+    <li>At the bottom of the left menu, click <b>Upgrade</b> and choose <b>Blaze (pay as you go)</b>. Link or create a billing account.</li>
+    <li>Recommended: in Google Cloud Billing, open <b>Budgets &amp; alerts</b> and create a monthly budget (for example US$50) with email alerts at 50%, 90% and 100%.</li>
+  </ol>
+
+  <h3>1.3 Create the database (Firestore)</h3>
+  <ol class="steps">
+    <li>Go to <b>Build → Firestore Database</b> and click <b>Create database</b>.</li>
+    <li>Keep the database ID <b>(default)</b>. For the location, choose <b>asia-south1 (Mumbai)</b>.</li>
+    <li>Choose <b>Start in production mode</b>. QwikMart uploads its own security rules in Step 4.</li>
+  </ol>
+  <div class="warn box"><b>Important</b>You cannot change the database location later. Choose <b>asia-south1</b>.</div>
+
+  <h3>1.4 Turn on file storage</h3>
+  <ol class="steps">
+    <li>Go to <b>Build → Storage</b> and click <b>Get started</b>.</li>
+    <li>Choose <b>production mode</b> and the same location (<b>asia-south1</b>, or the location Firebase suggests).</li>
+  </ol>
+
+  <h3>1.5 Turn on login methods</h3>
+  <ol class="steps">
+    <li>Go to <b>Build → Authentication</b>, click <b>Get started</b>, then open the <b>Sign-in method</b> tab.</li>
+    <li>Enable these three providers: <b>Email/Password</b>, <b>Phone</b> and <b>Anonymous</b>. Anonymous lets visitors fill a cart before they log in.</li>
+    <li>Open <b>Settings → SMS region policy</b> and allow the countries where your customers live. Otherwise phone OTP login fails.</li>
+    <li><span class="tag t-opt">Optional</span> Under <b>Phone → Phone numbers for testing</b>, add a test number and code (e.g. +91 9876543210 → 123456). You can then test phone login without receiving a real SMS.</li>
+  </ol>
+</section>
+
+<!-- ============================================================ STEP 2 -->
+<section class="chapter" id="step2">
+  <h2><span class="num">6</span>Step 2: Register your apps in Firebase <span class="tag t-easy">No coding</span></h2>
+
+  <h3>2.1 Add a web app (used by the website and the admin panel)</h3>
+  <ol class="steps">
+    <li>Click the ⚙️ gear next to <b>Project Overview → Project settings</b>. Under <b>Your apps</b>, click the <b>&lt;/&gt;</b> (Web) icon.</li>
+    <li>Give it a nickname such as <i>Website and Admin</i> and click <b>Register app</b>. You can skip the "Firebase Hosting" checkbox.</li>
+    <li>Firebase shows a block of code called <code>firebaseConfig</code>. Copy these six values into a notepad file: <code>apiKey</code>, <code>authDomain</code>, <code>projectId</code>, <code>storageBucket</code>, <code>messagingSenderId</code>, <code>appId</code>. You need them in Step 3. You can view them again later in Project settings.</li>
+  </ol>
+
+  <h3>2.2 Create two Hosting sites</h3>
+  <ol class="steps">
+    <li>Go to <b>Build → Hosting</b> and click <b>Get started</b>. Click through the wizard; you don't need to run the commands it shows. Your first site has the same name as your project: <span class="ph">YOUR-PROJECT-ID</span>. This will be your <b>customer website</b>.</li>
+    <li>On the Hosting page, scroll down and click <b>Add another site</b>. Enter a name for the <b>admin panel</b>, e.g. <span class="ph">YOUR-PROJECT-ID-admin</span>. Site names must be unique worldwide, so Firebase may ask you to pick another one.</li>
+    <li>Write down both site names. Your addresses will be <code>https://<span class="ph">website-site</span>.web.app</code> and <code>https://<span class="ph">admin-site</span>.web.app</code>.</li>
+  </ol>
+
+  <h3>2.3 Choose your Android app IDs</h3>
+  <p>Every Android app on Google Play has a unique ID, written like a reversed web address. Choose two IDs now, for example:</p>
+  <table>
+    <tr><th>App</th><th>Example ID</th></tr>
+    <tr><td>Customer app</td><td><code>com.<span class="ph">yourbrand</span>.customer</code></td></tr>
+    <tr><td>Delivery partner app</td><td><code>com.<span class="ph">yourbrand</span>.delivery</code></td></tr>
+  </table>
+  <div class="stop box"><b>Do not keep the original IDs</b>The included IDs (<code>com.qwikmartapp.customer</code> and <code>com.qwikmartapp.delivery</code>) belong to the author, and Google Play will reject them. An ID can never be changed after you publish. You add the IDs to the apps and register them in Firebase in Step 8.</div>
+</section>
+
+<!-- ============================================================ STEP 3 -->
+<section class="chapter" id="step3">
+  <h2><span class="num">7</span>Step 3: Put your Firebase details into the project <span class="tag t-cmd">Copy &amp; paste</span></h2>
+  <p class="lead">Now replace the author's Firebase settings with yours. Open the QwikMart folder in your text editor and change the files below. In each file, change only the highlighted values.</p>
+
+  <div class="tip box"><b>Hidden files</b>Some file names start with a dot (e.g. <code>.firebaserc</code>), and Windows and macOS hide them by default. Visual Studio Code always shows them. In Windows File Explorer, use <b>View → Show → Hidden items</b>.</div>
+
+  <h3>3.1 <code>.firebaserc</code>: two files</h3>
+  <p>There is one in the main folder and one in <code>firebase/</code>. Make both look like this:</p>
+<pre>{
+  "projects": {
+    "default": "<span class="ph">YOUR-PROJECT-ID</span>"
+  }
+}</pre>
+
+  <h3>3.2 <code>firebase.json</code> in the main folder</h3>
+  <p>Put your two Hosting site names (Step 2.2) into the two <code>"site"</code> lines:</p>
+<pre>"site": "<span class="ph">website-site</span>",   <span class="c">← was "qwikmart-infidec" (the line followed by "source": "web")</span>
+...
+"site": "<span class="ph">admin-site</span>",     <span class="c">← was "qwikmart-admin"   (the line followed by "source": "admin")</span></pre>
+  <p>Leave everything else in this file unchanged. Do <b>not</b> edit <code>firebase/firebase.json</code>; it needs no project-specific values.</p>
+
+  <h3>3.3 Backend settings file</h3>
+  <ol class="steps">
+    <li>In <code>firebase/functions/</code>, find the file <code>.env.qwikmart-infidec</code>.</li>
+    <li>Rename it to <code>.env.<span class="ph">YOUR-PROJECT-ID</span></code> (e.g. <code>.env.myshop-4f2a1</code>).</li>
+    <li>Open it and set:</li>
+  </ol>
+<pre>HOT_MIN_INSTANCES=0
+ENFORCE_APP_CHECK=false
+WEBSITE_URL=https://<span class="ph">website-site</span>.web.app</pre>
+  <table>
+    <tr><th style="width:28%">Setting</th><th>Meaning</th></tr>
+    <tr><td><code>HOT_MIN_INSTANCES</code></td><td><b>0</b> = cheapest. The first request after a quiet period takes a few seconds. <b>1</b> = always fast, but Google charges for 3 servers that stay running. Start with 0.</td></tr>
+    <tr><td><code>ENFORCE_APP_CHECK</code></td><td>Leave <b>false</b>.</td></tr>
+    <tr><td><code>WEBSITE_URL</code></td><td>The address of your customer website, used in links inside order emails. Use your own domain if you have one.</td></tr>
+  </table>
+
+  <h3>3.4 Customer website settings: <code>web/.env.local</code></h3>
+  <p>Copy <code>web/.env.example</code>, name the copy <code>web/.env.local</code> (in the same folder) and fill it in with the values from Step 2.1:</p>
+<pre>NEXT_PUBLIC_USE_MOCK=false
+NEXT_PUBLIC_FIREBASE_API_KEY=<span class="ph">apiKey</span>
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=<span class="ph">YOUR-PROJECT-ID</span>.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=<span class="ph">YOUR-PROJECT-ID</span>
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=<span class="ph">storageBucket</span>
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=<span class="ph">messagingSenderId</span>
+NEXT_PUBLIC_FIREBASE_APP_ID=<span class="ph">appId</span>
+NEXT_PUBLIC_FIREBASE_VAPID_KEY=
+NEXT_PUBLIC_USE_EMULATORS=false
+NEXT_PUBLIC_SITE_URL=https://<span class="ph">website-site</span>.web.app</pre>
+
+  <h3>3.5 Admin panel settings: <code>admin/.env.local</code></h3>
+  <p>Copy <code>admin/.env.example</code>, name the copy <code>admin/.env.local</code> and make it look like this:</p>
+<pre>NEXT_PUBLIC_FIREBASE_API_KEY=<span class="ph">apiKey</span>
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=<span class="ph">YOUR-PROJECT-ID</span>.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=<span class="ph">YOUR-PROJECT-ID</span>
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=<span class="ph">storageBucket</span>
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=<span class="ph">messagingSenderId</span>
+NEXT_PUBLIC_FIREBASE_APP_ID=<span class="ph">appId</span>
+NEXT_PUBLIC_FIREBASE_FUNCTIONS_REGION=asia-south1
+NEXT_PUBLIC_USE_EMULATORS=false
+NEXT_PUBLIC_EMULATOR_HOST=127.0.0.1</pre>
+  <div class="stop box"><b>Check this line</b>The example file says <code>NEXT_PUBLIC_USE_EMULATORS=true</code>. It <b>must</b> be <code>false</code>. Otherwise the published admin panel tries to connect to a test server on your own computer and nothing loads.</div>
+
+  <div class="note box"><b>Are these values secret?</b>No. The Firebase web settings are public by design: every website visitor's browser receives them. Your data is protected by the security rules uploaded in Step 4. Real secrets, such as payment and SMTP keys, are entered later in the admin panel and stored where only the Super Admin and the backend can read them.</div>
+</section>
+
+<!-- ============================================================ STEP 4 -->
+<section class="chapter" id="step4">
+  <h2><span class="num">8</span>Step 4: Deploy the backend <span class="tag t-cmd">Copy &amp; paste</span></h2>
+  <p class="lead">This uploads the database rules, the search indexes and the server code (Cloud Functions) to your Firebase project.</p>
+
+  <h3>4.1 Log in and deploy</h3>
+  <p>Open a terminal in the main QwikMart folder and run these commands one at a time:</p>
+<pre><span class="c"># 1. Log in to Firebase (a browser window opens; pick your Google account)</span>
+firebase login
+
+<span class="c"># 2. Install the backend's packages (takes a few minutes the first time)</span>
+cd firebase
+npm install
+cd functions
+npm install
+cd ..
+
+<span class="c"># 3. Deploy rules, indexes and server code</span>
+firebase deploy --only firestore,storage,functions --project <span class="ph">YOUR-PROJECT-ID</span></pre>
+  <ul>
+    <li>The first deploy takes <b>5–15 minutes</b>. Firebase may ask to enable some Google APIs: answer <b>Yes</b>.</li>
+    <li>When it finishes you'll see <code>✔ Deploy complete!</code></li>
+    <li>If the very first deploy fails with a permission or "Eventarc" error, wait 5 minutes and run the same command again. New projects sometimes need a few minutes to finish setting up.</li>
+    <li>The database indexes keep building in the background for a few minutes after the deploy.</li>
+  </ul>
+
+  <h3>4.2 Allow invoice download links <span class="tag t-easy">No coding</span></h3>
+  <p>This allows the backend to create secure download links for invoices and exports.</p>
+  <ol class="steps">
+    <li>Open <a href="https://console.cloud.google.com/iam-admin/iam">console.cloud.google.com/iam-admin/iam</a> and select your project at the top.</li>
+    <li>Find the member ending in <code>-compute@developer.gserviceaccount.com</code> and click the ✏️ pencil icon.</li>
+    <li>Click <b>Add another role</b>, choose <b>Service Account Token Creator</b> and click <b>Save</b>.</li>
+  </ol>
+  <p>If you skip this, invoices still work, but they use a less restrictive link type.</p>
+</section>
+
+<!-- ============================================================ STEP 5 -->
+<section class="chapter" id="step5">
+  <h2><span class="num">9</span>Step 5: Publish the website &amp; admin panel <span class="tag t-cmd">Copy &amp; paste</span></h2>
+
+  <h3>5.1 Deploy</h3>
+  <p>In a terminal in the <b>main QwikMart folder</b>:</p>
+<pre><span class="c"># 1. Allow Firebase Hosting to build Next.js websites (needed once per computer)</span>
+firebase experiments:enable webframeworks
+
+<span class="c"># 2. Install the website's and the admin panel's packages</span>
+cd web
+npm install
+cd ../admin
+npm install
+cd ..
+
+<span class="c"># 3. Build and publish both sites (takes 5–10 minutes)</span>
+firebase deploy --only hosting --project <span class="ph">YOUR-PROJECT-ID</span></pre>
+  <p>To publish only one of them later:</p>
+<pre>firebase deploy --only hosting:<span class="ph">website-site</span> --project <span class="ph">YOUR-PROJECT-ID</span>
+firebase deploy --only hosting:<span class="ph">admin-site</span> --project <span class="ph">YOUR-PROJECT-ID</span></pre>
+
+  <h3>5.2 Your addresses</h3>
+  <table>
+    <tr><th>What</th><th>Address</th></tr>
+    <tr><td>Customer website</td><td><code>https://<span class="ph">website-site</span>.web.app</code></td></tr>
+    <tr><td>Super Admin login</td><td><code>https://<span class="ph">admin-site</span>.web.app/admin/login</code></td></tr>
+    <tr><td>Store owner login</td><td><code>https://<span class="ph">admin-site</span>.web.app/store/login</code></td></tr>
+    <tr><td>Delivery partner web panel</td><td><code>https://<span class="ph">admin-site</span>.web.app/delivery/login</code></td></tr>
+  </table>
+  <p>The website will look empty for now. That's expected, because you haven't added any products yet.</p>
+
+  <h3>5.3 Allow your addresses to log in <span class="tag t-easy">No coding</span></h3>
+  <p>In Firebase, go to <b>Authentication → Settings → Authorized domains</b> and click <b>Add domain</b> for each of these:</p>
+  <ul>
+    <li><code><span class="ph">website-site</span>.web.app</code></li>
+    <li><code><span class="ph">admin-site</span>.web.app</code></li>
+    <li>any custom domain you add (see below)</li>
+  </ul>
+  <p>Without this step, phone OTP login and password-reset links fail on those addresses.</p>
+
+  <h3>5.4 Use your own domain <span class="tag t-opt">Optional</span></h3>
+  <p>In <b>Hosting</b>, click <b>Add custom domain</b> next to the site, follow the instructions to add DNS records at your domain provider, then add the domain to <b>Authorized domains</b> (5.3). Also update <code>WEBSITE_URL</code> (Step 3.3) and <code>NEXT_PUBLIC_SITE_URL</code> (Step 3.4), then deploy again.</p>
+</section>
+
+<!-- ============================================================ STEP 6 -->
+<section class="chapter" id="step6">
+  <h2><span class="num">10</span>Step 6: Create your Super Admin account <span class="tag t-cmd">Copy &amp; paste</span></h2>
+  <p class="lead">A new project has no admin account, so you can't log in to the admin panel yet. The included helper <code>documentation/tools/make-admin.mjs</code> creates the first one. After that, you create every other account from inside the admin panel.</p>
+
+  <ol class="steps">
+    <li><b>Download a key.</b> In Firebase, go to <b>Project settings → Service accounts</b> and click <b>Generate new private key</b>. A <code>.json</code> file downloads. Rename it to <code>admin-key.json</code> and move it into the folder <code>firebase/functions/</code>.</li>
+    <li><b>Copy the helper.</b> Copy <code>documentation/tools/make-admin.mjs</code> into the same folder, <code>firebase/functions/</code>.</li>
+    <li><b>Run it</b> with your own email, a strong password and your name:
+<pre>cd firebase/functions
+node make-admin.mjs admin-key.json <span class="ph">you@yourbrand.com</span> "<span class="ph">YourStrongPassword</span>" "<span class="ph">Your Name</span>"</pre>
+      You should see <code>Done. you@yourbrand.com is now a Super Admin…</code>
+    </li>
+    <li><b>Log in</b> at <code>https://<span class="ph">admin-site</span>.web.app/admin/login</code>.</li>
+    <li><b>Delete <code>admin-key.json</code></b> and <code>make-admin.mjs</code> from <code>firebase/functions/</code>.</li>
+  </ol>
+  <div class="stop box"><b>Keep the key file private</b>The service-account key gives full access to your Firebase project. Never email it, upload it or include it in a ZIP file. Delete it once you've finished. You can always generate a new one.</div>
+  <div class="tip box"><b>Forgot the password?</b>Use "Forgot password" on the login page, or run the helper again with the same email. Running it again keeps the existing account and only makes sure it's an admin; the password you type is ignored.</div>
+</section>
+
+<!-- ============================================================ STEP 7 -->
+<section class="chapter" id="step7">
+  <h2><span class="num">11</span>Step 7: Set up your business in the admin panel <span class="tag t-easy">No coding</span></h2>
+  <p class="lead">Log in as Super Admin and work through this list in order. Each item depends on the ones before it: products need categories, stores need zones, and zones need a country.</p>
+
+  <h3>7.1 Basic settings: System Settings</h3>
+  <ul class="check">
+    <li><b>General</b>: shop name, logo, contact details, currency and time zone. Make sure <b>Demo Mode is OFF</b>.</li>
+    <li><b>Maintenance</b>: optionally show a "coming soon" screen while you set up.</li>
+  </ul>
+
+  <h3>7.2 Where you deliver</h3>
+  <ul class="check">
+    <li><b>Locations → Countries</b>: add your country and mark it as the default.</li>
+    <li><b>Locations → Zones → Add Zone</b>: draw your delivery area on the map and set delivery charges and delivery time. Customers outside every zone see "not serviceable".</li>
+    <li><b>Locations → Stores → Add Store</b>: add each physical store or warehouse in a zone. The form also creates the <b>store owner's login</b> for the Store panel.</li>
+  </ul>
+
+  <h3>7.3 Your catalogue</h3>
+  <ul class="check">
+    <li><b>Products → Taxes</b> and <b>Products → Attributes</b> (e.g. Size, Weight, Colour).</li>
+    <li><b>Catalog → Brands</b> and <b>Categories → Add Category</b>, with images. Use <b>Category Order</b> to arrange them.</li>
+    <li><b>Products → Add Product</b>: name, images, variants, prices. For many products use <b>Bulk Upload</b> (CSV).</li>
+    <li><b>Stock Management</b>: set stock and, if needed, store-specific prices. In Quick mode, customers only see products that are in stock at their local store.</li>
+  </ul>
+
+  <h3>7.4 Your home screen</h3>
+  <ul class="check">
+    <li><b>Home Builder → Banners</b>: upload promotional banners.</li>
+    <li><b>Home Builder → Quick Layouts</b> and <b>eCommerce Layouts</b>: drag in sections (banner slider, categories, product sliders, brands…) and click <b>Publish</b>. The apps and website show the home screen only <b>after</b> you publish.</li>
+  </ul>
+
+  <h3>7.5 Taking money</h3>
+  <ul class="check">
+    <li><b>System Settings → Payment Gateways</b>: enable Cash on Delivery and/or Wallet, and add your gateway keys. Use the gateway's <b>test/sandbox keys</b> first, place a test order, then switch to live keys.</li>
+    <li><b>System Settings → Wallet</b> and <b>Referral</b>: limits and rewards.</li>
+  </ul>
+
+  <h3>7.6 Messages to customers</h3>
+  <ul class="check">
+    <li><b>System Settings → SMTP</b>: your email server (host, port, username, password, sender). Order emails are sent from it. Edit the texts in <b>Marketing → Email</b>.</li>
+    <li><b>System Settings → SMS Gateway</b>: <i>Firebase Phone Auth</i> is the simplest option. Twilio, MSG91, Fast2SMS and 2Factor are also supported.</li>
+    <li><b>System Settings → Firebase</b>: push notification and web settings.</li>
+  </ul>
+
+  <h3>7.7 Delivery &amp; apps</h3>
+  <ul class="check">
+    <li><b>System Settings → Delivery</b>: rider commission, and <b>Auto-assign delivery boy</b> (automatically offer new orders to riders in the zone).</li>
+    <li><b>System Settings → App</b>: app versions, Play Store links and forced updates. Fill this in after Step 8.</li>
+    <li><span class="tag t-opt">Optional</span> <b>System Settings → AI</b>: Google Gemini key for the AI helpers.</li>
+  </ul>
+
+  <h3>7.8 Content &amp; team</h3>
+  <ul class="check">
+    <li><b>Settings → Pages</b>: About Us, Privacy Policy, Terms and Refund Policy (Google Play requires a privacy policy).</li>
+    <li><b>Marketing → FAQs</b>, <b>Blog</b>, and <b>Settings → Languages</b> (English, Arabic and Hindi are included).</li>
+    <li><b>Staff → Roles</b> and <b>Staff Users</b>: give team members only the permissions they need.</li>
+  </ul>
+
+  <div class="tip box"><b>Test it</b>Open your website, choose a location inside your zone, add a product to the cart and place a Cash on Delivery order. It should appear in <b>Orders</b> in the admin panel within seconds.</div>
+</section>
+
+<!-- ============================================================ STEP 8 -->
+<section class="chapter" id="step8">
+  <h2><span class="num">12</span>Step 8: Brand &amp; publish the mobile apps <span class="tag t-cmd">Copy &amp; paste</span></h2>
+  <p class="lead">Do these steps for <b>both</b> app folders: <code>customer_app/</code> and <code>delivery_app/</code>. Building Android apps is the most technical part of the setup. If you have never done it, consider asking a Flutter developer. It's usually less than an hour of work for them. <span class="tag t-dev">Developer</span></p>
+
+  <h3>8.1 Install the tools</h3>
+  <p>Install Flutter and Android Studio (see <a href="#need">What you need</a>), then run <code>flutter doctor</code> and fix anything marked with ✗, for example by accepting the Android licences with <code>flutter doctor --android-licenses</code>.</p>
+
+  <h3>8.2 Change the app's identity</h3>
+  <table>
+    <tr><th style="width:26%">What</th><th style="width:38%">File (inside the app folder)</th><th>Change</th></tr>
+    <tr><td><b>App ID</b> (required)</td><td><code>android/app/build.gradle.kts</code></td><td>The line <code>applicationId = "com.qwikmartapp.customer"</code> → your ID from Step 2.3. Do <b>not</b> change the <code>namespace</code> line.</td></tr>
+    <tr><td><b>App name</b></td><td><code>android/app/src/main/AndroidManifest.xml</code></td><td><code>android:label="QwikMart"</code> → your app's name.</td></tr>
+    <tr><td><b>Colours</b></td><td><code>lib/core/theme.dart</code></td><td><code>primary</code> (and <code>accent</code> in the customer app), e.g. <code>Color(0xFF1846D1)</code>. Keep <code>0xFF</code> and replace the last six characters with your hex colour.</td></tr>
+    <tr><td><b>Logos</b></td><td><code>assets/brand/</code></td><td>Replace the four PNG files with your own, keeping the same <b>file names</b> and similar proportions.</td></tr>
+    <tr><td><b>App icon &amp; splash</b></td><td><code>assets/icon/</code></td><td>Replace the PNG files (same names and sizes), then run the two commands below.</td></tr>
+  </table>
+<pre>cd customer_app        <span class="c"># or: cd delivery_app</span>
+flutter pub get
+dart run flutter_launcher_icons
+dart run flutter_native_splash:create</pre>
+  <p>The website and admin panel logos are in <code>web/public/images/brand/</code> and <code>admin/public/images/brand/</code>. Replace those files too, keeping the names, and publish again (Step 5).</p>
+
+  <h3>8.3 Connect each app to your Firebase project</h3>
+  <p>The FlutterFire tool registers the app in your Firebase project and writes the two connection files (<code>lib/firebase_options.dart</code> and <code>android/app/google-services.json</code>):</p>
+<pre><span class="c"># once per computer</span>
+dart pub global activate flutterfire_cli
+
+<span class="c"># customer app</span>
+cd customer_app
+flutterfire configure --project=<span class="ph">YOUR-PROJECT-ID</span> --platforms=android,web \
+  --android-package-name=com.<span class="ph">yourbrand</span>.customer
+cd ..
+
+<span class="c"># delivery app</span>
+cd delivery_app
+flutterfire configure --project=<span class="ph">YOUR-PROJECT-ID</span> --platforms=android,web \
+  --android-package-name=com.<span class="ph">yourbrand</span>.delivery
+cd ..</pre>
+  <p>The <code>\</code> at the end of a line means the command continues on the next line. You can also type it as one long line without the <code>\</code>.</p>
+  <p>If it asks whether to overwrite the existing files, answer <b>yes</b>. If <code>flutterfire</code> is not found, close the terminal, open a new one and try again.</p>
+  <div class="note box"><b>Without FlutterFire</b>You can also add the Android app manually in <b>Project settings → Your apps → Add app → Android</b>, download <code>google-services.json</code> into <code>android/app/</code>, and replace the <code>projectId</code>, <code>appId</code>, <code>apiKey</code>, <code>messagingSenderId</code> and <code>storageBucket</code> values in <code>lib/firebase_options.dart</code> with the values from that file.</div>
+
+  <h3>8.4 Try the app on your phone</h3>
+  <p>Turn on <b>Developer options → USB debugging</b> on an Android phone, connect it with a cable and run:</p>
+<pre>cd customer_app
+flutter run</pre>
+
+  <h3>8.5 Create your signing key (once, keep it forever)</h3>
+  <p>Google Play requires every update to be signed with the same key.</p>
+<pre>keytool -genkey -v -keystore <span class="ph">upload-key.jks</span> -keyalg RSA -keysize 2048 -validity 10000 -alias upload</pre>
+  <p>Store the <code>.jks</code> file and its passwords somewhere safe <b>outside</b> the project folder, and back them up. Then create the file <code>android/key.properties</code> in each app:</p>
+<pre>storePassword=<span class="ph">your store password</span>
+keyPassword=<span class="ph">your key password</span>
+keyAlias=upload
+storeFile=<span class="ph">C:/Users/you/keys/upload-key.jks</span></pre>
+  <div class="stop box"><b>Don't lose this key</b>If you lose the <code>.jks</code> file or its password, you won't be able to publish updates to your app. Back it up.</div>
+
+  <h3>8.6 Allow phone login on Android (fingerprints)</h3>
+  <ol class="steps">
+    <li>Print your key's fingerprints: <code>keytool -list -v -keystore <span class="ph">upload-key.jks</span> -alias upload</code></li>
+    <li>In Firebase, open <b>Project settings → Your apps</b>, select your Android app and click <b>Add fingerprint</b>. Add both the <b>SHA-1</b> and the <b>SHA-256</b> value.</li>
+    <li>After your first upload to Google Play, also add the fingerprints of the <b>Play App Signing key</b> (Play Console → <b>Test and release → App integrity</b>).</li>
+    <li>Run <code>flutterfire configure</code> again (or download <code>google-services.json</code> again) so the app gets the updated file.</li>
+  </ol>
+
+  <h3>8.7 Build the release file</h3>
+  <p>First increase the <code>version:</code> line in <code>pubspec.yaml</code> for every upload, e.g. <code>1.0.0+1</code> → <code>1.0.1+2</code>. The number after <b>+</b> must always go up.</p>
+<pre><span class="c"># customer app</span>
+cd customer_app
+flutter build appbundle --release
+
+<span class="c"># delivery app</span>
+cd ../delivery_app
+flutter build appbundle --release --dart-define=FALLBACK_TO_MOCK=false</pre>
+  <p>The file to upload is <code>build/app/outputs/bundle/release/app-release.aab</code> inside each app folder.</p>
+
+  <h3>8.8 Publish on Google Play</h3>
+  <ol class="steps">
+    <li>In the <a href="https://play.google.com/console">Play Console</a>, click <b>Create app</b>, then fill in the store listing (description, screenshots, icon) and the policy forms (content rating, data safety, privacy policy link).</li>
+    <li>Upload the <code>.aab</code> file to a <b>testing</b> track first. Google requires new personal developer accounts to run a closed test before going to production.</li>
+    <li>The <b>delivery app</b> uses location in the background while a rider is online, so Google asks for a <b>location permission declaration</b>, usually including a short video showing why. Explain that location is used to assign nearby orders and to show live tracking to customers.</li>
+    <li>Once the app is live, enter its Play Store link in <b>System Settings → App</b>.</li>
+  </ol>
+</section>
+
+<!-- ============================================================ DAILY -->
+<section class="chapter" id="daily">
+  <h2><span class="num">13</span>Running your business day to day</h2>
+
+  <h3>Who uses what</h3>
+  <table>
+    <tr><th style="width:22%">Person</th><th style="width:30%">Uses</th><th>Typical tasks</th></tr>
+    <tr><td>You / your team</td><td>Admin panel <code>/admin</code></td><td>Everything: catalogue, orders, stores, riders, customers, payouts, marketing, reports, settings.</td></tr>
+    <tr><td>Store owner / staff</td><td>Store panel <code>/store</code></td><td>Their store's orders, products, stock, riders and reports only.</td></tr>
+    <tr><td>Delivery partner</td><td>Delivery app (or <code>/delivery</code> on the web)</td><td>Go online, accept orders, deliver, collect cash, view earnings, request withdrawals.</td></tr>
+    <tr><td>Customer</td><td>Website or customer app</td><td>Shop, pay, track, return, wallet, refer friends, chat with support.</td></tr>
+  </table>
+
+  <h3>The life of an order</h3>
+  <ol class="steps">
+    <li><b>Placed</b>: the customer checks out. Online payments show as <i>payment pending</i> until the gateway confirms them.</li>
+    <li><b>Received → Processed → Ready for pickup</b>: the store prepares the order (update the status in <b>Orders</b>).</li>
+    <li><b>Rider assigned</b>: automatically (if auto-assign is on) or manually from the order page. Riders in the zone can also accept available orders in their app.</li>
+    <li><b>Picked up → Out for delivery</b>: the rider updates the status, and the customer sees the rider moving on the map.</li>
+    <li><b>Delivered</b>: the customer reads a <b>6-digit OTP</b> from their app or website and gives it to the rider. For Cash on Delivery, the rider confirms the cash collected. Rider commission is calculated automatically.</li>
+  </ol>
+  <p>Customers can cancel orders, as long as the status still allows it, and request returns. Handle returns in <b>Return Requests</b>, where you can refund to the wallet or the original payment method.</p>
+
+  <h3>Adding delivery partners</h3>
+  <ol class="steps">
+    <li>The rider installs your delivery app, taps <b>Register</b>, and uploads their driving licence and ID proof.</li>
+    <li>You review them in <b>Delivery Boys → Pending Approvals</b> and approve them for a zone. You can also add riders yourself in <b>Delivery Boys → Manage</b>.</li>
+    <li>The rider logs in and taps <b>Go online</b>. Location permission is required.</li>
+    <li>Track cash in <b>Cash Collection</b>, and pay riders through <b>Earnings/Payouts</b> and <b>Withdrawal Requests</b>.</li>
+  </ol>
+
+  <h3>Other daily tools</h3>
+  <ul>
+    <li><b>Chat</b>: reply to customers and riders in real time.</li>
+    <li><b>Notifications</b>: send push messages to all users or to selected users.</li>
+    <li><b>Promo Codes</b>: percentage, fixed amount, free delivery or cashback.</li>
+    <li><b>Reports</b>: sales, product sales, stores, riders, tax, and Quick vs eCommerce.</li>
+    <li><b>Customers → Wallet Transactions / Withdrawal Requests / Referrals</b>.</li>
+  </ul>
+</section>
+
+<!-- ============================================================ COSTS -->
+<section class="chapter" id="costs">
+  <h2><span class="num">14</span>Costs, security &amp; maintenance</h2>
+
+  <h3>What you pay for</h3>
+  <ul>
+    <li><b>Firebase (Blaze)</b>: you pay for what you use: database reads and writes, function runs, storage and hosting traffic. There is a free monthly allowance. Costs grow with orders and active riders, because riders' locations are saved every 10 seconds while they are online. Keep the budget alert from Step 1.</li>
+    <li><b>HOT_MIN_INSTANCES=1</b> (Step 3.3) adds a small fixed monthly cost, in exchange for faster first page loads.</li>
+    <li>Google Play registration, your domain, payment gateway fees, SMS and email services are billed by those providers.</li>
+  </ul>
+
+  <h3>Security checklist</h3>
+  <ul class="check">
+    <li>Use a strong, unique password for the Super Admin account.</li>
+    <li>Make sure <b>Demo Mode</b> is OFF in System Settings → General.</li>
+    <li>Delete the service-account key file after Step 6, and never share it.</li>
+    <li>Give staff only the permissions they need (<b>Staff → Roles</b>).</li>
+    <li>Use live payment keys only after testing with test keys.</li>
+    <li>Restrict your Firebase web API key to your domains: Google Cloud console → <b>APIs &amp; Services → Credentials</b> → your browser key → <b>Website restrictions</b>.</li>
+    <li>Recommended: turn on daily backups in Firestore (<b>Firestore → Disaster recovery</b>).</li>
+  </ul>
+
+  <h3>Updating QwikMart later</h3>
+  <p>When you install a new version, keep a copy of the files you edited (see <a href="#appB">Appendix B</a>) and copy them back into the new version. Then deploy again: run the backend command from Step 4, the website and admin command from Step 5, and build new app versions with a higher version number (Step 8.7). Your data stays safe in Firebase while you update.</p>
+</section>
+
+<!-- ============================================================ TROUBLE -->
+<section class="chapter" id="trouble">
+  <h2><span class="num">15</span>Troubleshooting</h2>
+  <table>
+    <tr><th style="width:36%">Problem</th><th>Solution</th></tr>
+    <tr><td>Deploy says the project must be on the <b>Blaze plan</b>.</td><td>Upgrade the project (Step 1.2) and deploy again.</td></tr>
+    <tr><td>The first functions deploy fails with a permission or Eventarc error.</td><td>Wait 5 minutes and run the same deploy command again.</td></tr>
+    <tr><td><code>firebase: command not found</code></td><td>Run <code>npm install -g firebase-tools</code>, then open a new terminal.</td></tr>
+    <tr><td>Admin login sends you back to the login page or says you have no access.</td><td>The account isn't a Super Admin yet. Run Step 6 for that email, then log out and log in again.</td></tr>
+    <tr><td>Admin panel loads but shows nothing, or keeps spinning.</td><td>Check that <code>admin/.env.local</code> has <code>NEXT_PUBLIC_USE_EMULATORS=false</code> and your own values (Step 3.5), then publish again (Step 5).</td></tr>
+    <tr><td>The website shows a "DEMO DATA" badge.</td><td><code>NEXT_PUBLIC_USE_MOCK</code> is <code>true</code> in <code>web/.env.local</code>. Set it to <code>false</code> (Step 3.4) and publish again.</td></tr>
+    <tr><td>The website loads but shows no data and errors appear in the browser console.</td><td>The Firebase settings in <code>web/.env.local</code> are missing or wrong. Check every value against Step 2.1 and publish again.</td></tr>
+    <tr><td>A table says it "needs a Firestore index".</td><td>The indexes are still building (wait a few minutes) or weren't deployed. Run <code>firebase deploy --only firestore --project <span class="ph">YOUR-PROJECT-ID</span></code> from the <code>firebase</code> folder.</td></tr>
+    <tr><td>The app or website home screen is empty.</td><td>Publish a layout in <b>Home Builder</b> (Step 7.4). Also check that the customer's location is inside a zone and that products have stock in that zone's store.</td></tr>
+    <tr><td>"Location not serviceable".</td><td>The address is outside every zone. Edit the zone and widen the area on the map.</td></tr>
+    <tr><td>Phone OTP fails with a "region" message.</td><td>Allow the country in <b>Authentication → Settings → SMS region policy</b>.</td></tr>
+    <tr><td>Phone OTP fails in the Android app (reCAPTCHA appears or "app not authorized").</td><td>Add the SHA-1 and SHA-256 fingerprints (Step 8.6) and update <code>google-services.json</code>.</td></tr>
+    <tr><td>Password-reset link or website phone login fails.</td><td>Add the domain to <b>Authorized domains</b> (Step 5.3).</td></tr>
+    <tr><td>The app opens but can't connect, or crashes at start.</td><td>The <code>google-services.json</code> doesn't match the app ID. Make sure <code>applicationId</code> (Step 8.2) and the ID used in <code>flutterfire configure</code> (Step 8.3) are identical.</td></tr>
+    <tr><td>Order emails aren't sent.</td><td>Check the SMTP settings (Step 7.6). Gmail requires an <b>app password</b>, not your normal password.</td></tr>
+    <tr><td>A payment gateway doesn't appear at checkout.</td><td>It must be <b>enabled</b> and have <b>all</b> of its keys filled in (System Settings → Payment Gateways). Some gateways only support certain currencies.</td></tr>
+    <tr><td>A rider can't go online.</td><td>Allow location permission ("Allow all the time" on Android) and make sure the rider is approved for a zone.</td></tr>
+    <tr><td>Invoice links don't open.</td><td>Complete Step 4.2, then try again.</td></tr>
+  </table>
+</section>
+
+<!-- ============================================================ APPENDIX A -->
+<section class="chapter" id="appA">
+  <h2><span class="num">A</span>Explore the demo data on your computer <span class="tag t-dev">Developer</span> <span class="tag t-opt">Optional</span></h2>
+  <p class="lead">The demo data (stores, products, orders and demo accounts) is included only for local testing with the <b>Firebase Emulator Suite</b>, which is a copy of Firebase that runs on your own computer. Nothing here touches your live project.</p>
+
+  <p>Requirements: Node.js 22 and <b>Java 11 or newer</b>. Android Studio includes Java; otherwise install a JDK.</p>
+<pre><span class="c"># terminal 1: start the local Firebase with the demo data</span>
+cd firebase
+npm install
+npm --prefix functions install
+npm --prefix functions run build
+npx firebase emulators:start --project <span class="ph">YOUR-PROJECT-ID</span> --import tools/emulator-data
+<span class="c"># Emulator dashboard: http://127.0.0.1:4000</span></pre>
+<pre><span class="c"># terminal 2: admin panel against the local data</span>
+cd admin
+<span class="c"># temporarily set NEXT_PUBLIC_USE_EMULATORS=true in admin/.env.local</span>
+npm run dev            <span class="c"># http://localhost:3001/admin/login</span>
+
+<span class="c"># terminal 3: customer website</span>
+cd web
+<span class="c"># temporarily set NEXT_PUBLIC_USE_EMULATORS=true in web/.env.local</span>
+npm run dev            <span class="c"># http://localhost:3000</span>
+
+<span class="c"># apps (Android emulator)</span>
+cd customer_app &amp;&amp; flutter run --dart-define=USE_EMULATORS=true</pre>
+
+  <table>
+    <tr><th>Demo login (local only)</th><th>Email</th><th>Password</th></tr>
+    <tr><td>Super Admin</td><td>admin@gmail.com</td><td>123456</td></tr>
+    <tr><td>Store owner</td><td>mumbai@store.com</td><td>Mumbai@1</td></tr>
+    <tr><td>Delivery partner</td><td>alex@gmail.com</td><td>Alex@1234</td></tr>
+    <tr><td>Customer</td><td>customer@gmail.com</td><td>123456</td></tr>
+  </table>
+  <div class="stop box"><b>Before you publish again</b>Set <code>NEXT_PUBLIC_USE_EMULATORS=false</code> in both <code>.env.local</code> files again. Never create these demo accounts in your live project: their passwords are public.</div>
+  <p>The emulator doesn't save your changes when it stops. To keep them, add <code>--export-on-exit=my-data</code> to the start command, using a <b>different</b> folder name. Don't overwrite <code>tools/emulator-data</code>.</p>
+  <p>Both apps also have an offline demo mode that needs no Firebase at all: <code>flutter run --dart-define=USE_MOCK=true</code>.</p>
+</section>
+
+<!-- ============================================================ APPENDIX B -->
+<section class="chapter" id="appB">
+  <h2><span class="num">B</span>Every file you edit (quick reference)</h2>
+  <p class="lead">Keep a copy of these files. You'll need them again when you update to a new version.</p>
+  <table>
+    <tr><th style="width:44%">File</th><th style="width:10%">Step</th><th>What you change</th></tr>
+    <tr><td><code>.firebaserc</code></td><td>3.1</td><td>Project ID</td></tr>
+    <tr><td><code>firebase/.firebaserc</code></td><td>3.1</td><td>Project ID</td></tr>
+    <tr><td><code>firebase.json</code></td><td>3.2</td><td>Two Hosting site names</td></tr>
+    <tr><td><code>firebase/functions/.env.<span class="ph">YOUR-PROJECT-ID</span></code></td><td>3.3</td><td>Renamed; website URL, warm instances</td></tr>
+    <tr><td><code>web/.env.local</code></td><td>3.4</td><td>Firebase web settings, site URL</td></tr>
+    <tr><td><code>admin/.env.local</code></td><td>3.5</td><td>Firebase web settings, emulators off</td></tr>
+    <tr><td><code>*_app/android/app/build.gradle.kts</code></td><td>8.2</td><td><code>applicationId</code></td></tr>
+    <tr><td><code>*_app/android/app/src/main/AndroidManifest.xml</code></td><td>8.2</td><td>App name</td></tr>
+    <tr><td><code>*_app/lib/core/theme.dart</code></td><td>8.2</td><td>Colours</td></tr>
+    <tr><td><code>*_app/assets/brand/*</code>, <code>*_app/assets/icon/*</code></td><td>8.2</td><td>Logos, icon, splash</td></tr>
+    <tr><td><code>web/public/images/brand/*</code>, <code>admin/public/images/brand/*</code></td><td>8.2</td><td>Website and panel logos</td></tr>
+    <tr><td><code>*_app/lib/firebase_options.dart</code>, <code>*_app/android/app/google-services.json</code></td><td>8.3</td><td>Written by <code>flutterfire configure</code></td></tr>
+    <tr><td><code>*_app/android/key.properties</code></td><td>8.5</td><td>Signing key (keep private)</td></tr>
+    <tr><td><code>*_app/pubspec.yaml</code></td><td>8.7</td><td><code>version:</code> for every release</td></tr>
+  </table>
+  <p><code>*_app</code> means both <code>customer_app</code> and <code>delivery_app</code>.</p>
+</section>
+
+<!-- ============================================================ APPENDIX C -->
+<section class="chapter" id="appC">
+  <h2><span class="num">C</span>Technical overview <span class="tag t-dev">Developer</span></h2>
+  <table>
+    <tr><th style="width:24%">Part</th><th>Technology</th></tr>
+    <tr><td>Backend</td><td>Firebase Cloud Functions v2 (TypeScript, Node.js 22, region <code>asia-south1</code>), Cloud Firestore, Cloud Storage, Firebase Authentication (email/password, phone OTP, anonymous guests), Firebase Cloud Messaging. There is no separate server and no SQL database.</td></tr>
+    <tr><td>Admin / Store / Delivery panels</td><td>Next.js 15, React 19, TypeScript, Tailwind CSS, Firebase JS SDK, deployed with Firebase Hosting (web frameworks).</td></tr>
+    <tr><td>Customer website</td><td>Next.js 15, React 19, Tailwind CSS, Firebase JS SDK, Leaflet / OpenStreetMap maps (no map API key needed).</td></tr>
+    <tr><td>Mobile apps</td><td>Flutter 3.41+ (Dart 3.11), Riverpod, go_router, FlutterFire, flutter_map / OpenStreetMap. Android: minSdk 24, targetSdk 36.</td></tr>
+    <tr><td>Payments</td><td>Processed in Cloud Functions: Stripe, PayPal, Razorpay, Cashfree, PhonePe, PayTabs, Midtrans, Paystack, plus COD and wallet.</td></tr>
+    <tr><td>Secrets</td><td>Stored in Firestore <code>settings/private_*</code> documents that only the Super Admin and the backend can read. They are edited in System Settings.</td></tr>
+  </table>
+  <h3>Folder structure</h3>
+<pre>QwikMart/
+├── admin/             Admin, Store and Delivery web panels (Next.js)
+├── web/               Customer website (Next.js)
+├── customer_app/      Customer Android app (Flutter)
+├── delivery_app/      Delivery partner Android app (Flutter)
+├── firebase/
+│   ├── functions/     Cloud Functions (backend code)
+│   ├── tools/         Developer tools + emulator-data/ (local demo data)
+│   ├── firestore.rules, storage.rules, firestore.indexes.json
+│   └── firebase.json  Backend + emulator configuration
+├── firebase.json      Hosting configuration (website + admin)
+├── .firebaserc        Default Firebase project
+└── documentation/     This guide</pre>
+  <p>Each sub-folder also has a <code>README.md</code> with technical details for developers.</p>
+</section>
+
+<!-- ============================================================ SUPPORT -->
+<section class="chapter" id="support">
+  <h2>Support &amp; credits</h2>
+  <h3>Getting help</h3>
+  <p>If you're stuck, please contact us. Include your purchase code, the step number in this guide, and a screenshot of any error message.</p>
+  <table>
+    <tr><th style="width:30%">Channel</th><th>Details</th></tr>
+    <tr><td>Email</td><td><span class="ph">[your support email]</span></td></tr>
+    <tr><td>CodeCanyon</td><td><span class="ph">[your CodeCanyon profile link]</span>, then the item's <b>Support</b> tab</td></tr>
+    <tr><td>Response time</td><td><span class="ph">[e.g. within 1–2 business days]</span></td></tr>
+  </table>
+  <p>Item support covers questions about the item, help with reported bugs, and help with included third-party assets. It does <b>not</b> cover installation on your servers, customisation, or problems caused by third-party services (Firebase billing, payment gateway approval, Google Play review). Those can be offered as a separate paid service.</p>
+
+  <h3>Credits</h3>
+  <ul>
+    <li>Maps: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</li>
+    <li>Fonts: Plus Jakarta Sans and Bricolage Grotesque (SIL Open Font License).</li>
+    <li>Demo product and category photos: see <code>firebase/tools/assets/CREDITS.md</code> for each photo's source and licence.</li>
+    <li>Firebase, Google Play, Flutter and Android are trademarks of Google LLC. Other product names belong to their owners.</li>
+  </ul>
+  <p style="margin-top:30px;color:var(--muted)">Thank you for choosing QwikMart. If it helps your business, please consider leaving a rating on CodeCanyon. ⭐</p>
+</section>
+
+</div>
+</body>
+</html>
