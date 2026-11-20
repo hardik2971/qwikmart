@@ -25,7 +25,7 @@ import { useConfirm } from '@/components/ui/confirm';
 import type { Category, HomeLayout, Mode, SectionType, Store } from '@/lib/types';
 import { SortableList } from '@/modules/catalog/Sortable';
 import {
-  DEFAULT_HEADER, SECTION_ICONS, SECTION_TYPES, TYPE_KEYS, clone, loadSections, newSection, payload, rid, sectionLabel, type Header, type Section,
+  DEFAULT_HEADER, SECTION_ICONS, SECTION_TYPES, TYPE_KEYS, clone, hex, loadSections, newSection, payload, rid, sectionLabel, type Header, type Section,
 } from './defaults';
 import { clientItems, itemsKey, serverItemsBatch, type PItem } from './hydrate';
 import { PhonePreview, type Device } from './Preview';
@@ -89,6 +89,9 @@ export default function HomeBuilderPage() {
   const [rev, setRev] = useState(0);
   const [catIcon, setCatIcon] = useState<string | null>(null);
   const [catIconDirty, setCatIconDirty] = useState(false);
+  // categories/{id}.header_color — tints the storefront category strip for this tab
+  const [catColor, setCatColor] = useState<string | null>(null);
+  const [catColorDirty, setCatColorDirty] = useState(false);
   const [items, setItems] = useState<Record<string, PItem[]>>({});
   const [tick, setTick] = useState(0);
 
@@ -96,6 +99,7 @@ export default function HomeBuilderPage() {
   const headerRef = useRef(header); headerRef.current = header;
   const layoutRef = useRef(layout); layoutRef.current = layout;
   const catIconRef = useRef({ v: catIcon, dirty: catIconDirty }); catIconRef.current = { v: catIcon, dirty: catIconDirty };
+  const catColorRef = useRef({ v: catColor, dirty: catColorDirty }); catColorRef.current = { v: catColor, dirty: catColorDirty };
   const savingRef = useRef(false);
   const queued = useRef(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -121,6 +125,7 @@ export default function HomeBuilderPage() {
       setPublishedJson(JSON.stringify(payload(loadSections(doc?.published_sections))));
       setHeader({ ...DEFAULT_HEADER, ...(category?.header_color ? { bg_value: category.header_color } : {}), ...((edit === 'published' ? pub?.header : doc?.header) || {}) });
       setCatIcon(category?.icon || null); setCatIconDirty(false);
+      setCatColor(category?.header_color || null); setCatColorDirty(false);
       setDirty(false); setSavedAt(null); setRev(0);
       setSelected('header');
     } catch (e: any) {
@@ -183,9 +188,16 @@ export default function HomeBuilderPage() {
       if (isNew) setLayout({ id: layoutId, ...(data as any), published_sections: [], is_published: false });
       else setLayout((l) => (l ? { ...l, draft_sections: data.draft_sections, header: data.header } : l));
       const ci = catIconRef.current;
-      if (ci.dirty && categoryId && !isStore) {
-        await patchDoc('categories', categoryId, { icon: ci.v || null });
-        setCatIconDirty(false);
+      const cc = catColorRef.current;
+      // only a complete hex colour (or none) is written — half-typed values wait for the next save
+      const colorOk = cc.dirty && (!cc.v || hex(cc.v, '') !== '');
+      if ((ci.dirty || colorOk) && categoryId && !isStore) {
+        await patchDoc('categories', categoryId, {
+          ...(ci.dirty ? { icon: ci.v || null } : {}),
+          ...(colorOk ? { header_color: cc.v ? cc.v.toUpperCase() : null } : {}),
+        });
+        if (ci.dirty) setCatIconDirty(false);
+        if (colorOk) setCatColorDirty(false);
         invalidate('lookup', 'categories');
       }
       setSavedAt(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
@@ -323,10 +335,13 @@ export default function HomeBuilderPage() {
     return () => clearTimeout(t);
   }, [sections, zoneId, mode, items, allCats.length, brands.length]);
 
-  const iconRow = useMemo(() => {
-    const list = category ? allCats.filter((c) => c.parent_id === category.id && isActive(c.status)).sort((a, b) => (a.sort_order ?? 0) - (b.sort_order ?? 0)) : tabs;
-    return list.slice(0, 12).map((c) => ({ id: c.id, name: tr(c.name, uiLang), image: imgUrl(c.icon || c.image, tr(c.name, uiLang)) }));
-  }, [category, allCats, tabs, uiLang]);
+  // storefront category strip: the top-level tabs of this mode (the preview adds "All")
+  const previewTabs = useMemo(() => tabs.slice(0, 14).map((c) => ({
+    id: c.id, name: tr(c.name, uiLang),
+    image: c.icon || c.image ? imgUrl((c.id === categoryId && catIcon) || c.icon || c.image, tr(c.name, uiLang)) : '',
+  })), [tabs, uiLang, categoryId, catIcon]);
+  const previewTint = category ? (hex(catColor, '') || null) : null;
+  const logo = settings.logo ? imgUrl(settings.logo) : '/images/brand/qwikmart-logo.png';
 
   const hasChanges = useMemo(() => JSON.stringify(payload(sections)) !== publishedJson, [sections, publishedJson]);
 
@@ -452,16 +467,23 @@ export default function HomeBuilderPage() {
                 <button key={d} type="button" className={cx('icon-btn', device === d && '!bg-primary-50 !text-primary !border-primary')} onClick={() => setDevice(d)} title={d}><Ic className="w-4 h-4" /></button>
               ))}
             </div>
-            <PhonePreview sections={sections} header={header} selected={selected} onSelect={setSelected} items={items} device={device} mode={mode}
-              zoneName={zone.name} deliveryMinutes={Number(zone.delivery_time_minutes) || 0} iconRow={iconRow} lang={uiLang} tick={tick} />
+            <PhonePreview sections={sections} selected={selected} onSelect={setSelected} items={items} device={device} mode={mode}
+              zoneName={zone.name} deliveryMinutes={Number(zone.delivery_time_minutes) || 0} tabs={previewTabs} activeTab={categoryId || ''}
+              tint={previewTint} logo={logo} lang={uiLang} tick={tick} />
             <p className="text-center text-xs text-muted mt-3">Preview is approximate · click a section to edit it</p>
           </div>
 
           {/* RIGHT: settings */}
           <div className={cx('card p-4 lg:col-span-2 xl:col-span-1 xl:sticky xl:top-4', !canUpdate && 'pointer-events-none opacity-80')}>
             {selected === 'header' ? (
-              <HeaderSettings header={header} onChange={updateHeader} tabName={category ? tr(category.name, uiLang) : 'All'}
+              <HeaderSettings tabName={category ? tr(category.name, uiLang) : 'All'} isCategory={!!category}
                 copyOptions={copyOptions} copyFrom={copyFrom} setCopyFrom={setCopyFrom} onCopy={copyLayout}
+                categoryColor={catColor}
+                onCategoryColor={category && !isStore ? (v) => {
+                  setCatColor(v); setCatColorDirty(true);
+                  // keep the layout header (returned by getHome) in step with the category colour
+                  updateHeader({ ...headerRef.current, bg_type: 'color', bg_value: hex(v, '') || '#FFFFFF' });
+                } : null}
                 categoryIcon={catIcon} onCategoryIcon={category && !isStore ? (v) => { setCatIcon(v); setCatIconDirty(true); changed(); } : null} />
             ) : selSection ? (
               <SectionSettings key={selSection.id} section={selSection} all={sections} zoneId={zoneId} mode={mode} lang={uiLang} isStore={isStore}

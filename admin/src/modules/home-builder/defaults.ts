@@ -106,7 +106,8 @@ export function newSection(type: SectionType): Section {
   return { id: rid(), type, title: { en: SECTION_TYPES[type] }, is_active: true, settings: clone(SECTION_DEFAULTS[type]) };
 }
 
-export const DEFAULT_HEADER: Header = { bg_type: 'color', bg_value: '#FFF4C7', text_color: '#111827' };
+/** The storefront header is white with ink text (website theme); a category tab tints only its category strip. */
+export const DEFAULT_HEADER: Header = { bg_type: 'color', bg_value: '#FFFFFF', text_color: '#0B1B3F' };
 export const hex = (v: any, fallback: string) => (/^#[0-9a-f]{6}$/i.test(v || '') ? v : fallback);
 
 /** "Title #n" (n = position among sections of the same type) — HomeBuilder label(). */

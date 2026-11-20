@@ -6,7 +6,7 @@ import { ImageUpload } from '@/components/form/fields';
 import { LangTabs, TransInput } from '@/components/form/lang';
 import type { Mode, Trans } from '@/lib/types';
 import { EntityPicker } from '@/modules/catalog/pickers';
-import { PRODUCT_SOURCES, SECTION_ICONS, SECTION_TYPES, hex, sectionLabel, type Header, type LinkImage, type Section } from './defaults';
+import { PRODUCT_SOURCES, SECTION_ICONS, SECTION_TYPES, hex, sectionLabel, type LinkImage, type Section } from './defaults';
 
 const FOLDER = 'catalog/home';
 
@@ -82,9 +82,16 @@ function ColorInput({ value, fallback, onChange }: { value: string; fallback: st
   );
 }
 
-export function HeaderSettings({ header, onChange, tabName, copyOptions, copyFrom, setCopyFrom, onCopy, categoryIcon, onCategoryIcon }: {
-  header: Header; onChange: (h: Header) => void; tabName: string;
+/**
+ * Header panel. The storefront header (website + customer app) follows the brand theme: white top bar with the logo,
+ * Quick/eCommerce switch and delivery badge, then the category strip, and the navy hero on the "All" tab. The only
+ * per-tab setting the storefront uses is the category colour (categories/{id}.header_color), which tints the
+ * category strip while that tab is selected.
+ */
+export function HeaderSettings({ tabName, isCategory, copyOptions, copyFrom, setCopyFrom, onCopy, categoryColor, onCategoryColor, categoryIcon, onCategoryIcon }: {
+  tabName: string; isCategory: boolean;
   copyOptions: { value: string; label: string; group: string }[]; copyFrom: string; setCopyFrom: (v: string) => void; onCopy: () => void;
+  categoryColor?: string | null; onCategoryColor?: ((v: string | null) => void) | null;
   categoryIcon?: string | null; onCategoryIcon?: ((v: string | null) => void) | null;
 }) {
   const groups = [...new Set(copyOptions.map((o) => o.group))];
@@ -100,30 +107,33 @@ export function HeaderSettings({ header, onChange, tabName, copyOptions, copyFro
           </select>
           <button type="button" className="btn-soft btn-sm shrink-0" disabled={!copyFrom} onClick={onCopy}>Apply</button>
         </div>
-        <p className="text-[11px] text-muted mt-1">Copies the sections and header of the selected layout into this draft.</p>
+        <p className="text-[11px] text-muted mt-1">Copies the sections of the selected layout into this draft.</p>
       </div>
 
-      <div>
-        <label className="label">Header background for <span className="text-primary">{tabName}</span></label>
-        <div className="inline-flex rounded-lg border border-line overflow-hidden text-sm font-semibold mb-3 dark:border-dark-line">
-          <button type="button" className={cx('px-3 py-1.5', header.bg_type === 'color' ? 'bg-primary text-white' : 'bg-white text-bodytext dark:bg-slate-800 dark:text-slate-200')}
-            onClick={() => header.bg_type !== 'color' && onChange({ ...header, bg_type: 'color', bg_value: '#FFF4C7' })}>Color</button>
-          <button type="button" className={cx('px-3 py-1.5 border-l border-line dark:border-dark-line', header.bg_type === 'image' ? 'bg-primary text-white' : 'bg-white text-bodytext dark:bg-slate-800 dark:text-slate-200')}
-            onClick={() => header.bg_type !== 'image' && onChange({ ...header, bg_type: 'image', bg_value: '' })}>Image</button>
+      <div className="rounded-lg border border-line bg-slate-50 p-3 text-xs leading-relaxed text-bodytext dark:border-dark-line dark:bg-slate-800/60 dark:text-slate-300">
+        The header uses your <b>website theme</b> on the website and in the app: your logo, the Quick / eCommerce switch, the delivery time and the category strip
+        {isCategory ? '.' : <>, followed by the navy welcome banner with search on the <b>All</b> tab.</>}
+        {' '}Change the logo in <b>System Settings → General</b>.
+      </div>
+
+      {isCategory && (
+        <div>
+          <label className="label">Category colour for <span className="text-primary">{tabName}</span></label>
+          {onCategoryColor ? (
+            <div className="flex items-center gap-2">
+              <ColorInput value={categoryColor || ''} fallback="#1846D1" onChange={(v) => onCategoryColor(v.trim() || null)} />
+              {categoryColor && <button type="button" className="text-xs font-semibold text-muted hover:text-red-600" onClick={() => onCategoryColor(null)}>Clear</button>}
+            </div>
+          ) : (
+            <div className="flex items-center gap-2 text-sm font-mono">
+              <span className="w-6 h-6 rounded-md border border-line" style={{ background: hex(categoryColor, '#FFFFFF') }} />{categoryColor || 'Not set'}
+            </div>
+          )}
+          <p className="text-[11px] text-muted mt-1.5">Softly tints the category strip while this tab is selected, on the website and in the app. Saved on the category (same as <b>Categories → Header Color</b>). Leave empty for a white strip.</p>
         </div>
-        {header.bg_type === 'color'
-          ? <ColorInput value={header.bg_value} fallback="#FFF4C7" onChange={(v) => onChange({ ...header, bg_value: v })} />
-          : <ImageField value={header.bg_value} onChange={(v) => onChange({ ...header, bg_value: v || '' })} hint="Recommended 1080×600. The image covers the whole header area behind the search bar." />}
-        <p className="text-[11px] text-muted mt-1.5">Background will be used for the header area of this tab in the app.</p>
-      </div>
+      )}
 
-      <div>
-        <label className="label">Text color</label>
-        <ColorInput value={header.text_color} fallback="#111827" onChange={(v) => onChange({ ...header, text_color: v })} />
-        <p className="text-[11px] text-muted mt-1">Color of the header texts (delivery time, address, category names).</p>
-      </div>
-
-      {onCategoryIcon && <ImageField label="Category icon" value={categoryIcon} onChange={onCategoryIcon} hint="Icon shown for this category in the app category tabs (saved on the category)." />}
+      {onCategoryIcon && <ImageField label="Category icon" value={categoryIcon} onChange={onCategoryIcon} hint="Icon shown for this category in the category strip (saved on the category)." />}
     </div>
   );
 }
