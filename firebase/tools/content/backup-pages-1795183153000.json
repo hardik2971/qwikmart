@@ -1,0 +1,17 @@
+{
+  "privacy": {
+    "slug": "privacy",
+    "title": {
+      "en": "Privacy Policy",
+      "hi": "Privacy Policy",
+      "ar": "Privacy Policy"
+    },
+    "content": {
+      "en": "<p>We respect your privacy. We collect only the information needed to process orders and improve our services, and never sell your personal data.</p><h3>Information we collect</h3><ul><li>Account details (name, phone, email)</li><li>Delivery addresses and location</li><li>Order history</li></ul>"
+    },
+    "updated_at": {
+      "_seconds": 1791793631,
+      "_nanoseconds": 0
+    }
+  }
+}

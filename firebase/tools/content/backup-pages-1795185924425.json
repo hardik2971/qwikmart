@@ -1,0 +1,17 @@
+{
+  "terms": {
+    "slug": "terms",
+    "title": {
+      "en": "Terms & Conditions",
+      "hi": "Terms & Conditions",
+      "ar": "Terms & Conditions"
+    },
+    "content": {
+      "en": "<p>By using QwikMart you agree to these terms. Prices and availability may change without notice. Orders are subject to acceptance and stock availability.</p>"
+    },
+    "updated_at": {
+      "_seconds": 1791793631,
+      "_nanoseconds": 0
+    }
+  }
+}

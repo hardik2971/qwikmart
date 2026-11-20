@@ -5,6 +5,10 @@
  */
 
 export const UPDATED = '20 October 2026';
+/** Privacy Policy and Delete Account pages (revised separately from the other pages). */
+export const PRIVACY_UPDATED = '20 November 2026';
+/** Terms of Service (also the Google Play 'Terms of Service' URL). */
+export const TERMS_UPDATED = '20 November 2026';
 
 const about = `
 <p class="lead">{{app}} is a hyperlocal quick-commerce and online shopping platform. We bring groceries, fresh produce, daily essentials, beauty, pharmacy, electronics, fashion and home products from trusted local stores to your door — in minutes.</p>
@@ -52,49 +56,55 @@ const about = `
 `;
 
 const terms = `
-<p class="updated">Last updated: ${UPDATED}</p>
-<p>These Terms &amp; Conditions ("Terms") govern your use of the {{app}} website, the {{app}} mobile apps and all related services (together, the "Platform"), operated by <strong>{{company}}</strong>, {{address}} ("{{app}}", "we", "us"). By creating an account, browsing or placing an order you agree to these Terms. If you do not agree, please do not use the Platform.</p>
+<p class="updated">Last updated: ${TERMS_UPDATED}</p>
+<p class="lead">These Terms of Service ("Terms") govern your use of the {{app}} website, the <strong>{{app}}</strong> customer app, the <strong>{{app}} Delivery</strong> partner app and all related services (together, the "Platform"), operated by <strong>{{company}}</strong>, {{address}} ("{{app}}", "we", "us", "our").</p>
+<p>By downloading or using our apps, creating an account, browsing or placing an order you agree to these Terms and to our <a href="/pages/privacy">Privacy Policy</a>. If you do not agree, please do not use the Platform.</p>
+
+<div class="note"><strong>Who these Terms apply to:</strong> sections 1–14 apply to everyone, including customers who shop on the website or the {{app}} app. Section 15 also applies to delivery partners who use the {{app}} Delivery app.</div>
 
 <h2>1. About the Platform</h2>
-<p>{{app}} is an online marketplace. Products are sold by independent partner stores ("Sellers") listed on the Platform, and delivered by {{app}} delivery partners or collected by you at the store. {{app}} provides the technology, payment collection, customer support and delivery coordination. The Seller of each order is shown on the order details and the invoice.</p>
+<p>{{app}} is an online marketplace for groceries, daily essentials and other products. Products are sold by independent partner stores ("Sellers") listed on the Platform. Orders are delivered by {{app}} delivery partners or collected by you at the store (self pickup). {{app}} provides the technology, payment collection, customer support and delivery coordination. The Seller of each order is shown in the order details and on the invoice.</p>
 
 <h2>2. Eligibility and your account</h2>
 <ul>
   <li>You must be at least 18 years old and able to enter into a binding contract under the Indian Contract Act, 1872.</li>
-  <li>You can sign in with your mobile number (one-time password) or e-mail address. Keep your login details confidential; you are responsible for all activity on your account.</li>
-  <li>Provide accurate name, phone and address details so we can deliver your orders. Tell us immediately at <a href="mailto:{{email}}">{{email}}</a> if you suspect unauthorised use.</li>
-  <li>You may browse as a guest; an account is needed to place orders, use the wallet or write reviews.</li>
+  <li>You can sign in with your mobile number and a one-time password (OTP), or with your e-mail address and password. Keep your login details confidential. You are responsible for all activity on your account.</li>
+  <li>Give us an accurate name, phone number and address so we can deliver your orders. Tell us immediately at <a href="mailto:{{email}}">{{email}}</a> if you suspect unauthorised use of your account.</li>
+  <li>You may browse and fill a cart as a guest. You need an account to place orders, use the Wallet, refer friends or write reviews.</li>
   <li>We may suspend or close accounts that break these Terms, misuse offers or referrals, or act fraudulently.</li>
+  <li>You can delete your account at any time in the app (<strong>Profile → Delete account</strong>) or as described on our <a href="/pages/delete-account">Delete Account</a> page.</li>
 </ul>
 
 <h2>3. Products, prices and availability</h2>
 <ul>
   <li>Product images are for illustration; packaging, colour and size may vary slightly. Product details, MRP, ingredients and expiry information come from the Seller and the brand.</li>
-  <li>All prices are in Indian Rupees (₹) and include applicable taxes (GST) unless stated otherwise. Delivery fees, handling or small-cart fees and tips, where applicable, are shown before you pay.</li>
-  <li>Stock is live but can change quickly. If an item becomes unavailable after you order, we will remove it from the order and refund the amount for that item.</li>
+  <li>All prices are in Indian Rupees (₹) and include applicable taxes (GST) unless stated otherwise.</li>
+  <li>Any <strong>delivery charge</strong>, <strong>peak-time (surge) charge</strong> or other <strong>zone charge</strong> is shown in your cart before you pay. Self-pickup orders have no delivery charge.</li>
+  <li>Stock changes quickly. If an item becomes unavailable after you order, we remove it from the order and refund the amount for that item.</li>
   <li>If a product is listed at a clearly wrong price because of a technical or typographical error, we may cancel the order and refund you in full.</li>
-  <li>We may limit the quantity of an item per order to keep products available for everyone.</li>
+  <li>We may limit the quantity of an item per order so that products stay available for everyone.</li>
 </ul>
 
-<h2>4. Orders</h2>
+<h2>4. Orders and delivery</h2>
 <ul>
-  <li>Your order is an offer to buy. A contract is formed when the order is confirmed by the Seller (status <em>Received</em>).</li>
-  <li><strong>Quick delivery</strong> orders are fulfilled by the nearest store in your delivery zone; delivery times shown (e.g. "Delivery in 15 minutes") are estimates and can change with traffic, weather and demand.</li>
+  <li>Your order is an offer to buy. A contract is formed when the Seller confirms the order (status <em>Received</em>).</li>
+  <li><strong>Quick</strong> orders are fulfilled by a store in your delivery zone. Delivery times shown in the app (for example "Delivery in 10 minutes") are estimates and can change with traffic, weather and demand.</li>
   <li><strong>eCommerce</strong> orders are usually delivered in 1–4 days.</li>
-  <li>For safety, some deliveries need a <strong>one-time delivery code</strong>, shown in your order, which you share with the delivery partner at hand-over.</li>
-  <li>Please be available at the address at delivery time. If the delivery partner cannot reach you after reasonable attempts, the order may be cancelled; perishable items cannot be redelivered.</li>
-  <li>Restricted products (for example medicines that need a prescription) may require extra verification and can be refused by the Seller.</li>
+  <li>Deliveries are confirmed with a <strong>one-time delivery code (OTP)</strong> shown in your order. Share it with the delivery partner only when you receive your order.</li>
+  <li>Please be available at the delivery address. If the delivery partner cannot reach you after reasonable attempts, the order may be cancelled; perishable items cannot be redelivered.</li>
+  <li>You can follow your order and the delivery partner's live location in the app or on the website while it is out for delivery.</li>
+  <li>Restricted products (for example medicines that need a prescription) may need extra verification and can be refused by the Seller.</li>
 </ul>
 
 <h2>5. Cancellation</h2>
-<p>You can cancel an order from <strong>My Orders</strong> until it has been packed (statuses <em>Payment pending</em>, <em>Received</em> or <em>Processed</em>). Once it is packed or out for delivery it can no longer be cancelled; use a return instead where the product allows it. Some items are marked non-cancellable. We or the Seller may cancel an order if the item is out of stock, the address is not serviceable, payment fails or we suspect fraud. Refunds for cancellations are explained in the <a href="/pages/refund">Return &amp; Refund Policy</a>.</p>
+<p>You can cancel an order from <strong>My Orders</strong> while its status is <em>Payment pending</em>, <em>Received</em> or <em>Processed</em>. Once it is packed, shipped or out for delivery it can no longer be cancelled; use a return instead where the product allows it. Some items are marked as non-cancellable on the product page. We or the Seller may cancel an order if an item is out of stock, the address cannot be served, payment fails or we suspect fraud. Refunds are explained in our <a href="/pages/refund">Return &amp; Refund Policy</a>.</p>
 
 <h2>6. Payments</h2>
 <ul>
-  <li>We accept UPI, debit and credit cards, net banking and wallets through our payment partner <strong>Razorpay</strong>, Cash on Delivery (up to ₹{{cod_max}} per order) and the {{app}} Wallet.</li>
-  <li>Card and UPI details are entered on Razorpay's secure checkout. {{app}} does not see or store your full card number, CVV or UPI PIN.</li>
-  <li>If money is deducted but the order is not confirmed, the payment is reversed automatically by the payment partner, or credited to you once we confirm it — usually within 5–7 working days.</li>
-  <li>Please pay the exact amount for Cash on Delivery orders. Repeated refusal of COD orders may lead to COD being disabled for your account.</li>
+  <li>Online payments (UPI, debit and credit cards, net banking and other methods offered at checkout) are processed by our payment partner ({{payment_partners}}). You can also pay by Cash on Delivery (up to ₹{{cod_max}} per order, where available) or with your {{app}} Wallet.</li>
+  <li>Card and UPI details are entered on the payment partner's secure checkout. {{app}} does not see or store your full card number, CVV or UPI PIN.</li>
+  <li>If money is deducted but the order is not confirmed, the payment partner reverses it automatically, or we refund it once confirmed, usually within 5–7 working days.</li>
+  <li>Please pay the exact amount for Cash on Delivery orders. Repeatedly refusing COD orders may lead to COD being disabled for your account.</li>
 </ul>
 
 <h2>7. {{app}} Wallet</h2>
@@ -102,115 +112,194 @@ const terms = `
   <li>The Wallet is a closed-loop store balance that can be used only on {{app}}. It holds refunds, cashback, referral rewards and money you add (₹{{wallet_min}} – ₹{{wallet_max}} per top-up).</li>
   <li>Wallet balance does not earn interest and cannot be transferred to another user. Promotional credits may have an expiry date or minimum order value, shown when they are given.</li>
   <li>Money you added yourself can be withdrawn to your bank account on request (minimum ₹{{withdraw_min}}), subject to verification. Promotional credits cannot be withdrawn.</li>
+  <li>Any Wallet balance is lost if you delete your account, so use or withdraw it first.</li>
 </ul>
 
 <h2>8. Offers, coupons and referrals</h2>
-<p>Coupons and offers have their own conditions (minimum order, validity, one use per user, eligible products) which are shown with the offer. Under the referral programme, when a friend signs up with your code and completes their first order of at least ₹{{ref_min}}, you receive ₹{{ref_referrer}} and your friend receives ₹{{ref_referred}} in the Wallet. We may change or end offers at any time, and may withdraw rewards obtained through fake accounts, self-referrals or other misuse.</p>
+<p>Coupons and offers have their own conditions (minimum order, validity, one use per user, eligible products), shown with the offer. Under the referral programme, when a friend signs up with your code and completes their first order of at least ₹{{ref_min}}, you receive ₹{{ref_referrer}} and your friend receives ₹{{ref_referred}} in the Wallet. We may change or end offers at any time, and may withdraw rewards obtained through fake accounts, self-referrals or other misuse.</p>
 
-<h2>9. Reviews and content you post</h2>
-<p>You may rate products and post reviews and photos. Your content must be honest, relate to your own experience and must not be unlawful, abusive, misleading or infringe anyone's rights. You give {{app}} a non-exclusive, royalty-free licence to display it on the Platform. We may remove content that breaks these rules.</p>
+<h2>9. Returns and refunds</h2>
+<p>Products that allow returns show the return window on the product page. You can request a return from <strong>My Orders</strong> with photos of the item. Full details are in our <a href="/pages/refund">Return &amp; Refund Policy</a>.</p>
 
-<h2>10. Acceptable use</h2>
-<p>You agree not to: use the Platform for any unlawful purpose; resell products bought at promotional prices in commercial quantities; scrape, copy or reverse-engineer the Platform; interfere with its security; or harass our delivery partners, Sellers or support staff.</p>
+<h2>10. Reviews, chat and content you post</h2>
+<p>You may rate products, post reviews and photos, and chat with our support team. Your content must be honest, relate to your own experience and must not be unlawful, abusive, misleading or infringe anyone's rights. You give {{app}} a non-exclusive, royalty-free licence to display reviews on the Platform. We may remove content that breaks these rules.</p>
 
-<h2>11. Intellectual property</h2>
+<h2>11. Acceptable use</h2>
+<p>You agree not to:</p>
+<ul>
+  <li>use the Platform for any unlawful purpose or to place fake orders;</li>
+  <li>resell products bought at promotional prices in commercial quantities;</li>
+  <li>scrape, copy, modify, reverse-engineer or interfere with the security of the website or apps;</li>
+  <li>create multiple accounts to misuse offers, referrals or the Wallet;</li>
+  <li>harass, threaten or abuse delivery partners, Sellers or support staff.</li>
+</ul>
+
+<h2>12. The apps and third-party services</h2>
+<ul>
+  <li>We grant you a personal, non-transferable, revocable licence to use the {{app}} apps on your own device for their intended purpose. Download the apps only from official stores such as Google Play.</li>
+  <li>Some features rely on third parties, such as payment partners, maps and push-notification services. Their own terms apply to their services, and we are not responsible for their availability.</li>
+  <li>Google Play and other app stores are not parties to these Terms and are not responsible for the apps or their content.</li>
+  <li>We may update the apps to add features or fix issues. Some updates may be required to keep using the Platform.</li>
+</ul>
+
+<h2>13. Intellectual property</h2>
 <p>The {{app}} name, logo, website and app design, software and content are owned by or licensed to {{company}}. Brand names and product images belong to their respective owners. You may not use them without written permission.</p>
 
-<h2>12. Liability</h2>
-<p>We work hard to keep the Platform accurate and available, but it is provided "as is". To the extent permitted by law, {{app}} is not liable for indirect or consequential losses, and our total liability for any order is limited to the amount you paid for that order. Nothing in these Terms limits your rights as a consumer under the Consumer Protection Act, 2019.</p>
+<h2>14. Liability</h2>
+<p>We work hard to keep the Platform accurate and available, but it is provided "as is" and may sometimes be unavailable for maintenance or reasons beyond our control. To the extent permitted by law, {{app}} is not liable for indirect or consequential losses, and our total liability for any order is limited to the amount you paid for that order. Nothing in these Terms limits your rights as a consumer under the Consumer Protection Act, 2019.</p>
 
-<h2>13. Grievance redressal</h2>
+<h2>15. Delivery partners</h2>
+<p>This section also applies if you register as a delivery partner in the <strong>{{app}} Delivery</strong> app.</p>
+<ul>
+  <li><strong>Registration and approval</strong> — you must be at least 18, hold a valid driving licence for your vehicle and provide true identity, vehicle and bank details. We review every registration and may approve, reject or ask for more information. You can only accept orders after approval.</li>
+  <li><strong>Independent partner</strong> — you choose when to go online and which orders to accept. You are an independent service provider, not an employee of {{company}}, and you are responsible for your own vehicle, licence, insurance, fuel and taxes.</li>
+  <li><strong>Location</strong> — while you are online the app shares your live location, also in the background, to offer you nearby orders and to show customers where their order is. Going offline stops location sharing. See our <a href="/pages/privacy">Privacy Policy</a>.</li>
+  <li><strong>Deliveries</strong> — follow traffic laws, handle orders with care, and confirm each delivery with the customer's one-time delivery code. Never ask for the code before handing over the order.</li>
+  <li><strong>Cash on Delivery</strong> — collect the exact amount shown, confirm it in the app and settle the cash you hold with {{app}} as instructed. Unsettled cash may block new orders, withdrawals and account deletion.</li>
+  <li><strong>Earnings and payouts</strong> — your commission for each delivery is shown in the app. You can request a withdrawal of your earnings to your registered bank account; payouts are subject to verification and to settlement of any cash in hand.</li>
+  <li><strong>Conduct and deactivation</strong> — be respectful to customers and store staff. We may suspend or deactivate partners who give false information, commit fraud, mishandle cash, behave unsafely or repeatedly fail deliveries.</li>
+</ul>
+
+<h2>16. Grievance redressal</h2>
 <p>In line with the Consumer Protection (E-Commerce) Rules, 2020 and the Information Technology Rules, 2021, you can raise any complaint with our Grievance Officer:</p>
 <table>
   <tr><th>Grievance Officer</th><td>Customer Experience Team, {{company}}</td></tr>
   <tr><th>Address</th><td>{{address}}</td></tr>
-  <tr><th>E-mail</th><td><a href="mailto:{{email}}">{{email}}</a> (subject: "Grievance")</td></tr>
-  <tr><th>Phone</th><td><a href="tel:{{phone_tel}}">{{phone}}</a> (7 AM – 11 PM, every day)</td></tr>
+  <tr><th>E-mail</th><td><a href="mailto:{{email}}?subject=Grievance">{{email}}</a> (subject: "Grievance")</td></tr>
+  <tr><th>Phone</th><td><a href="tel:{{phone_tel}}">{{phone}}</a></td></tr>
 </table>
-<p>We acknowledge complaints within 48 hours and aim to resolve them within one month.</p>
+<p>We acknowledge complaints within 48 hours and aim to resolve them within one month of receiving them.</p>
 
-<h2>14. Governing law and changes</h2>
-<p>These Terms are governed by the laws of India, and the courts of Mumbai, Maharashtra have jurisdiction, without affecting your right to approach a consumer commission. We may update these Terms from time to time; the date at the top shows the latest version, and continued use of the Platform means you accept the updated Terms.</p>
+<h2>17. Governing law and changes</h2>
+<p>These Terms are governed by the laws of India. The courts of Mumbai, Maharashtra have jurisdiction, without affecting your right to approach a consumer commission. We may update these Terms from time to time; the date at the top shows the latest version. We will announce important changes in the app or on the website, and continued use of the Platform after an update means you accept the updated Terms.</p>
+
+<h2>18. Contact us</h2>
+<p>Questions about these Terms? E-mail <a href="mailto:{{email}}">{{email}}</a> or call <a href="tel:{{phone_tel}}">{{phone}}</a>.</p>
 `;
 
 const privacy = `
-<p class="updated">Last updated: ${UPDATED}</p>
-<p>This Privacy Policy explains how <strong>{{company}}</strong> ("{{app}}", "we", "us") collects, uses, shares and protects your personal data when you use the {{app}} website, the {{app}} customer app and the {{app}} Delivery partner app (together, the "Platform"). We process personal data in line with the Digital Personal Data Protection Act, 2023 and the Information Technology Act, 2000.</p>
+<p class="updated">Last updated: ${PRIVACY_UPDATED}</p>
+<p class="lead">This Privacy Policy explains how <strong>{{company}}</strong> ("{{app}}", "we", "us", "our") collects, uses, shares and protects your personal data when you use the {{app}} website, the {{app}} customer app and the {{app}} Delivery partner app (together, the "Platform").</p>
+<p>We process personal data in line with India's Digital Personal Data Protection Act, 2023 (DPDP Act), the Information Technology Act, 2000 and the rules made under them. By using the Platform you agree to this policy. If you do not agree, please do not use the Platform.</p>
 
-<div class="note"><strong>In short:</strong> we use your data to deliver your orders, run your account and keep the Platform safe. We do not sell your data and we do not show third-party advertising.</div>
+<div class="note"><strong>In short:</strong> we use your data to deliver your orders, run your account, pay our delivery partners and keep the Platform safe. We do <strong>not</strong> sell your data, we do <strong>not</strong> show third-party advertising and we do <strong>not</strong> use third-party analytics or advertising trackers in our apps or website.</div>
 
-<h2>1. Data we collect</h2>
-<h3>Customers</h3>
-<ul>
-  <li><strong>Account details</strong> — name, mobile number, e-mail address, profile photo (optional) and a user ID.</li>
-  <li><strong>Addresses and location</strong> — delivery addresses with a map pin, and your device's precise location when you allow it, to find the store and delivery zone near you. You can choose a city manually instead.</li>
-  <li><strong>Orders and payments</strong> — items, prices, invoices, cancellations, returns, wallet transactions and the payment method used. Card, UPI and net-banking details are entered on <strong>Razorpay</strong>'s checkout and processed by Razorpay; we receive only a payment reference and status, never your full card number, CVV or UPI PIN.</li>
-  <li><strong>Content you share</strong> — reviews, ratings and photos (reviews are public), return photos, support chat and contact-form messages.</li>
-  <li><strong>Device data</strong> — a push-notification token, app version, device model and IP address, used to send order updates and to keep the service secure.</li>
-</ul>
-<h3>Delivery partners</h3>
-<ul>
-  <li>Name, phone, e-mail, address, date of birth, vehicle type and number, driving licence and ID proof, and bank account details for payouts.</li>
-  <li><strong>Precise location while you are online</strong> — collected every few seconds, including when the app is in the background during an active shift, to offer nearby orders and to let the customer track the delivery. Location is not collected when you are offline.</li>
-  <li>Earnings, cash collected, ratings and order history.</li>
-</ul>
-<h3>Website cookies</h3>
-<p>The website uses essential cookies and local storage to keep you signed in, remember your cart, language and delivery zone. We do not use advertising or cross-site tracking cookies.</p>
+<h2>1. Who is responsible for your data</h2>
+<p><strong>{{company}}</strong>, {{address}}, is the Data Fiduciary for personal data processed on the Platform. Partner stores ("Sellers") receive only the order details they need to prepare your order. Contact details for privacy questions are in section 11.</p>
 
-<h2>2. How we use your data</h2>
-<ul>
-  <li>To create and manage your account and verify your login (OTP).</li>
-  <li>To process, deliver, track and support your orders, payments, refunds and returns.</li>
-  <li>To send order updates by push notification, SMS or e-mail, and — only if you have not opted out — offers from {{app}}.</li>
-  <li>To answer your questions and complaints.</li>
-  <li>To prevent fraud, misuse of offers and referrals, and to protect our users, Sellers and delivery partners.</li>
-  <li>To improve our catalogue, search and service using aggregated, non-identifying statistics.</li>
-  <li>To meet legal, tax and accounting obligations.</li>
-</ul>
-
-<h2>3. Who we share data with</h2>
-<p>We share only what is needed for each purpose:</p>
-<ul>
-  <li><strong>Partner stores</strong> — your name, items and (for self pickup) contact number, to prepare your order.</li>
-  <li><strong>Delivery partners</strong> — your name, phone number and delivery address for the order they deliver. Customers see the assigned delivery partner's name, phone and live location during delivery.</li>
-  <li><strong>Service providers</strong> acting on our instructions: Google Firebase / Google Cloud (hosting, database, authentication, notifications), Razorpay (payments), SMS and e-mail providers, and map services.</li>
-  <li><strong>Authorities</strong> — when required by law, court order or to protect rights and safety.</li>
-</ul>
-<p>We do not sell or rent your personal data.</p>
-
-<h2>4. Where your data is stored and how it is protected</h2>
-<p>Data is stored on Google Cloud / Firebase servers, which may be located in India or abroad, with encryption in transit (HTTPS/TLS) and at rest. Access is restricted by role: stores see only their own orders, and delivery partners see only the orders assigned to them. No system is perfectly secure; if a breach affects you, we will inform you and the authorities as required by law.</p>
-
-<h2>5. How long we keep data</h2>
+<h2>2. Data we collect</h2>
+<h3>2.1 Customers (website and customer app)</h3>
 <table>
-  <tr><th>Data</th><th>Retention</th></tr>
-  <tr><td>Account and profile</td><td>While your account is active; removed or anonymised when you delete it</td></tr>
-  <tr><td>Orders, invoices, payments, wallet transactions</td><td>8 years, as required by tax and accounting law</td></tr>
-  <tr><td>Support chats and contact messages</td><td>Up to 2 years</td></tr>
-  <tr><td>Delivery partner documents and bank details</td><td>While the partner account is active, and removed on deletion (payout records are kept for 8 years)</td></tr>
-  <tr><td>Delivery partner location</td><td>Only the latest position is kept while online; the last position on a delivered order stays with that order record</td></tr>
+  <tr><th>Data</th><th>What it includes</th><th>Why we need it</th></tr>
+  <tr><td>Guest session</td><td>A random user ID created when you first open the Platform, before you log in</td><td>To keep your cart; it is merged into your account when you log in</td></tr>
+  <tr><td>Account details</td><td>Name, mobile number, e-mail address, password (stored only in encrypted, hashed form by Google Firebase), profile photo (optional), language and referral code</td><td>Login, your profile and order communication</td></tr>
+  <tr><td>Addresses and location</td><td>Saved delivery addresses with a map pin; your device's precise location, <strong>only when you allow it</strong></td><td>To find your delivery zone and the nearest store, show delivery time and deliver your order. You can choose a city or pin manually instead.</td></tr>
+  <tr><td>Orders and payments</td><td>Items, prices, coupons, invoices, cancellations, returns, refunds, wallet and referral transactions, the payment method and a payment reference from our payment partner</td><td>To process, deliver, bill and support your orders</td></tr>
+  <tr><td>Content you share</td><td>Product reviews, ratings and photos (reviews are public), return photos, support chat and contact-form messages</td><td>Reviews, returns and customer support</td></tr>
+  <tr><td>Device and technical data</td><td>Push-notification token, app version, device type, language, IP address and security logs</td><td>Order notifications, fraud prevention and keeping the service secure</td></tr>
+</table>
+<p><strong>Card, UPI and net-banking details</strong> are entered directly on the secure checkout of our payment partner ({{payment_partners}}). We receive only a payment reference and status, never your full card number, CVV, UPI PIN or banking password.</p>
+
+<h3>2.2 Delivery partners (Delivery partner app)</h3>
+<table>
+  <tr><th>Data</th><th>What it includes</th><th>Why we need it</th></tr>
+  <tr><td>Registration and verification</td><td>Name, phone, e-mail, address, date of birth, delivery zone, vehicle type and number, driving licence and ID proof (photos or files you upload)</td><td>To verify and approve you as a delivery partner</td></tr>
+  <tr><td>Bank details</td><td>Account holder name, account number, IFSC / bank details</td><td>To pay your earnings and withdrawals</td></tr>
+  <tr><td><strong>Precise location</strong></td><td>Your GPS position, sent about every 10 seconds <strong>only while you are online</strong>, including when the app is in the background during your shift (a permanent notification is shown while this happens)</td><td>To offer you nearby orders, assign deliveries and let the customer track their order live. Location is <strong>not</strong> collected when you are offline.</td></tr>
+  <tr><td>Work records</td><td>Accepted, rejected and delivered orders, delivery OTP confirmations, cash collected, earnings, ratings and withdrawal requests</td><td>Payouts, cash settlement, support and quality</td></tr>
 </table>
 
-<h2>6. Your rights and choices</h2>
+<h3>2.3 Store owners and staff</h3>
+<p>For people who use the Store or Admin panels we collect name, e-mail, phone, role and store, and a log of actions such as order status changes, so that work can be tracked and secured.</p>
+
+<h3>2.4 App permissions</h3>
+<table>
+  <tr><th>Permission</th><th>Used for</th><th>Required?</th></tr>
+  <tr><td>Location</td><td>Customer app: finding your zone and address. Delivery app: live location while online.</td><td>Optional for customers; required for delivery partners to go online</td></tr>
+  <tr><td>Camera and photos</td><td>Profile photo, review and return photos, delivery partner documents</td><td>Optional; only when you choose to add a photo</td></tr>
+  <tr><td>Notifications</td><td>Order updates, new orders for delivery partners, support replies and offers</td><td>Optional</td></tr>
+</table>
+<p>You can change these permissions at any time in your phone's settings.</p>
+
+<h3>2.5 Cookies and local storage (website)</h3>
+<p>The website uses only essential browser storage to keep you signed in and to remember your cart, delivery location, language and theme. When you log in with your mobile number, <strong>Google reCAPTCHA</strong> checks that the request comes from a real person, and Google may set its own cookies for this purpose. We do not use advertising or cross-site tracking cookies.</p>
+
+<h2>3. How we use your data</h2>
 <ul>
-  <li><strong>Access and correction</strong> — view and edit your name, phone, e-mail, addresses and photo in your Profile.</li>
-  <li><strong>Notifications</strong> — turn off push notifications in your device settings, or ask us to stop promotional messages.</li>
-  <li><strong>Location</strong> — you can deny or withdraw location permission at any time in your device settings.</li>
-  <li><strong>Deletion</strong> — delete your account in the app (Profile → Delete account) or follow the steps on our <a href="/pages/delete-account">Delete Account</a> page.</li>
-  <li><strong>Withdraw consent / complain</strong> — contact our Grievance Officer below. You may also approach the Data Protection Board of India.</li>
+  <li>To create and manage your account, verify your login (OTP or password) and protect it.</li>
+  <li>To process, prepare, deliver and track your orders, and to handle payments, refunds, returns, wallet and referral rewards.</li>
+  <li>To send order updates by push notification, e-mail or SMS, and — unless you opt out — offers and announcements from {{app}}.</li>
+  <li>To answer your questions, complaints and support chats.</li>
+  <li>To verify, assign and pay delivery partners and settle cash collected on delivery.</li>
+  <li>To prevent fraud and misuse of offers, wallet and referrals, and to protect our users, Sellers and delivery partners.</li>
+  <li>To improve our catalogue, search and service using aggregated statistics that do not identify you.</li>
+  <li>To comply with legal, tax and accounting obligations and lawful requests from authorities.</li>
+</ul>
+<p>We use your data on the basis of your consent (for example location and notifications), to perform the services you request, and for legitimate uses permitted under the DPDP Act, such as complying with the law.</p>
+
+<h2>4. Who we share data with</h2>
+<p>We share only what each party needs:</p>
+<ul>
+  <li><strong>Partner stores</strong> — the items you ordered, your name and, for self-pickup orders, your phone number, so they can prepare your order.</li>
+  <li><strong>Delivery partners</strong> — your name, phone number and delivery address for the order they deliver. During delivery, customers see the assigned delivery partner's name, phone number and live location.</li>
+  <li><strong>Service providers</strong> who process data for us under contract:
+    <ul>
+      <li><strong>Google Firebase / Google Cloud</strong> — hosting, database, file storage, login and OTP SMS, reCAPTCHA and push notifications;</li>
+      <li><strong>Payment partners</strong> ({{payment_partners}}) — to process online payments and refunds;</li>
+      <li><strong>E-mail and SMS providers</strong> — to send order e-mails and messages;</li>
+      <li><strong>OpenStreetMap</strong> — map images and converting a map pin into an address on the website (the pin coordinates are sent; no name or account details).</li>
+    </ul>
+  </li>
+  <li><strong>Authorities</strong> — when required by law, a court order or a government request, or to protect the rights and safety of our users and the public.</li>
+  <li><strong>Business transfer</strong> — if {{company}} is merged or sold, your data may move to the new owner, who must respect this policy.</li>
+</ul>
+<p>Our team may use Google's Gemini AI to help write product descriptions and translations. <strong>No customer or delivery-partner personal data is sent to it.</strong></p>
+<p>We do not sell or rent your personal data.</p>
+
+<h2>5. Where your data is stored and how we protect it</h2>
+<p>Our database and files are stored on Google Cloud in <strong>Mumbai, India</strong> (region asia-south1). Some of our service providers, such as Google's global network and payment or e-mail providers, may process data in other countries, with safeguards required by law.</p>
+<ul>
+  <li>All connections use encryption (HTTPS/TLS), and stored data is encrypted by Google Cloud.</li>
+  <li>Access is restricted by role: stores see only their own orders, delivery partners see only orders offered or assigned to them, and staff see only what their role allows.</li>
+  <li>The delivery OTP is visible only to the customer, and delivery partner documents are visible only to our team.</li>
+</ul>
+<p>No system is perfectly secure. If a personal data breach affects you, we will inform you and the Data Protection Board of India as required by law.</p>
+
+<h2>6. How long we keep data</h2>
+<table>
+  <tr><th>Data</th><th>How long</th></tr>
+  <tr><td>Account and profile</td><td>While your account is active; anonymised when you delete it</td></tr>
+  <tr><td>Saved addresses, cart, favourites and notifications</td><td>While your account is active; deleted when you delete it</td></tr>
+  <tr><td>Orders, invoices, payments, refunds and wallet transactions</td><td>8 years, as required by tax and accounting law</td></tr>
+  <tr><td>Support chats and contact messages</td><td>Up to 2 years</td></tr>
+  <tr><td>Delivery partner documents, address and bank details</td><td>While the partner account is active; removed when the account is deleted (payout records are kept for 8 years)</td></tr>
+  <tr><td>Delivery partner location</td><td>Only the latest position is kept while online and it is cleared when the account is deleted; the rider position on a completed order stays with that order record</td></tr>
+</table>
+
+<h2>7. Your rights and choices</h2>
+<ul>
+  <li><strong>Access and correction</strong> — view and update your name, photo, addresses and other details in your Profile, or ask us for a summary of the personal data we hold about you.</li>
+  <li><strong>Deletion</strong> — delete your account in the app (<strong>Profile → Delete account</strong>) or follow the steps on our <a href="/pages/delete-account">Delete Account</a> page. Your login is removed, your profile is anonymised as "Deleted user", and your saved addresses, cart, favourites and notifications are deleted. Records that the law requires us to keep, such as invoices, are retained as described in section 6.</li>
+  <li><strong>Withdraw consent</strong> — turn off location or notifications in your phone's settings, opt out of promotional messages, or contact us. Withdrawing consent does not affect processing that happened before.</li>
+  <li><strong>Nominate</strong> — you may nominate another person to exercise your rights in the event of your death or incapacity, by writing to us.</li>
+  <li><strong>Grievances</strong> — contact our Grievance Officer (section 11). If you are not satisfied with our response, you may complain to the Data Protection Board of India.</li>
 </ul>
 
-<h2>7. Children</h2>
-<p>The Platform is meant for people aged 18 and over. We do not knowingly collect data from children. If you believe a child has given us personal data, contact us and we will delete it.</p>
+<h2>8. Children</h2>
+<p>The Platform is intended for people aged 18 and over. We do not knowingly collect personal data from children. If you believe a child has given us personal data, please contact us and we will delete it.</p>
 
-<h2>8. Changes to this policy</h2>
-<p>We may update this policy as the Platform changes. The date at the top shows the latest version; important changes will be announced in the app or by e-mail.</p>
+<h2>9. Links to other services</h2>
+<p>Payment pages, maps and other external links are operated by third parties under their own privacy policies. Please read them before sharing data with those services.</p>
 
-<h2>9. Contact and Grievance Officer</h2>
+<h2>10. Changes to this policy</h2>
+<p>We may update this policy when the Platform or the law changes. The date at the top shows the current version. We will announce important changes in the app, on the website or by e-mail.</p>
+
+<h2>11. Contact us and Grievance Officer</h2>
 <table>
+  <tr><th>Company</th><td>{{company}}</td></tr>
   <tr><th>Grievance Officer</th><td>Data Protection &amp; Customer Experience Team, {{company}}</td></tr>
   <tr><th>Address</th><td>{{address}}</td></tr>
-  <tr><th>E-mail</th><td><a href="mailto:{{email}}">{{email}}</a> (subject: "Privacy")</td></tr>
+  <tr><th>E-mail</th><td><a href="mailto:{{email}}?subject=Privacy">{{email}}</a> (subject: "Privacy")</td></tr>
   <tr><th>Phone</th><td><a href="tel:{{phone_tel}}">{{phone}}</a></td></tr>
 </table>
 `;
@@ -264,7 +353,7 @@ const refund = `
 `;
 
 const deleteAccount = `
-<p class="updated">Last updated: ${UPDATED}</p>
+<p class="updated">Last updated: ${PRIVACY_UPDATED}</p>
 <p class="lead">You can delete your {{app}} account at any time. This page explains how to do it, what is deleted and what we must keep. It applies to the {{app}} customer app, the {{app}} website and the {{app}} Delivery partner app.</p>
 
 <h2>Option 1 — Delete in the app (instant)</h2>
@@ -309,7 +398,7 @@ const deleteAccount = `
 
 export const PAGES: Record<string, { title: Record<'en' | 'hi' | 'ar', string>; html: string }> = {
   about: { title: { en: 'About Us', hi: 'हमारे बारे में', ar: 'من نحن' }, html: about },
-  terms: { title: { en: 'Terms & Conditions', hi: 'नियम और शर्तें', ar: 'الشروط والأحكام' }, html: terms },
+  terms: { title: { en: 'Terms of Service', hi: 'नियम और शर्तें', ar: 'الشروط والأحكام' }, html: terms },
   privacy: { title: { en: 'Privacy Policy', hi: 'गोपनीयता नीति', ar: 'سياسة الخصوصية' }, html: privacy },
   refund: { title: { en: 'Return & Refund Policy', hi: 'वापसी और रिफंड नीति', ar: 'سياسة الإرجاع والاسترداد' }, html: refund },
   'delete-account': { title: { en: 'Delete Your Account', hi: 'अपना खाता हटाएं', ar: 'حذف حسابك' }, html: deleteAccount },
